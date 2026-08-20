@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "lessonTitle": "Название урока",
+  "slides": [
+    { "kind": "title", "slots": { "title": "Название урока" } },
+    { "kind": "content", "sourceSlide": 1, "composition": "text.title-body", "slots": { "title": "Ключевая мысль", "body": "Текст урока сохраняется дословно." }, "interactive": false }
+  ]
+}

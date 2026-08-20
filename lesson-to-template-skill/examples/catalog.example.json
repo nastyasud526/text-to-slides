@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "titleTemplate": { "templateId": "title.lesson", "slots": { "title": "TITLE" } },
+  "compositions": {
+    "text.title-body": {
+      "templateId": "text.title-body",
+      "slots": { "title": "TITLE", "body": "BODY" },
+      "capacity": { "body": { "maxChars": 420, "maxLines": 6 } }
+    }
+  },
+  "slides": [
+    { "sourceSlide": 1, "templateId": "title.lesson", "comments": ["template_id: title.lesson"], "notes": [], "text": [], "suggestedSlots": {}, "objectNamesAreUnique": true },
+    { "sourceSlide": 2, "templateId": "text.title-body", "comments": ["template_id: text.title-body"], "notes": [], "text": [], "suggestedSlots": {}, "objectNamesAreUnique": true }
+  ]
+}

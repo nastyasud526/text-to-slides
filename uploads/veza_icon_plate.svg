@@ -1,0 +1,25 @@
+<svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    
+  </defs>
+
+  <rect x="0" y="0" width="300" height="260" fill="#F1EFEC"></rect>
+
+  
+  <g transform="translate(70,60) rotate(8)">
+    <rect x="0" y="0" width="150" height="150" rx="12" class="grayfill stroke-thick"></rect>
+    <circle cx="26" cy="26" r="11" class="bg stroke-thick"></circle>
+    <circle cx="124" cy="26" r="11" class="bg stroke-thick"></circle>
+    <circle cx="26" cy="124" r="11" class="bg stroke-thick"></circle>
+    <circle cx="124" cy="124" r="11" class="bg stroke-thick"></circle>
+  </g>
+
+  
+  <g transform="translate(30,40) rotate(-6)">
+    <rect x="0" y="0" width="150" height="150" rx="12" class="orange stroke-thick"></rect>
+    <circle cx="26" cy="26" r="11" class="bg stroke-thick"></circle>
+    <circle cx="124" cy="26" r="11" class="bg stroke-thick"></circle>
+    <circle cx="26" cy="124" r="11" class="bg stroke-thick"></circle>
+    <circle cx="124" cy="124" r="11" class="bg stroke-thick"></circle>
+  </g>
+</svg>
