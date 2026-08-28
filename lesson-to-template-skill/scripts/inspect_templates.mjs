@@ -85,11 +85,29 @@ const JSZip = require("jszip");
 const zip = await JSZip.loadAsync(await fs.readFile(pptx));
 const { FileBlob, PresentationFile } = await loadArtifactTool();
 const deck = await PresentationFile.importPptx(await FileBlob.load(pptx));
+const presentationXml = await zip.file("ppt/presentation.xml")?.async("string");
+const presentationRels = await zip.file("ppt/_rels/presentation.xml.rels")?.async("string");
+if (!presentationXml || !presentationRels) throw new Error("PPTX is missing presentation slide-order metadata.");
+const presentationTargets = new Map();
+for (const match of presentationRels.matchAll(/<Relationship\b[^>]*\/?>(?:<\/Relationship>)?/g)) {
+  const id = attribute(match[0], "Id");
+  const target = attribute(match[0], "Target");
+  if (id && target) presentationTargets.set(id, target);
+}
+const orderedSlideFiles = [];
+for (const match of presentationXml.matchAll(/<p:sldId\b[^>]*\br:id="([^"]+)"[^>]*\/?>(?:<\/p:sldId>)?/g)) {
+  const target = presentationTargets.get(decodeXml(match[1]));
+  if (!target) throw new Error(`Presentation slide relationship ${JSON.stringify(match[1])} has no target.`);
+  orderedSlideFiles.push(path.posix.normalize(target.startsWith("/") ? target.slice(1) : `ppt/${target}`));
+}
+if (orderedSlideFiles.length !== deck.slides.count) throw new Error(`PPTX order has ${orderedSlideFiles.length} slides, importer has ${deck.slides.count}.`);
 const slides = [];
-for (let slideIndex = 1; slideIndex <= deck.slides.count; slideIndex += 1) {
-  const slideXml = await zip.file(`ppt/slides/slide${slideIndex}.xml`)?.async("string");
-  if (!slideXml) throw new Error(`Missing ppt/slides/slide${slideIndex}.xml.`);
-  const rels = await zip.file(`ppt/slides/_rels/slide${slideIndex}.xml.rels`)?.async("string") ?? "";
+for (const [index, slideFile] of orderedSlideFiles.entries()) {
+  const slideIndex = index + 1;
+  const slideXml = await zip.file(slideFile)?.async("string");
+  if (!slideXml) throw new Error(`Missing ${slideFile}.`);
+  const relsFile = path.posix.join(path.posix.dirname(slideFile), "_rels", `${path.posix.basename(slideFile)}.rels`);
+  const rels = await zip.file(relsFile)?.async("string") ?? "";
   const comments = [];
   const notes = [];
   for (const target of relationshipTargets(rels, "/comments")) { const xml = await zip.file(relationshipPath(target))?.async("string"); if (xml) comments.push(textNodes(xml)); }

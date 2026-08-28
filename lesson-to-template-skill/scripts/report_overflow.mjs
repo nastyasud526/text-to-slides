@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import { usage } from "./runtime.mjs";
-import { validateCatalog, validatePlan } from "./validate.mjs";
+import { slotText, validateCatalog, validatePlan } from "./validate.mjs";
 
 const [catalogPath, planPath, reportPath] = process.argv.slice(2);
 if (!catalogPath || !planPath || !reportPath) {
@@ -17,8 +17,9 @@ for (const [index, item] of plan.slides.entries()) {
     const declared = spec.capacity?.[slot];
     if (declared === undefined) continue;
     const capacity = typeof declared === "number" ? { maxChars: declared } : declared;
-    const chars = [...value].length;
-    const lines = value.split("\n").length;
+    const text = slotText(value);
+    const chars = [...text].length;
+    const lines = text.split("\n").length;
     const exceedsChars = capacity.maxChars !== undefined && chars > capacity.maxChars;
     const exceedsLines = capacity.maxLines !== undefined && lines > capacity.maxLines;
     if (exceedsChars || exceedsLines) {

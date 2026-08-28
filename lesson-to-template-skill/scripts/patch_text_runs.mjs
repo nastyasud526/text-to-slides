@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import { createRequire } from "node:module";
 
 function normalize(value) {
@@ -51,9 +52,81 @@ function findShapeRanges(xml) {
   return ranges;
 }
 
+function findElementRanges(xml, tag) {
+  const ranges = [];
+  const start = new RegExp(`<${tag}(?=\\s|>)[^>]*>`, "g");
+  let match;
+  while ((match = start.exec(xml))) {
+    const end = findMatchingElement(xml, match.index, tag);
+    ranges.push({ start: match.index, end, xml: xml.slice(match.index, end) });
+    start.lastIndex = end;
+  }
+  return ranges;
+}
+
+function pictureObjectName(pictureXml) {
+  const cNvPr = /<p:cNvPr(?=\s|>)[^>]*>/.exec(pictureXml)?.[0];
+  return cNvPr ? attribute(cNvPr, "name") : null;
+}
+
+function pictureEmbedRelationshipId(pictureXml) {
+  const blip = /<a:blip(?=\s|>)[^>]*\br:embed="([^"]+)"[^>]*\/?>(?:<\/a:blip>)?/.exec(pictureXml);
+  return blip ? decodeXml(blip[1]) : null;
+}
+
+function slideRelationshipsFileName(slideFileName) {
+  return path.posix.join(path.posix.dirname(slideFileName), "_rels", `${path.posix.basename(slideFileName)}.rels`);
+}
+
+function relationshipTarget(xml, relationshipId) {
+  for (const match of xml.matchAll(/<Relationship\b[^>]*\/?>(?:<\/Relationship>)?/g)) {
+    if (attribute(match[0], "Id") === relationshipId) return attribute(match[0], "Target");
+  }
+  return null;
+}
+
+function replaceRelationshipTarget(xml, relationshipId, target) {
+  let replaced = false;
+  const result = xml.replace(/<Relationship\b[^>]*\/?>(?:<\/Relationship>)?/g, (entry) => {
+    if (attribute(entry, "Id") !== relationshipId) return entry;
+    replaced = true;
+    if (!/\bTarget="[^"]*"/.test(entry)) throw new Error(`Relationship ${JSON.stringify(relationshipId)} has no Target attribute.`);
+    return entry.replace(/\bTarget="[^"]*"/, `Target="${target}"`);
+  });
+  if (!replaced) throw new Error(`Missing relationship ${JSON.stringify(relationshipId)}.`);
+  return result;
+}
+
+function resolveRelationshipTarget(slideFileName, target) {
+  if (target.startsWith("/")) return path.posix.normalize(target.slice(1));
+  if (target.startsWith("ppt/")) return path.posix.normalize(target);
+  return path.posix.normalize(path.posix.join(path.posix.dirname(slideFileName), target));
+}
+
 function attribute(xml, name) {
   const match = new RegExp(`\\b${name}="([^"]*)"`).exec(xml);
   return match ? decodeXml(match[1]) : null;
+}
+
+async function orderedSlideFileNames(zip) {
+  const presentation = await zip.file("ppt/presentation.xml")?.async("string");
+  const relationships = await zip.file("ppt/_rels/presentation.xml.rels")?.async("string");
+  if (!presentation || !relationships) throw new Error("PPTX is missing presentation slide-order metadata.");
+  const targets = new Map();
+  for (const match of relationships.matchAll(/<Relationship\b[^>]*\/?>(?:<\/Relationship>)?/g)) {
+    const id = attribute(match[0], "Id");
+    const target = attribute(match[0], "Target");
+    if (id && target) targets.set(id, target);
+  }
+  const result = [];
+  for (const match of presentation.matchAll(/<p:sldId\b[^>]*\br:id="([^"]+)"[^>]*\/?>(?:<\/p:sldId>)?/g)) {
+    const target = targets.get(decodeXml(match[1]));
+    if (!target) throw new Error(`Presentation slide relationship ${JSON.stringify(match[1])} has no target.`);
+    const normalized = path.posix.normalize(target.startsWith("/") ? target.slice(1) : `ppt/${target}`);
+    result.push(normalized);
+  }
+  if (!result.length) throw new Error("PPTX presentation order contains no slides.");
+  return result;
 }
 
 function shapeObjectName(shapeXml) {
@@ -62,13 +135,10 @@ function shapeObjectName(shapeXml) {
 }
 
 function getShapeText(shapeXml) {
-  const withBreaks = shapeXml
-    .replace(/<a:br\b[^>]*\/>/g, "\n")
-    .replace(/<\/a:p>\s*<a:p(?=\s|>)[^>]*>/g, "\n");
   const values = [];
-  const token = /<a:t(?:\s[^>]*)?>([\s\S]*?)<\/a:t>/g;
+  const token = /<a:br\b[^>]*\/>|<a:t(?:\s[^>]*)?>([\s\S]*?)<\/a:t>/g;
   let match;
-  while ((match = token.exec(withBreaks))) values.push(decodeXml(match[1]));
+  while ((match = token.exec(shapeXml))) values.push(match[1] === undefined ? "\n" : decodeXml(match[1]));
   return normalize(values.join(""));
 }
 
@@ -87,20 +157,36 @@ function makeRun(templateRun, text) {
   return `${start}${rPr}${xmlSpace}${escapeXml(text)}</a:t></a:r>`;
 }
 
-function replaceShapeText(shapeXml, value) {
+function replaceShapeText(shapeXml, value, runStyles = null) {
   const txBodyStart = shapeXml.indexOf("<p:txBody");
   if (txBodyStart < 0) throw new Error("Mapped shape has no <p:txBody>.");
   const txBodyEnd = findMatchingElement(shapeXml, txBodyStart, "p:txBody");
   const txBody = shapeXml.slice(txBodyStart, txBodyEnd);
   const firstParagraph = txBody.match(/<a:p(?=\s|>)[\s\S]*?<\/a:p>/)?.[0];
   if (!firstParagraph) throw new Error("Mapped text shape has no paragraph.");
-  const templateRun = firstParagraph.match(/<a:r(?=\s|>)[\s\S]*?<\/a:r>/)?.[0];
-  if (!templateRun) throw new Error("Mapped text shape has no styled <a:r> to preserve.");
+  const templateRuns = [...txBody.matchAll(/<a:r(?=\s|>)[\s\S]*?<\/a:r>/g)].map((match) => match[0]);
+  if (!templateRuns.length) throw new Error("Mapped text shape has no styled <a:r> to preserve.");
   const paragraphStart = firstParagraph.match(/^<a:p(?=\s|>)[^>]*>/)?.[0] ?? "<a:p>";
   const pPr = extractElement(firstParagraph, "a:pPr");
   const endParaRPr = extractElement(firstParagraph, "a:endParaRPr");
-  const lines = normalize(value).split("\n");
-  const replacementParagraph = `${paragraphStart}${pPr}${lines.map((line, index) => `${index ? "<a:br/>" : ""}${makeRun(templateRun, line)}`).join("")}${endParaRPr}</a:p>`;
+  const segments = typeof value === "string" ? [{ text: value, run: 1 }] : value.segments.map((segment) => {
+    const run = runStyles?.[segment.style];
+    if (!run) throw new Error(`No template run is mapped for style ${JSON.stringify(segment.style)}.`);
+    return { text: segment.text, run };
+  });
+  let needsBreak = false;
+  const content = [];
+  for (const segment of segments) {
+    const templateRun = templateRuns[segment.run - 1];
+    if (!templateRun) throw new Error(`Template run ${segment.run} does not exist; found ${templateRuns.length} run(s).`);
+    for (const [lineIndex, line] of normalize(segment.text).split("\n").entries()) {
+      if (needsBreak || lineIndex) content.push("<a:br/>");
+      content.push(makeRun(templateRun, line));
+      needsBreak = lineIndex < normalize(segment.text).split("\n").length - 1;
+    }
+    needsBreak = false;
+  }
+  const replacementParagraph = `${paragraphStart}${pPr}${content.join("")}${endParaRPr}</a:p>`;
   const beforeParagraph = txBody.slice(0, txBody.indexOf(firstParagraph));
   const replacementTxBody = `${beforeParagraph}${replacementParagraph}</p:txBody>`;
   return `${shapeXml.slice(0, txBodyStart)}${replacementTxBody}${shapeXml.slice(txBodyEnd)}`;
@@ -112,8 +198,38 @@ function patchSlideXml(xml, patch) {
     throw new Error(`Slide ${patch.slideIndex}, slot ${patch.slot}: expected one text shape named ${JSON.stringify(patch.objectName)}, found ${matches.length}.`);
   }
   const match = matches[0];
-  const replacement = replaceShapeText(match.xml, patch.value);
+  const replacement = replaceShapeText(match.xml, patch.value, patch.runStyles);
   return `${xml.slice(0, match.start)}${replacement}${xml.slice(match.end)}`;
+}
+
+function stripSlideToNamedShapes(xml, operation) {
+  const spTreeStart = xml.indexOf("<p:spTree");
+  if (spTreeStart < 0) throw new Error(`Slide ${operation.slideIndex}: missing <p:spTree>.`);
+  const spTreeEnd = findMatchingElement(xml, spTreeStart, "p:spTree");
+  const keep = new Set(operation.keepObjectNames);
+  const removableTags = ["p:sp", "p:pic", "p:graphicFrame", "p:cxnSp", "p:grpSp"];
+  const removals = [];
+  for (const tag of removableTags) {
+    for (const range of findElementRanges(xml.slice(spTreeStart, spTreeEnd), tag)) {
+      const absolute = { ...range, start: range.start + spTreeStart, end: range.end + spTreeStart };
+      if (tag === "p:sp" && keep.has(shapeObjectName(range.xml))) continue;
+      if (tag === "p:grpSp" && findShapeRanges(range.xml).some((shape) => keep.has(shapeObjectName(shape.xml)))) continue;
+      removals.push(absolute);
+    }
+  }
+  const outermost = removals.filter((candidate, index, all) => !all.some((other, otherIndex) =>
+    otherIndex !== index && other.start <= candidate.start && other.end >= candidate.end
+  ));
+  outermost.sort((a, b) => b.start - a.start);
+  let result = xml;
+  for (const removal of outermost) result = `${result.slice(0, removal.start)}${result.slice(removal.end)}`;
+  for (const objectName of keep) {
+    const matches = findShapeRanges(result).filter((shape) => shapeObjectName(shape.xml) === objectName);
+    if (matches.length !== 1) {
+      throw new Error(`Slide ${operation.slideIndex}: expected one retained shape named ${JSON.stringify(objectName)}, found ${matches.length}.`);
+    }
+  }
+  return result;
 }
 
 export async function getPptxNamedShapeTexts(pptxPath) {
@@ -123,27 +239,75 @@ export async function getPptxNamedShapeTexts(pptxPath) {
   const JSZip = require("jszip");
   const zip = await JSZip.loadAsync(await fs.readFile(pptxPath));
   const result = new Map();
-  for (const name of Object.keys(zip.files)) {
-    const match = /^ppt\/slides\/slide(\d+)\.xml$/.exec(name);
-    if (!match) continue;
+  const slideFiles = await orderedSlideFileNames(zip);
+  for (const [index, name] of slideFiles.entries()) {
     const values = new Map();
     for (const shape of findShapeRanges(await zip.file(name).async("string"))) {
       const objectName = shapeObjectName(shape.xml);
       if (!objectName) continue;
-      if (values.has(objectName)) throw new Error(`Slide ${match[1]} has duplicate object name ${JSON.stringify(objectName)}.`);
-      values.set(objectName, getShapeText(shape.xml));
+      // Decorative template objects may retain duplicated generic names such as
+      // "Shape 0". Mapped fields have already been required to be unique by
+      // patchSlideXml; retain the first unrelated duplicate for inventory.
+      if (!values.has(objectName)) values.set(objectName, getShapeText(shape.xml));
     }
-    result.set(Number(match[1]), values);
+    result.set(index + 1, values);
   }
   return result;
 }
 
-export async function patchPptxTextRuns(pptxPath, patches) {
+export async function getPptxNamedImageHashes(pptxPath) {
   const modules = process.env.RUNTIME_NODE_MODULES;
   if (!modules) throw new Error("RUNTIME_NODE_MODULES is not set.");
   const require = createRequire(path.join(modules, "lesson-to-template-runtime.cjs"));
   const JSZip = require("jszip");
   const zip = await JSZip.loadAsync(await fs.readFile(pptxPath));
+  const result = new Map();
+  const slideFiles = await orderedSlideFileNames(zip);
+  for (const [index, slideFileName] of slideFiles.entries()) {
+    const slideXml = await zip.file(slideFileName)?.async("string");
+    const relationshipsFileName = slideRelationshipsFileName(slideFileName);
+    const relationshipsXml = await zip.file(relationshipsFileName)?.async("string");
+    if (!slideXml || !relationshipsXml) throw new Error(`Slide ${index + 1} is missing picture relationships.`);
+    const images = new Map();
+    for (const picture of findElementRanges(slideXml, "p:pic")) {
+      const objectName = pictureObjectName(picture.xml);
+      const relationshipId = pictureEmbedRelationshipId(picture.xml);
+      if (!objectName || !relationshipId) continue;
+      const target = relationshipTarget(relationshipsXml, relationshipId);
+      if (!target) throw new Error(`Slide ${index + 1}, image ${JSON.stringify(objectName)} has no media target.`);
+      const mediaFileName = resolveRelationshipTarget(slideFileName, target);
+      const media = zip.file(mediaFileName);
+      if (!media) throw new Error(`Slide ${index + 1}, image ${JSON.stringify(objectName)} points to missing ${mediaFileName}.`);
+      images.set(objectName, createHash("sha256").update(await media.async("nodebuffer")).digest("hex"));
+    }
+    result.set(index + 1, images);
+  }
+  return result;
+}
+
+export async function getPptxSlideCount(pptxPath) {
+  const modules = process.env.RUNTIME_NODE_MODULES;
+  if (!modules) throw new Error("RUNTIME_NODE_MODULES is not set.");
+  const require = createRequire(path.join(modules, "lesson-to-template-runtime.cjs"));
+  const JSZip = require("jszip");
+  const zip = await JSZip.loadAsync(await fs.readFile(pptxPath));
+  return (await orderedSlideFileNames(zip)).length;
+}
+
+export async function patchPptxTextRuns(pptxPath, patches, stripOperations = [], imagePatches = []) {
+  const modules = process.env.RUNTIME_NODE_MODULES;
+  if (!modules) throw new Error("RUNTIME_NODE_MODULES is not set.");
+  const require = createRequire(path.join(modules, "lesson-to-template-runtime.cjs"));
+  const JSZip = require("jszip");
+  const zip = await JSZip.loadAsync(await fs.readFile(pptxPath));
+  const slideFiles = await orderedSlideFileNames(zip);
+  for (const operation of stripOperations) {
+    const fileName = slideFiles[operation.slideIndex - 1];
+    if (!fileName) throw new Error(`Missing output slide ${operation.slideIndex} in exported presentation.`);
+    const file = zip.file(fileName);
+    if (!file) throw new Error(`Missing ${fileName} in exported presentation.`);
+    zip.file(fileName, stripSlideToNamedShapes(await file.async("string"), operation));
+  }
   const grouped = new Map();
   for (const patch of patches) {
     const items = grouped.get(patch.slideIndex) ?? [];
@@ -151,12 +315,36 @@ export async function patchPptxTextRuns(pptxPath, patches) {
     grouped.set(patch.slideIndex, items);
   }
   for (const [slideIndex, slidePatches] of grouped) {
-    const fileName = `ppt/slides/slide${slideIndex}.xml`;
+    const fileName = slideFiles[slideIndex - 1];
+    if (!fileName) throw new Error(`Missing output slide ${slideIndex} in exported presentation.`);
     const file = zip.file(fileName);
     if (!file) throw new Error(`Missing ${fileName} in exported presentation.`);
     let xml = await file.async("string");
     for (const patch of slidePatches) xml = patchSlideXml(xml, patch);
     zip.file(fileName, xml);
+  }
+  const seenImageTargets = new Set();
+  for (const patch of imagePatches) {
+    const key = `${patch.slideIndex}:${patch.objectName}`;
+    if (seenImageTargets.has(key)) throw new Error(`Slide ${patch.slideIndex}, image slot ${patch.slot}: duplicate image patch target ${JSON.stringify(patch.objectName)}.`);
+    seenImageTargets.add(key);
+    const fileName = slideFiles[patch.slideIndex - 1];
+    if (!fileName) throw new Error(`Missing output slide ${patch.slideIndex} for image slot ${patch.slot}.`);
+    const slideFile = zip.file(fileName);
+    const relationshipsFileName = slideRelationshipsFileName(fileName);
+    const relationshipsFile = zip.file(relationshipsFileName);
+    if (!slideFile || !relationshipsFile) throw new Error(`Slide ${patch.slideIndex}, image slot ${patch.slot}: missing image relationship data.`);
+    const slideXml = await slideFile.async("string");
+    const matches = findElementRanges(slideXml, "p:pic").filter((picture) => pictureObjectName(picture.xml) === patch.objectName);
+    if (matches.length !== 1) throw new Error(`Slide ${patch.slideIndex}, image slot ${patch.slot}: expected one image named ${JSON.stringify(patch.objectName)}, found ${matches.length}.`);
+    const relationshipId = pictureEmbedRelationshipId(matches[0].xml);
+    if (!relationshipId) throw new Error(`Slide ${patch.slideIndex}, image slot ${patch.slot}: image ${JSON.stringify(patch.objectName)} has no embedded relationship.`);
+    await fs.access(patch.imagePath);
+    const extension = path.extname(patch.imagePath).toLowerCase() || ".png";
+    const mediaFileName = `ppt/media/dialogue-scene-${String(patch.slideIndex).padStart(3, "0")}${extension}`;
+    zip.file(mediaFileName, await fs.readFile(patch.imagePath));
+    const relationshipsXml = await relationshipsFile.async("string");
+    zip.file(relationshipsFileName, replaceRelationshipTarget(relationshipsXml, relationshipId, `../media/${path.posix.basename(mediaFileName)}`));
   }
   await fs.writeFile(pptxPath, await zip.generateAsync({ type: "nodebuffer", compression: "DEFLATE" }));
 }

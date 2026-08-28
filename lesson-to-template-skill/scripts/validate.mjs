@@ -17,11 +17,57 @@ function slotBindings(value, label) {
   }
 }
 
+function imageBindings(value, label) {
+  if (value === undefined) return;
+  object(value, label);
+  const usedNames = new Set();
+  for (const [slot, objectName] of Object.entries(value)) {
+    if (!slot.trim()) throw new Error(`${label} has an empty image slot name`);
+    if (typeof objectName !== "string" || !objectName.trim()) throw new Error(`${label}.${slot} must be a non-empty PowerPoint image object name`);
+    if (usedNames.has(objectName)) throw new Error(`${label} maps more than one image slot to object ${JSON.stringify(objectName)}`);
+    usedNames.add(objectName);
+  }
+}
+
+function runStyleBindings(value, slots, label) {
+  if (value === undefined) return;
+  object(value, label);
+  for (const [slot, styles] of Object.entries(value)) {
+    if (slots[slot] === undefined) throw new Error(`${label}.${slot} has no matching slot`);
+    object(styles, `${label}.${slot}`);
+    if (!Object.keys(styles).length) throw new Error(`${label}.${slot} must map at least one style`);
+    for (const [style, run] of Object.entries(styles)) {
+      if (!style.trim()) throw new Error(`${label}.${slot} has an empty style name`);
+      integer(run, `${label}.${slot}.${style}`, 1);
+    }
+  }
+}
+
 function template(value, label, requireTitleSlot) {
   object(value, label);
   if (typeof value.templateId !== "string" || !value.templateId.trim()) throw new Error(`${label}.templateId must be a non-empty string`);
   slotBindings(value.slots, `${label}.slots`);
+  imageBindings(value.imageSlots, `${label}.imageSlots`);
+  runStyleBindings(value.runStyles, value.slots, `${label}.runStyles`);
+  if (value.stripToSlots !== undefined && typeof value.stripToSlots !== "boolean") throw new Error(`${label}.stripToSlots must be boolean`);
+  if (value.stripToSlots && value.imageSlots && Object.keys(value.imageSlots).length) throw new Error(`${label} cannot combine stripToSlots with imageSlots`);
   if (requireTitleSlot && value.slots.title === undefined) throw new Error(`${label}.slots.title is required`);
+}
+
+export function slotText(value) {
+  return typeof value === "string" ? value : value.segments.map((segment) => segment.text).join("");
+}
+
+function slotValue(value, label, runStyles) {
+  if (typeof value === "string") return;
+  object(value, label);
+  if (!Array.isArray(value.segments) || !value.segments.length) throw new Error(`${label}.segments must be a non-empty array`);
+  for (const [index, segment] of value.segments.entries()) {
+    object(segment, `${label}.segments[${index}]`);
+    if (typeof segment.style !== "string" || !segment.style.trim()) throw new Error(`${label}.segments[${index}].style must be a non-empty string`);
+    if (typeof segment.text !== "string") throw new Error(`${label}.segments[${index}].text must be a string`);
+    if (!runStyles?.[segment.style]) throw new Error(`${label}.segments[${index}].style ${JSON.stringify(segment.style)} is not mapped in catalog runStyles`);
+  }
 }
 
 function capacity(value, label) {
@@ -85,13 +131,13 @@ export function validatePlan(plan, catalog) {
   if (plan.slides[0].kind !== "title") throw new Error("plan.slides[0] must be the title slide");
   plan.slides.forEach((item, index) => {
     object(item, `plan.slides[${index}]`);
-    if (item.kind !== "title" && item.kind !== "content") throw new Error(`plan.slides[${index}].kind must be title or content`);
+    if (item.kind !== "title" && item.kind !== "content" && item.kind !== "dialogue") throw new Error(`plan.slides[${index}].kind must be title, content, or dialogue`);
     const spec = item.kind === "title" ? catalog.titleTemplate : catalog.compositions[item.composition];
     if (!spec) throw new Error(`plan.slides[${index}] has no mapped composition`);
     object(item.slots, `plan.slides[${index}].slots`);
     for (const [slot, value] of Object.entries(item.slots)) {
       if (spec.slots[slot] === undefined) throw new Error(`plan.slides[${index}].slots.${slot} is not in its catalog template`);
-      if (typeof value !== "string") throw new Error(`plan.slides[${index}].slots.${slot} must be a string`);
+      slotValue(value, `plan.slides[${index}].slots.${slot}`, spec.runStyles?.[slot]);
     }
     for (const slot of Object.keys(spec.slots)) {
       if (item.slots[slot] === undefined) throw new Error(`plan.slides[${index}].slots.${slot} is required so template sample text cannot remain`);
@@ -99,6 +145,12 @@ export function validatePlan(plan, catalog) {
     if (item.slots.title === undefined) throw new Error(`plan.slides[${index}].slots.title is required`);
     if (item.kind === "title" && index !== 0) throw new Error("a title slide may appear only at the start of plan.slides");
     if (item.kind === "content") integer(item.sourceSlide, `plan.slides[${index}].sourceSlide`, 1);
+    if (item.kind === "dialogue") {
+      const kinds = spec.kinds ?? (spec.kind ? [spec.kind] : []);
+      if (!kinds.includes("dialogue")) throw new Error(`plan.slides[${index}] uses a non-dialogue composition`);
+      if (!spec.imageSlots?.scene) throw new Error(`plan.slides[${index}] dialogue composition needs catalog.imageSlots.scene`);
+      if (typeof item.scenePath !== "string" || !item.scenePath.trim()) throw new Error(`plan.slides[${index}].scenePath must be a non-empty image path`);
+    }
     if (item.interactive !== undefined && typeof item.interactive !== "boolean") throw new Error(`plan.slides[${index}].interactive must be boolean when present`);
   });
   return plan;

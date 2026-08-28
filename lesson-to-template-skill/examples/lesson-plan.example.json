@@ -3,6 +3,22 @@
   "lessonTitle": "Название урока",
   "slides": [
     { "kind": "title", "slots": { "title": "Название урока" } },
-    { "kind": "content", "sourceSlide": 1, "composition": "text.title-body", "slots": { "title": "Ключевая мысль", "body": "Текст урока сохраняется дословно." }, "interactive": false }
+    { "kind": "content", "sourceSlide": 1, "composition": "text.title-body", "slots": { "title": "Ключевая мысль", "body": "Текст урока сохраняется дословно." }, "interactive": false },
+    {
+      "kind": "dialogue",
+      "composition": "dialogue.scene",
+      "slots": {
+        "title": "Стажировка",
+        "alexey_text": "Чем мастер занимается в течение смены?",
+        "denis_text": "Давай разберёмся на участке."
+      },
+      "dialogue": [
+        { "speaker": "Алексей", "text": "Чем мастер занимается в течение смены?" },
+        { "speaker": "Денис", "text": "Давай разберёмся на участке." }
+      ],
+      "textDensity": "high",
+      "image_prompt": "Алексей спрашивает Дениса о роли мастера на спокойном сборочном участке ВЕЗА.",
+      "scenePath": "../../assets/dialogue-scenes/slide-02_scene.png"
+    }
   ]
 }
