@@ -15,12 +15,22 @@
     "staging.blank": {
       "templateId": "staging.blank",
       "kinds": [
+        "dialogue"
+      ],
+      "stripToSlots": true,
+      "slots": {
+        "dialogue": "STAGING_BODY"
+      }
+    },
+    "staging.interaction": {
+      "templateId": "staging.interaction",
+      "kinds": [
         "interactive-staging",
         "unsupported-visual-staging"
       ],
       "stripToSlots": true,
       "slots": {
-        "title": "STAGING_BODY"
+        "body": "STAGING_BODY"
       }
     },
     "course.title": {
@@ -590,18 +600,18 @@
       "slots": {
         "title": "TITLE",
         "intro": "INTRO",
-        "card_1_title": "CARD_1_TITLE",
-        "card_1_body": "CARD_1_BODY",
-        "card_2_title": "CARD_2_TITLE",
-        "card_2_body": "CARD_2_BODY",
-        "card_3_title": "CARD_3_TITLE",
-        "card_3_body": "CARD_3_BODY",
-        "card_4_title": "CARD_4_TITLE",
-        "card_4_body": "CARD_4_BODY",
-        "card_5_title": "CARD_5_TITLE",
-        "card_5_body": "CARD_5_BODY",
-        "card_6_title": "CARD_6_TITLE",
-        "card_6_body": "CARD_6_BODY"
+        "card_1_title": "CARD_5_TITLE",
+        "card_1_body": "CARD_5_BODY",
+        "card_2_title": "CARD_1_TITLE",
+        "card_2_body": "CARD_1_BODY",
+        "card_3_title": "CARD_2_TITLE",
+        "card_3_body": "CARD_2_BODY",
+        "card_4_title": "CARD_6_TITLE",
+        "card_4_body": "CARD_6_BODY",
+        "card_5_title": "CARD_3_TITLE",
+        "card_5_body": "CARD_3_BODY",
+        "card_6_title": "CARD_4_TITLE",
+        "card_6_body": "CARD_4_BODY"
       }
     },
     "process.situation-outcome.4": {
@@ -819,7 +829,7 @@
       "templateId": "staging.blank",
       "comments": [],
       "notes": [
-        "Пустой слайд для диалоговых сцен и \nинтерактивностей"
+        "template_id: staging.blank\nПустой слайд только для диалоговых сцен"
       ],
       "text": [
         {
@@ -3718,7 +3728,26 @@
         "text_11": "EVENT_5_BODY"
       },
       "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 50,
+      "templateId": "staging.interaction",
+      "comments": [],
+      "notes": [
+        "template_id: staging.interaction\nПустой слайд только для интерактивностей"
+      ],
+      "text": [
+        {
+          "objectName": "STAGING_BODY",
+          "objectId": 2,
+          "text": "Здесь текст"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "STAGING_BODY"
+      },
+      "objectNamesAreUnique": true
     }
   ],
-  "instructions": "Current catalog generated from the 49-slide library. Add matching template_id markers to speaker notes before relying on --merge after a slide reorder."
+  "instructions": "Current catalog generated from the 50-slide library. staging.blank is dialogue-only; staging.interaction is the separate physical clone for interactions. Add matching template_id markers to the remaining speaker notes before relying on --merge after a slide reorder."
 }

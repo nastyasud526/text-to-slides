@@ -18,15 +18,15 @@ Create a compact internal scene card before writing the prompt:
   "discussion_object": null,
   "text_safe_area": "central 56%",
   "characters": [
-    { "name": "Алексей", "emotion": "заинтересованный", "pose": "повёрнут к Денису", "gesture": "одна ладонь слегка раскрыта", "gaze": "на Дениса" },
-    { "name": "Денис", "emotion": "спокойный, понимающий", "pose": "слегка повёрнут к Алексею", "gesture": "сдержанная поза", "gaze": "на Алексея" }
+    { "name": "Алексей", "emotion": "заинтересованный", "pose": "стоит в левой трети в переднем три четверти", "gesture": "одна рука в кармане, другая поднята на уровне груди", "gaze": "на Дениса" },
+    { "name": "Денис", "emotion": "спокойный, понимающий", "pose": "опирается боком на корпус станка в правой трети, корпус в профиль", "gesture": "одна рука лежит на планшете, другая опущена", "gaze": "на Алексея" }
   ]
 }
 ```
 
 Use restrained natural expressions and gestures. Avoid exaggerated faces and theatrical gestures. Keep Alexey on the left and Denis on the right in every scene; Denis remains about half a head taller. If the discussion needs an object, place it nearer to one character and keep the text-safe area clear.
 
-Choose genuinely different poses for the two characters. They may stand, sit, lean toward a desk or monitor, safely rest against a stationary surface or machine housing, examine a part, or hold a tablet. Use frontal, profile, half-turn, or front three-quarter views. Do not use rear or rear three-quarter views, mirrored poses, matching gestures, matching head angles, or identical expressions.
+Choose visibly asymmetric poses for the two characters before writing the final prompt. Assign at least two different pose primitives: stance (standing, sitting, leaning), torso orientation (frontal, profile, half-turn, front three-quarter), and hand use (one hand in a pocket, one hand on a desk or tablet, pointing at an object, or a restrained listening posture). Do not assign both characters an open-palmed explanatory gesture, the same stance, or the same head angle. Never use rear or rear three-quarter views, mirrored poses, matching gestures, or identical expressions. If the draft prompt does not make the asymmetry explicit, rewrite it before the single generation call.
 
 ## Prompt template
 

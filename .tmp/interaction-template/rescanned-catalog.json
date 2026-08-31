@@ -1,0 +1,2945 @@
+{
+  "version": 2,
+  "titleTemplate": null,
+  "compositions": {
+    "staging.blank": {
+      "templateId": "staging.blank",
+      "kinds": [
+        "interactive-staging",
+        "unsupported-visual-staging",
+        "dialogue"
+      ],
+      "stripToSlots": true,
+      "slots": {
+        "dialogue": "STAGING_BODY"
+      }
+    }
+  },
+  "slides": [
+    {
+      "sourceSlide": 1,
+      "templateId": "staging.blank",
+      "comments": [],
+      "notes": [
+        "template_id: staging.blank\nПустой слайд только для диалоговых сцен\nинтерактивностей"
+      ],
+      "text": [
+        {
+          "objectName": "STAGING_BODY",
+          "objectId": 2,
+          "text": "Здесь текст"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "STAGING_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 2,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Титульный слайд курса"
+      ],
+      "text": [
+        {
+          "objectName": "COURSE_TITLE",
+          "objectId": 1965,
+          "text": "УСПЕШНЫЙ МАСТЕР"
+        },
+        {
+          "objectName": "COURSE_SUBTITLE",
+          "objectId": 1966,
+          "text": "Обучающий курс"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "COURSE_TITLE",
+        "text_2": "COURSE_SUBTITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 3,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Титульный слайд модуля"
+      ],
+      "text": [
+        {
+          "objectName": "MODULE_TITLE",
+          "objectId": 2140,
+          "text": "РОЛЬ МАСТЕРА"
+        },
+        {
+          "objectName": "MODULE_LABEL",
+          "objectId": 2141,
+          "text": "МОДУЛЬ 01"
+        },
+        {
+          "objectName": "MODULE_SUBTITLE",
+          "objectId": 2142,
+          "text": "You can enter a subtitle here if you need it"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "MODULE_TITLE",
+        "text_2": "MODULE_LABEL",
+        "text_3": "MODULE_SUBTITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 4,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Титульный слайд урока"
+      ],
+      "text": [
+        {
+          "objectName": "LESSON_NUMBER",
+          "objectId": 2100,
+          "text": "УРОК 1"
+        },
+        {
+          "objectName": "LESSON_TITLE",
+          "objectId": 2101,
+          "text": "НАЧАЛО СМЕНЫ"
+        },
+        {
+          "objectName": "MODULE_LABEL",
+          "objectId": 18,
+          "text": "МОДУЛЬ 1"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "LESSON_NUMBER",
+        "text_2": "LESSON_TITLE",
+        "text_3": "MODULE_LABEL"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 5,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Один текст на плашке. \nText.plain"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 9,
+          "text": "РОЛЬ МАСТЕРА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "BODY",
+          "objectId": 11,
+          "text": "Мастер отвечает не только за выполнение сменного плана, но и за то, как работает бригада. Он распределяет задачи, следит за качеством сборки и первым замечает, где процесс начинает давать сбой.Сильный мастер не тушит пожары в конце смены, а выстраивает работу так, чтобы брак и простои не появлялись. Его решения в первый час смены определяют весь день участка."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 6,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Введение + 5 пунктов с короткими заголовками"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 9,
+          "text": "ДЛЯ РАЗНЫХ ЗАДАЧ НУЖНО РАЗНОЕ ПОВЕДЕНИЕ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 2,
+          "text": "Одного подхода на все случаи нет. Поведение мастера зависит от задачи."
+        },
+        {
+          "objectName": "CARD_1_TITLE",
+          "objectId": 39,
+          "text": "ПОСТАВИТЬ ЗАДАЧУ "
+        },
+        {
+          "objectName": "CARD_1_BODY",
+          "objectId": 3,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        },
+        {
+          "objectName": "CARD_2_TITLE",
+          "objectId": 53,
+          "text": "РАЗОБРАТЬ ОШИБКУ"
+        },
+        {
+          "objectName": "CARD_2_BODY",
+          "objectId": 57,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        },
+        {
+          "objectName": "CARD_3_TITLE",
+          "objectId": 54,
+          "text": "ОБЕСПЕЧИТЬ СТРОГОСТЬ"
+        },
+        {
+          "objectName": "CARD_3_BODY",
+          "objectId": 58,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        },
+        {
+          "objectName": "CARD_4_TITLE",
+          "objectId": 55,
+          "text": "ПОДДЕРЖАТЬ НОВИЧКА"
+        },
+        {
+          "objectName": "CARD_4_BODY",
+          "objectId": 59,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        },
+        {
+          "objectName": "CARD_5_TITLE",
+          "objectId": 56,
+          "text": "•СООБЩИТЬ О ПРОБЛЕМЕ РУКОВОДИТЕЛЮ"
+        },
+        {
+          "objectName": "CARD_5_BODY",
+          "objectId": 60,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "CARD_1_TITLE",
+        "text_4": "CARD_1_BODY",
+        "text_5": "CARD_2_TITLE",
+        "text_6": "CARD_2_BODY",
+        "text_7": "CARD_3_TITLE",
+        "text_8": "CARD_3_BODY",
+        "text_9": "CARD_4_TITLE",
+        "text_10": "CARD_4_BODY",
+        "text_11": "CARD_5_TITLE",
+        "text_12": "CARD_5_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 7,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Введение + \n4\n пунктов с короткими заголовками и коротким \nтектом"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 9,
+          "text": "ДЛЯ РАЗНЫХ ЗАДАЧ НУЖНО РАЗНОЕ ПОВЕДЕНИЕ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 2,
+          "text": "Одного подхода на все случаи нет. Поведение мастера зависит от задачи."
+        },
+        {
+          "objectName": "CARD_1_TITLE",
+          "objectId": 39,
+          "text": "ПОСТАВИТЬ ЗАДАЧУ "
+        },
+        {
+          "objectName": "CARD_1_BODY",
+          "objectId": 3,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        },
+        {
+          "objectName": "CARD_2_TITLE",
+          "objectId": 53,
+          "text": "РАЗОБРАТЬ ОШИБКУ"
+        },
+        {
+          "objectName": "CARD_2_BODY",
+          "objectId": 57,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        },
+        {
+          "objectName": "CARD_3_TITLE",
+          "objectId": 55,
+          "text": "ПОДДЕРЖАТЬ НОВИЧКА"
+        },
+        {
+          "objectName": "CARD_3_BODY",
+          "objectId": 59,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        },
+        {
+          "objectName": "CARD_4_TITLE",
+          "objectId": 56,
+          "text": "•СООБЩИТЬ О ПРОБЛЕМЕ РУКОВОДИТЕЛЮ"
+        },
+        {
+          "objectName": "CARD_4_BODY",
+          "objectId": 60,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "CARD_1_TITLE",
+        "text_4": "CARD_1_BODY",
+        "text_5": "CARD_2_TITLE",
+        "text_6": "CARD_2_BODY",
+        "text_7": "CARD_3_TITLE",
+        "text_8": "CARD_3_BODY",
+        "text_9": "CARD_4_TITLE",
+        "text_10": "CARD_4_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 8,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст+пример\n."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ПРОВЕРКА КОМПЛЕКТНОСТИ ДО СБОРКИ"
+        },
+        {
+          "objectName": "BODY",
+          "objectId": 8,
+          "text": "Комплектность узла проверяют до начала сборки, а не в процессе. Один недостающий крепёж останавливает работу на середине и заставляет разбирать уже собранное. Комплектность узла проверяют до начала сборки, а не в процессе. Один недостающий крепёж останавливает работу на середине и заставляет разбирать уже собранное."
+        },
+        {
+          "objectName": "EXAMPLE_LABEL",
+          "objectId": 15,
+          "text": "ПРИМЕР С УЧАСТКА"
+        },
+        {
+          "objectName": "EXAMPLE_BODY",
+          "objectId": 16,
+          "text": "На участке вентиляционных секций смена начала сборку, не пересчитав уголки. Нехватку четырёх штук заметили только на финальной затяжке — узел разобрали полностью и потеряли два часа рабочего времени. На участке вентиляционных секций смена начала сборку, не пересчитав уголки. Нехватку четырёх штук заметили только на финальной затяжке — узел разобрали."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "BODY",
+        "text_3": "EXAMPLE_LABEL",
+        "text_4": "EXAMPLE_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 9,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Определение термина + пояснение"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "DEFINITION",
+          "objectId": 8,
+          "text": "Цель мастера — чтобы участок сдавал план в срок, годным, безопасно и с разумным расходом ресурсов. Этот результат нужен каждую смену."
+        },
+        {
+          "objectName": "EXPLANATION",
+          "objectId": 16,
+          "text": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался готовый заказ. Всё, что мастер делает за день, работает на эту цель."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "DEFINITION",
+        "text_3": "EXPLANATION"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 10,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Введение - определение термина + пояснение"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЧТО ТАКОЕ НОРМО-ЧАС"
+        },
+        {
+          "objectName": "DEFINITION",
+          "objectId": 8,
+          "text": "Нормо-час — это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в нормальном темпе."
+        },
+        {
+          "objectName": "EXPLANATION",
+          "objectId": 16,
+          "text": "Норматив закреплён за операцией. Если на неё установлено два нормо-часа, участок получит за выполненную операцию два нормо-часа независимо от того, кто её выполнял.Фактическое время может отличаться от норматива. Опытный рабочий выполнит операцию быстрее, новичок — медленнее. Поэтому за восьмичасовую смену рабочий может сдать больше или меньше восьми нормо-часов."
+        },
+        {
+          "objectName": "CONTEXT",
+          "objectId": 2,
+          "text": "Мастер отвечает за выполнение плана. Но разные изделия нельзя просто сложить в штуках: одно собирают за час, другое — за десять. Поэтому объём работы участка измеряют в нормо-часах."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "DEFINITION",
+        "text_3": "EXPLANATION",
+        "text_4": "CONTEXT"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 11,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Термин определение + пояснение +пример"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЧТО ТАКОЕ НОРМО-ЧАС"
+        },
+        {
+          "objectName": "DEFINITION",
+          "objectId": 8,
+          "text": "Нормо-час — это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в нормальном темпе."
+        },
+        {
+          "objectName": "EXPLANATION",
+          "objectId": 16,
+          "text": "Норматив закреплён за операцией. Если на неё установлено два нормо-часа, участок получит за выполненную операцию два нормо-часа независимо от того, кто её выполнял.Фактическое время может отличаться от норматива. Опытный рабочий выполнит операцию быстрее, новичок — медленнее. Поэтому за восьмичасовую смену рабочий может сдать больше или меньше восьми нормо-часов."
+        },
+        {
+          "objectName": "CONTEXT",
+          "objectId": 2,
+          "text": "Мастер отвечает за выполнение плана. Но разные изделия нельзя просто сложить в штуках: одно собирают за час, другое — за десять. Поэтому объём работы участка измеряют в нормо-часах."
+        },
+        {
+          "objectName": "EXAMPLE_LABEL",
+          "objectId": 26,
+          "text": "ПРИМЕР"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "DEFINITION",
+        "text_3": "EXPLANATION",
+        "text_4": "CONTEXT",
+        "text_5": "EXAMPLE_LABEL"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 12,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст + сравнение плохо-хорошо"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ"
+        },
+        {
+          "objectName": "COMPARE_LEFT_BODY",
+          "objectId": 8,
+          "text": "На КОНВЕЙЕРЕ одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений."
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 16,
+          "text": "Работа мастера зависит от типа производства."
+        },
+        {
+          "objectName": "COMPARE_RIGHT_BODY",
+          "objectId": 30,
+          "text": "ВЕЗА собирает ОБОРУДОВАНИЕ ПОД ЗАКАЗ, часто поштучно под конкретную спецификацию. Почти каждый заказ отличается по составу, трудоёмкости и срокам. Сегодня нужна одна расстановка людей, завтра другая. Поэтому мастер каждую смену заново решает, кого поставить на каждую операцию и в каком порядке выполнять заказы."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "COMPARE_LEFT_BODY",
+        "text_3": "INTRO",
+        "text_4": "COMPARE_RIGHT_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 13,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Ситуация - действие"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "SOLUTION",
+          "objectId": 8,
+          "text": "РЕШЕНИЕКогда один и тот же порядок действует для всех, рабочий понимает, на чём основано требование. Личной придиркой чаще выглядит другое: одному мастер разрешил, другого за то же самое наказал. "
+        },
+        {
+          "objectName": "SITUATION",
+          "objectId": 16,
+          "text": "СИТУАЦИЯМастеру необязательно каждый раз собираться с духом и придумывать, как повести себя в неприятной ситуации. Можно действовать по установленному порядку: сначала проверить факты, затем определить причину и выполнить нужное действие.Большая часть таких процедур уже разобрана в курсе: как поставить задачу, проверить её выполнение, разобрать нарушение, дать обратную связь."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "SOLUTION",
+        "text_3": "SITUATION"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 14,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Ситуация - действие"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "AFTER",
+          "objectId": 8,
+          "text": "СТАЛОКогда один и тот же порядок действует для всех, рабочий понимает, на чём основано требование. Личной придиркой чаще выглядит другое: одному мастер разрешил, другого за то же самое наказал. "
+        },
+        {
+          "objectName": "BEFORE",
+          "objectId": 16,
+          "text": "БЫЛОМастеру необязательно каждый раз собираться с духом и придумывать, как повести себя в неприятной ситуации. Можно действовать по установленному порядку: сначала проверить факты, затем определить причину и выполнить нужное действие.Большая часть таких процедур уже разобрана в курсе: как поставить задачу, проверить её выполнение, разобрать нарушение, дать обратную связь."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "AFTER",
+        "text_3": "BEFORE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 15,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Проблема, пример, решение \nИли проблема. Пояснение, решение\nИли исследование, вывод, пример"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 107,
+          "text": "THE SOLUTIONSTATEMENT"
+        },
+        {
+          "objectName": "INTRO_TITLE",
+          "objectId": 15,
+          "text": "PROBLEM WITHINFORMATION SHARING"
+        },
+        {
+          "objectName": "INTRO_BODY",
+          "objectId": 16,
+          "text": "Company values are critical, keeping in mind that it purpose organization’s functions. And like I said, having a well-lai setof company core values will keep each and everyone from top to bottom in the organization on the right. Furthermore, when associate value with a certain thing activity,  emphasizesthe importance of the same. Company values are critical, keeping in mind that it purpose organization’s functions. And like Isaid, having a well-lai setof company core values will keepeach and everyone from top to bottom."
+        },
+        {
+          "objectName": "PROBLEM_HEADING",
+          "objectId": 18,
+          "text": "PROBLEMDECENTRALIZED NETWORK"
+        },
+        {
+          "objectName": "PROBLEM_BODY",
+          "objectId": 19,
+          "text": "Look at both sides of the issue with the challenges and risks pyramid. This slide has a five-level PowerPoint pyramid to showcase the problem your team is facing and the associated risks of not acting now. Having a visualization of"
+        },
+        {
+          "objectName": "SOLUTION_SUBTITLE",
+          "objectId": 28,
+          "text": "DECENTRALIZED NETWORK"
+        },
+        {
+          "objectName": "SOLUTION_BODY",
+          "objectId": 29,
+          "text": "Look at both sides of the issue with the challenges and risks pyramid. This slide has a five-level PowerPoint pyramid to showcase the problem your team is facing and the associated risks of not acting now. Having a visualization of"
+        },
+        {
+          "objectName": "SOLUTION_TITLE",
+          "objectId": 20,
+          "text": "SOLUTION"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO_TITLE",
+        "text_3": "INTRO_BODY",
+        "text_4": "PROBLEM_HEADING",
+        "text_5": "PROBLEM_BODY",
+        "text_6": "SOLUTION_SUBTITLE",
+        "text_7": "SOLUTION_BODY",
+        "text_8": "SOLUTION_TITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 16,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст + сравнение двух схожих элементов или явлений"
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "Работа мастера зависит от типа производства."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ"
+        },
+        {
+          "objectName": "COMPARE_BOTTOM_BODY",
+          "objectId": 52,
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений."
+        },
+        {
+          "objectName": "COMPARE_TOP_BODY",
+          "objectId": 53,
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений."
+        },
+        {
+          "objectName": "COMPARE_TOP_LABEL",
+          "objectId": 54,
+          "text": "КОНВЕЙЕР"
+        },
+        {
+          "objectName": "COMPARE_BOTTOM_LABEL",
+          "objectId": 55,
+          "text": "МЕЛКОСЕРИЙНОЕ ПРОИЗВОДСТВО"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "COMPARE_BOTTOM_BODY",
+        "text_4": "COMPARE_TOP_BODY",
+        "text_5": "COMPARE_TOP_LABEL",
+        "text_6": "COMPARE_BOTTOM_LABEL"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 17,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст + сравнение двух схожих элементов или явлений, много текста"
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "Работа мастера зависит от типа производства."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ"
+        },
+        {
+          "objectName": "COMPARE_BOTTOM_BODY",
+          "objectId": 52,
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений."
+        },
+        {
+          "objectName": "COMPARE_TOP_BODY",
+          "objectId": 53,
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений."
+        },
+        {
+          "objectName": "COMPARE_TOP_LABEL",
+          "objectId": 54,
+          "text": "КОНВЕЙЕР"
+        },
+        {
+          "objectName": "COMPARE_BOTTOM_LABEL",
+          "objectId": 55,
+          "text": "МЕЛКОСЕРИЙНОЕ ПРОИЗВОДСТВО"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "COMPARE_BOTTOM_BODY",
+        "text_4": "COMPARE_TOP_BODY",
+        "text_5": "COMPARE_TOP_LABEL",
+        "text_6": "COMPARE_BOTTOM_LABEL"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 18,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Тезис+пример+иллюстрация"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "DEFINITION",
+          "objectId": 37,
+          "text": "Нормо-час — это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в нормальном темпе."
+        },
+        {
+          "objectName": "EXPLANATION",
+          "objectId": 38,
+          "text": "Мастер отвечает за выполнение плана. Но разные изделия нельзя просто сложить в штуках: одно собирают за час, другое — за десять. Поэтому объём работы участка измеряют в нормо-часах."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "DEFINITION",
+        "text_3": "EXPLANATION"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 19,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст + реплика Дениса"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "COURSE_TEXT",
+          "objectId": 37,
+          "text": "Нормо-час — это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в нормальном темпе. это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в нормальном темпе.это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в нормальном темпе."
+        },
+        {
+          "objectName": "CHARACTER_COMMENT",
+          "objectId": 38,
+          "text": "Мастер отвечает за выполнение плана. Но разные изделия нельзя просто сложить в штуках: одно собирают за час, другое — за десять. Поэтому объём работы участка измеряют в нормо-часах. Поэтому объём работы участка измеряют в нормо-часах.Поэтому объём работы Поэтому объём работы"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "COURSE_TEXT",
+        "text_3": "CHARACTER_COMMENT"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 20,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "текст+иллюстрация"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "BODY",
+          "objectId": 16,
+          "text": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался готовый заказ. Всё, что мастер делает за день, работает на эту цель."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 21,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Большой \nтекст+иллюстрация"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "BODY",
+          "objectId": 16,
+          "text": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался готовый заказ. Всё, что мастер делает за день, работает на эту цель."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 22,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "чеклист"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЧЕКЛИСТ МАСТЕРА "
+        },
+        {
+          "objectName": "CHECK_1",
+          "objectId": 28,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "CHECK_2",
+          "objectId": 30,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "CHECK_3",
+          "objectId": 38,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "CHECK_4",
+          "objectId": 43,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "CHECK_5",
+          "objectId": 44,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "CHECK_6",
+          "objectId": 45,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "CHECK_1",
+        "text_3": "CHECK_2",
+        "text_4": "CHECK_3",
+        "text_5": "CHECK_4",
+        "text_6": "CHECK_5",
+        "text_7": "CHECK_6"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 23,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Пример на весь слайд"
+      ],
+      "text": [
+        {
+          "objectName": "EXAMPLE_LABEL",
+          "objectId": 6,
+          "text": "ПРИМЕР"
+        },
+        {
+          "objectName": "BODY",
+          "objectId": 16,
+          "text": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался готовый заказ. Всё, что мастер делает за день, работает на эту цель."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "EXAMPLE_LABEL",
+        "text_2": "BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 24,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Введение + текст +вывод"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ОТ РЕАКЦИИ МАСТЕРА ЗАВИСИТ, СООБЩАТ ЛИ ЕМУ О ПРОБЛЕМЕ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 16,
+          "text": "Состояние и поведение мастера влияют не только на настроение участка. От них зависит, решатся ли рабочие сообщать ему неприятные новости."
+        },
+        {
+          "objectName": "CASE_BODY",
+          "objectId": 30,
+          "text": "В 1999 году профессор Гарвардской школы бизнеса Эми Эдмондсон изучала медицинские команды. Она обнаружила парадокс: лучшие команды сообщали о большем количестве ошибок.Дело было не в том, что они ошибались чаще. В командах, где руководитель спокойно принимал сообщение и разбирал ошибку по существу, люди не боялись говорить о проблемах. Поэтому ошибки замечали раньше.Там, где руководитель кричал, обвинял или наказывал за сам факт плохой новости, люди старались молчать. Ошибки обнаруживали позднее, когда исправление обходилось дороже."
+        },
+        {
+          "objectName": "CONCLUSION",
+          "objectId": 4,
+          "text": "Для мастера это означает: брак и угрозу срыва невозможно обнаружить вовремя, если рабочий боится подойти и рассказать о проблеме."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "CASE_BODY",
+        "text_4": "CONCLUSION"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 25,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст+ нумерованный список из 3 пунктов"
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "ITEM_1_NUMBER",
+          "objectId": 22,
+          "text": "01"
+        },
+        {
+          "objectName": "ITEM_2_NUMBER",
+          "objectId": 24,
+          "text": "02"
+        },
+        {
+          "objectName": "ITEM_3_NUMBER",
+          "objectId": 25,
+          "text": "03"
+        },
+        {
+          "objectName": "ITEM_1_TITLE",
+          "objectId": 29,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_1_BODY",
+          "objectId": 30,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_2_TITLE",
+          "objectId": 31,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_2_BODY",
+          "objectId": 32,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_3_TITLE",
+          "objectId": 33,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_3_BODY",
+          "objectId": 34,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "ITEM_1_NUMBER",
+        "text_4": "ITEM_2_NUMBER",
+        "text_5": "ITEM_3_NUMBER",
+        "text_6": "ITEM_1_TITLE",
+        "text_7": "ITEM_1_BODY",
+        "text_8": "ITEM_2_TITLE",
+        "text_9": "ITEM_2_BODY",
+        "text_10": "ITEM_3_TITLE",
+        "text_11": "ITEM_3_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 26,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст+ маркированный список"
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "BODY",
+          "objectId": 2,
+          "text": "Рабочий хамит в ответ.«Со мной так не разговаривают. Вернёмся к панели».Рабочий сыплет оправданиями.«Стоп. Что конкретно мешало и когда ты это увидел?»Рабочий третий раз делает одно и то же.«Мы это обсуждали дважды. Сегодня пишешь объяснительную».Начальник производства давит при рабочих.«Понял, разберусь. Подойду к Вам через двадцать минут с решением»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 27,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст+ основная мысль"
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "КАЧЕСТВО ДЕРЖИТСЯ НА ТРЁХ ПРИВЫЧКАХ, КОТОРЫЕ НЕ ЗАВИСЯТ ОТ СЛОЖНОСТИ ЗАКАЗА."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "BODY",
+          "objectId": 2,
+          "text": "В 1999 году профессор Гарвардской школы бизнеса Эми Эдмондсон изучала медицинские команды. Она обнаружила парадокс: лучшие команды сообщали о большем количестве ошибок.Дело было не в том, что они ошибались чаще. В командах, где руководитель спокойно принимал сообщение и разбирал ошибку по существу, люди не боялись говорить о проблемах. Поэтому ошибки замечали раньше.Там, где руководитель кричал, обвинял или наказывал за сам факт плохой новости, люди старались молчать. Ошибки обнаруживали позднее, когда исправление обходилось дороже."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 28,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст+ нумерованный список из 6 пунктов"
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "ITEM_1_NUMBER",
+          "objectId": 22,
+          "text": "01"
+        },
+        {
+          "objectName": "ITEM_2_NUMBER",
+          "objectId": 24,
+          "text": "02"
+        },
+        {
+          "objectName": "ITEM_3_NUMBER",
+          "objectId": 25,
+          "text": "03"
+        },
+        {
+          "objectName": "ITEM_1_TITLE",
+          "objectId": 29,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_1_BODY",
+          "objectId": 30,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_2_TITLE",
+          "objectId": 31,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_2_BODY",
+          "objectId": 32,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_3_TITLE",
+          "objectId": 33,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_3_BODY",
+          "objectId": 34,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "ITEM_4_NUMBER",
+          "objectId": 50,
+          "text": "04"
+        },
+        {
+          "objectName": "ITEM_5_NUMBER",
+          "objectId": 51,
+          "text": "05"
+        },
+        {
+          "objectName": "ITEM_6_NUMBER",
+          "objectId": 52,
+          "text": "06"
+        },
+        {
+          "objectName": "ITEM_4_TITLE",
+          "objectId": 54,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_4_BODY",
+          "objectId": 55,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_5_TITLE",
+          "objectId": 56,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_5_BODY",
+          "objectId": 57,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_6_TITLE",
+          "objectId": 58,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_6_BODY",
+          "objectId": 59,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "ITEM_1_NUMBER",
+        "text_4": "ITEM_2_NUMBER",
+        "text_5": "ITEM_3_NUMBER",
+        "text_6": "ITEM_1_TITLE",
+        "text_7": "ITEM_1_BODY",
+        "text_8": "ITEM_2_TITLE",
+        "text_9": "ITEM_2_BODY",
+        "text_10": "ITEM_3_TITLE",
+        "text_11": "ITEM_3_BODY",
+        "text_12": "ITEM_4_NUMBER",
+        "text_13": "ITEM_5_NUMBER",
+        "text_14": "ITEM_6_NUMBER",
+        "text_15": "ITEM_4_TITLE",
+        "text_16": "ITEM_4_BODY",
+        "text_17": "ITEM_5_TITLE",
+        "text_18": "ITEM_5_BODY",
+        "text_19": "ITEM_6_TITLE",
+        "text_20": "ITEM_6_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 29,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст+ список из \n5\n \nпунктов"
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "ITEM_1_NUMBER",
+          "objectId": 22,
+          "text": "01"
+        },
+        {
+          "objectName": "ITEM_2_NUMBER",
+          "objectId": 24,
+          "text": "02"
+        },
+        {
+          "objectName": "ITEM_3_NUMBER",
+          "objectId": 25,
+          "text": "03"
+        },
+        {
+          "objectName": "ITEM_1_TITLE",
+          "objectId": 29,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_1_BODY",
+          "objectId": 30,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_2_TITLE",
+          "objectId": 31,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_2_BODY",
+          "objectId": 32,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_3_TITLE",
+          "objectId": 33,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_3_BODY",
+          "objectId": 34,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "ITEM_4_NUMBER",
+          "objectId": 50,
+          "text": "04"
+        },
+        {
+          "objectName": "ITEM_5_NUMBER",
+          "objectId": 51,
+          "text": "05"
+        },
+        {
+          "objectName": "ITEM_4_TITLE",
+          "objectId": 54,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_4_BODY",
+          "objectId": 55,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_5_TITLE",
+          "objectId": 56,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_5_BODY",
+          "objectId": 57,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "ITEM_1_NUMBER",
+        "text_4": "ITEM_2_NUMBER",
+        "text_5": "ITEM_3_NUMBER",
+        "text_6": "ITEM_1_TITLE",
+        "text_7": "ITEM_1_BODY",
+        "text_8": "ITEM_2_TITLE",
+        "text_9": "ITEM_2_BODY",
+        "text_10": "ITEM_3_TITLE",
+        "text_11": "ITEM_3_BODY",
+        "text_12": "ITEM_4_NUMBER",
+        "text_13": "ITEM_5_NUMBER",
+        "text_14": "ITEM_4_TITLE",
+        "text_15": "ITEM_4_BODY",
+        "text_16": "ITEM_5_TITLE",
+        "text_17": "ITEM_5_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 30,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст+ нумерованный список из 4 пунктов"
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "ITEM_1_NUMBER",
+          "objectId": 22,
+          "text": "01"
+        },
+        {
+          "objectName": "ITEM_2_NUMBER",
+          "objectId": 24,
+          "text": "02"
+        },
+        {
+          "objectName": "ITEM_3_NUMBER",
+          "objectId": 25,
+          "text": "03"
+        },
+        {
+          "objectName": "ITEM_1_TITLE",
+          "objectId": 29,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_1_BODY",
+          "objectId": 30,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_2_TITLE",
+          "objectId": 31,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_2_BODY",
+          "objectId": 32,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_3_TITLE",
+          "objectId": 33,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_3_BODY",
+          "objectId": 34,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "ITEM_4_NUMBER",
+          "objectId": 50,
+          "text": "04"
+        },
+        {
+          "objectName": "ITEM_4_TITLE",
+          "objectId": 52,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_4_BODY",
+          "objectId": 55,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "ITEM_1_NUMBER",
+        "text_4": "ITEM_2_NUMBER",
+        "text_5": "ITEM_3_NUMBER",
+        "text_6": "ITEM_1_TITLE",
+        "text_7": "ITEM_1_BODY",
+        "text_8": "ITEM_2_TITLE",
+        "text_9": "ITEM_2_BODY",
+        "text_10": "ITEM_3_TITLE",
+        "text_11": "ITEM_3_BODY",
+        "text_12": "ITEM_4_NUMBER",
+        "text_13": "ITEM_4_TITLE",
+        "text_14": "ITEM_4_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 31,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "ключевая мысль."
+      ],
+      "text": [
+        {
+          "objectName": "QUOTE",
+          "objectId": 5,
+          "text": "SOMEONE FAMOUS This is a quote, words full of wisdom that someone important said and can make the reader get inspired"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "QUOTE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 32,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "нумерованный список  и картинка. Если пунктов больше или меньше, добавить текстом."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "ITEM_1_NUMBER",
+          "objectId": 22,
+          "text": "01"
+        },
+        {
+          "objectName": "ITEM_2_NUMBER",
+          "objectId": 24,
+          "text": "02"
+        },
+        {
+          "objectName": "ITEM_3_NUMBER",
+          "objectId": 25,
+          "text": "03"
+        },
+        {
+          "objectName": "ITEM_1_TITLE",
+          "objectId": 29,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_1_BODY",
+          "objectId": 30,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_2_TITLE",
+          "objectId": 31,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_2_BODY",
+          "objectId": 32,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_3_TITLE",
+          "objectId": 33,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_3_BODY",
+          "objectId": 34,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "ITEM_4_NUMBER",
+          "objectId": 50,
+          "text": "04"
+        },
+        {
+          "objectName": "ITEM_4_TITLE",
+          "objectId": 52,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_4_BODY",
+          "objectId": 55,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "ITEM_1_NUMBER",
+        "text_3": "ITEM_2_NUMBER",
+        "text_4": "ITEM_3_NUMBER",
+        "text_5": "ITEM_1_TITLE",
+        "text_6": "ITEM_1_BODY",
+        "text_7": "ITEM_2_TITLE",
+        "text_8": "ITEM_2_BODY",
+        "text_9": "ITEM_3_TITLE",
+        "text_10": "ITEM_3_BODY",
+        "text_11": "ITEM_4_NUMBER",
+        "text_12": "ITEM_4_TITLE",
+        "text_13": "ITEM_4_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 33,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Классификация 3 элемента"
+      ],
+      "text": [
+        {
+          "objectName": "ROOT_TITLE",
+          "objectId": 4,
+          "text": "COMPANY VALUES"
+        },
+        {
+          "objectName": "NODE_3_TITLE",
+          "objectId": 35,
+          "text": "TALENT ACQUISITION"
+        },
+        {
+          "objectName": "NODE_2_TITLE",
+          "objectId": 40,
+          "text": "EMPLOYEE RETENTION"
+        },
+        {
+          "objectName": "NODE_1_TITLE",
+          "objectId": 42,
+          "text": "EMPLOYEE ENGAGEMENT"
+        },
+        {
+          "objectName": "NODE_3_BODY",
+          "objectId": 44,
+          "text": "Every employer desires toHave performance-driven companyculture. However, cultivating thesame within organization"
+        },
+        {
+          "objectName": "NODE_2_BODY",
+          "objectId": 45,
+          "text": "Every employer desires toHave performance-driven companyculture. However, cultivating thesame within organization"
+        },
+        {
+          "objectName": "NODE_1_BODY",
+          "objectId": 46,
+          "text": "Every employer desires toHave performance-driven companyculture. However, cultivating thesame within organization"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "ROOT_TITLE",
+        "text_2": "NODE_3_TITLE",
+        "text_3": "NODE_2_TITLE",
+        "text_4": "NODE_1_TITLE",
+        "text_5": "NODE_3_BODY",
+        "text_6": "NODE_2_BODY",
+        "text_7": "NODE_1_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 34,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Классификация 4 элемента"
+      ],
+      "text": [
+        {
+          "objectName": "ROOT_TITLE",
+          "objectId": 4,
+          "text": "COMPANY VALUES"
+        },
+        {
+          "objectName": "NODE_1_TITLE",
+          "objectId": 42,
+          "text": "EMPLOYEE ENGAGEMENT"
+        },
+        {
+          "objectName": "NODE_1_BODY",
+          "objectId": 44,
+          "text": "Every employer desires toHave performance-driven companyculture. However, cultivating thesame within organization"
+        },
+        {
+          "objectName": "NODE_2_TITLE",
+          "objectId": 40,
+          "text": "EMPLOYEE RETENTION"
+        },
+        {
+          "objectName": "NODE_2_BODY",
+          "objectId": 45,
+          "text": "Every employer desires toHave performance-driven companyculture. However, cultivating thesame within organization"
+        },
+        {
+          "objectName": "NODE_3_TITLE",
+          "objectId": 35,
+          "text": "TALENT ACQUISITION"
+        },
+        {
+          "objectName": "NODE_3_BODY",
+          "objectId": 46,
+          "text": "Every employer desires toHave performance-driven companyculture. However, cultivating thesame within organization"
+        },
+        {
+          "objectName": "NODE_4_TITLE",
+          "objectId": 77,
+          "text": "EMPLOYEE RETENTION"
+        },
+        {
+          "objectName": "NODE_4_BODY",
+          "objectId": 79,
+          "text": "Every employer desires toHave performance-driven companyculture. However, cultivating thesame within organization"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "ROOT_TITLE",
+        "text_2": "NODE_1_TITLE",
+        "text_3": "NODE_1_BODY",
+        "text_4": "NODE_2_TITLE",
+        "text_5": "NODE_2_BODY",
+        "text_6": "NODE_3_TITLE",
+        "text_7": "NODE_3_BODY",
+        "text_8": "NODE_4_TITLE",
+        "text_9": "NODE_4_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 35,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Короткий текст + список 6 пунктов или классификация"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "ITEM_1_TITLE",
+          "objectId": 29,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_1_BODY",
+          "objectId": 30,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_2_TITLE",
+          "objectId": 31,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_2_BODY",
+          "objectId": 32,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_3_TITLE",
+          "objectId": 33,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_3_BODY",
+          "objectId": 34,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "ITEM_4_TITLE",
+          "objectId": 52,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_4_BODY",
+          "objectId": 53,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_5_TITLE",
+          "objectId": 54,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_5_BODY",
+          "objectId": 55,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_6_TITLE",
+          "objectId": 56,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_6_BODY",
+          "objectId": 57,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "CENTER_MESSAGE",
+          "objectId": 2,
+          "text": "Поддерживать — значит замечать не только результат работы, но и состояние человека."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "ITEM_1_TITLE",
+        "text_3": "ITEM_1_BODY",
+        "text_4": "ITEM_2_TITLE",
+        "text_5": "ITEM_2_BODY",
+        "text_6": "ITEM_3_TITLE",
+        "text_7": "ITEM_3_BODY",
+        "text_8": "ITEM_4_TITLE",
+        "text_9": "ITEM_4_BODY",
+        "text_10": "ITEM_5_TITLE",
+        "text_11": "ITEM_5_BODY",
+        "text_12": "ITEM_6_TITLE",
+        "text_13": "ITEM_6_BODY",
+        "text_14": "CENTER_MESSAGE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 36,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст + 6 плашек с коротким заголовком и текстом"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 3,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 4,
+          "text": "Поддерживать — значит замечать не только результат работы, но и состояние человека."
+        },
+        {
+          "objectName": "LEFT_1_BODY",
+          "objectId": 12,
+          "text": "Lorem visual form commonly use  dolor demonstrate."
+        },
+        {
+          "objectName": "LEFT_2_BODY",
+          "objectId": 14,
+          "text": "Lorem visual form commonly use  dolor demonstrate."
+        },
+        {
+          "objectName": "LEFT_3_BODY",
+          "objectId": 16,
+          "text": "Lorem visual form commonly use  dolor demonstrate."
+        },
+        {
+          "objectName": "LEFT_1_TITLE",
+          "objectId": 35,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "LEFT_2_TITLE",
+          "objectId": 37,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "LEFT_3_TITLE",
+          "objectId": 39,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "RIGHT_1_BODY",
+          "objectId": 44,
+          "text": "Lorem visual form commonly use  dolor demonstrate."
+        },
+        {
+          "objectName": "RIGHT_2_BODY",
+          "objectId": 45,
+          "text": "Lorem visual form commonly use  dolor demonstrate."
+        },
+        {
+          "objectName": "RIGHT_3_BODY",
+          "objectId": 50,
+          "text": "Lorem visual form commonly use  dolor demonstrate."
+        },
+        {
+          "objectName": "RIGHT_1_TITLE",
+          "objectId": 52,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "RIGHT_2_TITLE",
+          "objectId": 53,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "RIGHT_3_TITLE",
+          "objectId": 54,
+          "text": "ВРЕМЯ"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "LEFT_1_BODY",
+        "text_4": "LEFT_2_BODY",
+        "text_5": "LEFT_3_BODY",
+        "text_6": "LEFT_1_TITLE",
+        "text_7": "LEFT_2_TITLE",
+        "text_8": "LEFT_3_TITLE",
+        "text_9": "RIGHT_1_BODY",
+        "text_10": "RIGHT_2_BODY",
+        "text_11": "RIGHT_3_BODY",
+        "text_12": "RIGHT_1_TITLE",
+        "text_13": "RIGHT_2_TITLE",
+        "text_14": "RIGHT_3_TITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 37,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст+3 плашки"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 8,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "CARD_1_TITLE",
+          "objectId": 16,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "CARD_1_BODY",
+          "objectId": 17,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "CARD_2_TITLE",
+          "objectId": 25,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "CARD_2_BODY",
+          "objectId": 26,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "CARD_3_TITLE",
+          "objectId": 34,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "CARD_3_BODY",
+          "objectId": 35,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "CARD_1_TITLE",
+        "text_4": "CARD_1_BODY",
+        "text_5": "CARD_2_TITLE",
+        "text_6": "CARD_2_BODY",
+        "text_7": "CARD_3_TITLE",
+        "text_8": "CARD_3_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 38,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст+ 4 плашки"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 8,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "CARD_1_TITLE",
+          "objectId": 16,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "CARD_1_BODY",
+          "objectId": 17,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "CARD_2_TITLE",
+          "objectId": 25,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "CARD_2_BODY",
+          "objectId": 26,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "CARD_3_TITLE",
+          "objectId": 34,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "CARD_3_BODY",
+          "objectId": 35,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "CARD_4_TITLE",
+          "objectId": 44,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "CARD_4_BODY",
+          "objectId": 45,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "CARD_1_TITLE",
+        "text_4": "CARD_1_BODY",
+        "text_5": "CARD_2_TITLE",
+        "text_6": "CARD_2_BODY",
+        "text_7": "CARD_3_TITLE",
+        "text_8": "CARD_3_BODY",
+        "text_9": "CARD_4_TITLE",
+        "text_10": "CARD_4_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 39,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Текст+ 6 плашек"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 8,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "CARD_1_TITLE",
+          "objectId": 16,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "CARD_1_BODY",
+          "objectId": 17,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "CARD_2_TITLE",
+          "objectId": 25,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "CARD_2_BODY",
+          "objectId": 26,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "CARD_3_TITLE",
+          "objectId": 34,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "CARD_3_BODY",
+          "objectId": 35,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "CARD_4_TITLE",
+          "objectId": 44,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "CARD_4_BODY",
+          "objectId": 45,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "CARD_5_TITLE",
+          "objectId": 48,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "CARD_5_BODY",
+          "objectId": 49,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "CARD_6_TITLE",
+          "objectId": 51,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "CARD_6_BODY",
+          "objectId": 52,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "CARD_1_TITLE",
+        "text_4": "CARD_1_BODY",
+        "text_5": "CARD_2_TITLE",
+        "text_6": "CARD_2_BODY",
+        "text_7": "CARD_3_TITLE",
+        "text_8": "CARD_3_BODY",
+        "text_9": "CARD_4_TITLE",
+        "text_10": "CARD_4_BODY",
+        "text_11": "CARD_5_TITLE",
+        "text_12": "CARD_5_BODY",
+        "text_13": "CARD_6_TITLE",
+        "text_14": "CARD_6_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 40,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Развитие ситуации, шаги, процесс. Если менее 5 шагов, оставляем лишние пустыми. Можно уменьшать текст при переполнении до 14."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ПРИМЕР: ОПОЗДАНИЯ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 8,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "STAGE_1_TEXT",
+          "objectId": 99,
+          "text": "Сначала один рабочий регулярно опаздывал на десять минут."
+        },
+        {
+          "objectName": "STAGE_2_TEXT",
+          "objectId": 104,
+          "text": "Мастер считал это мелочью и ничего не говорил. "
+        },
+        {
+          "objectName": "STAGE_3_TEXT",
+          "objectId": 107,
+          "text": "Через месяц опаздывали уже пятеро. "
+        },
+        {
+          "objectName": "OUTCOME_TEXT",
+          "objectId": 114,
+          "text": "Первые сорок минут смены участок работал НЕПОЛНЫМ СОСТАВОМ."
+        },
+        {
+          "objectName": "STAGE_4_TEXT",
+          "objectId": 47,
+          "text": "Через месяц опаздывали уже пятеро. "
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "STAGE_1_TEXT",
+        "text_4": "STAGE_2_TEXT",
+        "text_5": "STAGE_3_TEXT",
+        "text_6": "OUTCOME_TEXT",
+        "text_7": "STAGE_4_TEXT"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 41,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Стадии, шаги 3-4 шага. \nЕсли 3 шага, один оставить пустым."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 8,
+          "text": "ПОРЯДОК СБОРКИ УЗЛА"
+        },
+        {
+          "objectName": "STEP_1_TITLE",
+          "objectId": 10,
+          "text": "ПОДГОТОВКА"
+        },
+        {
+          "objectName": "STEP_1_NUMBER",
+          "objectId": 12,
+          "text": "01"
+        },
+        {
+          "objectName": "STEP_1_BODY",
+          "objectId": 13,
+          "text": "Проверьте комплект и разложите крепёж по операциям. Проверьте комплект и разложите крепёж по операциям.Проверьте комплект и разложите крепёж по операциям."
+        },
+        {
+          "objectName": "STEP_2_TITLE",
+          "objectId": 15,
+          "text": "СБОРКА"
+        },
+        {
+          "objectName": "STEP_2_NUMBER",
+          "objectId": 17,
+          "text": "02"
+        },
+        {
+          "objectName": "STEP_2_BODY",
+          "objectId": 18,
+          "text": "Соберите узел по схеме, без пропуска промежуточных затяжек. Проверьте комплект и разложите крепёж по операциям.Проверьте комплект и разложите крепёж по операциям."
+        },
+        {
+          "objectName": "STEP_3_TITLE",
+          "objectId": 20,
+          "text": "КОНТРОЛЬ"
+        },
+        {
+          "objectName": "STEP_3_NUMBER",
+          "objectId": 22,
+          "text": "03"
+        },
+        {
+          "objectName": "STEP_3_BODY",
+          "objectId": 23,
+          "text": "Проверьте соединения, зазоры и размеры по чертежу. Проверьте комплект и разложите крепёж по операциям.Проверьте комплект и разложите крепёж по операциям."
+        },
+        {
+          "objectName": "STEP_4_TITLE",
+          "objectId": 25,
+          "text": "ЗАПУСК"
+        },
+        {
+          "objectName": "STEP_4_NUMBER",
+          "objectId": 27,
+          "text": "04"
+        },
+        {
+          "objectName": "STEP_4_BODY",
+          "objectId": 28,
+          "text": "Настройте параметры и запустите узел в работу. Проверьте комплект и разложите крепёж по операциям.Проверьте комплект и разложите крепёж по операциям."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "STEP_1_TITLE",
+        "text_3": "STEP_1_NUMBER",
+        "text_4": "STEP_1_BODY",
+        "text_5": "STEP_2_TITLE",
+        "text_6": "STEP_2_NUMBER",
+        "text_7": "STEP_2_BODY",
+        "text_8": "STEP_3_TITLE",
+        "text_9": "STEP_3_NUMBER",
+        "text_10": "STEP_3_BODY",
+        "text_11": "STEP_4_TITLE",
+        "text_12": "STEP_4_NUMBER",
+        "text_13": "STEP_4_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 42,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Стадии, шаги, процесс"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 5,
+          "text": "ЭТАПЫ ПРОЦЕССА"
+        },
+        {
+          "objectName": "STEP_1_TITLE",
+          "objectId": 9,
+          "text": "Шаг 1"
+        },
+        {
+          "objectName": "STEP_1_BODY",
+          "objectId": 10,
+          "text": "Подготовьте материалыи проверьте комплект Подготовьте материалыи проверьте комплект"
+        },
+        {
+          "objectName": "STEP_1_NUMBER",
+          "objectId": 11,
+          "text": "01"
+        },
+        {
+          "objectName": "STEP_2_TITLE",
+          "objectId": 14,
+          "text": "Шаг 2"
+        },
+        {
+          "objectName": "STEP_2_BODY",
+          "objectId": 15,
+          "text": "Соберите узелпо схеме Подготовьте материалыи проверьте комплект Подготовьте материалыи проверьте комплект"
+        },
+        {
+          "objectName": "STEP_2_NUMBER",
+          "objectId": 16,
+          "text": "02"
+        },
+        {
+          "objectName": "STEP_3_TITLE",
+          "objectId": 19,
+          "text": "Шаг 3"
+        },
+        {
+          "objectName": "STEP_3_BODY",
+          "objectId": 20,
+          "text": "Проверьте соединенияи размеры Подготовьте материалыи проверьте комплект"
+        },
+        {
+          "objectName": "STEP_3_NUMBER",
+          "objectId": 21,
+          "text": "03"
+        },
+        {
+          "objectName": "STEP_4_TITLE",
+          "objectId": 24,
+          "text": "Шаг 4"
+        },
+        {
+          "objectName": "STEP_4_BODY",
+          "objectId": 25,
+          "text": "Настройте параметрыи запустите работу Подготовьте материалыи проверьте комплект Подготовьте материалыи проверьте комплект"
+        },
+        {
+          "objectName": "STEP_4_NUMBER",
+          "objectId": 26,
+          "text": "04"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "STEP_1_TITLE",
+        "text_3": "STEP_1_BODY",
+        "text_4": "STEP_1_NUMBER",
+        "text_5": "STEP_2_TITLE",
+        "text_6": "STEP_2_BODY",
+        "text_7": "STEP_2_NUMBER",
+        "text_8": "STEP_3_TITLE",
+        "text_9": "STEP_3_BODY",
+        "text_10": "STEP_3_NUMBER",
+        "text_11": "STEP_4_TITLE",
+        "text_12": "STEP_4_BODY",
+        "text_13": "STEP_4_NUMBER"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 43,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Длинный процесс 6 шагов"
+      ],
+      "text": [
+        {
+          "objectName": "STEP_1_NUMBER",
+          "objectId": 6,
+          "text": "01"
+        },
+        {
+          "objectName": "STEP_2_NUMBER",
+          "objectId": 7,
+          "text": "02"
+        },
+        {
+          "objectName": "STEP_3_NUMBER",
+          "objectId": 8,
+          "text": "03"
+        },
+        {
+          "objectName": "STEP_4_NUMBER",
+          "objectId": 9,
+          "text": "04"
+        },
+        {
+          "objectName": "STEP_1_BODY",
+          "objectId": 10,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "STEP_1_TITLE",
+          "objectId": 11,
+          "text": "ORIGINAL ARTICLES"
+        },
+        {
+          "objectName": "STEP_2_BODY",
+          "objectId": 12,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "STEP_2_TITLE",
+          "objectId": 13,
+          "text": "WORK ANALYSIS"
+        },
+        {
+          "objectName": "STEP_3_BODY",
+          "objectId": 14,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "STEP_3_TITLE",
+          "objectId": 15,
+          "text": "WORK DESIGN"
+        },
+        {
+          "objectName": "STEP_4_BODY",
+          "objectId": 16,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "STEP_4_TITLE",
+          "objectId": 17,
+          "text": "TEXT ANALYSIS"
+        },
+        {
+          "objectName": "STEP_5_NUMBER",
+          "objectId": 18,
+          "text": "05"
+        },
+        {
+          "objectName": "STEP_5_BODY",
+          "objectId": 19,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "STEP_5_TITLE",
+          "objectId": 20,
+          "text": "MARKET INSIGHTS"
+        },
+        {
+          "objectName": "STEP_6_NUMBER",
+          "objectId": 21,
+          "text": "06"
+        },
+        {
+          "objectName": "STEP_6_BODY",
+          "objectId": 22,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "STEP_6_TITLE",
+          "objectId": 23,
+          "text": "PRODUCTION"
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 29,
+          "text": "ЭТАПЫ ПРОЦЕССА"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "STEP_1_NUMBER",
+        "text_2": "STEP_2_NUMBER",
+        "text_3": "STEP_3_NUMBER",
+        "text_4": "STEP_4_NUMBER",
+        "text_5": "STEP_1_BODY",
+        "text_6": "STEP_1_TITLE",
+        "text_7": "STEP_2_BODY",
+        "text_8": "STEP_2_TITLE",
+        "text_9": "STEP_3_BODY",
+        "text_10": "STEP_3_TITLE",
+        "text_11": "STEP_4_BODY",
+        "text_12": "STEP_4_TITLE",
+        "text_13": "STEP_5_NUMBER",
+        "text_14": "STEP_5_BODY",
+        "text_15": "STEP_5_TITLE",
+        "text_16": "STEP_6_NUMBER",
+        "text_17": "STEP_6_BODY",
+        "text_18": "STEP_6_TITLE",
+        "text_19": "TITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 44,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Шаги, процесс, можно под список однородных понятий, 3-4 шага. \nЕсли 3 шага, один оставить пустым"
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 5,
+          "text": "ЭТАПЫ ПРОЦЕССА"
+        },
+        {
+          "objectName": "CARD_1_TITLE",
+          "objectId": 6,
+          "text": "STRATEGIC PLANS"
+        },
+        {
+          "objectName": "CARD_1_BODY",
+          "objectId": 7,
+          "text": "This is the sample Dummy Textinsert your desired text here becausethis is the dummy textThis is the sample Dummy Textinsert your desired text here becausethis is the dummy text"
+        },
+        {
+          "objectName": "CARD_2_TITLE",
+          "objectId": 8,
+          "text": "PAID SEARCH"
+        },
+        {
+          "objectName": "CARD_2_BODY",
+          "objectId": 9,
+          "text": "This is the sample Dummy Textinsert your desired text here becausethis is the dummy textThis is the sample Dummy Textinsert your desired text here becausethis is the dummy text"
+        },
+        {
+          "objectName": "CARD_3_TITLE",
+          "objectId": 10,
+          "text": "TACTICAL PLANS"
+        },
+        {
+          "objectName": "CARD_3_BODY",
+          "objectId": 11,
+          "text": "This is the sample Dummy Textinsert your desired text here becausethis is the dummy textThis is the sample Dummy Textinsert your desired text here becausethis is the dummy text"
+        },
+        {
+          "objectName": "CARD_4_TITLE",
+          "objectId": 26,
+          "text": "LAND NURTURING"
+        },
+        {
+          "objectName": "CARD_4_BODY",
+          "objectId": 27,
+          "text": "This is the sample Dummy Textinsert your desired text here becausethis is the dummy text This is the sample Dummy Textinsert your desired text here becausethis is the dummy text"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "CARD_1_TITLE",
+        "text_3": "CARD_1_BODY",
+        "text_4": "CARD_2_TITLE",
+        "text_5": "CARD_2_BODY",
+        "text_6": "CARD_3_TITLE",
+        "text_7": "CARD_3_BODY",
+        "text_8": "CARD_4_TITLE",
+        "text_9": "CARD_4_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 45,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Процесс  4 шага"
+      ],
+      "text": [
+        {
+          "objectName": "STEP_1_DETAIL_TITLE",
+          "objectId": 42,
+          "text": "TITLE TEXT HERE"
+        },
+        {
+          "objectName": "STEP_1_BODY",
+          "objectId": 43,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore"
+        },
+        {
+          "objectName": "STEP_1_LABEL",
+          "objectId": 47,
+          "text": "PROCESS STEP01"
+        },
+        {
+          "objectName": "STEP_2_LABEL",
+          "objectId": 48,
+          "text": "PROCESS STEP02"
+        },
+        {
+          "objectName": "STEP_3_LABEL",
+          "objectId": 49,
+          "text": "PROCESS STEP03"
+        },
+        {
+          "objectName": "STEP_4_LABEL",
+          "objectId": 51,
+          "text": "PROCESS STEP03"
+        },
+        {
+          "objectName": "STEP_2_DETAIL_TITLE",
+          "objectId": 53,
+          "text": "TITLE TEXT HERE"
+        },
+        {
+          "objectName": "STEP_2_BODY",
+          "objectId": 54,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore"
+        },
+        {
+          "objectName": "STEP_3_DETAIL_TITLE",
+          "objectId": 56,
+          "text": "TITLE TEXT HERE"
+        },
+        {
+          "objectName": "STEP_3_BODY",
+          "objectId": 57,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore"
+        },
+        {
+          "objectName": "STEP_4_DETAIL_TITLE",
+          "objectId": 59,
+          "text": "TITLE TEXT HERE"
+        },
+        {
+          "objectName": "STEP_4_BODY",
+          "objectId": 60,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore"
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 63,
+          "text": "ЭТАПЫ ПРОЦЕССА"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "STEP_1_DETAIL_TITLE",
+        "text_2": "STEP_1_BODY",
+        "text_3": "STEP_1_LABEL",
+        "text_4": "STEP_2_LABEL",
+        "text_5": "STEP_3_LABEL",
+        "text_6": "STEP_4_LABEL",
+        "text_7": "STEP_2_DETAIL_TITLE",
+        "text_8": "STEP_2_BODY",
+        "text_9": "STEP_3_DETAIL_TITLE",
+        "text_10": "STEP_3_BODY",
+        "text_11": "STEP_4_DETAIL_TITLE",
+        "text_12": "STEP_4_BODY",
+        "text_13": "TITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 46,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Процесс 3 шага"
+      ],
+      "text": [
+        {
+          "objectName": "STEP_1_DETAIL_TITLE",
+          "objectId": 42,
+          "text": "TITLE TEXT HERE"
+        },
+        {
+          "objectName": "STEP_1_BODY",
+          "objectId": 43,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore"
+        },
+        {
+          "objectName": "STEP_1_LABEL",
+          "objectId": 47,
+          "text": "PROCESS STEP01"
+        },
+        {
+          "objectName": "STEP_2_LABEL",
+          "objectId": 48,
+          "text": "PROCESS STEP02"
+        },
+        {
+          "objectName": "STEP_3_LABEL",
+          "objectId": 51,
+          "text": "PROCESS STEP03"
+        },
+        {
+          "objectName": "STEP_2_DETAIL_TITLE",
+          "objectId": 53,
+          "text": "TITLE TEXT HERE"
+        },
+        {
+          "objectName": "STEP_2_BODY",
+          "objectId": 54,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore"
+        },
+        {
+          "objectName": "STEP_3_DETAIL_TITLE",
+          "objectId": 59,
+          "text": "TITLE TEXT HERE"
+        },
+        {
+          "objectName": "STEP_3_BODY",
+          "objectId": 60,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore"
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 63,
+          "text": "ЭТАПЫ ПРОЦЕССА"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "STEP_1_DETAIL_TITLE",
+        "text_2": "STEP_1_BODY",
+        "text_3": "STEP_1_LABEL",
+        "text_4": "STEP_2_LABEL",
+        "text_5": "STEP_3_LABEL",
+        "text_6": "STEP_2_DETAIL_TITLE",
+        "text_7": "STEP_2_BODY",
+        "text_8": "STEP_3_DETAIL_TITLE",
+        "text_9": "STEP_3_BODY",
+        "text_10": "TITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 47,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Статистика 3 цифры"
+      ],
+      "text": [
+        {
+          "objectName": "METRIC_1_TITLE",
+          "objectId": 33,
+          "text": "BUDGET"
+        },
+        {
+          "objectName": "METRIC_1_BODY",
+          "objectId": 34,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the."
+        },
+        {
+          "objectName": "METRIC_1_VALUE",
+          "objectId": 36,
+          "text": "$ 4.7M"
+        },
+        {
+          "objectName": "METRIC_2_TITLE",
+          "objectId": 44,
+          "text": "SPENDING"
+        },
+        {
+          "objectName": "METRIC_2_BODY",
+          "objectId": 45,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the."
+        },
+        {
+          "objectName": "METRIC_2_VALUE",
+          "objectId": 46,
+          "text": "$ 3.5M"
+        },
+        {
+          "objectName": "METRIC_3_TITLE",
+          "objectId": 48,
+          "text": "SAVING"
+        },
+        {
+          "objectName": "METRIC_3_BODY",
+          "objectId": 49,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the."
+        },
+        {
+          "objectName": "METRIC_3_VALUE",
+          "objectId": 50,
+          "text": "$ 5M"
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 14,
+          "text": "ЦИФРЫ ИССЛЕДОВАНИЯ"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "METRIC_1_TITLE",
+        "text_2": "METRIC_1_BODY",
+        "text_3": "METRIC_1_VALUE",
+        "text_4": "METRIC_2_TITLE",
+        "text_5": "METRIC_2_BODY",
+        "text_6": "METRIC_2_VALUE",
+        "text_7": "METRIC_3_TITLE",
+        "text_8": "METRIC_3_BODY",
+        "text_9": "METRIC_3_VALUE",
+        "text_10": "TITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 48,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Статистика 4 цифры"
+      ],
+      "text": [
+        {
+          "objectName": "METRIC_1_TITLE",
+          "objectId": 33,
+          "text": "BUDGET"
+        },
+        {
+          "objectName": "METRIC_1_BODY",
+          "objectId": 34,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the."
+        },
+        {
+          "objectName": "METRIC_1_VALUE",
+          "objectId": 36,
+          "text": "$ 4.7M"
+        },
+        {
+          "objectName": "METRIC_2_TITLE",
+          "objectId": 44,
+          "text": "SPENDING"
+        },
+        {
+          "objectName": "METRIC_2_BODY",
+          "objectId": 45,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the."
+        },
+        {
+          "objectName": "METRIC_2_VALUE",
+          "objectId": 46,
+          "text": "$ 3.5M"
+        },
+        {
+          "objectName": "METRIC_3_TITLE",
+          "objectId": 48,
+          "text": "SAVING"
+        },
+        {
+          "objectName": "METRIC_3_BODY",
+          "objectId": 49,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the."
+        },
+        {
+          "objectName": "METRIC_3_VALUE",
+          "objectId": 50,
+          "text": "$ 5M"
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 14,
+          "text": "ЦИФРЫ ИССЛЕДОВАНИЯ"
+        },
+        {
+          "objectName": "METRIC_4_TITLE",
+          "objectId": 15,
+          "text": "SAVING"
+        },
+        {
+          "objectName": "METRIC_4_BODY",
+          "objectId": 16,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the."
+        },
+        {
+          "objectName": "METRIC_4_VALUE",
+          "objectId": 17,
+          "text": "$ 5M"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "METRIC_1_TITLE",
+        "text_2": "METRIC_1_BODY",
+        "text_3": "METRIC_1_VALUE",
+        "text_4": "METRIC_2_TITLE",
+        "text_5": "METRIC_2_BODY",
+        "text_6": "METRIC_2_VALUE",
+        "text_7": "METRIC_3_TITLE",
+        "text_8": "METRIC_3_BODY",
+        "text_9": "METRIC_3_VALUE",
+        "text_10": "TITLE",
+        "text_11": "METRIC_4_TITLE",
+        "text_12": "METRIC_4_BODY",
+        "text_13": "METRIC_4_VALUE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 49,
+      "templateId": null,
+      "comments": [],
+      "notes": [
+        "Таймлайн\n, процесс. Если менее 5 пунктов, то оставить пустыми. Если более 5 пунктов, то лишний текст в заметки слайда."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 14,
+          "text": "ТАЙМЛАЙН"
+        },
+        {
+          "objectName": "EVENT_1_TITLE",
+          "objectId": 16,
+          "text": "DESCRIPTION"
+        },
+        {
+          "objectName": "EVENT_1_BODY",
+          "objectId": 17,
+          "text": "Placeholder document design, Lorem ipsum use ipsumplaceholder text. Placeholder document design, Lorem ipsum use ipsumplaceholder text."
+        },
+        {
+          "objectName": "EVENT_2_TITLE",
+          "objectId": 18,
+          "text": "DESCRIPTION"
+        },
+        {
+          "objectName": "EVENT_2_BODY",
+          "objectId": 19,
+          "text": "Placeholder document design, Lorem ipsum use ipsumplaceholder text."
+        },
+        {
+          "objectName": "EVENT_3_TITLE",
+          "objectId": 29,
+          "text": "DESCRIPTION"
+        },
+        {
+          "objectName": "EVENT_3_BODY",
+          "objectId": 30,
+          "text": "Placeholder document design, Lorem ipsum use ipsumplaceholder text. Placeholder document design, Lorem ipsum use ipsumplaceholder text."
+        },
+        {
+          "objectName": "EVENT_4_TITLE",
+          "objectId": 31,
+          "text": "DESCRIPTION"
+        },
+        {
+          "objectName": "EVENT_4_BODY",
+          "objectId": 32,
+          "text": "Placeholder document design, Lorem ipsum use ipsumplaceholder text."
+        },
+        {
+          "objectName": "EVENT_5_TITLE",
+          "objectId": 35,
+          "text": "DESCRIPTION"
+        },
+        {
+          "objectName": "EVENT_5_BODY",
+          "objectId": 37,
+          "text": "Placeholder document design, Lorem ipsum use ipsumplaceholder text. Placeholder document design, Lorem ipsum use ipsumplaceholder text."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "EVENT_1_TITLE",
+        "text_3": "EVENT_1_BODY",
+        "text_4": "EVENT_2_TITLE",
+        "text_5": "EVENT_2_BODY",
+        "text_6": "EVENT_3_TITLE",
+        "text_7": "EVENT_3_BODY",
+        "text_8": "EVENT_4_TITLE",
+        "text_9": "EVENT_4_BODY",
+        "text_10": "EVENT_5_TITLE",
+        "text_11": "EVENT_5_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 50,
+      "templateId": "staging.interaction",
+      "comments": [],
+      "notes": [
+        "template_id: staging.interaction\nПустой слайд только для интерактивностей\nинтерактивностей"
+      ],
+      "text": [
+        {
+          "objectName": "STAGING_BODY",
+          "objectId": 2,
+          "text": "Здесь текст"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "STAGING_BODY"
+      },
+      "objectNamesAreUnique": true
+    }
+  ],
+  "instructions": "Add `template_id: meaningful.id` to the comment or notes of every reusable slide. Then map titleTemplate and compositions to templateId and map each semantic slot to an existing PowerPoint object name. sourceSlide is refreshed on every inspection and is never a persistent address."
+}

@@ -4,13 +4,12 @@
   "slides": [
     { "kind": "title", "slots": { "title": "Название урока" } },
     { "kind": "content", "sourceSlide": 1, "composition": "text.title-body", "slots": { "title": "Ключевая мысль", "body": "Текст урока сохраняется дословно." }, "interactive": false },
+    { "kind": "content", "sourceSlide": 2, "composition": "staging.interaction", "slots": { "body": "Вопрос упражнения и все варианты ответа сохраняются дословно." }, "interactive": true },
     {
       "kind": "dialogue",
-      "composition": "dialogue.scene",
+      "composition": "staging.blank",
       "slots": {
-        "title": "Стажировка",
-        "alexey_text": "Чем мастер занимается в течение смены?",
-        "denis_text": "Давай разберёмся на участке."
+        "dialogue": "Алексей: Чем мастер занимается в течение смены?\nДенис: Давай разберёмся на участке."
       },
       "dialogue": [
         { "speaker": "Алексей", "text": "Чем мастер занимается в течение смены?" },

@@ -58,6 +58,16 @@ export function slotText(value) {
   return typeof value === "string" ? value : value.segments.map((segment) => segment.text).join("");
 }
 
+export function dialogueTranscript(item, label = "dialogue") {
+  if (!Array.isArray(item.dialogue) || !item.dialogue.length) throw new Error(`${label}.dialogue must be a non-empty array`);
+  return item.dialogue.map((entry, index) => {
+    object(entry, `${label}.dialogue[${index}]`);
+    if (entry.speaker !== "Алексей" && entry.speaker !== "Денис") throw new Error(`${label}.dialogue[${index}].speaker must be Алексей or Денис`);
+    if (typeof entry.text !== "string") throw new Error(`${label}.dialogue[${index}].text must be a string`);
+    return `${entry.speaker}: ${entry.text}`;
+  }).join("\n");
+}
+
 function slotValue(value, label, runStyles) {
   if (typeof value === "string") return;
   object(value, label);
@@ -114,7 +124,8 @@ export function validateCatalog(catalog) {
   if (!Object.keys(catalog.compositions).length) throw new Error("catalog.compositions must contain at least one composition");
   for (const [name, spec] of Object.entries(catalog.compositions)) {
     if (!name.trim()) throw new Error("catalog.compositions has an empty name");
-    template(spec, `catalog.compositions.${name}`, true);
+    const kinds = spec.kinds ?? (spec.kind ? [spec.kind] : []);
+    template(spec, `catalog.compositions.${name}`, !kinds.includes("dialogue") && !kinds.includes("interactive-staging"));
     resolveTemplate(catalog, spec, `catalog.compositions.${name}`);
     if (spec.kind !== undefined && typeof spec.kind !== "string") throw new Error(`catalog.compositions.${name}.kind must be a string`);
     if (spec.kinds !== undefined && (!Array.isArray(spec.kinds) || spec.kinds.some((kind) => typeof kind !== "string"))) throw new Error(`catalog.compositions.${name}.kinds must be an array of strings`);
@@ -142,14 +153,23 @@ export function validatePlan(plan, catalog) {
     for (const slot of Object.keys(spec.slots)) {
       if (item.slots[slot] === undefined) throw new Error(`plan.slides[${index}].slots.${slot} is required so template sample text cannot remain`);
     }
-    if (item.slots.title === undefined) throw new Error(`plan.slides[${index}].slots.title is required`);
+    const kinds = spec.kinds ?? (spec.kind ? [spec.kind] : []);
+    const isInteractionStaging = item.kind === "content" && kinds.includes("interactive-staging");
+    if (item.kind !== "dialogue" && !isInteractionStaging && item.slots.title === undefined) throw new Error(`plan.slides[${index}].slots.title is required`);
     if (item.kind === "title" && index !== 0) throw new Error("a title slide may appear only at the start of plan.slides");
-    if (item.kind === "content") integer(item.sourceSlide, `plan.slides[${index}].sourceSlide`, 1);
+    if (item.kind === "content") {
+      integer(item.sourceSlide, `plan.slides[${index}].sourceSlide`, 1);
+      if (item.interactive === true && !isInteractionStaging) throw new Error(`plan.slides[${index}] interactive content must use an interactive-staging composition`);
+      if (isInteractionStaging && item.interactive !== true) throw new Error(`plan.slides[${index}] interactive-staging composition requires interactive: true`);
+      if (isInteractionStaging && spec.templateId === "staging.blank") throw new Error(`plan.slides[${index}] interaction must not use dialogue-only staging.blank`);
+    }
     if (item.kind === "dialogue") {
-      const kinds = spec.kinds ?? (spec.kind ? [spec.kind] : []);
       if (!kinds.includes("dialogue")) throw new Error(`plan.slides[${index}] uses a non-dialogue composition`);
-      if (!spec.imageSlots?.scene) throw new Error(`plan.slides[${index}] dialogue composition needs catalog.imageSlots.scene`);
+      if (spec.templateId !== "staging.blank") throw new Error(`plan.slides[${index}] dialogue must use staging.blank`);
+      if (resolveTemplate(catalog, spec, `plan.slides[${index}]`).sourceSlide !== 1) throw new Error(`plan.slides[${index}] dialogue composition must use the first blank library slide`);
       if (typeof item.scenePath !== "string" || !item.scenePath.trim()) throw new Error(`plan.slides[${index}].scenePath must be a non-empty image path`);
+      const transcript = dialogueTranscript(item, `plan.slides[${index}]`);
+      if (slotText(item.slots.dialogue) !== transcript) throw new Error(`plan.slides[${index}].slots.dialogue must reproduce the speaker-labelled dialogue in source order`);
     }
     if (item.interactive !== undefined && typeof item.interactive !== "boolean") throw new Error(`plan.slides[${index}].interactive must be boolean when present`);
   });

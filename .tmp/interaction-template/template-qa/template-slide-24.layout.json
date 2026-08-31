@@ -1,0 +1,952 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/7qto7e10",
+    "id": "7qto7e10",
+    "slide": 24,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Другая 4",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#3F454F",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Bahnschrift Condensed",
+      "Bahnschrift SemiBold Condensed",
+      "Calibri",
+      "Calibri Light",
+      "Nunito"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "backgroundColor": "#EEF0F3",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/obqp47q1",
+      "id": "31",
+      "name": "Рисунок 12",
+      "bbox": [
+        122.15,
+        807.99,
+        321.44,
+        321.44
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image21.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1206
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image21.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1206
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9wzq1svi",
+      "id": "6",
+      "name": "TITLE",
+      "bbox": [
+        84.9,
+        37.07,
+        1000,
+        58.67
+      ],
+      "geometry": "rect",
+      "text": "ОТ РЕАКЦИИ МАСТЕРА ЗАВИСИТ, СООБЩАТ ЛИ ЕМУ О ПРОБЛЕМЕ",
+      "textPreview": "ОТ РЕАКЦИИ МАСТЕРА ЗАВИСИТ, СООБЩАТ ЛИ ЕМУ О ПРОБЛЕМЕ",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ОТ РЕАКЦИИ МАСТЕРА ЗАВИСИТ, СООБЩАТ ЛИ ЕМУ"
+          },
+          {
+            "index": 2,
+            "text": "О ПРОБЛЕМЕ"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ОТ РЕАКЦИИ МАСТЕРА ЗАВИСИТ, СООБЩАТ ЛИ ЕМУ О ПРОБЛЕМЕ",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ОТ РЕАКЦИИ МАСТЕРА ЗАВИСИТ, СООБЩАТ ЛИ ЕМУ О ПРОБЛЕМЕ",
+              "fontSize": 40,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/nahovmpg",
+      "id": "32",
+      "name": "Image 3",
+      "bbox": [
+        1109.81,
+        64,
+        96.83,
+        30.67
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image33.png",
+        "contentType": "image/png",
+        "byteLength": 47754
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image33.png",
+        "contentType": "image/png",
+        "byteLength": 47754
+      }
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/axgza10b",
+      "id": "16",
+      "name": "INTRO",
+      "bbox": [
+        84.9,
+        90.1,
+        921.23,
+        133.11
+      ],
+      "geometry": "rect",
+      "text": "Состояние и поведение мастера влияют не только на настроение участка. От них зависит, решатся ли рабочие сообщать ему неприятные новости.",
+      "textPreview": "Состояние и поведение мастера влияют не только на настроение участка. От них зависит, решатся ли рабочие сообщать ему неприятные новости.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Состояние и поведение мастера влияют не только на настроение участка. От них"
+          },
+          {
+            "index": 2,
+            "text": "зависит, решатся ли рабочие сообщать ему неприятные новости."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Состояние и поведение мастера влияют не только на настроение участка. От них зависит, решатся ли рабочие сообщать ему неприятные новости.",
+          "lineSpacingPercent": 130000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "Состояние и поведение мастера влияют не только на настроение участка. От них зависит, решатся ли рабочие сообщать ему неприятные новости.",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#676C74",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d43itcjy",
+      "id": "19",
+      "name": "Shape 0",
+      "bbox": [
+        73.37,
+        0,
+        0.02,
+        94.67
+      ],
+      "horizontalFlip": true,
+      "geometry": "line",
+      "lineColor": "#F5340B",
+      "lineWidth": 2
+    },
+    {
+      "order": 6,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/2p872h8v",
+      "id": "33",
+      "name": "Рисунок 2",
+      "bbox": [
+        417.49,
+        867.61,
+        195,
+        195
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image16.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1006
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image16.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1006
+      }
+    },
+    {
+      "order": 7,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/1oz6tc7a",
+      "id": "34",
+      "name": "Рисунок 6",
+      "bbox": [
+        -253.14,
+        543.4,
+        188,
+        188
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image33.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 892
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image33.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 892
+      }
+    },
+    {
+      "order": 8,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/0nq507qp",
+      "id": "35",
+      "name": "Рисунок 8",
+      "bbox": [
+        1233.23,
+        843.78,
+        132,
+        132
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image34.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 909
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image34.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 909
+      }
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/fmhor2p4",
+      "id": "36",
+      "name": "Рисунок 10",
+      "bbox": [
+        594.06,
+        762.77,
+        212,
+        212
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image20.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image20.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      }
+    },
+    {
+      "order": 10,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/el8nyx8j",
+      "id": "37",
+      "name": "Рисунок 14",
+      "bbox": [
+        -323.56,
+        803.77,
+        390,
+        390
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image22.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image22.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      }
+    },
+    {
+      "order": 11,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/lk365w7e",
+      "id": "38",
+      "name": "Рисунок 16",
+      "bbox": [
+        966.4,
+        660,
+        237,
+        237
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image35.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1265
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image35.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1265
+      }
+    },
+    {
+      "order": 12,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/kjupcrq9",
+      "id": "39",
+      "name": "Рисунок 18",
+      "bbox": [
+        40.15,
+        -346.75,
+        328,
+        328
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image24.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1287
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image24.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1287
+      }
+    },
+    {
+      "order": 13,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/sby5g7md",
+      "id": "40",
+      "name": "Рисунок 20",
+      "bbox": [
+        1328.43,
+        234.36,
+        212,
+        212
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image25.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image25.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      }
+    },
+    {
+      "order": 14,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/tc769c3y",
+      "id": "41",
+      "name": "Рисунок 22",
+      "bbox": [
+        1187.12,
+        -213.48,
+        189.13,
+        189.13
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image36.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 834
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image36.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 834
+      }
+    },
+    {
+      "order": 15,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/69wnex4n",
+      "id": "42",
+      "name": "Рисунок 24",
+      "bbox": [
+        -337.03,
+        -60.75,
+        348,
+        348
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image37.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1545
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image37.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1545
+      }
+    },
+    {
+      "order": 16,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/7apo72ls",
+      "id": "43",
+      "name": "Рисунок 33",
+      "bbox": [
+        384.94,
+        -227.87,
+        169,
+        169
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image38.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1124
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image38.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1124
+      }
+    },
+    {
+      "order": 17,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/gfy5krmp",
+      "id": "44",
+      "name": "Рисунок 34",
+      "bbox": [
+        915.85,
+        -298.18,
+        212,
+        212
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image39.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image39.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      }
+    },
+    {
+      "order": 18,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/hg76dc3a",
+      "id": "45",
+      "name": "!!gear-07",
+      "bbox": [
+        1262.43,
+        776.91,
+        386.01,
+        386.01
+      ],
+      "rotation": 223.97,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image7.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image7.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      }
+    },
+    {
+      "order": 19,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/udgnih4j",
+      "id": "46",
+      "name": "Рисунок 8",
+      "bbox": [
+        73.37,
+        215.73,
+        670.34,
+        454.04
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image32.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 443
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image32.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 443
+      }
+    },
+    {
+      "order": 20,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/fepobml4",
+      "id": "47",
+      "name": "Image 7",
+      "bbox": [
+        772.69,
+        337.8,
+        123.06,
+        149.09
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image44.png",
+        "contentType": "image/png",
+        "byteLength": 8542
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image44.png",
+        "contentType": "image/png",
+        "byteLength": 8542
+      }
+    },
+    {
+      "order": 21,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/43iporml",
+      "id": "48",
+      "name": "Рисунок 4",
+      "bbox": [
+        937.49,
+        838.11,
+        254,
+        254
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image17.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1261
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image17.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1261
+      }
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mlg3al4f",
+      "id": "30",
+      "name": "CASE_BODY",
+      "bbox": [
+        130.71,
+        253.24,
+        560.5,
+        377.77
+      ],
+      "geometry": "rect",
+      "text": "В 1999 году профессор Гарвардской школы бизнеса Эми Эдмондсон изучала медицинские команды. Она обнаружила парадокс: лучшие команды сообщали о большем количестве ошибок.\n\nДело было не в том, что они ошибались чаще. В командах, где руководитель спокойно принимал сообщение и разбирал ошибку по существу, люди не боялись говорить о проблемах. Поэтому ошибки замечали раньше.\nТам, где руководитель кричал, обвинял или наказывал за сам факт плохой новости, люди старались молчать. Ошибки обнаруживали позднее, когда исправление обходилось дороже.",
+      "textPreview": "В 1999 году профессор Гарвардской школы бизнеса Эми Эдмондсон изучала медицинские команды. Она обнаружила парадокс: лучшие команды сообща...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 14,
+        "lines": [
+          {
+            "index": 1,
+            "text": "В 1999 году профессор Гарвардской школы бизнеса"
+          },
+          {
+            "index": 2,
+            "text": "Эми Эдмондсон изучала медицинские команды. Она"
+          },
+          {
+            "index": 3,
+            "text": "обнаружила парадокс: лучшие команды сообщали о"
+          },
+          {
+            "index": 4,
+            "text": "большем количестве ошибок."
+          },
+          {
+            "index": 5,
+            "text": ""
+          },
+          {
+            "index": 6,
+            "text": "Дело было не в том, что они ошибались чаще. В"
+          },
+          {
+            "index": 7,
+            "text": "командах, где руководитель спокойно принимал"
+          },
+          {
+            "index": 8,
+            "text": "сообщение и разбирал ошибку по существу, люди не"
+          },
+          {
+            "index": 9,
+            "text": "боялись говорить о проблемах. Поэтому ошибки"
+          },
+          {
+            "index": 10,
+            "text": "замечали раньше."
+          },
+          {
+            "index": 11,
+            "text": "Там, где руководитель кричал, обвинял или наказывал"
+          },
+          {
+            "index": 12,
+            "text": "за сам факт плохой новости, люди старались молчать."
+          },
+          {
+            "index": 13,
+            "text": "Ошибки обнаруживали позднее, когда исправление"
+          },
+          {
+            "index": 14,
+            "text": "обходилось дороже."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "В 1999 году профессор Гарвардской школы бизнеса Эми Эдмондсон изучала медицинские команды. Она обнаружила парадокс: лучшие команды сообщали о большем количестве ошибок.\n",
+          "runs": [
+            {
+              "index": 1,
+              "text": "В 1999 году профессор Гарвардской школы бизнеса Эми ",
+              "fontSize": 21.33,
+              "typeface": "Nunito"
+            },
+            {
+              "index": 2,
+              "text": "Эдмондсон",
+              "fontSize": 21.33,
+              "typeface": "Nunito"
+            },
+            {
+              "index": 3,
+              "text": " изучала медицинские команды. Она обнаружила парадокс: лучшие команды сообщали о большем количестве ошибок.",
+              "fontSize": 21.33,
+              "typeface": "Nunito"
+            },
+            {
+              "index": 4,
+              "text": "\n"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Дело было не в том, что они ошибались чаще. В командах, где руководитель спокойно принимал сообщение и разбирал ошибку по существу, люди не боялись говорить о проблемах. Поэтому ошибки замечали раньше.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Дело было не в том, что они ошибались чаще. В командах, где руководитель спокойно принимал сообщение и разбирал ошибку по существу, люди не боялись говорить о проблемах. Поэтому ошибки замечали раньше.",
+              "fontSize": 21.33,
+              "typeface": "Nunito"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "Там, где руководитель кричал, обвинял или наказывал за сам факт плохой новости, люди старались молчать. Ошибки обнаруживали позднее, когда исправление обходилось дороже.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Там, где руководитель кричал, обвинял или наказывал за сам факт плохой новости, люди старались молчать. Ошибки обнаруживали позднее, когда исправление обходилось дороже.",
+              "fontSize": 21.33,
+              "typeface": "Nunito"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0r6p4nul",
+      "id": "3",
+      "name": "TextBox 2",
+      "bbox": [
+        895.75,
+        257.12,
+        337.48,
+        350.26
+      ],
+      "geometry": "rect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      }
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nux8zidc",
+      "id": "4",
+      "name": "CONCLUSION",
+      "bbox": [
+        915.85,
+        215.73,
+        337.48,
+        454.04
+      ],
+      "geometry": "rect",
+      "text": "Для мастера это означает: брак и угрозу срыва невозможно обнаружить вовремя, если рабочий боится подойти и рассказать о проблеме.\n",
+      "textPreview": "Для мастера это означает: брак и угрозу срыва невозможно обнаружить вовремя, если рабочий боится подойти и рассказать о проблеме. |",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 7,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Для мастера это"
+          },
+          {
+            "index": 2,
+            "text": "означает: брак и угрозу"
+          },
+          {
+            "index": 3,
+            "text": "срыва невозможно"
+          },
+          {
+            "index": 4,
+            "text": "обнаружить вовремя, если"
+          },
+          {
+            "index": 5,
+            "text": "рабочий боится подойти и"
+          },
+          {
+            "index": 6,
+            "text": "рассказать о проблеме."
+          },
+          {
+            "index": 7,
+            "text": ""
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Для мастера это означает: брак и угрозу срыва невозможно обнаружить вовремя, если рабочий боится подойти и рассказать о проблеме.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Для мастера это означает: ",
+              "fontSize": 32,
+              "typeface": "Bahnschrift Condensed",
+              "color": "#F5340B"
+            },
+            {
+              "index": 2,
+              "text": "брак и угрозу срыва невозможно обнаружить вовремя, если рабочий боится подойти и рассказать о проблеме.",
+              "fontSize": 24,
+              "typeface": "Nunito"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

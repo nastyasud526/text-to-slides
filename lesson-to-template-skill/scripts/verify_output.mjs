@@ -5,14 +5,14 @@ import { usage } from "./runtime.mjs";
 import { slotText, validateCatalog, validatePlan } from "./validate.mjs";
 import { getPptxNamedImageHashes, getPptxNamedShapeTexts, getPptxSlideCount } from "./patch_text_runs.mjs";
 
-const [pptx, catalogPath, planPath, qaDir] = process.argv.slice(2);
-if (!pptx || !catalogPath || !planPath || !qaDir) usage("verify_output.mjs", "<output.pptx> <catalog.json> <lesson-plan.json> <qa-directory>");
+const [pptx, catalogPath, planPath, verificationDir] = process.argv.slice(2);
+if (!pptx || !catalogPath || !planPath || !verificationDir) usage("verify_output.mjs", "<output.pptx> <catalog.json> <lesson-plan.json> <verification-directory>");
 const catalog = validateCatalog(JSON.parse(await fs.readFile(catalogPath, "utf8")));
 const plan = validatePlan(JSON.parse(await fs.readFile(planPath, "utf8")), catalog);
 const isHeadingSlot = (slot) => slot === "title" || slot === "subtitle" || /_(?:title|label)$/.test(slot);
 const slideCount = await getPptxSlideCount(pptx);
 if (slideCount !== plan.slides.length) throw new Error(`Expected ${plan.slides.length} output slides, got ${slideCount}`);
-await fs.mkdir(qaDir, { recursive: true });
+await fs.mkdir(verificationDir, { recursive: true });
 const namedText = await getPptxNamedShapeTexts(pptx);
 const namedImageHashes = await getPptxNamedImageHashes(pptx);
 
@@ -26,17 +26,15 @@ for (const [slideIndex, item] of plan.slides.entries()) {
     if (actual !== expectedValue) throw new Error(`Slide ${slideIndex + 1}, slot ${slot}: expected exact text ${JSON.stringify(expectedValue)}, got ${JSON.stringify(actual)}`);
   }
   if (item.kind === "dialogue") {
-    const actualHash = namedImageHashes.get(slideIndex + 1)?.get(spec.imageSlots.scene);
-    if (!actualHash) throw new Error(`Slide ${slideIndex + 1}, dialogue scene: no image named ${JSON.stringify(spec.imageSlots.scene)}.`);
+    const actualHash = namedImageHashes.get(slideIndex + 1)?.get("DIALOGUE_SCENE");
+    if (!actualHash) throw new Error(`Slide ${slideIndex + 1}, dialogue scene: no image named "DIALOGUE_SCENE".`);
     const expectedHash = createHash("sha256").update(await fs.readFile(path.resolve(path.dirname(planPath), item.scenePath))).digest("hex");
     if (actualHash !== expectedHash) throw new Error(`Slide ${slideIndex + 1}, dialogue scene: embedded image does not match ${JSON.stringify(item.scenePath)}.`);
   }
 }
-await fs.writeFile(path.join(qaDir, "technical-verification.json"), JSON.stringify({
+await fs.writeFile(path.join(verificationDir, "technical-verification.json"), JSON.stringify({
   slideCount,
   exactNamedText: true,
-  dialogueSceneAssets: true,
-  rendered: false,
-  renderReason: "Production batch verification is structural. Visual review is a separate user-requested action."
+  dialogueSceneAssets: true
 }, null, 2), "utf8");
-console.log(`Verified ${slideCount} slides, exact mapped text, dialogue scene assets, and heading casing without rendering to ${qaDir}.`);
+console.log(`Structurally verified ${slideCount} slides, exact mapped text, dialogue scene assets, and heading casing in ${verificationDir}.`);

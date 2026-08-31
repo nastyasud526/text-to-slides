@@ -1,0 +1,1838 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/pcvutcvy",
+    "id": "pcvutcvy",
+    "slide": 44,
+    "layoutId": "/ppt/slideLayouts/slideLayout2.xml",
+    "layoutName": "Blank slide",
+    "layoutType": "blank",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Другая 4",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#3F454F",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Bahnschrift Condensed",
+      "Bahnschrift SemiBold Condensed",
+      "Calibri",
+      "Calibri Light",
+      "Nunito"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout2.xml",
+      "name": "Blank slide",
+      "type": "blank",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "backgroundColor": "#EEF0F3",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fqhcn6lk",
+      "id": "4",
+      "name": "Shape 0",
+      "bbox": [
+        31.65,
+        0,
+        0,
+        119.04
+      ],
+      "geometry": "line",
+      "lineColor": "#F5340B",
+      "lineWidth": 2
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ep8ve1kz",
+      "id": "5",
+      "name": "TITLE",
+      "bbox": [
+        -29.63,
+        36.48,
+        302.4,
+        46.08
+      ],
+      "geometry": "rect",
+      "text": "ЭТАПЫ ПРОЦЕССА",
+      "textPreview": "ЭТАПЫ ПРОЦЕССА",
+      "resolvedFontSize": 23.04,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.96,
+        "autoFitLineSpaceReduction": 10000,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ЭТАПЫ ПРОЦЕССА"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ЭТАПЫ ПРОЦЕССА",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ЭТАПЫ ПРОЦЕССА",
+              "fontSize": 40,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "color": "#3F454F",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1szepg3q",
+      "id": "6",
+      "name": "CARD_1_TITLE",
+      "bbox": [
+        230.91,
+        514.75,
+        159.24,
+        38.78
+      ],
+      "geometry": "rect",
+      "text": "STRATEGIC PLANS",
+      "textPreview": "STRATEGIC PLANS",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "STRATEGIC PLANS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "STRATEGIC PLANS",
+          "runs": [
+            {
+              "index": 1,
+              "text": "STRATEGIC PLANS",
+              "typeface": "Bahnschrift Condensed",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/grqdgb25",
+      "id": "7",
+      "name": "CARD_1_BODY",
+      "bbox": [
+        149.28,
+        549.15,
+        329.89,
+        154.85
+      ],
+      "geometry": "rect",
+      "text": "This is the sample Dummy Text\ninsert your desired text here because\nthis is the dummy textThis is the sample Dummy Text\ninsert your desired text here because\nthis is the dummy text\n",
+      "textPreview": "This is the sample Dummy Text | insert your desired text here because | this is the dummy textThis is the sample Dummy Text | insert your...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 7,
+        "lines": [
+          {
+            "index": 1,
+            "text": "This is the sample Dummy Text"
+          },
+          {
+            "index": 2,
+            "text": "insert your desired text here because"
+          },
+          {
+            "index": 3,
+            "text": "this is the dummy textThis is the"
+          },
+          {
+            "index": 4,
+            "text": "sample Dummy Text"
+          },
+          {
+            "index": 5,
+            "text": "insert your desired text here because"
+          },
+          {
+            "index": 6,
+            "text": "this is the dummy text"
+          },
+          {
+            "index": 7,
+            "text": ""
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "This is the sample Dummy Text",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "This is the sample Dummy Text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "insert your desired text here because",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "insert your desired text here because",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "this is the dummy textThis is the sample Dummy Text",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "this is the dummy ",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            },
+            {
+              "index": 2,
+              "text": "text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            },
+            {
+              "index": 3,
+              "text": "This",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74",
+              "bold": true
+            },
+            {
+              "index": 4,
+              "text": " is the sample Dummy Text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "insert your desired text here because",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "insert your desired text here because",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "this is the dummy text",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "this is the dummy text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vuxcb2lg",
+      "id": "8",
+      "name": "CARD_2_TITLE",
+      "bbox": [
+        490.41,
+        52.02,
+        122.22,
+        38.78
+      ],
+      "geometry": "rect",
+      "text": "PAID SEARCH",
+      "textPreview": "PAID SEARCH",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PAID SEARCH"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PAID SEARCH",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "PAID SEARCH",
+              "typeface": "Bahnschrift Condensed",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ut4b2xkv",
+      "id": "9",
+      "name": "CARD_2_BODY",
+      "bbox": [
+        386.58,
+        90.79,
+        329.89,
+        181.06
+      ],
+      "geometry": "rect",
+      "text": "This is the sample Dummy Text\ninsert your desired text here because\nthis is the dummy textThis is the sample Dummy Text\ninsert your desired text here because\nthis is the dummy text\n",
+      "textPreview": "This is the sample Dummy Text | insert your desired text here because | this is the dummy textThis is the sample Dummy Text | insert your...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 7,
+        "lines": [
+          {
+            "index": 1,
+            "text": "This is the sample Dummy Text"
+          },
+          {
+            "index": 2,
+            "text": "insert your desired text here because"
+          },
+          {
+            "index": 3,
+            "text": "this is the dummy textThis is the"
+          },
+          {
+            "index": 4,
+            "text": "sample Dummy Text"
+          },
+          {
+            "index": 5,
+            "text": "insert your desired text here because"
+          },
+          {
+            "index": 6,
+            "text": "this is the dummy text"
+          },
+          {
+            "index": 7,
+            "text": ""
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "This is the sample Dummy Text",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "This is the sample Dummy Text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "insert your desired text here because",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "insert your desired text here because",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "this is the dummy textThis is the sample Dummy Text",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "this is the dummy ",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            },
+            {
+              "index": 2,
+              "text": "text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            },
+            {
+              "index": 3,
+              "text": "This",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74",
+              "bold": true
+            },
+            {
+              "index": 4,
+              "text": " is the sample Dummy Text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "insert your desired text here because",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "insert your desired text here because",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "this is the dummy text",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "this is the dummy text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8rqh8jul",
+      "id": "10",
+      "name": "CARD_3_TITLE",
+      "bbox": [
+        712.14,
+        514.75,
+        147.8,
+        38.78
+      ],
+      "geometry": "rect",
+      "text": "TACTICAL PLANS",
+      "textPreview": "TACTICAL PLANS",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "TACTICAL PLANS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TACTICAL PLANS",
+          "runs": [
+            {
+              "index": 1,
+              "text": "TACTICAL PLANS",
+              "typeface": "Bahnschrift Condensed",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tszihov6",
+      "id": "11",
+      "name": "CARD_3_BODY",
+      "bbox": [
+        623.87,
+        549.15,
+        329.89,
+        154.85
+      ],
+      "geometry": "rect",
+      "text": "This is the sample Dummy Text\ninsert your desired text here because\nthis is the dummy textThis is the sample Dummy Text\ninsert your desired text here because\nthis is the dummy text\n",
+      "textPreview": "This is the sample Dummy Text | insert your desired text here because | this is the dummy textThis is the sample Dummy Text | insert your...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 7,
+        "lines": [
+          {
+            "index": 1,
+            "text": "This is the sample Dummy Text"
+          },
+          {
+            "index": 2,
+            "text": "insert your desired text here because"
+          },
+          {
+            "index": 3,
+            "text": "this is the dummy textThis is the"
+          },
+          {
+            "index": 4,
+            "text": "sample Dummy Text"
+          },
+          {
+            "index": 5,
+            "text": "insert your desired text here because"
+          },
+          {
+            "index": 6,
+            "text": "this is the dummy text"
+          },
+          {
+            "index": 7,
+            "text": ""
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "This is the sample Dummy Text",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "This is the sample Dummy Text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "insert your desired text here because",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "insert your desired text here because",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "this is the dummy textThis is the sample Dummy Text",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "this is the dummy ",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            },
+            {
+              "index": 2,
+              "text": "text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            },
+            {
+              "index": 3,
+              "text": "This",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74",
+              "bold": true
+            },
+            {
+              "index": 4,
+              "text": " is the sample Dummy Text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "insert your desired text here because",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "insert your desired text here because",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "this is the dummy text",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "this is the dummy text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6poz69cf",
+      "id": "12",
+      "name": "Freeform 7",
+      "bbox": [
+        195.63,
+        271.17,
+        949.07,
+        229.47
+      ],
+      "geometry": "custom",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "lineColor": "bg1",
+      "lineWidth": 3.33
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7qx0fed0",
+      "id": "13",
+      "name": "Line 5",
+      "bbox": [
+        446.72,
+        449.11,
+        0,
+        0
+      ],
+      "geometry": "line",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "lineColor": "#231F20",
+      "lineWidth": 1.83
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gvqhcjuh",
+      "id": "14",
+      "name": "Line 6",
+      "bbox": [
+        663.18,
+        409.75,
+        0,
+        0
+      ],
+      "geometry": "line",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "lineColor": "#231F20",
+      "lineWidth": 1.83
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hwzilov2",
+      "id": "15",
+      "name": "Line 12",
+      "bbox": [
+        928.17,
+        449.11,
+        0,
+        0
+      ],
+      "geometry": "line",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "lineColor": "#231F20",
+      "lineWidth": 1.83
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ut8za9cr",
+      "id": "16",
+      "name": "Freeform 8",
+      "bbox": [
+        227.34,
+        307.12,
+        173.77,
+        192.84
+      ],
+      "geometry": "custom",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vuh0jedw",
+      "id": "17",
+      "name": "Oval 9",
+      "bbox": [
+        266.13,
+        355.24,
+        96.19,
+        96.6
+      ],
+      "geometry": "ellipse",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#FB4D4D",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x0fi9kvy",
+      "id": "19",
+      "name": "Freeform 10",
+      "bbox": [
+        464.64,
+        271.85,
+        173.77,
+        193.3
+      ],
+      "rotation": 0,
+      "geometry": "custom",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dw7ydgnm",
+      "id": "20",
+      "name": "Oval 11",
+      "bbox": [
+        503.5,
+        320.2,
+        96.05,
+        96.6
+      ],
+      "rotation": 0,
+      "geometry": "ellipse",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cvyx4b61",
+      "id": "21",
+      "name": "Freeform 13",
+      "bbox": [
+        701.93,
+        307.12,
+        173.77,
+        192.84
+      ],
+      "geometry": "custom",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#1CAA2D",
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bu5gb65w",
+      "id": "22",
+      "name": "Oval 14",
+      "bbox": [
+        740.79,
+        355.24,
+        96.05,
+        96.6
+      ],
+      "geometry": "ellipse",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qtwf2lob",
+      "id": "23",
+      "name": "Freeform 15",
+      "bbox": [
+        939.22,
+        271.85,
+        173.77,
+        193.3
+      ],
+      "geometry": "custom",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lk7yh0ny",
+      "id": "24",
+      "name": "Oval 16",
+      "bbox": [
+        978.01,
+        320.2,
+        96.19,
+        96.6
+      ],
+      "geometry": "ellipse",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#6ADE78",
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0jyx8v6d",
+      "id": "25",
+      "name": "Oval 11",
+      "bbox": [
+        503.5,
+        319.52,
+        96.05,
+        96.6
+      ],
+      "geometry": "ellipse",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "#F97A07",
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zipgfq5s",
+      "id": "26",
+      "name": "CARD_4_TITLE",
+      "bbox": [
+        950.02,
+        52.02,
+        152.17,
+        38.78
+      ],
+      "geometry": "rect",
+      "text": "LAND NURTURING",
+      "textPreview": "LAND NURTURING",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "LAND NURTURING"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "LAND NURTURING",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "LAND NURTURING",
+              "typeface": "Bahnschrift Condensed",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yxgf6lo7",
+      "id": "27",
+      "name": "CARD_4_BODY",
+      "bbox": [
+        861.16,
+        90.79,
+        329.89,
+        181.06
+      ],
+      "geometry": "rect",
+      "text": "This is the sample Dummy Text\ninsert your desired text here because\nthis is the dummy text This is the sample Dummy Text\ninsert your desired text here because\nthis is the dummy text\n",
+      "textPreview": "This is the sample Dummy Text | insert your desired text here because | this is the dummy text This is the sample Dummy Text | insert you...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 7,
+        "lines": [
+          {
+            "index": 1,
+            "text": "This is the sample Dummy Text"
+          },
+          {
+            "index": 2,
+            "text": "insert your desired text here because"
+          },
+          {
+            "index": 3,
+            "text": "this is the dummy text This is the"
+          },
+          {
+            "index": 4,
+            "text": "sample Dummy Text"
+          },
+          {
+            "index": 5,
+            "text": "insert your desired text here because"
+          },
+          {
+            "index": 6,
+            "text": "this is the dummy text"
+          },
+          {
+            "index": 7,
+            "text": ""
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "This is the sample Dummy Text",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "This is the sample Dummy Text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "insert your desired text here because",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "insert your desired text here because",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "this is the dummy text This is the sample Dummy Text",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "this is the dummy text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            },
+            {
+              "index": 3,
+              "text": "This is the sample Dummy Text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "insert your desired text here because",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "insert your desired text here because",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "this is the dummy text",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "this is the dummy text",
+              "fontSize": 18.67,
+              "typeface": "Nunito",
+              "color": "#676C74"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9oryl0nu",
+      "id": "28",
+      "name": "Freeform 30",
+      "bbox": [
+        528.43,
+        344.81,
+        46.18,
+        46.03
+      ],
+      "geometry": "custom",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8nixcv69",
+      "id": "29",
+      "name": "Freeform 39",
+      "bbox": [
+        291.43,
+        380.9,
+        45.59,
+        45.29
+      ],
+      "geometry": "custom",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineWidth": 0
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6h83qd0f",
+      "id": "30",
+      "name": "Freeform 41",
+      "bbox": [
+        1003.24,
+        345.27,
+        45.74,
+        46.47
+      ],
+      "geometry": "custom",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7ih4jyh0",
+      "id": "31",
+      "name": "Freeform 115",
+      "bbox": [
+        765.95,
+        380.6,
+        45.74,
+        45.88
+      ],
+      "geometry": "custom",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "tx2",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

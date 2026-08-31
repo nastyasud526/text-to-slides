@@ -13,7 +13,8 @@ const overflow = [];
 
 for (const [index, item] of plan.slides.entries()) {
   const spec = item.kind === "title" ? catalog.titleTemplate : catalog.compositions[item.composition];
-  for (const [slot, value] of Object.entries(item.slots)) {
+  const values = item.slots;
+  for (const [slot, value] of Object.entries(values)) {
     const declared = spec.capacity?.[slot];
     if (declared === undefined) continue;
     const capacity = typeof declared === "number" ? { maxChars: declared } : declared;

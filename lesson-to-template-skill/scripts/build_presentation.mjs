@@ -1,13 +1,15 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { loadArtifactTool, usage } from "./runtime.mjs";
-import { resolveTemplate, validateCatalog, validatePlan } from "./validate.mjs";
+import { dialogueTranscript, resolveTemplate, validateCatalog, validatePlan } from "./validate.mjs";
 import { patchPptxTextRuns } from "./patch_text_runs.mjs";
+import { preflightLibrary } from "./preflight_library.mjs";
 
 const [source, catalogPath, planPath, out] = process.argv.slice(2);
 if (!source || !catalogPath || !planPath || !out) usage("build_presentation.mjs", "<template.pptx> <catalog.json> <lesson-plan.json> <output.pptx>");
 const catalog = validateCatalog(JSON.parse(await fs.readFile(catalogPath, "utf8")));
 const plan = validatePlan(JSON.parse(await fs.readFile(planPath, "utf8")), catalog);
+await preflightLibrary(source, catalog);
 const { FileBlob, PresentationFile } = await loadArtifactTool();
 const deck = await PresentationFile.importPptx(await FileBlob.load(source));
 const originals = deck.slides.items.slice();
@@ -15,6 +17,7 @@ const outputSlides = [];
 const textPatches = [];
 const imagePatches = [];
 const stripOperations = [];
+const dialogueOperations = [];
 const isHeadingSlot = (slot) => slot === "title" || slot === "subtitle" || /_(?:title|label)$/.test(slot);
 const uppercaseSlotValue = (value) => typeof value === "string"
   ? value.toUpperCase()
@@ -25,8 +28,17 @@ for (const [planIndex, item] of plan.slides.entries()) {
   const sourceTemplate = resolveTemplate(catalog, spec, `plan.slides[${planIndex}]`);
   if (sourceTemplate.sourceSlide > originals.length) throw new Error(`plan.slides[${planIndex}] points to missing source slide ${sourceTemplate.sourceSlide}`);
   const clone = originals[sourceTemplate.sourceSlide - 1].duplicate();
+  if (item.kind === "dialogue") {
+    dialogueOperations.push({
+      slideIndex: planIndex + 1,
+      objectName: "DIALOGUE_SCENE",
+      imagePath: path.resolve(path.dirname(planPath), item.scenePath)
+    });
+  }
   for (const [slot, value] of Object.entries(item.slots)) {
-    const finalValue = isHeadingSlot(slot) ? uppercaseSlotValue(value) : value;
+    const finalValue = item.kind === "dialogue" && slot === "dialogue"
+      ? dialogueTranscript(item, `plan.slides[${planIndex}]`)
+      : (isHeadingSlot(slot) ? uppercaseSlotValue(value) : value);
     textPatches.push({
       slideIndex: planIndex + 1,
       slot,
@@ -38,15 +50,7 @@ for (const [planIndex, item] of plan.slides.entries()) {
   if (spec.stripToSlots) {
     stripOperations.push({
       slideIndex: planIndex + 1,
-      keepObjectNames: [...new Set(Object.values(spec.slots))]
-    });
-  }
-  if (item.kind === "dialogue") {
-    imagePatches.push({
-      slideIndex: planIndex + 1,
-      slot: "scene",
-      objectName: spec.imageSlots.scene,
-      imagePath: path.resolve(path.dirname(planPath), item.scenePath)
+      keepObjectNames: [...new Set([...Object.values(spec.slots), ...(item.kind === "dialogue" ? ["DIALOGUE_SCENE"] : [])])]
     });
   }
   outputSlides.push(clone);
@@ -56,5 +60,5 @@ for (const [planIndex, item] of plan.slides.entries()) {
 for (let index = originals.length - 1; index >= 0; index -= 1) originals[index].delete();
 for (const [index, slide] of outputSlides.entries()) slide.moveTo(index);
 await (await PresentationFile.exportPptx(deck)).save(out);
-await patchPptxTextRuns(out, textPatches, stripOperations, imagePatches);
-console.log(`Created ${outputSlides.length} slides from selected templates only, replacing text and ${imagePatches.length} dialogue scene image(s) inside existing template objects.`);
+await patchPptxTextRuns(out, textPatches, stripOperations, imagePatches, dialogueOperations);
+console.log(`Created ${outputSlides.length} slides from selected templates only, including ${dialogueOperations.length} dialogue slide(s) assembled on the first blank template slide.`);

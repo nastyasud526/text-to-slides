@@ -1,0 +1,1638 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/jyhsreh4",
+    "id": "jyhsreh4",
+    "slide": 37,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Другая 4",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#3F454F",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Bahnschrift SemiBold Condensed",
+      "Calibri",
+      "Calibri Light",
+      "Nunito"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "backgroundColor": "#EEF0F3",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ja54fehg",
+      "id": "42",
+      "name": "Рисунок 38",
+      "bbox": [
+        453.43,
+        272.21,
+        367.6,
+        261.13
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image55.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 443
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image55.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 443
+      }
+    },
+    {
+      "order": 2,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ipw3m90v",
+      "id": "43",
+      "name": "Рисунок 39",
+      "bbox": [
+        845.73,
+        272.21,
+        367.6,
+        261.13
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image55.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 443
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image55.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 443
+      }
+    },
+    {
+      "order": 3,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/tg7mlozi",
+      "id": "44",
+      "name": "Рисунок 37",
+      "bbox": [
+        66.67,
+        269.54,
+        367.6,
+        261.13
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image55.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 443
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image55.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 443
+      }
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ixc7it0f",
+      "id": "6",
+      "name": "TITLE",
+      "bbox": [
+        87.54,
+        89.44,
+        1000,
+        58.67
+      ],
+      "geometry": "rect",
+      "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ",
+      "textPreview": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ",
+              "fontSize": 40,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "color": "#3F454F",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/sfy5sjid",
+      "id": "45",
+      "name": "Image 3",
+      "bbox": [
+        1109.81,
+        64,
+        96.83,
+        30.67
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image33.png",
+        "contentType": "image/png",
+        "byteLength": 47754
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image33.png",
+        "contentType": "image/png",
+        "byteLength": 47754
+      }
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4vy9wnyp",
+      "id": "8",
+      "name": "INTRO",
+      "bbox": [
+        90.67,
+        188,
+        933.33,
+        53.33
+      ],
+      "geometry": "rect",
+      "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа.",
+      "textPreview": "Качество держится на трёх привычках, которые не зависят от сложности заказа.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Качество",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 3,
+              "text": "держится",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 4,
+              "text": " ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 5,
+              "text": "на",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 7,
+              "text": "трёх",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 8,
+              "text": " ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 9,
+              "text": "привычках",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 10,
+              "text": ", ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 11,
+              "text": "которые",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 12,
+              "text": " ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 13,
+              "text": "не",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 14,
+              "text": " ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 15,
+              "text": "зависят",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 16,
+              "text": " ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 17,
+              "text": "от",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 18,
+              "text": " ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 19,
+              "text": "сложности",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 20,
+              "text": " ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 21,
+              "text": "заказа",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 22,
+              "text": ".",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z6ds369w",
+      "id": "16",
+      "name": "CARD_1_TITLE",
+      "bbox": [
+        116,
+        308.79,
+        286.67,
+        33.33
+      ],
+      "geometry": "rect",
+      "text": "ВРЕМЯ",
+      "textPreview": "ВРЕМЯ",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ВРЕМЯ"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ВРЕМЯ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "ВРЕМЯ",
+              "fontSize": 22.67,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "color": "#F5340B",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y54ra18b",
+      "id": "17",
+      "name": "CARD_1_BODY",
+      "bbox": [
+        116,
+        348.79,
+        286.67,
+        133.33
+      ],
+      "geometry": "rect",
+      "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки».",
+      "textPreview": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки».",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Проверки и затяжка идут по"
+          },
+          {
+            "index": 2,
+            "text": "регламенту, а не «когда"
+          },
+          {
+            "index": 3,
+            "text": "дойдут руки»."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки».",
+          "lineSpacingPercent": 125000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "Проверки",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 2,
+              "text": " и ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 3,
+              "text": "затяжка",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 4,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 5,
+              "text": "идут",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 6,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 7,
+              "text": "по",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 8,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 9,
+              "text": "регламенту",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 10,
+              "text": ", а ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 11,
+              "text": "не",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 12,
+              "text": " «",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 13,
+              "text": "когда",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 14,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 15,
+              "text": "дойдут",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 16,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 17,
+              "text": "руки",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 18,
+              "text": "».",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/7ep4jehs",
+      "id": "46",
+      "name": "Image 5",
+      "bbox": [
+        516.67,
+        308.67,
+        28,
+        28
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image59.png",
+        "contentType": "image/png",
+        "byteLength": 1960
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image59.png",
+        "contentType": "image/png",
+        "byteLength": 1960
+      }
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hknu94f6",
+      "id": "25",
+      "name": "CARD_2_TITLE",
+      "bbox": [
+        501.33,
+        308.67,
+        286.67,
+        33.33
+      ],
+      "geometry": "rect",
+      "text": "БЕЗОПАСНОСТЬ",
+      "textPreview": "БЕЗОПАСНОСТЬ",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "БЕЗОПАСНОСТЬ"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "БЕЗОПАСНОСТЬ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "БЕЗОПАСНОСТЬ",
+              "fontSize": 22.67,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "color": "#21C535",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uhwbe9gf",
+      "id": "26",
+      "name": "CARD_2_BODY",
+      "bbox": [
+        501.33,
+        348.67,
+        286.67,
+        133.33
+      ],
+      "geometry": "rect",
+      "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после.",
+      "textPreview": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "СИЗ надеты, зона свободна,"
+          },
+          {
+            "index": 2,
+            "text": "инструмент исправен — до"
+          },
+          {
+            "index": 3,
+            "text": "начала операции, не после."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после.",
+          "lineSpacingPercent": 125000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "СИЗ ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 2,
+              "text": "надеты",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 3,
+              "text": ", ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 4,
+              "text": "зона",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 5,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 6,
+              "text": "свободна",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 7,
+              "text": ", ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 8,
+              "text": "инструмент",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 9,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 10,
+              "text": "исправен",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 11,
+              "text": " — ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 12,
+              "text": "до",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 13,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 14,
+              "text": "начала",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 15,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 16,
+              "text": "операции",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 17,
+              "text": ", ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 18,
+              "text": "не",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 19,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 20,
+              "text": "после",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 21,
+              "text": ".",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/6dgnqt07",
+      "id": "47",
+      "name": "Image 6",
+      "bbox": [
+        892.67,
+        308.67,
+        28,
+        28
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image60.png",
+        "contentType": "image/png",
+        "byteLength": 1154
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image60.png",
+        "contentType": "image/png",
+        "byteLength": 1154
+      }
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/je5wzu1s",
+      "id": "34",
+      "name": "CARD_3_TITLE",
+      "bbox": [
+        892.67,
+        308.67,
+        286.67,
+        33.33
+      ],
+      "geometry": "rect",
+      "text": "ДОСТОВЕРНОСТЬ",
+      "textPreview": "ДОСТОВЕРНОСТЬ",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ДОСТОВЕРНОСТЬ"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ДОСТОВЕРНОСТЬ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "ДОСТОВЕРНОСТЬ",
+              "fontSize": 22.67,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "color": "#F97A07",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/idcvqp07",
+      "id": "35",
+      "name": "CARD_3_BODY",
+      "bbox": [
+        892.67,
+        348.67,
+        309.33,
+        133.33
+      ],
+      "geometry": "rect",
+      "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу».",
+      "textPreview": "В журнал вносят то, что реально сделано, без округлений и «потом допишу».",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "В журнал вносят то, что"
+          },
+          {
+            "index": 2,
+            "text": "реально сделано, без"
+          },
+          {
+            "index": 3,
+            "text": "округлений и «потом допишу»."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу».",
+          "lineSpacingPercent": 125000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "В ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 2,
+              "text": "журнал",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 3,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 4,
+              "text": "вносят",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 5,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 6,
+              "text": "то",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 7,
+              "text": ", ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 8,
+              "text": "что",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 9,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 10,
+              "text": "реально",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 11,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 12,
+              "text": "сделано",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 13,
+              "text": ", ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 14,
+              "text": "без",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 15,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 16,
+              "text": "округлений",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 17,
+              "text": " и «",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 18,
+              "text": "потом",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 19,
+              "text": " ",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 20,
+              "text": "допишу",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 21,
+              "text": "».",
+              "fontSize": 19.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ryxofmtc",
+      "id": "41",
+      "name": "Shape 0",
+      "bbox": [
+        76.42,
+        0,
+        0,
+        148.1
+      ],
+      "geometry": "line",
+      "lineColor": "#F5340B",
+      "lineWidth": 2
+    },
+    {
+      "order": 16,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/9k3m94ze",
+      "id": "48",
+      "name": "Рисунок 2",
+      "bbox": [
+        384.94,
+        779.77,
+        195,
+        195
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image16.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1006
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image16.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1006
+      }
+    },
+    {
+      "order": 17,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/8julgzit",
+      "id": "49",
+      "name": "Рисунок 4",
+      "bbox": [
+        1318.54,
+        -13.75,
+        254,
+        254
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image17.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1261
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image17.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1261
+      }
+    },
+    {
+      "order": 18,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ypsjq5gr",
+      "id": "50",
+      "name": "Рисунок 6",
+      "bbox": [
+        -253.14,
+        543.4,
+        188,
+        188
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image33.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 892
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image33.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 892
+      }
+    },
+    {
+      "order": 19,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/zq1kjqxc",
+      "id": "51",
+      "name": "Рисунок 8",
+      "bbox": [
+        892.67,
+        -26.77,
+        132,
+        132
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image34.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 909
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image34.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 909
+      }
+    },
+    {
+      "order": 20,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/0ra1svyx",
+      "id": "52",
+      "name": "Рисунок 10",
+      "bbox": [
+        90.67,
+        520.1,
+        697.33,
+        697.33
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image56.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 999
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image56.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 999
+      }
+    },
+    {
+      "order": 21,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/lsj2l0fi",
+      "id": "53",
+      "name": "Рисунок 12",
+      "bbox": [
+        917.07,
+        -303.75,
+        242,
+        242
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image21.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1206
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image21.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1206
+      }
+    },
+    {
+      "order": 22,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/mtcju5gn",
+      "id": "54",
+      "name": "Рисунок 14",
+      "bbox": [
+        -28.42,
+        731.4,
+        390,
+        390
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image22.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image22.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      }
+    },
+    {
+      "order": 23,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/nulknax8",
+      "id": "55",
+      "name": "Рисунок 16",
+      "bbox": [
+        -277.64,
+        296.83,
+        237,
+        237
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image35.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1265
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image35.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1265
+      }
+    },
+    {
+      "order": 24,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/8vu1wfyt",
+      "id": "56",
+      "name": "Рисунок 18",
+      "bbox": [
+        40.15,
+        -346.75,
+        328,
+        328
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image24.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1287
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image24.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1287
+      }
+    },
+    {
+      "order": 25,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/9g32pkfe",
+      "id": "57",
+      "name": "Рисунок 20",
+      "bbox": [
+        1328.43,
+        234.36,
+        212,
+        212
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image25.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image25.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      }
+    },
+    {
+      "order": 26,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/2x8jilgj",
+      "id": "58",
+      "name": "Рисунок 22",
+      "bbox": [
+        852.07,
+        803.77,
+        130,
+        130
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image36.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 834
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image36.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 834
+      }
+    },
+    {
+      "order": 27,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/3yh0b6x4",
+      "id": "59",
+      "name": "Рисунок 24",
+      "bbox": [
+        -337.03,
+        -60.75,
+        348,
+        348
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image37.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1545
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image37.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1545
+      }
+    },
+    {
+      "order": 28,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/72dgjmdw",
+      "id": "60",
+      "name": "Рисунок 35",
+      "bbox": [
+        384.94,
+        -227.87,
+        169,
+        169
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image38.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1124
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image38.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1124
+      }
+    },
+    {
+      "order": 29,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/614zqhwb",
+      "id": "61",
+      "name": "Рисунок 36",
+      "bbox": [
+        731.96,
+        -117.33,
+        212,
+        212
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image39.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image39.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      }
+    }
+  ],
+  "composeRuns": []
+}

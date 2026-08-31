@@ -32,7 +32,10 @@ function findMatchingElement(xml, start, tag) {
   let match;
   while ((match = token.exec(xml))) {
     const full = match[0];
-    if (full.endsWith("/>")) continue;
+    if (full.endsWith("/>")) {
+      if (match.index === start && depth === 0) return token.lastIndex;
+      continue;
+    }
     if (!match[1]) depth += 1;
     else depth -= 1;
     if (depth === 0) return token.lastIndex;
@@ -213,6 +216,7 @@ function stripSlideToNamedShapes(xml, operation) {
     for (const range of findElementRanges(xml.slice(spTreeStart, spTreeEnd), tag)) {
       const absolute = { ...range, start: range.start + spTreeStart, end: range.end + spTreeStart };
       if (tag === "p:sp" && keep.has(shapeObjectName(range.xml))) continue;
+      if (tag === "p:pic" && keep.has(pictureObjectName(range.xml))) continue;
       if (tag === "p:grpSp" && findShapeRanges(range.xml).some((shape) => keep.has(shapeObjectName(shape.xml)))) continue;
       removals.push(absolute);
     }
@@ -224,12 +228,53 @@ function stripSlideToNamedShapes(xml, operation) {
   let result = xml;
   for (const removal of outermost) result = `${result.slice(0, removal.start)}${result.slice(removal.end)}`;
   for (const objectName of keep) {
-    const matches = findShapeRanges(result).filter((shape) => shapeObjectName(shape.xml) === objectName);
-    if (matches.length !== 1) {
-      throw new Error(`Slide ${operation.slideIndex}: expected one retained shape named ${JSON.stringify(objectName)}, found ${matches.length}.`);
+    const shapeMatches = findShapeRanges(result).filter((shape) => shapeObjectName(shape.xml) === objectName);
+    const pictureMatches = findElementRanges(result, "p:pic").filter((picture) => pictureObjectName(picture.xml) === objectName);
+    const retainedCount = shapeMatches.length + pictureMatches.length;
+    if (retainedCount !== 1) {
+      throw new Error(`Slide ${operation.slideIndex}: expected one retained object named ${JSON.stringify(objectName)}, found ${retainedCount}.`);
     }
   }
   return result;
+}
+
+function dialoguePicture(objectName, relationshipId, id) {
+  return `<p:pic><p:nvPicPr><p:cNvPr id="${id}" name="${escapeXml(objectName)}"/><p:cNvPicPr><a:picLocks noChangeAspect="1"/></p:cNvPicPr><p:nvPr/></p:nvPicPr><p:blipFill><a:blip r:embed="${escapeXml(relationshipId)}"/><a:stretch><a:fillRect/></a:stretch></p:blipFill><p:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="12192000" cy="6858000"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></p:spPr></p:pic>`;
+}
+
+function nextShapeId(xml) {
+  let maximum = 0;
+  for (const match of xml.matchAll(/<p:cNvPr\b[^>]*\bid="(\d+)"[^>]*\/?>(?:<\/p:cNvPr>)?/g)) maximum = Math.max(maximum, Number(match[1]));
+  return maximum + 1;
+}
+
+function insertDialogueScene(xml, operation, relationshipId) {
+  let namespaced = xml.replace(/<p:sld(?=\s|>)([^>]*)>/, (opening, attributes) => {
+    const aNamespace = /\bxmlns:a=/.test(opening) ? "" : ' xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"';
+    const rNamespace = /\bxmlns:r=/.test(opening) ? "" : ' xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"';
+    return `<p:sld${attributes}${aNamespace}${rNamespace}>`;
+  });
+  const spTreeStart = namespaced.indexOf("<p:spTree");
+  if (spTreeStart < 0) throw new Error(`Slide ${operation.slideIndex}: missing <p:spTree>.`);
+  const groupPropertiesStart = namespaced.indexOf("<p:grpSpPr", spTreeStart);
+  if (groupPropertiesStart < 0) throw new Error(`Slide ${operation.slideIndex}: missing <p:grpSpPr>.`);
+  const groupPropertiesEnd = findMatchingElement(namespaced, groupPropertiesStart, "p:grpSpPr");
+  return `${namespaced.slice(0, groupPropertiesEnd)}${dialoguePicture(operation.objectName, relationshipId, nextShapeId(namespaced))}${namespaced.slice(groupPropertiesEnd)}`;
+}
+
+function appendRelationship(xml, relationshipId, target) {
+  if (relationshipTarget(xml, relationshipId)) throw new Error(`Relationship ${JSON.stringify(relationshipId)} already exists.`);
+  const closing = xml.lastIndexOf("</Relationships>");
+  if (closing < 0) throw new Error("Slide relationships XML has no closing Relationships element.");
+  const entry = `<Relationship Id="${escapeXml(relationshipId)}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="${escapeXml(target)}"/>`;
+  return `${xml.slice(0, closing)}${entry}${xml.slice(closing)}`;
+}
+
+function ensurePngContentType(xml) {
+  if (/Extension="png"/i.test(xml)) return xml;
+  const closing = xml.lastIndexOf("</Types>");
+  if (closing < 0) throw new Error("[Content_Types].xml has no closing Types element.");
+  return `${xml.slice(0, closing)}<Default Extension="png" ContentType="image/png"/>${xml.slice(closing)}`;
 }
 
 export async function getPptxNamedShapeTexts(pptxPath) {
@@ -294,13 +339,31 @@ export async function getPptxSlideCount(pptxPath) {
   return (await orderedSlideFileNames(zip)).length;
 }
 
-export async function patchPptxTextRuns(pptxPath, patches, stripOperations = [], imagePatches = []) {
+export async function patchPptxTextRuns(pptxPath, patches, stripOperations = [], imagePatches = [], dialogueOperations = []) {
   const modules = process.env.RUNTIME_NODE_MODULES;
   if (!modules) throw new Error("RUNTIME_NODE_MODULES is not set.");
   const require = createRequire(path.join(modules, "lesson-to-template-runtime.cjs"));
   const JSZip = require("jszip");
   const zip = await JSZip.loadAsync(await fs.readFile(pptxPath));
   const slideFiles = await orderedSlideFileNames(zip);
+  for (const operation of dialogueOperations) {
+    const fileName = slideFiles[operation.slideIndex - 1];
+    if (!fileName) throw new Error(`Missing output slide ${operation.slideIndex} for dialogue scene.`);
+    const slideFile = zip.file(fileName);
+    const relationshipsFileName = slideRelationshipsFileName(fileName);
+    const relationshipsFile = zip.file(relationshipsFileName);
+    if (!slideFile || !relationshipsFile) throw new Error(`Slide ${operation.slideIndex}: missing dialogue relationship data.`);
+    await fs.access(operation.imagePath);
+    if (path.extname(operation.imagePath).toLowerCase() !== ".png") throw new Error(`Slide ${operation.slideIndex}: dialogue scene must be a PNG.`);
+    const relationshipId = `rIdDialogueScene${operation.slideIndex}`;
+    const mediaFileName = `ppt/media/dialogue-scene-${String(operation.slideIndex).padStart(3, "0")}.png`;
+    zip.file(mediaFileName, await fs.readFile(operation.imagePath));
+    zip.file(fileName, insertDialogueScene(await slideFile.async("string"), operation, relationshipId));
+    zip.file(relationshipsFileName, appendRelationship(await relationshipsFile.async("string"), relationshipId, `../media/${path.posix.basename(mediaFileName)}`));
+    const contentTypes = await zip.file("[Content_Types].xml")?.async("string");
+    if (!contentTypes) throw new Error("PPTX is missing [Content_Types].xml.");
+    zip.file("[Content_Types].xml", ensurePngContentType(contentTypes));
+  }
   for (const operation of stripOperations) {
     const fileName = slideFiles[operation.slideIndex - 1];
     if (!fileName) throw new Error(`Missing output slide ${operation.slideIndex} in exported presentation.`);

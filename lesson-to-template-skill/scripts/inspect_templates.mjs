@@ -66,7 +66,7 @@ function relationshipTargets(relsXml, typeFragment) {
   }
   return targets.filter(Boolean);
 }
-function relationshipPath(target) { return path.posix.normalize(path.posix.join("ppt/slides", target)); }
+function relationshipPath(target) { return path.posix.normalize(target.startsWith("/") ? target.slice(1) : path.posix.join("ppt/slides", target)); }
 function templateIdFromMetadata(metadata) {
   const match = /(?:^|\n)\s*template_id\s*:\s*([A-Za-z0-9._-]+)\s*(?:$|\n)/im.exec(metadata);
   return match?.[1] ?? null;
