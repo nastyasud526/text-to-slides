@@ -6,6 +6,10 @@ function integer(value, label, minimum = 0) {
   if (!Number.isInteger(value) || value < minimum) throw new Error(`${label} must be an integer greater than or equal to ${minimum}`);
 }
 
+function nonEmptyString(value, label) {
+  if (typeof value !== "string" || !value.trim()) throw new Error(`${label} must be a non-empty string`);
+}
+
 function slotBindings(value, label) {
   object(value, label);
   const usedNames = new Set();
@@ -43,15 +47,20 @@ function runStyleBindings(value, slots, label) {
   }
 }
 
-function template(value, label, requireTitleSlot) {
+function template(value, label, requireTitleSlot, requireContext = true) {
   object(value, label);
-  if (typeof value.templateId !== "string" || !value.templateId.trim()) throw new Error(`${label}.templateId must be a non-empty string`);
+  nonEmptyString(value.templateId, `${label}.templateId`);
   slotBindings(value.slots, `${label}.slots`);
   imageBindings(value.imageSlots, `${label}.imageSlots`);
   runStyleBindings(value.runStyles, value.slots, `${label}.runStyles`);
   if (value.stripToSlots !== undefined && typeof value.stripToSlots !== "boolean") throw new Error(`${label}.stripToSlots must be boolean`);
   if (value.stripToSlots && value.imageSlots && Object.keys(value.imageSlots).length) throw new Error(`${label} cannot combine stripToSlots with imageSlots`);
   if (requireTitleSlot && value.slots.title === undefined) throw new Error(`${label}.slots.title is required`);
+  if (requireContext) {
+    if (!Array.isArray(value.groups) || !value.groups.length || value.groups.some((group) => typeof group !== "string" || !group.trim())) throw new Error(`${label}.groups must be a non-empty array of strings`);
+    nonEmptyString(value.description, `${label}.description`);
+    nonEmptyString(value.example, `${label}.example`);
+  }
 }
 
 export function slotText(value) {
@@ -116,8 +125,16 @@ export function resolveTemplate(catalog, spec, label = "template") {
 
 export function validateCatalog(catalog) {
   object(catalog, "catalog");
-  if (catalog.version !== 2) throw new Error("catalog.version must equal 2; regenerate it with inspect_templates.mjs and add template_id comments to reusable slides");
+  if (catalog.version !== 2) throw new Error("catalog.version must equal 2; rebuild it with the separate prepare-template-library skill");
   catalogSlides(catalog.slides);
+  object(catalog.groups, "catalog.groups");
+  if (!Object.keys(catalog.groups).length) throw new Error("catalog.groups must contain at least one group");
+  for (const [groupName, group] of Object.entries(catalog.groups)) {
+    if (!groupName.trim()) throw new Error("catalog.groups has an empty name");
+    object(group, `catalog.groups.${groupName}`);
+    nonEmptyString(group.description, `catalog.groups.${groupName}.description`);
+    if (!Array.isArray(group.templates) || !group.templates.length || group.templates.some((name) => typeof name !== "string" || !name.trim())) throw new Error(`catalog.groups.${groupName}.templates must be a non-empty array of composition IDs`);
+  }
   template(catalog.titleTemplate, "catalog.titleTemplate", true);
   resolveTemplate(catalog, catalog.titleTemplate, "catalog.titleTemplate");
   object(catalog.compositions, "catalog.compositions");
@@ -129,7 +146,18 @@ export function validateCatalog(catalog) {
     resolveTemplate(catalog, spec, `catalog.compositions.${name}`);
     if (spec.kind !== undefined && typeof spec.kind !== "string") throw new Error(`catalog.compositions.${name}.kind must be a string`);
     if (spec.kinds !== undefined && (!Array.isArray(spec.kinds) || spec.kinds.some((kind) => typeof kind !== "string"))) throw new Error(`catalog.compositions.${name}.kinds must be an array of strings`);
+    for (const groupName of spec.groups) {
+      if (!catalog.groups[groupName]) throw new Error(`catalog.compositions.${name}.groups references missing group ${JSON.stringify(groupName)}`);
+      if (!catalog.groups[groupName].templates.includes(name)) throw new Error(`catalog.groups.${groupName}.templates must include ${JSON.stringify(name)}`);
+    }
     capacity(spec.capacity, `catalog.compositions.${name}.capacity`);
+  }
+  for (const [groupName, group] of Object.entries(catalog.groups)) {
+    for (const name of group.templates) {
+      const spec = catalog.compositions[name];
+      if (!spec) throw new Error(`catalog.groups.${groupName}.templates references missing composition ${JSON.stringify(name)}`);
+      if (!spec.groups.includes(groupName)) throw new Error(`catalog.compositions.${name}.groups must include ${JSON.stringify(groupName)}`);
+    }
   }
   return catalog;
 }

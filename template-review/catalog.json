@@ -1,5 +1,127 @@
 {
   "version": 2,
+  "groups": {
+    "service": {
+      "description": "Титульные и разделительные слайды, которые обозначают уровень курса, модуля или урока.",
+      "templates": [
+        "course.title",
+        "module.title",
+        "lesson.title"
+      ]
+    },
+    "text": {
+      "description": "Связное объяснение, тезис, вывод или основной текст, когда последовательность рассуждения важнее разбиения на самостоятельные элементы.",
+      "templates": [
+        "text.plain",
+        "text.character-comment",
+        "text.illustration",
+        "text.long.illustration",
+        "intro.body.conclusion",
+        "text.key-idea",
+        "key-idea.quote"
+      ]
+    },
+    "concepts": {
+      "description": "Термины, определения и пояснения, которые помогают обучающемуся связать новое понятие с контекстом и применением.",
+      "templates": [
+        "term.explanation",
+        "context.definition.explanation",
+        "term.context.explanation.example",
+        "thesis.example.illustration"
+      ]
+    },
+    "examples": {
+      "description": "Примеры, ситуации и демонстрации применения, которые переводят объяснение в конкретный рабочий контекст.",
+      "templates": [
+        "text.example",
+        "term.context.explanation.example",
+        "thesis.example.illustration",
+        "text.character-comment",
+        "example.full"
+      ]
+    },
+    "comparison": {
+      "description": "Сопоставление двух объектов, подходов или состояний по общей теме, чтобы обучающийся увидел различие или сходство.",
+      "templates": [
+        "compare.poor-good",
+        "compare.two.intro.short",
+        "compare.two.intro.detailed",
+        "compare.two.no-intro"
+      ]
+    },
+    "situations": {
+      "description": "Рабочие ситуации, проблемы, действия, решения и последствия, где важно показать развитие мысли или связь решения с контекстом.",
+      "templates": [
+        "situation.action.a",
+        "situation.action.b",
+        "problem.solution",
+        "intro.body.conclusion"
+      ]
+    },
+    "lists": {
+      "description": "Самостоятельные однородные пункты, рекомендации или вопросы. Нумерация может быть добавлена как способ организации, даже если исходник не содержит цифр.",
+      "templates": [
+        "checklist.6",
+        "numbered-list.3",
+        "numbered-list.4",
+        "numbered-list.5",
+        "numbered-list.6",
+        "numbered-list.4.illustration",
+        "list.6.center-message"
+      ]
+    },
+    "cards": {
+      "description": "Несколько самостоятельных однородных элементов, которые полезно воспринимать параллельно как отдельные смысловые единицы.",
+      "templates": [
+        "cards.5.intro",
+        "cards.4.intro",
+        "cards.6.columns",
+        "cards.3",
+        "cards.4",
+        "cards.6"
+      ]
+    },
+    "classification": {
+      "description": "Классы, типы или элементы одной системы, когда визуальное разделение помогает понять состав и отношения между категориями.",
+      "templates": [
+        "classification.3",
+        "classification.4",
+        "list.6.center-message"
+      ]
+    },
+    "process": {
+      "description": "Шаги, стадии, развитие ситуации и последовательности, где порядок или переход между состояниями помогает понять материал.",
+      "templates": [
+        "numbered-list.3",
+        "numbered-list.4",
+        "numbered-list.5",
+        "numbered-list.6",
+        "numbered-list.4.illustration",
+        "process.situation-outcome.4",
+        "process.4.stages",
+        "process.4",
+        "process.6",
+        "process.cards.4",
+        "process.4.detailed",
+        "process.3.detailed",
+        "timeline.5"
+      ]
+    },
+    "data": {
+      "description": "Несколько числовых показателей, которые должны быстро считываться и поддерживать вывод урока.",
+      "templates": [
+        "statistics.3",
+        "statistics.4"
+      ]
+    },
+    "staging": {
+      "description": "Технические заготовки для диалоговой сцены или последующей разработки интерактивности.",
+      "templates": [
+        "staging.blank",
+        "staging.interaction"
+      ]
+    }
+  },
   "titleTemplate": {
     "templateId": "lesson.title",
     "kinds": [
@@ -9,7 +131,12 @@
       "lesson_number": "LESSON_NUMBER",
       "title": "LESSON_TITLE",
       "module_label": "MODULE_LABEL"
-    }
+    },
+    "groups": [
+      "service"
+    ],
+    "description": "Титульный слайд урока сообщает номер, название и модуль и помогает обучающемуся понять место урока в курсе.",
+    "example": "Урок 1.4 «Первые решения мастера», модуль 1."
   },
   "compositions": {
     "staging.blank": {
@@ -20,7 +147,12 @@
       "stripToSlots": true,
       "slots": {
         "dialogue": "STAGING_BODY"
-      }
+      },
+      "groups": [
+        "staging"
+      ],
+      "description": "Пустая техническая основа для диалога: сборщик вставляет сцену с Алексеем и Денисом и сохраняет реплики в служебном поле.",
+      "example": "Алексей задаёт вопрос о постановке задачи, Денис отвечает на производственном участке."
     },
     "staging.interaction": {
       "templateId": "staging.interaction",
@@ -31,7 +163,12 @@
       "stripToSlots": true,
       "slots": {
         "body": "STAGING_BODY"
-      }
+      },
+      "groups": [
+        "staging"
+      ],
+      "description": "Пустая техническая основа для будущей интерактивности; полный исходный блок сохраняется для последующей авторской разработки.",
+      "example": "Задание на сопоставление действий мастера и возможных последствий."
     },
     "course.title": {
       "templateId": "course.title",
@@ -41,7 +178,12 @@
       "slots": {
         "title": "COURSE_TITLE",
         "course_subtitle": "COURSE_SUBTITLE"
-      }
+      },
+      "groups": [
+        "service"
+      ],
+      "description": "Титульный слайд всего курса с названием и кратким пояснением темы.",
+      "example": "Курс «Мастер производственного участка»: практические решения в течение смены."
     },
     "module.title": {
       "templateId": "module.title",
@@ -52,7 +194,12 @@
         "title": "MODULE_TITLE",
         "module_label": "MODULE_LABEL",
         "module_subtitle": "MODULE_SUBTITLE"
-      }
+      },
+      "groups": [
+        "service"
+      ],
+      "description": "Разделитель модуля, который обозначает новый крупный этап обучения.",
+      "example": "Модуль 2. Постановка задач и контроль результата."
     },
     "lesson.title": {
       "templateId": "lesson.title",
@@ -63,7 +210,12 @@
         "lesson_number": "LESSON_NUMBER",
         "title": "LESSON_TITLE",
         "module_label": "MODULE_LABEL"
-      }
+      },
+      "groups": [
+        "service"
+      ],
+      "description": "Титульный слайд отдельного урока с номером, названием и обозначением модуля.",
+      "example": "Урок 1.4. Первые решения мастера."
     },
     "text.plain": {
       "templateId": "text.plain",
@@ -74,7 +226,12 @@
       "slots": {
         "title": "TITLE",
         "body": "BODY"
-      }
+      },
+      "groups": [
+        "text"
+      ],
+      "description": "Один связный текст на плашке, когда логика последовательно раскрывается внутри нескольких абзацев и не требует отдельной схемы.",
+      "example": "Объяснение роли мастера в начале смены и влияния его решений на работу участка."
     },
     "cards.5.intro": {
       "templateId": "cards.5.intro",
@@ -95,7 +252,12 @@
         "card_4_body": "CARD_4_BODY",
         "card_5_title": "CARD_5_TITLE",
         "card_5_body": "CARD_5_BODY"
-      }
+      },
+      "groups": [
+        "cards"
+      ],
+      "description": "Короткое вступление и пять самостоятельных элементов с небольшими заголовками и пояснениями.",
+      "example": "Пять источников информации, которые мастер проверяет перед началом смены."
     },
     "cards.4.intro": {
       "templateId": "cards.4.intro",
@@ -114,7 +276,12 @@
         "card_3_body": "CARD_3_BODY",
         "card_4_title": "CARD_4_TITLE",
         "card_4_body": "CARD_4_BODY"
-      }
+      },
+      "groups": [
+        "cards"
+      ],
+      "description": "Короткое вступление и четыре самостоятельных элемента, которые обучающийся должен воспринимать как равнозначный набор.",
+      "example": "Четыре признака хорошо поставленной производственной задачи."
     },
     "text.example": {
       "templateId": "text.example",
@@ -125,7 +292,12 @@
         "title": "EXAMPLE_LABEL",
         "body": "BODY",
         "example_body": "EXAMPLE_BODY"
-      }
+      },
+      "groups": [
+        "examples"
+      ],
+      "description": "Объяснение и отдельный пример, который показывает смысл тезиса в конкретной рабочей ситуации.",
+      "example": "Почему просьба отличается от задачи, затем короткий разговор мастера с рабочим."
     },
     "term.explanation": {
       "templateId": "term.explanation",
@@ -136,7 +308,12 @@
         "title": "TITLE",
         "definition": "DEFINITION",
         "explanation": "EXPLANATION"
-      }
+      },
+      "groups": [
+        "concepts"
+      ],
+      "description": "Термин или принцип и его связное пояснение, когда обучающемуся нужно сначала понять значение понятия.",
+      "example": "Рабочая дистанция — значение термина и пояснение поведения мастера."
     },
     "context.definition.explanation": {
       "templateId": "context.definition.explanation",
@@ -149,7 +326,12 @@
         "definition": "DEFINITION",
         "explanation": "EXPLANATION",
         "context": "CONTEXT"
-      }
+      },
+      "groups": [
+        "concepts"
+      ],
+      "description": "Вводный контекст, определение и пояснение образуют последовательное знакомство с новым понятием.",
+      "example": "Почему возникает отклонение, что такое обратная связь и как она влияет на повторение результата."
     },
     "term.context.explanation.example": {
       "templateId": "term.context.explanation.example",
@@ -161,7 +343,13 @@
         "definition": "DEFINITION",
         "explanation": "EXPLANATION",
         "context": "CONTEXT"
-      }
+      },
+      "groups": [
+        "concepts",
+        "examples"
+      ],
+      "description": "Термин раскрывается через контекст, пояснение и конкретное применение.",
+      "example": "Определение контроля результата, производственный контекст и короткий пример проверки."
     },
     "compare.poor-good": {
       "templateId": "compare.poor-good",
@@ -173,7 +361,12 @@
         "compare_left_body": "COMPARE_LEFT_BODY",
         "intro": "INTRO",
         "compare_right_body": "COMPARE_RIGHT_BODY"
-      }
+      },
+      "groups": [
+        "comparison"
+      ],
+      "description": "Явный контраст неудачного и удачного подхода, где две стороны показывают разные способы действовать в одной ситуации.",
+      "example": "Неясная формулировка задачи и конкретная формулировка с результатом, сроком и проверкой."
     },
     "situation.action.a": {
       "templateId": "situation.action.a",
@@ -184,7 +377,12 @@
         "title": "TITLE",
         "solution": "SOLUTION",
         "situation": "SITUATION"
-      }
+      },
+      "groups": [
+        "situations"
+      ],
+      "description": "Рабочая ситуация и действие мастера, которое отвечает на неё.",
+      "example": "Рабочий сообщает о необычном следе на детали; мастер останавливается, проверяет сигнал и принимает решение."
     },
     "situation.action.b": {
       "templateId": "situation.action.b",
@@ -195,7 +393,12 @@
         "title": "TITLE",
         "after": "AFTER",
         "before": "BEFORE"
-      }
+      },
+      "groups": [
+        "situations"
+      ],
+      "description": "Две связанные части рабочей ситуации, показывающие исходное положение и последующее действие или изменение.",
+      "example": "До разговора требование было необязательным; после разговора определены действие, срок и проверка."
     },
     "problem.solution": {
       "templateId": "problem.solution",
@@ -212,10 +415,15 @@
         "solution_subtitle": "SOLUTION_SUBTITLE",
         "solution_body": "SOLUTION_BODY",
         "solution_title": "SOLUTION_TITLE"
-      }
+      },
+      "groups": [
+        "situations"
+      ],
+      "description": "Развёрнутая рабочая проблема, её пояснение и решение с несколькими самостоятельными смысловыми полями.",
+      "example": "Повторяющаяся ошибка рабочего, причина реакции мастера и способ довести требование до результата."
     },
-    "compare.two.standard": {
-      "templateId": "compare.two.standard",
+    "compare.two.intro.short": {
+      "templateId": "compare.two.intro.short",
       "kinds": [
         "comparison",
         "two-group-diagnostic"
@@ -227,10 +435,15 @@
         "compare_top_body": "COMPARE_TOP_BODY",
         "compare_top_label": "COMPARE_TOP_LABEL",
         "compare_bottom_label": "COMPARE_BOTTOM_LABEL"
-      }
+      },
+      "groups": [
+        "comparison"
+      ],
+      "description": "Короткое вступление и два столбца с небольшим количеством текста для сопоставления двух объектов, подходов или состояний по одной теме.",
+      "example": "Сравнение контроля результата и постоянного вмешательства: по одному короткому пояснению в каждом столбце."
     },
-    "compare.two.detailed": {
-      "templateId": "compare.two.detailed",
+    "compare.two.intro.detailed": {
+      "templateId": "compare.two.intro.detailed",
       "kinds": [
         "comparison",
         "two-group-diagnostic",
@@ -243,7 +456,31 @@
         "compare_top_body": "COMPARE_TOP_BODY",
         "compare_top_label": "COMPARE_TOP_LABEL",
         "compare_bottom_label": "COMPARE_BOTTOM_LABEL"
-      }
+      },
+      "groups": [
+        "comparison"
+      ],
+      "description": "Вступление и два вместительных столбца для подробного сопоставления двух объектов, подходов или состояний.",
+      "example": "Сравнение работы мастера на конвейерном и мелкосерийном производстве с несколькими предложениями на каждую сторону."
+    },
+    "compare.two.no-intro": {
+      "templateId": "compare.two.no-intro",
+      "kinds": [
+        "comparison",
+        "two-group-diagnostic"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "compare_bottom_body": "COMPARE_BOTTOM_BODY",
+        "compare_top_body": "COMPARE_TOP_BODY",
+        "compare_top_label": "COMPARE_TOP_LABEL",
+        "compare_bottom_label": "COMPARE_BOTTOM_LABEL"
+      },
+      "groups": [
+        "comparison"
+      ],
+      "description": "Два столбца без отдельного вступления для непосредственного сопоставления двух ясно названных сторон.",
+      "example": "Опытный рабочий и новичок: различия в объёме инструктажа и точках контроля."
     },
     "thesis.example.illustration": {
       "templateId": "thesis.example.illustration",
@@ -254,7 +491,13 @@
         "title": "TITLE",
         "definition": "DEFINITION",
         "explanation": "EXPLANATION"
-      }
+      },
+      "groups": [
+        "concepts",
+        "examples"
+      ],
+      "description": "Тезис, поясняющий пример и сохранённая иллюстрация поддерживают одну ключевую мысль.",
+      "example": "Тезис о раннем сигнале отклонения и пример рабочего, заметившего изменение звука станка."
     },
     "text.character-comment": {
       "templateId": "text.character-comment",
@@ -265,7 +508,13 @@
         "title": "TITLE",
         "course_text": "COURSE_TEXT",
         "character_comment": "CHARACTER_COMMENT"
-      }
+      },
+      "groups": [
+        "text",
+        "examples"
+      ],
+      "description": "Основной текст дополняется короткой репликой персонажа, которая помогает связать объяснение с опытом обучающегося.",
+      "example": "Объяснение принципа и короткое замечание Дениса о похожей ситуации на участке."
     },
     "text.illustration": {
       "templateId": "text.illustration",
@@ -275,7 +524,12 @@
       "slots": {
         "title": "TITLE",
         "body": "BODY"
-      }
+      },
+      "groups": [
+        "text"
+      ],
+      "description": "Связный текст средней длины рядом с сохранённой иллюстрацией, которая поддерживает основную мысль.",
+      "example": "Объяснение порядка действий мастера рядом с производственной иллюстрацией."
     },
     "text.long.illustration": {
       "templateId": "text.long.illustration",
@@ -285,7 +539,12 @@
       "slots": {
         "title": "TITLE",
         "body": "BODY"
-      }
+      },
+      "groups": [
+        "text"
+      ],
+      "description": "Более вместительный связный текст рядом с иллюстрацией, когда объяснение требует нескольких абзацев.",
+      "example": "Подробное объяснение последствий постоянного вмешательства в работу опытного сотрудника."
     },
     "checklist.6": {
       "templateId": "checklist.6",
@@ -300,7 +559,12 @@
         "check_4": "CHECK_4",
         "check_5": "CHECK_5",
         "check_6": "CHECK_6"
-      }
+      },
+      "groups": [
+        "lists"
+      ],
+      "description": "Шесть коротких вопросов или проверочных пунктов, которые обучающийся применяет к собственной практике.",
+      "example": "Проверка после смены: где задача была неясной, где сигнал остался без реакции, где правило применялось непоследовательно."
     },
     "example.full": {
       "templateId": "example.full",
@@ -310,7 +574,12 @@
       "slots": {
         "title": "EXAMPLE_LABEL",
         "body": "BODY"
-      }
+      },
+      "groups": [
+        "examples"
+      ],
+      "description": "Один развёрнутый пример или производственная история занимает основное пространство слайда.",
+      "example": "Диалог о срочном заказе и объяснение, почему рабочий воспринял задачу как необязательную просьбу."
     },
     "intro.body.conclusion": {
       "templateId": "intro.body.conclusion",
@@ -323,7 +592,13 @@
         "intro": "INTRO",
         "case_body": "CASE_BODY",
         "conclusion": "CONCLUSION"
-      }
+      },
+      "groups": [
+        "text",
+        "situations"
+      ],
+      "description": "Вступление, основное объяснение и отдельный вывод сохраняют ход рассуждения и позволяют выделить итог для обучающегося.",
+      "example": "Общее изменение отношений после назначения, объяснение рабочей дистанции со списком и итог о сохранении авторитета."
     },
     "numbered-list.3": {
       "templateId": "numbered-list.3",
@@ -343,18 +618,13 @@
         "item_2_body": "ITEM_2_BODY",
         "item_3_title": "ITEM_3_TITLE",
         "item_3_body": "ITEM_3_BODY"
-      }
-    },
-    "marked-list": {
-      "templateId": "marked-list",
-      "kinds": [
-        "marked-list"
+      },
+      "groups": [
+        "lists",
+        "process"
       ],
-      "slots": {
-        "intro": "INTRO",
-        "title": "TITLE",
-        "body": "BODY"
-      }
+      "description": "Три самостоятельных пункта с нумерацией; цифры можно добавить для удобства восприятия, даже если их не было в исходнике.",
+      "example": "Три действия мастера после сигнала рабочего."
     },
     "text.key-idea": {
       "templateId": "text.key-idea",
@@ -365,7 +635,12 @@
         "intro": "INTRO",
         "title": "TITLE",
         "body": "BODY"
-      }
+      },
+      "groups": [
+        "text"
+      ],
+      "description": "Связное объяснение и отдельно подчеркнутая основная мысль, которую обучающийся должен запомнить.",
+      "example": "Пояснение последствий исключений для друзей и итог о единых правилах для всей бригады."
     },
     "numbered-list.6": {
       "templateId": "numbered-list.6",
@@ -394,7 +669,13 @@
         "item_5_body": "ITEM_5_BODY",
         "item_6_title": "ITEM_6_TITLE",
         "item_6_body": "ITEM_6_BODY"
-      }
+      },
+      "groups": [
+        "lists",
+        "process"
+      ],
+      "description": "Шесть самостоятельных пунктов или шагов с нумерацией для длинного, но однородного перечня.",
+      "example": "Шесть условий понятной задачи мастера."
     },
     "numbered-list.5": {
       "templateId": "numbered-list.5",
@@ -420,7 +701,13 @@
         "item_4_body": "ITEM_4_BODY",
         "item_5_title": "ITEM_5_TITLE",
         "item_5_body": "ITEM_5_BODY"
-      }
+      },
+      "groups": [
+        "lists",
+        "process"
+      ],
+      "description": "Пять самостоятельных пунктов или шагов с нумерацией, которая помогает удерживать структуру перечня.",
+      "example": "Пять ошибок нового мастера в работе с опытными сотрудниками."
     },
     "numbered-list.4": {
       "templateId": "numbered-list.4",
@@ -443,7 +730,13 @@
         "item_4_number": "ITEM_4_NUMBER",
         "item_4_title": "ITEM_4_TITLE",
         "item_4_body": "ITEM_4_BODY"
-      }
+      },
+      "groups": [
+        "lists",
+        "process"
+      ],
+      "description": "Четыре самостоятельных пункта или шага с нумерацией; подходит и для обычного списка без цифр в исходнике.",
+      "example": "Четыре признака рабочей дистанции."
     },
     "key-idea.quote": {
       "templateId": "key-idea.quote",
@@ -453,7 +746,12 @@
       ],
       "slots": {
         "title": "QUOTE"
-      }
+      },
+      "groups": [
+        "text"
+      ],
+      "description": "Одна короткая ключевая мысль или цитата получает максимальный визуальный акцент.",
+      "example": "Авторитет растёт из последовательных решений, а не из названия должности."
     },
     "numbered-list.4.illustration": {
       "templateId": "numbered-list.4.illustration",
@@ -475,7 +773,13 @@
         "item_4_number": "ITEM_4_NUMBER",
         "item_4_title": "ITEM_4_TITLE",
         "item_4_body": "ITEM_4_BODY"
-      }
+      },
+      "groups": [
+        "lists",
+        "process"
+      ],
+      "description": "Четыре нумерованных пункта рядом с сохранённой иллюстрацией, когда изображение помогает понять перечень или последовательность.",
+      "example": "Четыре действия мастера при обнаружении отклонения рядом с изображением участка."
     },
     "classification.3": {
       "templateId": "classification.3",
@@ -490,7 +794,12 @@
         "node_3_body": "NODE_3_BODY",
         "node_2_body": "NODE_2_BODY",
         "node_1_body": "NODE_1_BODY"
-      }
+      },
+      "groups": [
+        "classification"
+      ],
+      "description": "Три категории или элемента одной системы с общим основанием классификации.",
+      "example": "Три типа производственных сигналов: качество, оборудование и материалы."
     },
     "classification.4": {
       "templateId": "classification.4",
@@ -507,7 +816,12 @@
         "node_3_body": "NODE_3_BODY",
         "node_4_title": "NODE_4_TITLE",
         "node_4_body": "NODE_4_BODY"
-      }
+      },
+      "groups": [
+        "classification"
+      ],
+      "description": "Четыре категории или элемента одной системы с общим основанием классификации.",
+      "example": "Четыре зоны ответственности мастера на участке."
     },
     "list.6.center-message": {
       "templateId": "list.6.center-message",
@@ -530,7 +844,13 @@
         "item_6_title": "ITEM_6_TITLE",
         "item_6_body": "ITEM_6_BODY",
         "center_message": "CENTER_MESSAGE"
-      }
+      },
+      "groups": [
+        "lists",
+        "classification"
+      ],
+      "description": "Шесть коротких элементов окружают общую центральную мысль и показывают их связь с единым принципом.",
+      "example": "Шесть ежедневных действий мастера вокруг центральной цели — стабильного результата смены."
     },
     "cards.6.columns": {
       "templateId": "cards.6.columns",
@@ -553,7 +873,12 @@
         "right_1_title": "RIGHT_1_TITLE",
         "right_2_title": "RIGHT_2_TITLE",
         "right_3_title": "RIGHT_3_TITLE"
-      }
+      },
+      "groups": [
+        "cards"
+      ],
+      "description": "Шесть небольших карточек в двух колонках для параллельного набора однородных элементов.",
+      "example": "Шесть способов проверить, что задача понята одинаково."
     },
     "cards.3": {
       "templateId": "cards.3",
@@ -570,7 +895,12 @@
         "card_2_body": "CARD_2_BODY",
         "card_3_title": "CARD_3_TITLE",
         "card_3_body": "CARD_3_BODY"
-      }
+      },
+      "groups": [
+        "cards"
+      ],
+      "description": "Три самостоятельные карточки для трёх равнозначных идей, действий или признаков.",
+      "example": "Три уровня реакции мастера на отклонение."
     },
     "cards.4": {
       "templateId": "cards.4",
@@ -589,7 +919,12 @@
         "card_3_body": "CARD_3_BODY",
         "card_4_title": "CARD_4_TITLE",
         "card_4_body": "CARD_4_BODY"
-      }
+      },
+      "groups": [
+        "cards"
+      ],
+      "description": "Четыре самостоятельные карточки для коротких однородных элементов.",
+      "example": "Четыре вопроса перед передачей задачи рабочему."
     },
     "cards.6": {
       "templateId": "cards.6",
@@ -612,7 +947,12 @@
         "card_5_body": "CARD_3_BODY",
         "card_6_title": "CARD_4_TITLE",
         "card_6_body": "CARD_4_BODY"
-      }
+      },
+      "groups": [
+        "cards"
+      ],
+      "description": "Шесть самостоятельных карточек для компактных однородных элементов, которые полезно видеть одновременно.",
+      "example": "Шесть типичных сигналов о риске брака или простоя."
     },
     "process.situation-outcome.4": {
       "templateId": "process.situation-outcome.4",
@@ -628,7 +968,12 @@
         "stage_3_text": "STAGE_3_TEXT",
         "outcome_text": "OUTCOME_TEXT",
         "stage_4_text": "STAGE_4_TEXT"
-      }
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "Развитие ситуации через несколько стадий к итоговому состоянию, когда важна причинная связь между изменениями.",
+      "example": "Слабый сигнал остаётся без реакции, отклонение усиливается, возникает брак и требуется переделка."
     },
     "process.4.stages": {
       "templateId": "process.4.stages",
@@ -650,7 +995,12 @@
         "step_4_title": "STEP_4_TITLE",
         "step_4_number": "STEP_4_NUMBER",
         "step_4_body": "STEP_4_BODY"
-      }
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "Три или четыре стадии процесса с названиями и пояснениями, когда обучающемуся важно видеть общий порядок.",
+      "example": "Подготовить задачу, передать её, проверить понимание и согласовать контроль."
     },
     "process.4": {
       "templateId": "process.4",
@@ -672,7 +1022,12 @@
         "step_4_title": "STEP_4_TITLE",
         "step_4_body": "STEP_4_BODY",
         "step_4_number": "STEP_4_NUMBER"
-      }
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "Четыре последовательных шага с компактными пояснениями.",
+      "example": "Получить сигнал, проверить факт, принять решение, сообщить его рабочему."
     },
     "process.6": {
       "templateId": "process.6",
@@ -700,7 +1055,12 @@
         "step_6_body": "STEP_6_BODY",
         "step_6_title": "STEP_6_TITLE",
         "title": "TITLE"
-      }
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "Длинная последовательность из шести этапов, когда каждый этап требует отдельного заголовка и пояснения.",
+      "example": "Шесть этапов постановки, выполнения и контроля производственной задачи."
     },
     "process.cards.4": {
       "templateId": "process.cards.4",
@@ -718,7 +1078,12 @@
         "card_3_body": "CARD_3_BODY",
         "card_4_title": "CARD_4_TITLE",
         "card_4_body": "CARD_4_BODY"
-      }
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "Три или четыре последовательных этапа, оформленных как самостоятельные карточки.",
+      "example": "Подготовка разговора, обсуждение факта, договорённость и контроль результата."
     },
     "process.4.detailed": {
       "templateId": "process.4.detailed",
@@ -740,7 +1105,12 @@
         "step_4_detail_title": "STEP_4_DETAIL_TITLE",
         "step_4_body": "STEP_4_BODY",
         "title": "TITLE"
-      }
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "Подробный процесс из четырёх этапов с дополнительными заголовками и вместительными пояснениями.",
+      "example": "Четыре этапа реакции на повторяющееся нарушение с действиями и ожидаемым результатом каждого этапа."
     },
     "process.3.detailed": {
       "templateId": "process.3.detailed",
@@ -759,7 +1129,12 @@
         "step_3_detail_title": "STEP_3_DETAIL_TITLE",
         "step_3_body": "STEP_3_BODY",
         "title": "TITLE"
-      }
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "Подробный процесс из трёх этапов с дополнительными заголовками и вместительными пояснениями.",
+      "example": "Подготовить факты, провести разговор и проверить изменение поведения."
     },
     "statistics.3": {
       "templateId": "statistics.3",
@@ -777,7 +1152,12 @@
         "metric_3_body": "METRIC_3_BODY",
         "metric_3_value": "METRIC_3_VALUE",
         "title": "TITLE"
-      }
+      },
+      "groups": [
+        "data"
+      ],
+      "description": "Три числовых показателя с короткими названиями и пояснениями.",
+      "example": "Три показателя участка: выполнение плана, доля брака и время простоя."
     },
     "statistics.4": {
       "templateId": "statistics.4",
@@ -798,7 +1178,12 @@
         "metric_4_title": "METRIC_4_TITLE",
         "metric_4_body": "METRIC_4_BODY",
         "metric_4_value": "METRIC_4_VALUE"
-      }
+      },
+      "groups": [
+        "data"
+      ],
+      "description": "Четыре числовых показателя с короткими названиями и пояснениями.",
+      "example": "Четыре результата смены: выпуск, брак, простои и переделка."
     },
     "timeline.5": {
       "templateId": "timeline.5",
@@ -820,7 +1205,12 @@
         "event_4_body": "EVENT_4_BODY",
         "event_5_title": "EVENT_5_TITLE",
         "event_5_body": "EVENT_5_BODY"
-      }
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "До пяти событий или этапов, связанных временем или последовательным развитием.",
+      "example": "Ход смены от постановки задач утром до итоговой проверки результата."
     }
   },
   "slides": [
@@ -829,7 +1219,7 @@
       "templateId": "staging.blank",
       "comments": [],
       "notes": [
-        "template_id: staging.blank\nПустой слайд только для диалоговых сцен"
+        "template_id: staging.blank\nПустая техническая основа для диалога: сборщик вставляет сцену с Алексеем и Денисом и сохраняет реплики в служебном поле.\nПример: Алексей задаёт вопрос о постановке задачи, Денис отвечает на производственном участке."
       ],
       "text": [
         {
@@ -848,7 +1238,7 @@
       "templateId": "course.title",
       "comments": [],
       "notes": [
-        "Титульный слайд курса"
+        "template_id: course.title\nТитульный слайд всего курса с названием и кратким пояснением темы.\nПример: Курс «Мастер производственного участка»: практические решения в течение смены."
       ],
       "text": [
         {
@@ -873,7 +1263,7 @@
       "templateId": "module.title",
       "comments": [],
       "notes": [
-        "Титульный слайд модуля"
+        "template_id: module.title\nРазделитель модуля, который обозначает новый крупный этап обучения.\nПример: Модуль 2. Постановка задач и контроль результата."
       ],
       "text": [
         {
@@ -904,7 +1294,7 @@
       "templateId": "lesson.title",
       "comments": [],
       "notes": [
-        "Титульный слайд урока"
+        "template_id: lesson.title\nТитульный слайд отдельного урока с номером, названием и обозначением модуля.\nПример: Урок 1.4. Первые решения мастера."
       ],
       "text": [
         {
@@ -935,7 +1325,7 @@
       "templateId": "text.plain",
       "comments": [],
       "notes": [
-        "Один текст на плашке. \nText.plain"
+        "template_id: text.plain\nОдин связный текст на плашке, когда логика последовательно раскрывается внутри нескольких абзацев и не требует отдельной схемы.\nПример: Объяснение роли мастера в начале смены и влияния его решений на работу участка."
       ],
       "text": [
         {
@@ -960,7 +1350,7 @@
       "templateId": "cards.5.intro",
       "comments": [],
       "notes": [
-        "Введение + 5 пунктов с короткими заголовками"
+        "template_id: cards.5.intro\nКороткое вступление и пять самостоятельных элементов с небольшими заголовками и пояснениями.\nПример: Пять источников информации, которые мастер проверяет перед началом смены."
       ],
       "text": [
         {
@@ -1045,7 +1435,7 @@
       "templateId": "cards.4.intro",
       "comments": [],
       "notes": [
-        "Введение + \n4\n пунктов с короткими заголовками и коротким \nтектом"
+        "template_id: cards.4.intro\nКороткое вступление и четыре самостоятельных элемента, которые обучающийся должен воспринимать как равнозначный набор.\nПример: Четыре признака хорошо поставленной производственной задачи."
       ],
       "text": [
         {
@@ -1118,7 +1508,7 @@
       "templateId": "text.example",
       "comments": [],
       "notes": [
-        "Текст+пример\n."
+        "template_id: text.example\nОбъяснение и отдельный пример, который показывает смысл тезиса в конкретной рабочей ситуации.\nПример: Почему просьба отличается от задачи, затем короткий разговор мастера с рабочим."
       ],
       "text": [
         {
@@ -1155,7 +1545,7 @@
       "templateId": "term.explanation",
       "comments": [],
       "notes": [
-        "Определение термина + пояснение"
+        "template_id: term.explanation\nТермин или принцип и его связное пояснение, когда обучающемуся нужно сначала понять значение понятия.\nПример: Рабочая дистанция — значение термина и пояснение поведения мастера."
       ],
       "text": [
         {
@@ -1186,7 +1576,7 @@
       "templateId": "context.definition.explanation",
       "comments": [],
       "notes": [
-        "Введение - определение термина + пояснение"
+        "template_id: context.definition.explanation\nВводный контекст, определение и пояснение образуют последовательное знакомство с новым понятием.\nПример: Почему возникает отклонение, что такое обратная связь и как она влияет на повторение результата."
       ],
       "text": [
         {
@@ -1223,7 +1613,7 @@
       "templateId": "term.context.explanation.example",
       "comments": [],
       "notes": [
-        "Термин определение + пояснение +пример"
+        "template_id: term.context.explanation.example\nТермин раскрывается через контекст, пояснение и конкретное применение.\nПример: Определение контроля результата, производственный контекст и короткий пример проверки."
       ],
       "text": [
         {
@@ -1266,7 +1656,7 @@
       "templateId": "compare.poor-good",
       "comments": [],
       "notes": [
-        "Текст + сравнение плохо-хорошо"
+        "template_id: compare.poor-good\nЯвный контраст неудачного и удачного подхода, где две стороны показывают разные способы действовать в одной ситуации.\nПример: Неясная формулировка задачи и конкретная формулировка с результатом, сроком и проверкой."
       ],
       "text": [
         {
@@ -1303,7 +1693,7 @@
       "templateId": "situation.action.a",
       "comments": [],
       "notes": [
-        "Ситуация - действие"
+        "template_id: situation.action.a\nРабочая ситуация и действие мастера, которое отвечает на неё.\nПример: Рабочий сообщает о необычном следе на детали; мастер останавливается, проверяет сигнал и принимает решение."
       ],
       "text": [
         {
@@ -1334,7 +1724,7 @@
       "templateId": "situation.action.b",
       "comments": [],
       "notes": [
-        "Ситуация - действие"
+        "template_id: situation.action.b\nДве связанные части рабочей ситуации, показывающие исходное положение и последующее действие или изменение.\nПример: До разговора требование было необязательным; после разговора определены действие, срок и проверка."
       ],
       "text": [
         {
@@ -1365,7 +1755,7 @@
       "templateId": "problem.solution",
       "comments": [],
       "notes": [
-        "Проблема, пример, решение \nИли проблема. Пояснение, решение\nИли исследование, вывод, пример"
+        "template_id: problem.solution\nРазвёрнутая рабочая проблема, её пояснение и решение с несколькими самостоятельными смысловыми полями.\nПример: Повторяющаяся ошибка рабочего, причина реакции мастера и способ довести требование до результата."
       ],
       "text": [
         {
@@ -1423,16 +1813,16 @@
     },
     {
       "sourceSlide": 16,
-      "templateId": "compare.two.standard",
+      "templateId": "compare.two.intro.short",
       "comments": [],
       "notes": [
-        "Текст + сравнение двух схожих элементов или явлений"
+        "template_id: compare.two.intro.short\nКороткое вступление и два столбца с небольшим количеством текста для сопоставления двух объектов, подходов или состояний по одной теме.\nПример: Сравнение контроля результата и постоянного вмешательства: по одному короткому пояснению в каждом столбце."
       ],
       "text": [
         {
           "objectName": "INTRO",
           "objectId": 2100,
-          "text": "Работа мастера зависит от типа производства."
+          "text": "Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства."
         },
         {
           "objectName": "TITLE",
@@ -1442,12 +1832,12 @@
         {
           "objectName": "COMPARE_BOTTOM_BODY",
           "objectId": 52,
-          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений."
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. На конвейере"
         },
         {
           "objectName": "COMPARE_TOP_BODY",
           "objectId": 53,
-          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений."
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. На конвейере"
         },
         {
           "objectName": "COMPARE_TOP_LABEL",
@@ -1472,16 +1862,16 @@
     },
     {
       "sourceSlide": 17,
-      "templateId": "compare.two.detailed",
+      "templateId": "compare.two.intro.detailed",
       "comments": [],
       "notes": [
-        "Текст + сравнение двух схожих элементов или явлений, много текста"
+        "template_id: compare.two.intro.detailed\nВступление и два вместительных столбца для подробного сопоставления двух объектов, подходов или состояний.\nПример: Сравнение работы мастера на конвейерном и мелкосерийном производстве с несколькими предложениями на каждую сторону."
       ],
       "text": [
         {
           "objectName": "INTRO",
           "objectId": 2100,
-          "text": "Работа мастера зависит от типа производства."
+          "text": "Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства."
         },
         {
           "objectName": "TITLE",
@@ -1491,12 +1881,12 @@
         {
           "objectName": "COMPARE_BOTTOM_BODY",
           "objectId": 52,
-          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений."
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений."
         },
         {
           "objectName": "COMPARE_TOP_BODY",
           "objectId": 53,
-          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений."
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений."
         },
         {
           "objectName": "COMPARE_TOP_LABEL",
@@ -1521,10 +1911,53 @@
     },
     {
       "sourceSlide": 18,
+      "templateId": "compare.two.no-intro",
+      "comments": [],
+      "notes": [
+        "template_id: compare.two.no-intro\nДва столбца без отдельного вступления для непосредственного сопоставления двух ясно названных сторон.\nПример: Опытный рабочий и новичок: различия в объёме инструктажа и точках контроля."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ"
+        },
+        {
+          "objectName": "COMPARE_BOTTOM_BODY",
+          "objectId": 52,
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. На конвейере одно и то же изделие идёт потоком"
+        },
+        {
+          "objectName": "COMPARE_TOP_BODY",
+          "objectId": 53,
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. На конвейере одно и то же изделие идёт потоком. "
+        },
+        {
+          "objectName": "COMPARE_TOP_LABEL",
+          "objectId": 54,
+          "text": "КОНВЕЙЕР"
+        },
+        {
+          "objectName": "COMPARE_BOTTOM_LABEL",
+          "objectId": 55,
+          "text": "МЕЛКОСЕРИЙНОЕ ПРОИЗВОДСТВО"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "COMPARE_BOTTOM_BODY",
+        "text_3": "COMPARE_TOP_BODY",
+        "text_4": "COMPARE_TOP_LABEL",
+        "text_5": "COMPARE_BOTTOM_LABEL"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 19,
       "templateId": "thesis.example.illustration",
       "comments": [],
       "notes": [
-        "Тезис+пример+иллюстрация"
+        "template_id: thesis.example.illustration\nТезис, поясняющий пример и сохранённая иллюстрация поддерживают одну ключевую мысль.\nПример: Тезис о раннем сигнале отклонения и пример рабочего, заметившего изменение звука станка."
       ],
       "text": [
         {
@@ -1551,11 +1984,11 @@
       "objectNamesAreUnique": true
     },
     {
-      "sourceSlide": 19,
+      "sourceSlide": 20,
       "templateId": "text.character-comment",
       "comments": [],
       "notes": [
-        "Текст + реплика Дениса"
+        "template_id: text.character-comment\nОсновной текст дополняется короткой репликой персонажа, которая помогает связать объяснение с опытом обучающегося.\nПример: Объяснение принципа и короткое замечание Дениса о похожей ситуации на участке."
       ],
       "text": [
         {
@@ -1582,36 +2015,11 @@
       "objectNamesAreUnique": true
     },
     {
-      "sourceSlide": 20,
+      "sourceSlide": 21,
       "templateId": "text.illustration",
       "comments": [],
       "notes": [
-        "текст+иллюстрация"
-      ],
-      "text": [
-        {
-          "objectName": "TITLE",
-          "objectId": 6,
-          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
-        },
-        {
-          "objectName": "BODY",
-          "objectId": 16,
-          "text": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался готовый заказ. Всё, что мастер делает за день, работает на эту цель."
-        }
-      ],
-      "suggestedSlots": {
-        "text_1": "TITLE",
-        "text_2": "BODY"
-      },
-      "objectNamesAreUnique": true
-    },
-    {
-      "sourceSlide": 21,
-      "templateId": "text.long.illustration",
-      "comments": [],
-      "notes": [
-        "Большой \nтекст+иллюстрация"
+        "template_id: text.illustration\nСвязный текст средней длины рядом с сохранённой иллюстрацией, которая поддерживает основную мысль.\nПример: Объяснение порядка действий мастера рядом с производственной иллюстрацией."
       ],
       "text": [
         {
@@ -1633,10 +2041,35 @@
     },
     {
       "sourceSlide": 22,
+      "templateId": "text.long.illustration",
+      "comments": [],
+      "notes": [
+        "template_id: text.long.illustration\nБолее вместительный связный текст рядом с иллюстрацией, когда объяснение требует нескольких абзацев.\nПример: Подробное объяснение последствий постоянного вмешательства в работу опытного сотрудника."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "BODY",
+          "objectId": 16,
+          "text": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался готовый заказ. Всё, что мастер делает за день, работает на эту цель."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 23,
       "templateId": "checklist.6",
       "comments": [],
       "notes": [
-        "чеклист"
+        "template_id: checklist.6\nШесть коротких вопросов или проверочных пунктов, которые обучающийся применяет к собственной практике.\nПример: Проверка после смены: где задача была неясной, где сигнал остался без реакции, где правило применялось непоследовательно."
       ],
       "text": [
         {
@@ -1687,11 +2120,11 @@
       "objectNamesAreUnique": true
     },
     {
-      "sourceSlide": 23,
+      "sourceSlide": 24,
       "templateId": "example.full",
       "comments": [],
       "notes": [
-        "Пример на весь слайд"
+        "template_id: example.full\nОдин развёрнутый пример или производственная история занимает основное пространство слайда.\nПример: Диалог о срочном заказе и объяснение, почему рабочий воспринял задачу как необязательную просьбу."
       ],
       "text": [
         {
@@ -1712,11 +2145,11 @@
       "objectNamesAreUnique": true
     },
     {
-      "sourceSlide": 24,
+      "sourceSlide": 25,
       "templateId": "intro.body.conclusion",
       "comments": [],
       "notes": [
-        "Введение + текст +вывод"
+        "template_id: intro.body.conclusion\nВступление, основное объяснение и отдельный вывод сохраняют ход рассуждения и позволяют выделить итог для обучающегося.\nПример: Общее изменение отношений после назначения, объяснение рабочей дистанции со списком и итог о сохранении авторитета."
       ],
       "text": [
         {
@@ -1749,11 +2182,11 @@
       "objectNamesAreUnique": true
     },
     {
-      "sourceSlide": 25,
+      "sourceSlide": 26,
       "templateId": "numbered-list.3",
       "comments": [],
       "notes": [
-        "Текст+ нумерованный список из 3 пунктов"
+        "template_id: numbered-list.3\nТри самостоятельных пункта с нумерацией; цифры можно добавить для удобства восприятия, даже если их не было в исходнике.\nПример: Три действия мастера после сигнала рабочего."
       ],
       "text": [
         {
@@ -1828,42 +2261,11 @@
       "objectNamesAreUnique": true
     },
     {
-      "sourceSlide": 26,
-      "templateId": "marked-list",
-      "comments": [],
-      "notes": [
-        "Текст+ маркированный список"
-      ],
-      "text": [
-        {
-          "objectName": "INTRO",
-          "objectId": 2100,
-          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
-        },
-        {
-          "objectName": "TITLE",
-          "objectId": 18,
-          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
-        },
-        {
-          "objectName": "BODY",
-          "objectId": 2,
-          "text": "Рабочий хамит в ответ.«Со мной так не разговаривают. Вернёмся к панели».Рабочий сыплет оправданиями.«Стоп. Что конкретно мешало и когда ты это увидел?»Рабочий третий раз делает одно и то же.«Мы это обсуждали дважды. Сегодня пишешь объяснительную».Начальник производства давит при рабочих.«Понял, разберусь. Подойду к Вам через двадцать минут с решением»."
-        }
-      ],
-      "suggestedSlots": {
-        "text_1": "INTRO",
-        "text_2": "TITLE",
-        "text_3": "BODY"
-      },
-      "objectNamesAreUnique": true
-    },
-    {
       "sourceSlide": 27,
       "templateId": "text.key-idea",
       "comments": [],
       "notes": [
-        "Текст+ основная мысль"
+        "template_id: text.key-idea\nСвязное объяснение и отдельно подчеркнутая основная мысль, которую обучающийся должен запомнить.\nПример: Пояснение последствий исключений для друзей и итог о единых правилах для всей бригады."
       ],
       "text": [
         {
@@ -1894,7 +2296,7 @@
       "templateId": "numbered-list.6",
       "comments": [],
       "notes": [
-        "Текст+ нумерованный список из 6 пунктов"
+        "template_id: numbered-list.6\nШесть самостоятельных пунктов или шагов с нумерацией для длинного, но однородного перечня.\nПример: Шесть условий понятной задачи мастера."
       ],
       "text": [
         {
@@ -2027,7 +2429,7 @@
       "templateId": "numbered-list.5",
       "comments": [],
       "notes": [
-        "Текст+ список из \n5\n \nпунктов"
+        "template_id: numbered-list.5\nПять самостоятельных пунктов или шагов с нумерацией, которая помогает удерживать структуру перечня.\nПример: Пять ошибок нового мастера в работе с опытными сотрудниками."
       ],
       "text": [
         {
@@ -2142,7 +2544,7 @@
       "templateId": "numbered-list.4",
       "comments": [],
       "notes": [
-        "Текст+ нумерованный список из 4 пунктов"
+        "template_id: numbered-list.4\nЧетыре самостоятельных пункта или шага с нумерацией; подходит и для обычного списка без цифр в исходнике.\nПример: Четыре признака рабочей дистанции."
       ],
       "text": [
         {
@@ -2239,7 +2641,7 @@
       "templateId": "key-idea.quote",
       "comments": [],
       "notes": [
-        "ключевая мысль."
+        "template_id: key-idea.quote\nОдна короткая ключевая мысль или цитата получает максимальный визуальный акцент.\nПример: Авторитет растёт из последовательных решений, а не из названия должности."
       ],
       "text": [
         {
@@ -2258,7 +2660,7 @@
       "templateId": "numbered-list.4.illustration",
       "comments": [],
       "notes": [
-        "нумерованный список  и картинка. Если пунктов больше или меньше, добавить текстом."
+        "template_id: numbered-list.4.illustration\nЧетыре нумерованных пункта рядом с сохранённой иллюстрацией, когда изображение помогает понять перечень или последовательность.\nПример: Четыре действия мастера при обнаружении отклонения рядом с изображением участка."
       ],
       "text": [
         {
@@ -2349,7 +2751,7 @@
       "templateId": "classification.3",
       "comments": [],
       "notes": [
-        "Классификация 3 элемента"
+        "template_id: classification.3\nТри категории или элемента одной системы с общим основанием классификации.\nПример: Три типа производственных сигналов: качество, оборудование и материалы."
       ],
       "text": [
         {
@@ -2404,7 +2806,7 @@
       "templateId": "classification.4",
       "comments": [],
       "notes": [
-        "Классификация 4 элемента"
+        "template_id: classification.4\nЧетыре категории или элемента одной системы с общим основанием классификации.\nПример: Четыре зоны ответственности мастера на участке."
       ],
       "text": [
         {
@@ -2471,7 +2873,7 @@
       "templateId": "list.6.center-message",
       "comments": [],
       "notes": [
-        "Короткий текст + список 6 пунктов или классификация"
+        "template_id: list.6.center-message\nШесть коротких элементов окружают общую центральную мысль и показывают их связь с единым принципом.\nПример: Шесть ежедневных действий мастера вокруг центральной цели — стабильного результата смены."
       ],
       "text": [
         {
@@ -2568,7 +2970,7 @@
       "templateId": "cards.6.columns",
       "comments": [],
       "notes": [
-        "Текст + 6 плашек с коротким заголовком и текстом"
+        "template_id: cards.6.columns\nШесть небольших карточек в двух колонках для параллельного набора однородных элементов.\nПример: Шесть способов проверить, что задача понята одинаково."
       ],
       "text": [
         {
@@ -2665,7 +3067,7 @@
       "templateId": "cards.3",
       "comments": [],
       "notes": [
-        "Текст+3 плашки"
+        "template_id: cards.3\nТри самостоятельные карточки для трёх равнозначных идей, действий или признаков.\nПример: Три уровня реакции мастера на отклонение."
       ],
       "text": [
         {
@@ -2726,7 +3128,7 @@
       "templateId": "cards.4",
       "comments": [],
       "notes": [
-        "Текст+ 4 плашки"
+        "template_id: cards.4\nЧетыре самостоятельные карточки для коротких однородных элементов.\nПример: Четыре вопроса перед передачей задачи рабочему."
       ],
       "text": [
         {
@@ -2799,7 +3201,7 @@
       "templateId": "cards.6",
       "comments": [],
       "notes": [
-        "Текст+ 6 плашек"
+        "template_id: cards.6\nШесть самостоятельных карточек для компактных однородных элементов, которые полезно видеть одновременно.\nПример: Шесть типичных сигналов о риске брака или простоя."
       ],
       "text": [
         {
@@ -2896,7 +3298,7 @@
       "templateId": "process.situation-outcome.4",
       "comments": [],
       "notes": [
-        "Развитие ситуации, шаги, процесс. Если менее 5 шагов, оставляем лишние пустыми. Можно уменьшать текст при переполнении до 14."
+        "template_id: process.situation-outcome.4\nРазвитие ситуации через несколько стадий к итоговому состоянию, когда важна причинная связь между изменениями.\nПример: Слабый сигнал остаётся без реакции, отклонение усиливается, возникает брак и требуется переделка."
       ],
       "text": [
         {
@@ -2951,7 +3353,7 @@
       "templateId": "process.4.stages",
       "comments": [],
       "notes": [
-        "Стадии, шаги 3-4 шага. \nЕсли 3 шага, один оставить пустым."
+        "template_id: process.4.stages\nТри или четыре стадии процесса с названиями и пояснениями, когда обучающемуся важно видеть общий порядок.\nПример: Подготовить задачу, передать её, проверить понимание и согласовать контроль."
       ],
       "text": [
         {
@@ -3042,7 +3444,7 @@
       "templateId": "process.4",
       "comments": [],
       "notes": [
-        "Стадии, шаги, процесс"
+        "template_id: process.4\nЧетыре последовательных шага с компактными пояснениями.\nПример: Получить сигнал, проверить факт, принять решение, сообщить его рабочему."
       ],
       "text": [
         {
@@ -3133,7 +3535,7 @@
       "templateId": "process.6",
       "comments": [],
       "notes": [
-        "Длинный процесс 6 шагов"
+        "template_id: process.6\nДлинная последовательность из шести этапов, когда каждый этап требует отдельного заголовка и пояснения.\nПример: Шесть этапов постановки, выполнения и контроля производственной задачи."
       ],
       "text": [
         {
@@ -3260,7 +3662,7 @@
       "templateId": "process.cards.4",
       "comments": [],
       "notes": [
-        "Шаги, процесс, можно под список однородных понятий, 3-4 шага. \nЕсли 3 шага, один оставить пустым"
+        "template_id: process.cards.4\nТри или четыре последовательных этапа, оформленных как самостоятельные карточки.\nПример: Подготовка разговора, обсуждение факта, договорённость и контроль результата."
       ],
       "text": [
         {
@@ -3327,7 +3729,7 @@
       "templateId": "process.4.detailed",
       "comments": [],
       "notes": [
-        "Процесс  4 шага"
+        "template_id: process.4.detailed\nПодробный процесс из четырёх этапов с дополнительными заголовками и вместительными пояснениями.\nПример: Четыре этапа реакции на повторяющееся нарушение с действиями и ожидаемым результатом каждого этапа."
       ],
       "text": [
         {
@@ -3418,7 +3820,7 @@
       "templateId": "process.3.detailed",
       "comments": [],
       "notes": [
-        "Процесс 3 шага"
+        "template_id: process.3.detailed\nПодробный процесс из трёх этапов с дополнительными заголовками и вместительными пояснениями.\nПример: Подготовить факты, провести разговор и проверить изменение поведения."
       ],
       "text": [
         {
@@ -3491,7 +3893,7 @@
       "templateId": "statistics.3",
       "comments": [],
       "notes": [
-        "Статистика 3 цифры"
+        "template_id: statistics.3\nТри числовых показателя с короткими названиями и пояснениями.\nПример: Три показателя участка: выполнение плана, доля брака и время простоя."
       ],
       "text": [
         {
@@ -3564,7 +3966,7 @@
       "templateId": "statistics.4",
       "comments": [],
       "notes": [
-        "Статистика 4 цифры"
+        "template_id: statistics.4\nЧетыре числовых показателя с короткими названиями и пояснениями.\nПример: Четыре результата смены: выпуск, брак, простои и переделка."
       ],
       "text": [
         {
@@ -3655,7 +4057,7 @@
       "templateId": "timeline.5",
       "comments": [],
       "notes": [
-        "Таймлайн\n, процесс. Если менее 5 пунктов, то оставить пустыми. Если более 5 пунктов, то лишний текст в заметки слайда."
+        "template_id: timeline.5\nДо пяти событий или этапов, связанных временем или последовательным развитием.\nПример: Ход смены от постановки задач утром до итоговой проверки результата."
       ],
       "text": [
         {
@@ -3734,7 +4136,7 @@
       "templateId": "staging.interaction",
       "comments": [],
       "notes": [
-        "template_id: staging.interaction\nПустой слайд только для интерактивностей"
+        "template_id: staging.interaction\nПустая техническая основа для будущей интерактивности; полный исходный блок сохраняется для последующей авторской разработки.\nПример: Задание на сопоставление действий мастера и возможных последствий."
       ],
       "text": [
         {
@@ -3749,5 +4151,5 @@
       "objectNamesAreUnique": true
     }
   ],
-  "instructions": "Current catalog generated from the 50-slide library. staging.blank is dialogue-only; staging.interaction is the separate physical clone for interactions. Add matching template_id markers to the remaining speaker notes before relying on --merge after a slide reorder."
+  "instructions": "Add `template_id: meaningful.id` to the comment or notes of every reusable slide. Then map titleTemplate and compositions to templateId and map each semantic slot to an existing PowerPoint object name. sourceSlide is refreshed on every inspection and is never a persistent address."
 }

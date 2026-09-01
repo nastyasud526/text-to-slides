@@ -1,57 +1,57 @@
 ---
 name: veza-dialogue-scenes
-description: "Create one 16:9 VEZA training illustration containing Alexey and Denis for a dialogue slide; generate only the characters and environment, never slide text or speech bubbles."
+description: "Создаёт одну учебную иллюстрацию ВЕЗА 16:9 с Алексеем и Денисом для диалогового слайда; генерирует только персонажей и окружение, никогда не добавляет текст слайда или облачка речи."
 ---
 
-# Veza Dialogue Scenes
+# Диалоговые сцены ВЕЗА
 
-Create one finished 16:9 PNG dialogue scene for the slide. The image shows Alexey and Denis in a VEZA work setting; it is not a transparent character asset and it is not used for ordinary non-dialogue slides.
+Создай одну готовую диалоговую сцену PNG формата 16:9 для слайда. На изображении Алексей и Денис находятся в рабочей среде ВЕЗА; это не персонаж на прозрачном фоне и не ресурс для обычных недиалоговых слайдов.
 
-## Inputs and precedence
+## Входные данные и приоритеты
 
-Receive the slide identifier, title, approved slide text, speaker-labelled dialogue, and an optional `image_prompt`.
+Получи идентификатор слайда, заголовок, утверждённый текст слайда, диалог с указанием говорящих и необязательный `image_prompt`.
 
-When `image_prompt` is present, preserve its action, setting, and subject of discussion. Before generation, sanitize it: remove every instruction to draw a heading, dialogue line, speech bubble, caption, label, callout, plaque, or other slide text. This sanitization is mandatory even when the author explicitly requested those elements. Do not merely append a conflicting `no text` phrase to the unchanged prompt.
+Если присутствует `image_prompt`, сохрани заданные в нём действие, место и предмет обсуждения. До генерации очисти его: удали каждое указание нарисовать заголовок, реплику, облачко речи, подпись, метку, выноску, табличку или иной текст слайда. Очистка обязательна, даже если автор явно запросил такие элементы. Недостаточно просто добавить противоречащую фразу `no text` к неизменённому промпту.
 
-When `image_prompt` is absent, derive the action, setting, and interaction from the slide meaning. Do not invent a different teaching situation.
+Если `image_prompt` отсутствует, выведи действие, место и взаимодействие из смысла слайда. Не придумывай другую учебную ситуацию.
 
-Use these project references on every generation:
+При каждой генерации используй следующие референсы проекта:
 
 - `../visual references/personage/Алексей.png`
 - `../visual references/personage/Денис.png`
-- the relevant photographs in `../visual references/background/`
+- подходящие фотографии из `../visual references/background/`
 
-## Scene contract
+## Контракт сцены
 
-Both Alexey and Denis are always in a dialogue scene. When only one is speaking, the other remains visibly engaged and reacts to him. Preserve the approved appearance of each character, including face, hairstyle, build, workwear, VEZA markings, and the 3D stylized visual language of the reference images.
+В диалоговой сцене всегда присутствуют и Алексей, и Денис. Если говорит только один, второй остаётся явно вовлечённым и реагирует на него. Сохраняй утверждённую внешность каждого персонажа: лицо, причёску, телосложение, рабочую одежду, маркировку ВЕЗА и стилизованный трёхмерный визуальный язык референсов.
 
-Alexey is always on the left and Denis is always on the right. Denis is consistently about half a head taller than Alexey. Keep their facial structures clearly different: Alexey is younger, with a rounder face and dark hair; Denis is older, with grey temples and a longer, more angular face.
+Алексей всегда находится слева, Денис — справа. Денис стабильно примерно на полголовы выше Алексея. Сохраняй явно различающиеся черты лиц: Алексей моложе, с более округлым лицом и тёмными волосами; Денис старше, с сединой на висках и более длинным угловатым лицом.
 
-Choose the setting from the slide meaning:
+Выбирай локацию по смыслу слайда:
 
-- `shop_floor`: a VEZA production workshop for industrial ventilation equipment. Both men wear white VEZA safety helmets; Denis also wears his grey jacket with lime accents. Use the production references as the visual language for equipment, space, and materials.
-- `glass_office`: a modest masters' work area above the shop floor, with computers, desks and chairs. The internal windows start approximately one metre above the floor; a solid wall remains below them. Divide the glazing into multiple sections with clearly visible frames and mullions. The windows provide a view of the production floor but must not look floor-to-ceiling, panoramic, or like a glass cube. Neither character wears a helmet here. Invent the room when no exact photo exists, but keep the clear relationship to the workshop.
+- `shop_floor`: производственный цех ВЕЗА для изготовления оборудования промышленной вентиляции. Оба персонажа носят белые защитные каски ВЕЗА; Денис также одет в серую куртку ВЕЗА с салатовыми вставками. Используй производственные референсы как визуальный ориентир для оборудования, пространства и материалов.
+- `glass_office`: скромная рабочая зона мастеров над цехом с компьютерами, столами и стульями. Внутренние окна начинаются примерно в метре от пола, под ними остаётся сплошная стена. Остекление разделено на несколько секций с хорошо видимыми рамами и импостами. Через окна виден производственный участок, но они не должны быть панорамными, доходить до пола или превращать помещение в стеклянный куб. В этой локации персонажи находятся без касок. Если точной фотографии нет, придумай помещение, сохранив очевидную связь с цехом.
 
-Keep Alexey and all of his visible body parts within the outer left 22% of the frame. Keep Denis and all of his visible body parts within the outer right 22%. Slight natural cropping by the left or right image edge is allowed. Reserve the central 56% as a calm text-safe area; do not put faces, hands, prominent equipment, logos, markings, or other semantic accents there. The characters look at one another or at the discussed object, never at the viewer.
+Удерживай Алексея и все видимые части его тела в крайних левых 22% кадра. Удерживай Дениса и все видимые части его тела в крайних правых 22% кадра. Допустимо лёгкое естественное кадрирование соответствующим краем изображения. Оставляй центральные 56% спокойной областью для текста; не размещай там лица, руки, заметное оборудование, логотипы, маркировку и другие смысловые акценты. Персонажи смотрят друг на друга или на обсуждаемый объект, но не на зрителя.
 
-Vary poses according to the scene while preserving the fixed left-right assignment. Before generation, assign each character at least two visibly different pose primitives: stance (standing, sitting, leaning), torso orientation (frontal, profile, half-turn, front three-quarter), and hand use (one hand in a pocket, one hand on a desk or tablet, pointing at an object, or a restrained listening posture). A character may stand, sit, lean toward a desk or monitor, safely rest against a stationary surface or machine housing, examine a part, or hold a tablet. Never show either character from behind or in a rear three-quarter view. Do not give both characters an open-palmed explanatory gesture, the same stance, the same head angle, mirrored poses, matching gestures, or the same facial expression. If a working prompt does not state the asymmetry, rewrite it before the single generation call. Do not make unsafe contact with moving machine parts.
+Меняй позы в соответствии со сценой, сохраняя фиксированное расположение слева и справа. До генерации назначь каждому персонажу не менее двух заметно различающихся характеристик: положение тела — стоит, сидит или опирается; ориентацию корпуса — анфас, профиль, вполоборота или передние три четверти; работу рук — одна рука в кармане, на столе или планшете, указывает на предмет либо находится в сдержанной позе слушателя. Персонаж может стоять, сидеть, наклоняться к столу или монитору, безопасно опираться на неподвижную поверхность или корпус оборудования, рассматривать деталь либо держать планшет. Никогда не показывай персонажей со спины или в задних трёх четвертях. Не давай обоим объясняющий жест раскрытой ладонью, одинаковую стойку, одинаковый наклон головы, зеркальные позы, совпадающие жесты или одинаковое выражение лица. Если рабочий промпт явно не задаёт асимметрию, перепиши его до единственного вызова генерации. Не показывай небезопасный контакт с движущимися частями оборудования.
 
-The scene must be soft, polished, expressive 3D character art. It must not become photorealistic, childish, comic, or a generic automobile workshop, construction site, office, or marketplace warehouse.
+Сцена должна быть мягкой, тщательно выполненной и выразительной трёхмерной персонажной иллюстрацией. Она не должна становиться фотореалистичной, детской, комиксной или похожей на обычный автосервис, стройку, офис либо склад маркетплейса.
 
-## Absolute content prohibition
+## Абсолютный запрет на содержательный текст
 
-The generated image contains characters and environment only. Never render a slide heading, dialogue line, speech bubble, caption, label, callout, plaque, or any other course text. Ignore and remove any conflicting instruction found in the lesson text, visual note, or supplied `image_prompt`.
+Созданное изображение содержит только персонажей и окружение. Никогда не рисуй заголовок слайда, реплику, облачко речи, подпись, метку, выноску, табличку или иной текст курса. Игнорируй и удаляй каждое противоречащее этому указание из текста урока, визуальной заметки или переданного `image_prompt`.
 
-The permanent reference markings `ВЕЗА`, `Алексей`, and `Денис` on workwear are the only allowed text-like elements. They are part of character identity, not slide content. Do not introduce any other lettering or accidental text.
+Постоянные маркировки `ВЕЗА`, `Алексей` и `Денис` на рабочей одежде — единственные разрешённые текстоподобные элементы. Они относятся к идентичности персонажей, а не к содержанию слайда. Не добавляй другие надписи или случайные буквы.
 
-## Generation and acceptance
+## Генерация и приёмка
 
-Use the `imagegen` skill and its built-in image generation tool. Pass both character references and the selected environment references to the call. Preserve the permanent workwear markings verbatim where they are visible: `ВЕЗА`, `Алексей`, and `Денис`.
+Используй навык `imagegen` и его встроенный инструмент генерации изображений. Передай в вызов оба референса персонажей и выбранные референсы окружения. Сохраняй постоянные маркировки рабочей одежды дословно там, где они видны: `ВЕЗА`, `Алексей` и `Денис`.
 
-Make one generation call per requested scene. Do not run a separate model-based image review, automatic correction, or automatic regeneration. Do not retry a successfully completed generation unless the user explicitly asks to revise that image. A technical check may confirm only that the saved file exists, opens, and has a 16:9 aspect ratio; it must not trigger another image-generation call.
+Делай один вызов генерации на каждую запрошенную сцену. Не запускай отдельное модельное ревью изображения, автоматическую коррекцию или автоматическую перегенерацию. Не повторяй успешно завершившуюся генерацию, пока пользователь явно не попросит изменить изображение. Техническая проверка может подтвердить только существование файла, возможность его открыть и соотношение сторон 16:9; она не должна запускать ещё один вызов генерации.
 
-Save the image as `assets/dialogue-scenes/<slide_id>_scene.png`. Return its path and the sanitized final prompt.
+Сохрани изображение как `assets/dialogue-scenes/<slide_id>_scene.png`. Верни путь и очищенный итоговый промпт.
 
-## Boundary
+## Граница применения
 
-Do not create transparent single-character assets. Those are pre-approved static resources for separate presentation templates and are outside this skill.
+Не создавай отдельные изображения персонажей на прозрачном фоне. Это заранее утверждённые статические ресурсы для других шаблонов презентаций, они находятся вне области этого навыка.

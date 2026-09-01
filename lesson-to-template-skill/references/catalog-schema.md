@@ -1,85 +1,65 @@
-# Catalog schema
+# Схема каталога
 
-`catalog.json` is a prepared version-2 registry supplied with the course template library. Lesson assembly reads it but never creates, refreshes, or edits it. It has two levels.
+`catalog.json` — подготовленный семантический реестр одной библиотеки шаблонов PowerPoint. Сборка урока читает его и никогда не обновляет.
 
-`slides` describes the matching PowerPoint library. Each item has a `sourceSlide`, an optional `templateId`, comments and notes, and text objects with their PowerPoint `objectName`. The lesson pipeline accepts these addresses only after `preflight_library.mjs` confirms that they still match the supplied PPTX.
+## Индекс групп
 
-`titleTemplate` and `compositions` are the maintained semantic layer. Each entry points to a `templateId` and maps semantic slots to exact object names:
+`groups` — компактный индекс первого прохода. Каждая группа объясняет широкое визуальное назначение и перечисляет входящие в неё идентификаторы композиций:
 
 ```json
 {
-  "templateId": "cards.2.row",
+  "comparison": {
+    "description": "Композиции, которые помогают сопоставить два сравнимых объекта, подхода или состояния.",
+    "templates": ["compare.two.intro.short", "compare.two.intro.detailed", "compare.two.no-intro"]
+  }
+}
+```
+
+Модель сначала читает этот индекс, выбирает наиболее полезную для обучающегося группу и затем читает только записи её композиций. Шаблон может входить в несколько групп, если действительно поддерживает несколько учебных структур.
+
+## Семантические композиции
+
+`titleTemplate` и каждая запись в `compositions` указывают устойчивый физический `templateId` и сопоставляют семантические поля с точными именами объектов PowerPoint. Каждая композиция также содержит краткий контекст:
+
+```json
+{
+  "templateId": "compare.two.intro.short",
+  "groups": ["comparison"],
+  "description": "Короткое вступление и две компактные колонки для сопоставления двух сторон одного вопроса.",
+  "example": "Сравнение понятной и непонятной постановки задачи с одним коротким последствием в каждой колонке.",
   "slots": {
     "title": "TITLE",
-    "card_1": "CARD_1",
-    "card_2": "CARD_2"
+    "intro": "INTRO",
+    "compare_top_label": "COMPARE_TOP_LABEL",
+    "compare_top_body": "COMPARE_TOP_BODY",
+    "compare_bottom_label": "COMPARE_BOTTOM_LABEL",
+    "compare_bottom_body": "COMPARE_BOTTOM_BODY"
   }
 }
 ```
 
-A composition may also have `kinds`, an array of compatible semantic uses, and `stripToSlots: true` for an agreed clean staging slide. `templateId` identifies the physical template; `kinds` describes several valid ways to use it. Keep one ID for one physical template even when it supports several lesson structures.
+Описания и примеры дают контекст, но не образуют исчерпывающих условий применимости. `groups` сужает поиск, а `description`, `example`, видимая структура исходника и именованные поля помогают модели принять решение.
 
-A dialogue slide uses the first blank library slide as a controlled exception. Register that physical slide as `staging.blank`, include `dialogue` in `kinds`, and map its existing editable text field for the speaker-labelled replicas:
+`kinds` может сохранять технические метки совместимости, используемые детерминированным сборщиком, например `dialogue` и `interactive-staging`. Поля `stripToSlots: true`, `imageSlots` и `runStyles` описывают техническое поведение, уже существующее в физическом шаблоне.
 
-```json
-{
-  "templateId": "staging.blank",
-  "kinds": ["dialogue"],
-  "stripToSlots": true,
-  "slots": {
-    "dialogue": "STAGING_BODY"
-  }
-}
+## Физический реестр
+
+`slides` отражает текущий порядок слайдов в PPTX. Каждая запись содержит `sourceSlide`, необязательный `templateId`, комментарии, заметки докладчика и именованные текстовые объекты. `sourceSlide` обновляется при подготовке библиотеки и никогда не служит постоянным семантическим адресом.
+
+У каждого переиспользуемого слайда в заметках PowerPoint или комментарии есть одна устойчивая строка:
+
+```text
+template_id: compare.two.intro.short
 ```
 
-The source `staging.blank` slide does not need to contain `DIALOGUE_SCENE` or speech bubbles. For a dialogue plan item, the builder removes the blank placeholder, creates one full-slide picture named `DIALOGUE_SCENE`, and writes the replicas into the existing mapped field. It must not create a title, speech bubbles, speaker labels, or other overlay objects. The builder creates a separate media relationship for every output dialogue slide, so one scene cannot overwrite another in a batch. Ordinary `imageSlots` are still reserved for replacing pictures that already exist in a physical template.
+Остальные заметки могут обычным языком объяснять назначение шаблона. Навык подготовки поддерживает физический реестр и семантический каталог вместе. Навык сборки урока принимает их только после того, как `preflight_library.mjs` подтвердит количество слайдов, уникальность идентификаторов и имена сопоставленных объектов.
 
-Interaction staging uses a separate physical slide that is visually identical to `staging.blank`:
+## Технические заготовки
 
-```json
-{
-  "templateId": "staging.interaction",
-  "kinds": ["interactive-staging", "unsupported-visual-staging"],
-  "stripToSlots": true,
-  "slots": {
-    "body": "STAGING_BODY"
-  }
-}
-```
+`staging.blank` используется только для диалога и сопоставляет существующее редактируемое служебное поле. Сборщик вставляет для каждого диалогового выходного слайда одно созданное полноэкранное изображение с именем `DIALOGUE_SCENE`.
 
-Never map an interaction plan item to `staging.blank`. The separate physical template keeps dialogue image insertion and interactive authoring independent while reusing the same visual blank-slide design.
+`staging.interaction` — отдельный физический слайд со своим `templateId`. Он сопоставляет редактируемое служебное поле основного текста и не запускает генерацию изображения. Эти две записи могут иметь одинаковый визуальный дизайн, но не могут использовать одинаковую операцию сборки.
 
-When one editable shape deliberately contains several text styles, add `runStyles`. The number is the one-based styled run in the source shape:
+## Существующие стили фрагментов
 
-```json
-{
-  "templateId": "term.explanation",
-  "slots": {
-    "title": "TITLE",
-    "definition": "DEFINITION"
-  },
-  "runStyles": {
-    "definition": {
-      "accent": 1,
-      "body": 3
-    }
-  }
-}
-```
-
-The lesson plan may then use a structured slot value. Concatenating `segments[].text` must reproduce the exact approved text:
-
-```json
-{
-  "definition": {
-    "segments": [
-      { "style": "accent", "text": "Нормо-час" },
-      { "style": "body", "text": " — это мера объёма работы." }
-    ]
-  }
-}
-```
-
-Use semantic style names such as `accent`, `body`, and `label`. Map them only to runs that already exist in that named template object.
-
-Every prepared template has a stable `template_id` in its PowerPoint comment or speaker notes. The lesson pipeline checks these identifiers and mapped object names before every build. A missing or mismatched identifier is a stopping condition; resolving it belongs to a separate library-preparation task.
+Если одно редактируемое поле намеренно содержит несколько стилей текста, `runStyles` сопоставляет семантические имена с существующими фрагментами, пронумерованными с единицы. При объединении текста сегментов структурированные значения плана должны дословно воспроизводить утверждённый текст. Сборщик никогда не придумывает новый шрифт, цвет, размер или выделение.

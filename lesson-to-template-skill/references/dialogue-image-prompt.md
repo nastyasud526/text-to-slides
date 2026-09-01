@@ -1,12 +1,12 @@
-# Dialogue image prompt
+# Промпт изображения для диалога
 
-`lesson-to-template` creates this working prompt for every recognised dialogue slide before calling `veza-dialogue-scenes`. It is not an extra field the course author must write. When the source already has `image_prompt:`, preserve its semantic scene decision. The image skill sanitizes the prompt before generation and removes every request to render a heading, dialogue line, speech bubble, caption, label, callout, plaque, or other slide text.
+`lesson-to-template` создаёт этот рабочий промпт для каждого распознанного диалогового слайда до вызова `veza-dialogue-scenes`. Это не дополнительное поле, которое должен заполнять автор курса. Если в исходнике уже есть `image_prompt:`, сохрани заложенное в нём смысловое решение сцены. Навык генерации изображения очищает промпт до генерации и удаляет каждое указание нарисовать заголовок, реплику, облачко речи, подпись, метку, выноску, табличку или иной текст слайда.
 
-## Read the slide first
+## Сначала прочитай слайд
 
-Determine what happens in the exchange, who is speaking, who is listening or reacting, the topic, the discussed object if any, the appropriate setting, and the available text area. Use `shop_floor` when the exchange concerns an operation, equipment, quality, logistics, order at the workplace, a production task, or an object in the workshop. Use `glass_office` when the exchange concerns planning, analysis, a computer-based task, or a discussion at the masters' work area. If the setting cannot be inferred confidently, use a neutral VEZA assembly area rather than inventing a specific machine or process.
+Определи, что происходит в разговоре, кто говорит, кто слушает или реагирует, тему, обсуждаемый объект при его наличии, подходящую локацию и доступную область для текста. Используй `shop_floor`, когда разговор касается операции, оборудования, качества, логистики, порядка на рабочем месте, производственной задачи или предмета в цехе. Используй `glass_office`, когда разговор касается планирования, анализа, работы за компьютером или обсуждения на рабочем месте мастеров. Если локацию нельзя уверенно вывести из смысла, используй нейтральный сборочный участок ВЕЗА и не придумывай конкретный станок или процесс.
 
-Create a compact internal scene card before writing the prompt:
+До написания промпта создай компактную внутреннюю карточку сцены:
 
 ```json
 {
@@ -24,13 +24,13 @@ Create a compact internal scene card before writing the prompt:
 }
 ```
 
-Use restrained natural expressions and gestures. Avoid exaggerated faces and theatrical gestures. Keep Alexey on the left and Denis on the right in every scene; Denis remains about half a head taller. If the discussion needs an object, place it nearer to one character and keep the text-safe area clear.
+Используй сдержанные естественные эмоции и жесты. Избегай преувеличенной мимики и театральных движений. На каждой сцене Алексей находится слева, Денис — справа; Денис остаётся примерно на полголовы выше. Если для обсуждения нужен предмет, расположи его ближе к одному из персонажей и сохрани область для текста свободной.
 
-Choose visibly asymmetric poses for the two characters before writing the final prompt. Assign at least two different pose primitives: stance (standing, sitting, leaning), torso orientation (frontal, profile, half-turn, front three-quarter), and hand use (one hand in a pocket, one hand on a desk or tablet, pointing at an object, or a restrained listening posture). Do not assign both characters an open-palmed explanatory gesture, the same stance, or the same head angle. Never use rear or rear three-quarter views, mirrored poses, matching gestures, or identical expressions. If the draft prompt does not make the asymmetry explicit, rewrite it before the single generation call.
+До написания итогового промпта выбери для персонажей заметно несимметричные позы. Назначь им не менее двух различающихся характеристик: положение тела — стоит, сидит или опирается; ориентацию корпуса — анфас, профиль, вполоборота или передние три четверти; работу рук — одна рука в кармане, на столе или планшете, указывает на предмет либо находится в сдержанной позе слушателя. Не назначай обоим персонажам объясняющий жест раскрытой ладонью, одинаковую стойку или одинаковый наклон головы. Не используй вид со спины или задние три четверти, зеркальные позы, совпадающие жесты или одинаковые выражения лица. Если черновой промпт не задаёт асимметрию явно, перепиши его до единственного вызова генерации.
 
-## Prompt template
+## Шаблон промпта
 
-Write the final prompt in English and fill the square-bracketed parts from the scene card.
+Пиши итоговый промпт на английском языке и заполняй части в квадратных скобках по карточке сцены. Английский текст ниже является рабочим техническим шаблоном и не переводится:
 
 ```text
 Create a 16:9 3D cartoon-style training illustration for a VEZA course about production foremen.

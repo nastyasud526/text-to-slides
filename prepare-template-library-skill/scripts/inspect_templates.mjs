@@ -4,10 +4,12 @@ import { createRequire } from "node:module";
 import { loadArtifactTool, usage } from "./runtime.mjs";
 
 const args = process.argv.slice(2);
-const [pptx, out, qaDir] = args;
+const [pptx, out] = args;
 const mergeAt = args.indexOf("--merge");
 const mergePath = mergeAt >= 0 ? args[mergeAt + 1] : null;
-if (!pptx || !out || !qaDir || (mergeAt >= 0 && !mergePath)) usage("inspect_templates.mjs", "<template.pptx> <catalog.json> <template-qa-directory> [--merge <previous-catalog.json>]");
+const renderAt = args.indexOf("--render-dir");
+const renderDir = renderAt >= 0 ? args[renderAt + 1] : null;
+if (!pptx || !out || (mergeAt >= 0 && !mergePath) || (renderAt >= 0 && !renderDir)) usage("inspect_templates.mjs", "<template.pptx> <catalog.json> [--merge <previous-catalog.json>] [--render-dir <directory>]");
 
 function decodeXml(value) {
   return value.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&amp;/g, "&");
@@ -75,7 +77,12 @@ function mergeSelections(next, previous) {
   if (!previous || previous.version !== 2) return next;
   const liveIds = new Set(next.slides.map((slide) => slide.templateId).filter(Boolean));
   const keep = (spec) => spec && liveIds.has(spec.templateId) ? spec : null;
-  return { ...next, titleTemplate: keep(previous.titleTemplate), compositions: Object.fromEntries(Object.entries(previous.compositions ?? {}).filter(([, spec]) => keep(spec))) };
+  const compositions = Object.fromEntries(Object.entries(previous.compositions ?? {}).filter(([, spec]) => keep(spec)));
+  const groups = Object.fromEntries(Object.entries(previous.groups ?? {}).map(([name, group]) => [name, {
+    ...group,
+    templates: (group.templates ?? []).filter((template) => compositions[template])
+  }]).filter(([, group]) => group.templates.length));
+  return { ...next, groups, titleTemplate: keep(previous.titleTemplate), compositions };
 }
 
 const modules = process.env.RUNTIME_NODE_MODULES;
@@ -83,8 +90,6 @@ if (!modules) throw new Error("RUNTIME_NODE_MODULES is not set.");
 const require = createRequire(path.join(modules, "lesson-to-template-runtime.cjs"));
 const JSZip = require("jszip");
 const zip = await JSZip.loadAsync(await fs.readFile(pptx));
-const { FileBlob, PresentationFile } = await loadArtifactTool();
-const deck = await PresentationFile.importPptx(await FileBlob.load(pptx));
 const presentationXml = await zip.file("ppt/presentation.xml")?.async("string");
 const presentationRels = await zip.file("ppt/_rels/presentation.xml.rels")?.async("string");
 if (!presentationXml || !presentationRels) throw new Error("PPTX is missing presentation slide-order metadata.");
@@ -100,7 +105,6 @@ for (const match of presentationXml.matchAll(/<p:sldId\b[^>]*\br:id="([^"]+)"[^>
   if (!target) throw new Error(`Presentation slide relationship ${JSON.stringify(match[1])} has no target.`);
   orderedSlideFiles.push(path.posix.normalize(target.startsWith("/") ? target.slice(1) : `ppt/${target}`));
 }
-if (orderedSlideFiles.length !== deck.slides.count) throw new Error(`PPTX order has ${orderedSlideFiles.length} slides, importer has ${deck.slides.count}.`);
 const slides = [];
 for (const [index, slideFile] of orderedSlideFiles.entries()) {
   const slideIndex = index + 1;
@@ -120,6 +124,7 @@ for (const [index, slideFile] of orderedSlideFiles.entries()) {
 }
 const baseCatalog = {
   version: 2,
+  groups: {},
   titleTemplate: null,
   compositions: {},
   slides,
@@ -127,15 +132,20 @@ const baseCatalog = {
 };
 const previous = mergePath ? JSON.parse(await fs.readFile(mergePath, "utf8")) : null;
 const catalog = mergeSelections(baseCatalog, previous);
-await fs.mkdir(qaDir, { recursive: true });
-for (const [index, slide] of deck.slides.items.entries()) {
-  const stem = `template-slide-${String(index + 1).padStart(2, "0")}`;
-  const png = await slide.export({ format: "png", scale: 1 });
-  await fs.writeFile(path.join(qaDir, `${stem}.png`), new Uint8Array(await png.arrayBuffer()));
-  const layout = await slide.export({ format: "layout" });
-  await fs.writeFile(path.join(qaDir, `${stem}.layout.json`), await layout.text(), "utf8");
+if (renderDir) {
+  const { FileBlob, PresentationFile } = await loadArtifactTool();
+  const deck = await PresentationFile.importPptx(await FileBlob.load(pptx));
+  if (orderedSlideFiles.length !== deck.slides.count) throw new Error(`PPTX order has ${orderedSlideFiles.length} slides, importer has ${deck.slides.count}.`);
+  await fs.mkdir(renderDir, { recursive: true });
+  for (const [index, slide] of deck.slides.items.entries()) {
+    const stem = `template-slide-${String(index + 1).padStart(2, "0")}`;
+    const png = await slide.export({ format: "png", scale: 1 });
+    await fs.writeFile(path.join(renderDir, `${stem}.png`), new Uint8Array(await png.arrayBuffer()));
+    const layout = await slide.export({ format: "layout" });
+    await fs.writeFile(path.join(renderDir, `${stem}.layout.json`), await layout.text(), "utf8");
+  }
+  const inspection = await deck.inspect({ kind: "slide,textbox,image,notes,layout", maxChars: 50000 });
+  await fs.writeFile(path.join(renderDir, "template.inspect.ndjson"), inspection.ndjson, "utf8");
 }
-const inspection = await deck.inspect({ kind: "slide,textbox,image,notes,layout", maxChars: 50000 });
-await fs.writeFile(path.join(qaDir, "template.inspect.ndjson"), inspection.ndjson, "utf8");
 await fs.writeFile(out, JSON.stringify(catalog, null, 2), "utf8");
-console.log(`Catalogued and rendered ${slides.length} slides; found ${slides.filter((slide) => slide.templateId).length} template_id markers.`);
+console.log(`Catalogued ${slides.length} slides; found ${slides.filter((slide) => slide.templateId).length} template_id markers${renderDir ? "; optional renders created" : ""}.`);
