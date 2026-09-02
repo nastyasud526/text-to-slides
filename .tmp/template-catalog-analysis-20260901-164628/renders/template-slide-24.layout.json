@@ -1,0 +1,594 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/l0bepsfm",
+    "id": "l0bepsfm",
+    "slide": 24,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Другая 4",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#3F454F",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Bahnschrift SemiBold Condensed",
+      "Calibri",
+      "Calibri Light",
+      "Nunito"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "backgroundColor": "#EEF0F3",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/76tc729o",
+      "id": "20",
+      "name": "Рисунок 12",
+      "bbox": [
+        162.47,
+        590.32,
+        321.44,
+        321.44
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image22.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1206
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image22.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1206
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/md0321kv",
+      "id": "6",
+      "name": "EXAMPLE_LABEL",
+      "bbox": [
+        84.9,
+        37.07,
+        1000,
+        58.67
+      ],
+      "geometry": "rect",
+      "text": "ПРИМЕР",
+      "textPreview": "ПРИМЕР",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ПРИМЕР"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ПРИМЕР",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ПРИМЕР",
+              "fontSize": 40,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "color": "#F5340B",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b21svulg",
+      "id": "16",
+      "name": "BODY",
+      "bbox": [
+        77.44,
+        107.14,
+        797.7,
+        542.7
+      ],
+      "geometry": "rect",
+      "text": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался готовый заказ. Всё, что мастер делает за день, работает на эту цель.",
+      "textPreview": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался го...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Участок — это люди, оборудование и материалы. Сами по себе они изделие"
+          },
+          {
+            "index": 2,
+            "text": "не выпустят. Мастер соединяет их так, чтобы на выходе получался готовый"
+          },
+          {
+            "index": 3,
+            "text": "заказ. Всё, что мастер делает за день, работает на эту цель."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался готовый заказ. Всё, что мастер делает за день, работает на эту цель.",
+          "lineSpacingPercent": 130000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался готовый заказ. Всё, что мастер делает за день, работает на эту цель.",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ozq90f2p",
+      "id": "19",
+      "name": "Shape 0",
+      "bbox": [
+        73.37,
+        0,
+        0.02,
+        94.67
+      ],
+      "horizontalFlip": true,
+      "geometry": "line",
+      "lineColor": "#F5340B",
+      "lineWidth": 2
+    },
+    {
+      "order": 5,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/m5kbex8j",
+      "id": "21",
+      "name": "Рисунок 2",
+      "bbox": [
+        926.75,
+        45.25,
+        195,
+        195
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image50.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1043
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image50.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1043
+      }
+    },
+    {
+      "order": 6,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/98bu9sru",
+      "id": "22",
+      "name": "Рисунок 4",
+      "bbox": [
+        897.25,
+        474.88,
+        254,
+        254
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image18.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1261
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image18.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1261
+      }
+    },
+    {
+      "order": 7,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/872tgnq9",
+      "id": "23",
+      "name": "Рисунок 6",
+      "bbox": [
+        1179.12,
+        -27.59,
+        188,
+        188
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image35.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 892
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image35.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 892
+      }
+    },
+    {
+      "order": 8,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/vudcb2p0",
+      "id": "24",
+      "name": "Рисунок 8",
+      "bbox": [
+        1065.64,
+        255.62,
+        132,
+        132
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image36.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 909
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image36.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 909
+      }
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/utkbix8f",
+      "id": "25",
+      "name": "Рисунок 10",
+      "bbox": [
+        1074.2,
+        91.35,
+        212,
+        212
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image51.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 999
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image51.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 999
+      }
+    },
+    {
+      "order": 10,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/hwvudc76",
+      "id": "26",
+      "name": "Рисунок 14",
+      "bbox": [
+        885.5,
+        -295.33,
+        390,
+        390
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image52.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1485
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image52.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1485
+      }
+    },
+    {
+      "order": 11,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/gvmdk7ql",
+      "id": "27",
+      "name": "Рисунок 16",
+      "bbox": [
+        -277.64,
+        296.83,
+        237,
+        237
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image37.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1265
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image37.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1265
+      }
+    },
+    {
+      "order": 12,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/by9czi9w",
+      "id": "28",
+      "name": "Рисунок 18",
+      "bbox": [
+        40.15,
+        -346.75,
+        328,
+        328
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image25.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1287
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image25.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1287
+      }
+    },
+    {
+      "order": 13,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ax0b6d8b",
+      "id": "29",
+      "name": "Рисунок 20",
+      "bbox": [
+        927.64,
+        308.41,
+        212,
+        212
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image26.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image26.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      }
+    },
+    {
+      "order": 14,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/03y9gj6t",
+      "id": "30",
+      "name": "Рисунок 22",
+      "bbox": [
+        1001.64,
+        190.62,
+        130,
+        130
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image38.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 834
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image38.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 834
+      }
+    },
+    {
+      "order": 15,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/147q947e",
+      "id": "31",
+      "name": "Рисунок 24",
+      "bbox": [
+        -337.03,
+        -60.75,
+        348,
+        348
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image39.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1545
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image39.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1545
+      }
+    },
+    {
+      "order": 16,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ehwre9o3",
+      "id": "32",
+      "name": "Рисунок 33",
+      "bbox": [
+        1074.2,
+        618.55,
+        169,
+        169
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image53.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1155
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image53.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1155
+      }
+    },
+    {
+      "order": 17,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/fi587epo",
+      "id": "33",
+      "name": "Рисунок 34",
+      "bbox": [
+        558.75,
+        -227.01,
+        212,
+        212
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image41.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image41.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      }
+    },
+    {
+      "order": 18,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/sfe9cz6x",
+      "id": "34",
+      "name": "!!gear-07",
+      "bbox": [
+        1082.49,
+        306.28,
+        386.01,
+        386.01
+      ],
+      "rotation": 223.97,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image8.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image8.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      }
+    }
+  ],
+  "composeRuns": []
+}

@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "groups": {
+    "service": {
+      "description": "Титульные слайды курса, модуля и урока.",
+      "templates": ["lesson.title"]
+    },
+    "text": {
+      "description": "Связное объяснение, в котором должна сохраняться последовательность рассуждения.",
+      "templates": ["text.title-body"]
+    },
+    "staging": {
+      "description": "Служебные слайды для диалоговых сцен и передачи интерактивного задания автору.",
+      "templates": ["staging.blank", "staging.interaction"]
+    }
+  },
+  "titleTemplate": {
+    "templateId": "lesson.title",
+    "groups": ["service"],
+    "description": "Представляет урок и его место в курсе.",
+    "example": "Урок 1.4. Первые решения руководителя производства.",
+    "slots": { "title": "TITLE" }
+  },
+  "compositions": {
+    "lesson.title": {
+      "templateId": "lesson.title",
+      "groups": ["service"],
+      "description": "Представляет урок и его место в курсе.",
+      "example": "Урок 1.4. Первые решения руководителя производства.",
+      "slots": { "title": "TITLE" }
+    },
+    "text.title-body": {
+      "templateId": "text.title-body",
+      "groups": ["text"],
+      "description": "Показывает одно связное объяснение под содержательным заголовком.",
+      "example": "Почему первая встреча смены задаёт приоритеты на весь день.",
+      "slots": { "title": "TITLE", "body": "BODY" }
+    },
+    "staging.blank": {
+      "templateId": "staging.blank",
+      "groups": ["staging"],
+      "description": "Пустой служебный слайд для созданной диалоговой сцены.",
+      "example": "Два заданных в конфигурации персонажа обсуждают рабочую ситуацию.",
+      "slots": { "dialogue": "DIALOGUE" },
+      "kinds": ["dialogue"]
+    },
+    "staging.interaction": {
+      "templateId": "staging.interaction",
+      "groups": ["staging"],
+      "description": "Служебный слайд, который сохраняет интерактивное упражнение для дальнейшей авторской разработки.",
+      "example": "Вопрос и все варианты ответа передаются автору без изменений.",
+      "slots": { "body": "BODY" },
+      "kinds": ["interactive-staging"]
+    }
+  },
+  "slides": [
+    {
+      "sourceSlide": 1,
+      "templateId": "staging.blank",
+      "comments": ["template_id: staging.blank"],
+      "notes": [],
+      "text": [],
+      "suggestedSlots": {},
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 2,
+      "templateId": "lesson.title",
+      "comments": ["template_id: lesson.title"],
+      "notes": [],
+      "text": [],
+      "suggestedSlots": {},
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 3,
+      "templateId": "text.title-body",
+      "comments": ["template_id: text.title-body"],
+      "notes": [],
+      "text": [],
+      "suggestedSlots": {},
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 4,
+      "templateId": "staging.interaction",
+      "comments": ["template_id: staging.interaction"],
+      "notes": [],
+      "text": [],
+      "suggestedSlots": {},
+      "objectNamesAreUnique": true
+    }
+  ]
+}

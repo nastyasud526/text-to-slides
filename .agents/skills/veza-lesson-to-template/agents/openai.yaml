@@ -1,6 +1,0 @@
-interface:
-  display_name: "Сборка урока ВЕЗА"
-  short_description: "Собрать урок ВЕЗА по подготовленной библиотеке курса"
-  default_prompt: "Используй $veza-lesson-to-template, чтобы собрать презентацию запрошенного урока курса ВЕЗА."
-policy:
-  allow_implicit_invocation: true

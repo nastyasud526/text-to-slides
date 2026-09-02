@@ -1,0 +1,6 @@
+interface:
+  display_name: "Подготовка библиотеки слайдов"
+  short_description: "Подготовить библиотеку PPTX и семантический каталог"
+  default_prompt: "Используй $prepare-template-library, чтобы подготовить библиотеку шаблонов PowerPoint из course.yaml и заново собрать её каталог."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,944 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/oz2xg3q1",
+    "id": "oz2xg3q1",
+    "slide": 47,
+    "layoutId": "/ppt/slideLayouts/slideLayout6.xml",
+    "layoutName": "1_Financial Table",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Другая 4",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#3F454F",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Bahnschrift SemiBold Condensed",
+      "Calibri",
+      "Calibri Light",
+      "Nunito"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout6.xml",
+      "name": "1_Financial Table",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout6.xml/6",
+          "id": "6",
+          "name": "Picture Placeholder 5",
+          "bbox": [
+            671.83,
+            0,
+            611.17,
+            720
+          ],
+          "geometry": "custom",
+          "text": "Image placeholder",
+          "textPreview": "Image placeholder",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none"
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Image placeholder",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Image placeholder"
+                }
+              ]
+            }
+          ],
+          "fillColor": {
+            "type": "theme",
+            "value": "bg1",
+            "transform": {
+              "darken": 0.05
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "backgroundColor": "#EEF0F3",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uxgr2x03",
+      "id": "33",
+      "name": "METRIC_1_TITLE",
+      "bbox": [
+        261.71,
+        128.13,
+        68.19,
+        33.93
+      ],
+      "geometry": "rect",
+      "text": "BUDGET",
+      "textPreview": "BUDGET",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "BUDGET"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "BUDGET",
+          "runs": [
+            {
+              "index": 1,
+              "text": "BUDGET",
+              "fontSize": 20,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9w7q9sji",
+      "id": "34",
+      "name": "METRIC_1_BODY",
+      "bbox": [
+        261.71,
+        163.05,
+        358.68,
+        140.02
+      ],
+      "geometry": "rect",
+      "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the.\n",
+      "textPreview": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 6,
+        "lines": [
+          {
+            "index": 1,
+            "text": "This is the sample Dummy Text"
+          },
+          {
+            "index": 2,
+            "text": "insert your desired text here"
+          },
+          {
+            "index": 3,
+            "text": "because this the. This is the"
+          },
+          {
+            "index": 4,
+            "text": "sample Dummy Text insert your"
+          },
+          {
+            "index": 5,
+            "text": "desired text here because this the."
+          },
+          {
+            "index": 6,
+            "text": ""
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "This is the sample Dummy Text insert ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.5
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "your desired text here because this the.",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.5
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": " This is the sample Dummy Text insert ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.5
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 4,
+              "text": "your desired text here because this the.",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.5
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nup8721c",
+      "id": "36",
+      "name": "METRIC_1_VALUE",
+      "bbox": [
+        141.62,
+        122.47,
+        83.68,
+        45.24
+      ],
+      "geometry": "rect",
+      "text": "$ 4.7M",
+      "textPreview": "$ 4.7M",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "$ 4.7M"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "$ 4.7M",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "$ 4.7M",
+              "fontSize": 29.33,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "color": "accent2"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/on69k7ex",
+      "id": "44",
+      "name": "METRIC_2_TITLE",
+      "bbox": [
+        261.71,
+        297.52,
+        84.18,
+        33.93
+      ],
+      "geometry": "rect",
+      "text": "SPENDING",
+      "textPreview": "SPENDING",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "SPENDING"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "SPENDING",
+          "runs": [
+            {
+              "index": 1,
+              "text": "SPENDING",
+              "fontSize": 20,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pozqtcfi",
+      "id": "45",
+      "name": "METRIC_2_BODY",
+      "bbox": [
+        261.71,
+        332.44,
+        358.68,
+        140.02
+      ],
+      "geometry": "rect",
+      "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the.\n",
+      "textPreview": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 6,
+        "lines": [
+          {
+            "index": 1,
+            "text": "This is the sample Dummy Text"
+          },
+          {
+            "index": 2,
+            "text": "insert your desired text here"
+          },
+          {
+            "index": 3,
+            "text": "because this the. This is the"
+          },
+          {
+            "index": 4,
+            "text": "sample Dummy Text insert your"
+          },
+          {
+            "index": 5,
+            "text": "desired text here because this the."
+          },
+          {
+            "index": 6,
+            "text": ""
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "This is the sample Dummy Text insert ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.5
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "your desired text here because this the.",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.5
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": " This is the sample Dummy Text insert ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.5
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 4,
+              "text": "your desired text here because this the.",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.5
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2lorixwr",
+      "id": "46",
+      "name": "METRIC_2_VALUE",
+      "bbox": [
+        141.79,
+        291.86,
+        83.51,
+        45.24
+      ],
+      "geometry": "rect",
+      "text": "$ 3.5M",
+      "textPreview": "$ 3.5M",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "$ 3.5M"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "$ 3.5M",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "$ 3.5M",
+              "fontSize": 29.33,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "color": "accent2"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wbq9oret",
+      "id": "48",
+      "name": "METRIC_3_TITLE",
+      "bbox": [
+        261.71,
+        466.91,
+        66.85,
+        33.93
+      ],
+      "geometry": "rect",
+      "text": "SAVING",
+      "textPreview": "SAVING",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "SAVING"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "SAVING",
+          "runs": [
+            {
+              "index": 1,
+              "text": "SAVING",
+              "fontSize": 20,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xczqxcfe",
+      "id": "49",
+      "name": "METRIC_3_BODY",
+      "bbox": [
+        261.71,
+        501.83,
+        358.68,
+        140.02
+      ],
+      "geometry": "rect",
+      "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the.\n",
+      "textPreview": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 6,
+        "lines": [
+          {
+            "index": 1,
+            "text": "This is the sample Dummy Text"
+          },
+          {
+            "index": 2,
+            "text": "insert your desired text here"
+          },
+          {
+            "index": 3,
+            "text": "because this the. This is the"
+          },
+          {
+            "index": 4,
+            "text": "sample Dummy Text insert your"
+          },
+          {
+            "index": 5,
+            "text": "desired text here because this the."
+          },
+          {
+            "index": 6,
+            "text": ""
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "This is the sample Dummy Text insert ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.5
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "your desired text here because this the.",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.5
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": " This is the sample Dummy Text insert ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.5
+                }
+              },
+              "bold": true
+            },
+            {
+              "index": 4,
+              "text": "your desired text here because this the.",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.5
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/761cnqhg",
+      "id": "50",
+      "name": "METRIC_3_VALUE",
+      "bbox": [
+        158.62,
+        461.25,
+        66.68,
+        45.24
+      ],
+      "geometry": "rect",
+      "text": "$ 5M",
+      "textPreview": "$ 5M",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "$ 5M"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "$ 5M",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "$ 5M",
+              "fontSize": 29.33,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "color": "accent2"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "chart",
+      "scope": "slide",
+      "aid": "ch/epormd8n",
+      "id": "51",
+      "name": "Chart 5",
+      "bbox": [
+        716.05,
+        143.61,
+        497.37,
+        418.39
+      ],
+      "chartType": "bar"
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kz6tcbad",
+      "id": "13",
+      "name": "Shape 0",
+      "bbox": [
+        1211.52,
+        0,
+        0,
+        119.04
+      ],
+      "geometry": "line",
+      "lineColor": "#F5340B",
+      "lineWidth": 2
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72xcnqto",
+      "id": "14",
+      "name": "TITLE",
+      "bbox": [
+        789.6,
+        46.08,
+        400.8,
+        46.08
+      ],
+      "geometry": "rect",
+      "text": "ЦИФРЫ ИССЛЕДОВАНИЯ",
+      "textPreview": "ЦИФРЫ ИССЛЕДОВАНИЯ",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ЦИФРЫ"
+          },
+          {
+            "index": 2,
+            "text": "ИССЛЕДОВАНИЯ"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ЦИФРЫ ИССЛЕДОВАНИЯ",
+          "resolvedTextStyle": {
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ЦИФРЫ ИССЛЕДОВАНИЯ",
+              "fontSize": 40,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "color": "#3F454F",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

@@ -1,0 +1,940 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/8f2psfyx",
+    "id": "8f2psfyx",
+    "slide": 12,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Другая 4",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#3F454F",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Bahnschrift Condensed",
+      "Bahnschrift SemiBold Condensed",
+      "Calibri",
+      "Calibri Light",
+      "Nunito"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "backgroundColor": "#EEF0F3",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/8zulk7u1",
+      "id": "39",
+      "name": "Рисунок 34",
+      "bbox": [
+        131.92,
+        240.25,
+        462.14,
+        402.08
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image44.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 443
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image44.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 443
+      }
+    },
+    {
+      "order": 2,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/8rml47ql",
+      "id": "40",
+      "name": "Рисунок 12",
+      "bbox": [
+        -69.88,
+        738.87,
+        321.44,
+        321.44
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image22.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1206
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image22.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1206
+      }
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dcbm583y",
+      "id": "6",
+      "name": "TITLE",
+      "bbox": [
+        84.9,
+        37.07,
+        1000,
+        58.67
+      ],
+      "geometry": "rect",
+      "text": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ",
+      "textPreview": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ"
+          },
+          {
+            "index": 2,
+            "text": "ТЯЖЕЛЕЕ"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ",
+              "fontSize": 40,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "color": "#3F454F",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/9cv2xc76",
+      "id": "41",
+      "name": "Image 3",
+      "bbox": [
+        1109.81,
+        64,
+        96.83,
+        30.67
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image34.png",
+        "contentType": "image/png",
+        "byteLength": 47754
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image34.png",
+        "contentType": "image/png",
+        "byteLength": 47754
+      }
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b6d4f2lc",
+      "id": "8",
+      "name": "COMPARE_LEFT_BODY",
+      "bbox": [
+        157.23,
+        263.88,
+        406.43,
+        366.66
+      ],
+      "geometry": "rect",
+      "text": "На КОНВЕЙЕРЕ одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений.",
+      "textPreview": "На КОНВЕЙЕРЕ одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётс...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 6,
+        "lines": [
+          {
+            "index": 1,
+            "text": "На КОНВЕЙЕРЕ одно и то же"
+          },
+          {
+            "index": 2,
+            "text": "изделие идёт потоком. Темп и"
+          },
+          {
+            "index": 3,
+            "text": "порядок операций задаёт линия,"
+          },
+          {
+            "index": 4,
+            "text": "работа у каждого расписана"
+          },
+          {
+            "index": 5,
+            "text": "заранее. Мастеру остаётся меньше"
+          },
+          {
+            "index": 6,
+            "text": "решений."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "На КОНВЕЙЕРЕ одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений.",
+          "lineSpacingPercent": 130000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "На ",
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 2,
+              "text": "КОНВЕЙЕРЕ",
+              "typeface": "Bahnschrift Condensed",
+              "color": "#21C535"
+            },
+            {
+              "index": 3,
+              "text": " ",
+              "typeface": "Bahnschrift Condensed",
+              "color": "#F5340B"
+            },
+            {
+              "index": 4,
+              "text": "одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся ",
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 5,
+              "text": "меньше решений.",
+              "typeface": "Nunito",
+              "color": "#21C535"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mps7a5or",
+      "id": "16",
+      "name": "INTRO",
+      "bbox": [
+        90.84,
+        118.3,
+        807.45,
+        103.3
+      ],
+      "geometry": "rect",
+      "text": "Работа мастера зависит от типа производства.",
+      "textPreview": "Работа мастера зависит от типа производства.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Работа мастера зависит от типа производства."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Работа мастера зависит от типа производства.",
+          "lineSpacingPercent": 130000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "Работа мастера зависит от типа производства.",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1oj61kn6",
+      "id": "19",
+      "name": "Shape 0",
+      "bbox": [
+        73.37,
+        0,
+        0.02,
+        94.67
+      ],
+      "horizontalFlip": true,
+      "geometry": "line",
+      "lineColor": "#F5340B",
+      "lineWidth": 2
+    },
+    {
+      "order": 8,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/mpk32x8v",
+      "id": "42",
+      "name": "Рисунок 2",
+      "bbox": [
+        384.94,
+        779.77,
+        195,
+        195
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image17.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1006
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image17.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1006
+      }
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/nqdkv2pg",
+      "id": "43",
+      "name": "Рисунок 4",
+      "bbox": [
+        1318.54,
+        -13.75,
+        254,
+        254
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image18.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1261
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image18.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1261
+      }
+    },
+    {
+      "order": 10,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/wfml8rqx",
+      "id": "44",
+      "name": "Рисунок 6",
+      "bbox": [
+        -253.14,
+        543.4,
+        188,
+        188
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image35.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 892
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image35.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 892
+      }
+    },
+    {
+      "order": 11,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/xgvm1w7i",
+      "id": "45",
+      "name": "Рисунок 8",
+      "bbox": [
+        1328.43,
+        493.7,
+        132,
+        132
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image36.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 909
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image36.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 909
+      }
+    },
+    {
+      "order": 12,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ad436h8r",
+      "id": "46",
+      "name": "Рисунок 10",
+      "bbox": [
+        694.86,
+        849.63,
+        212,
+        212
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image21.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image21.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      }
+    },
+    {
+      "order": 13,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/vedkzmpc",
+      "id": "47",
+      "name": "Рисунок 14",
+      "bbox": [
+        1175.33,
+        185.57,
+        390,
+        390
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image23.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image23.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      }
+    },
+    {
+      "order": 14,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/cj2lwnqt",
+      "id": "48",
+      "name": "Рисунок 16",
+      "bbox": [
+        -442.09,
+        296.83,
+        237,
+        237
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image37.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1265
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image37.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1265
+      }
+    },
+    {
+      "order": 15,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/dkb2ps7y",
+      "id": "49",
+      "name": "Рисунок 18",
+      "bbox": [
+        40.15,
+        -346.75,
+        328,
+        328
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image25.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1287
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image25.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1287
+      }
+    },
+    {
+      "order": 16,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/fehovq9g",
+      "id": "50",
+      "name": "Рисунок 20",
+      "bbox": [
+        1328.43,
+        234.36,
+        212,
+        212
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image26.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image26.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      }
+    },
+    {
+      "order": 17,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ed8n2lsb",
+      "id": "51",
+      "name": "Рисунок 22",
+      "bbox": [
+        852.07,
+        803.77,
+        130,
+        130
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image38.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 834
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image38.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 834
+      }
+    },
+    {
+      "order": 18,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/1gz6x0rm",
+      "id": "52",
+      "name": "Рисунок 24",
+      "bbox": [
+        -294.95,
+        207.19,
+        390,
+        390
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image39.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1545
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image39.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1545
+      }
+    },
+    {
+      "order": 19,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/gfq54va1",
+      "id": "53",
+      "name": "Рисунок 33",
+      "bbox": [
+        384.94,
+        -227.87,
+        169,
+        169
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image40.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1124
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image40.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1124
+      }
+    },
+    {
+      "order": 20,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/rahorq9k",
+      "id": "54",
+      "name": "Рисунок 34",
+      "bbox": [
+        558.75,
+        -227.01,
+        212,
+        212
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image41.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image41.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      }
+    },
+    {
+      "order": 21,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/69onylsz",
+      "id": "55",
+      "name": "!!gear-07",
+      "bbox": [
+        1017.21,
+        723.58,
+        386.01,
+        386.01
+      ],
+      "rotation": 223.97,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image8.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image8.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      }
+    },
+    {
+      "order": 22,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/tcz6tgrq",
+      "id": "56",
+      "name": "Рисунок 34",
+      "bbox": [
+        681.08,
+        241.82,
+        462.14,
+        402.08
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image44.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 443
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image44.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 443
+      }
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/alwbitsn",
+      "id": "30",
+      "name": "COMPARE_RIGHT_BODY",
+      "bbox": [
+        706.39,
+        258.59,
+        406.43,
+        366.66
+      ],
+      "geometry": "rect",
+      "text": "ВЕЗА собирает ОБОРУДОВАНИЕ ПОД ЗАКАЗ, часто поштучно под конкретную спецификацию. Почти каждый заказ отличается по составу, трудоёмкости и срокам. \nСегодня нужна одна расстановка людей, завтра другая. Поэтому мастер каждую смену заново решает, кого поставить на каждую операцию и в каком порядке выполнять заказы.",
+      "textPreview": "ВЕЗА собирает ОБОРУДОВАНИЕ ПОД ЗАКАЗ, часто поштучно под конкретную спецификацию. Почти каждый заказ отличается по составу, трудоёмкости ...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 10,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ВЕЗА собирает ОБОРУДОВАНИЕ ПОД"
+          },
+          {
+            "index": 2,
+            "text": "ЗАКАЗ, часто поштучно под конкретную"
+          },
+          {
+            "index": 3,
+            "text": "спецификацию. Почти каждый заказ"
+          },
+          {
+            "index": 4,
+            "text": "отличается по составу, трудоёмкости и"
+          },
+          {
+            "index": 5,
+            "text": "срокам."
+          },
+          {
+            "index": 6,
+            "text": "Сегодня нужна одна расстановка"
+          },
+          {
+            "index": 7,
+            "text": "людей, завтра другая. Поэтому мастер"
+          },
+          {
+            "index": 8,
+            "text": "каждую смену заново решает, кого"
+          },
+          {
+            "index": 9,
+            "text": "поставить на каждую операцию и в"
+          },
+          {
+            "index": 10,
+            "text": "каком порядке выполнять заказы."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ВЕЗА собирает ОБОРУДОВАНИЕ ПОД ЗАКАЗ, часто поштучно под конкретную спецификацию. Почти каждый заказ отличается по составу, трудоёмкости и срокам. ",
+          "lineSpacingPercent": 130000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "ВЕЗА собирает ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 2,
+              "text": "ОБОРУДОВАНИЕ ПОД ЗАКАЗ,",
+              "fontSize": 21.33,
+              "typeface": "Bahnschrift Condensed",
+              "color": "#F5340B"
+            },
+            {
+              "index": 3,
+              "text": " часто поштучно под конкретную спецификацию. Почти",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 4,
+              "text": " ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#F5340B"
+            },
+            {
+              "index": 5,
+              "text": "каждый заказ отличается по составу, трудоёмкости и срокам. ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Сегодня нужна одна расстановка людей, завтра другая. Поэтому мастер каждую смену заново решает, кого поставить на каждую операцию и в каком порядке выполнять заказы.",
+          "lineSpacingPercent": 130000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "Сегодня нужна одна расстановка людей, завтра другая. Поэтому мастер ",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            },
+            {
+              "index": 2,
+              "text": "каждую смену заново решает",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#F5340B"
+            },
+            {
+              "index": 3,
+              "text": ", кого поставить на каждую операцию и в каком порядке выполнять заказы.",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": "#3F454F"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6dgbqdsv",
+      "id": "38",
+      "name": "Shape 0",
+      "bbox": [
+        640,
+        240.25,
+        0,
+        402.08
+      ],
+      "geometry": "line",
+      "lineColor": "#F5340B",
+      "lineWidth": 2
+    }
+  ],
+  "composeRuns": []
+}

@@ -1,0 +1,882 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/6lsnupw7",
+    "id": "6lsnupw7",
+    "slide": 14,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "DEFAULT",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "Другая 4",
+    "colors": {
+      "accent1": "#4472C4",
+      "accent2": "#ED7D31",
+      "accent3": "#A5A5A5",
+      "accent4": "#FFC000",
+      "accent5": "#5B9BD5",
+      "accent6": "#70AD47",
+      "dk1": "#3F454F",
+      "lt1": "#FFFFFF",
+      "dk2": "#44546A",
+      "lt2": "#E7E6E6",
+      "hlink": "#0563C1",
+      "folHlink": "#954F72"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Bahnschrift Condensed",
+      "Bahnschrift SemiBold Condensed",
+      "Calibri",
+      "Calibri Light",
+      "Nunito"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "DEFAULT",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "backgroundColor": "#EEF0F3",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/mhgf6t4n",
+      "id": "20",
+      "name": "Рисунок 12",
+      "bbox": [
+        -356.44,
+        784.14,
+        321.44,
+        321.44
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image22.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1206
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image22.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1206
+      }
+    },
+    {
+      "order": 2,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/7ipgzel8",
+      "id": "21",
+      "name": "Рисунок 34",
+      "bbox": [
+        721.22,
+        126.62,
+        517.77,
+        534.26
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image44.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 443
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image44.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 443
+      }
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5grehs7i",
+      "id": "6",
+      "name": "TITLE",
+      "bbox": [
+        84.9,
+        37.07,
+        1000,
+        58.67
+      ],
+      "geometry": "rect",
+      "text": "ЦЕЛЬ РОЛИ МАСТЕРА",
+      "textPreview": "ЦЕЛЬ РОЛИ МАСТЕРА",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ЦЕЛЬ РОЛИ МАСТЕРА",
+              "fontSize": 40,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "color": "#3F454F",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/8jyx8jmt",
+      "id": "22",
+      "name": "Image 3",
+      "bbox": [
+        1109.81,
+        64,
+        96.83,
+        30.67
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image34.png",
+        "contentType": "image/png",
+        "byteLength": 47754
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image34.png",
+        "contentType": "image/png",
+        "byteLength": 47754
+      }
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zi5c3y98",
+      "id": "8",
+      "name": "AFTER",
+      "bbox": [
+        780.81,
+        152.2,
+        422.96,
+        488.67
+      ],
+      "geometry": "rect",
+      "text": "СТАЛО\nКогда один и тот же порядок действует для всех, рабочий понимает, на чём основано требование. Личной придиркой чаще выглядит другое: одному мастер разрешил, другого за то же самое наказал.\n\n ",
+      "textPreview": "СТАЛО | Когда один и тот же порядок действует для всех, рабочий понимает, на чём основано требование. Личной придиркой чаще выглядит друг...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 10,
+        "lines": [
+          {
+            "index": 1,
+            "text": "СТАЛО"
+          },
+          {
+            "index": 2,
+            "text": "Когда один и тот же порядок"
+          },
+          {
+            "index": 3,
+            "text": "действует для всех, рабочий"
+          },
+          {
+            "index": 4,
+            "text": "понимает, на чём основано"
+          },
+          {
+            "index": 5,
+            "text": "требование. Личной придиркой"
+          },
+          {
+            "index": 6,
+            "text": "чаще выглядит другое: одному"
+          },
+          {
+            "index": 7,
+            "text": "мастер разрешил, другого за то же"
+          },
+          {
+            "index": 8,
+            "text": "самое наказал."
+          },
+          {
+            "index": 9,
+            "text": ""
+          },
+          {
+            "index": 10,
+            "text": " "
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "СТАЛО",
+          "lineSpacingPercent": 130000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "СТАЛО",
+              "fontSize": 37.33,
+              "typeface": "Bahnschrift Condensed",
+              "color": "#1CAA2D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Когда один и тот же порядок действует для всех, рабочий понимает, на чём основано требование. Личной придиркой чаще выглядит другое: одному мастер разрешил, другого за то же самое наказал.",
+          "lineSpacingPercent": 130000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "Когда один и тот же порядок действует для всех, рабочий понимает, на чём основано требование. Личной придиркой чаще выглядит другое: одному мастер разрешил, другого за то же самое наказал.",
+              "fontSize": 24,
+              "typeface": "Nunito"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "lineSpacingPercent": 130000,
+          "runs": [
+            {
+              "index": 1,
+              "text": " ",
+              "fontSize": 21.33,
+              "typeface": "Bahnschrift Condensed",
+              "color": "#F5340B"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y5wjitgj",
+      "id": "16",
+      "name": "BEFORE",
+      "bbox": [
+        76.23,
+        126.62,
+        473.21,
+        513.36
+      ],
+      "geometry": "rect",
+      "text": "БЫЛО\nМастеру необязательно каждый раз собираться с духом и придумывать, как повести себя в неприятной ситуации. Можно действовать по установленному порядку: сначала проверить факты, затем определить причину и выполнить нужное действие.\n\nБольшая часть таких процедур уже разобрана в курсе: как поставить задачу, проверить её выполнение, разобрать нарушение, дать обратную связь.",
+      "textPreview": "БЫЛО | Мастеру необязательно каждый раз собираться с духом и придумывать, как повести себя в неприятной ситуации. Можно действовать по ус...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 12,
+        "lines": [
+          {
+            "index": 1,
+            "text": "БЫЛО"
+          },
+          {
+            "index": 2,
+            "text": "Мастеру необязательно каждый раз"
+          },
+          {
+            "index": 3,
+            "text": "собираться с духом и придумывать, как"
+          },
+          {
+            "index": 4,
+            "text": "повести себя в неприятной ситуации. Можно"
+          },
+          {
+            "index": 5,
+            "text": "действовать по установленному порядку:"
+          },
+          {
+            "index": 6,
+            "text": "сначала проверить факты, затем определить"
+          },
+          {
+            "index": 7,
+            "text": "причину и выполнить нужное действие."
+          },
+          {
+            "index": 8,
+            "text": ""
+          },
+          {
+            "index": 9,
+            "text": "Большая часть таких процедур уже"
+          },
+          {
+            "index": 10,
+            "text": "разобрана в курсе: как поставить задачу,"
+          },
+          {
+            "index": 11,
+            "text": "проверить её выполнение, разобрать"
+          },
+          {
+            "index": 12,
+            "text": "нарушение, дать обратную связь."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "БЫЛО",
+          "lineSpacingPercent": 130000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "БЫЛО",
+              "fontSize": 37.33,
+              "typeface": "Bahnschrift SemiBold Condensed",
+              "color": {
+                "type": "theme",
+                "value": "accent3",
+                "transform": {
+                  "darken": 0.25
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Мастеру необязательно каждый раз собираться с духом и придумывать, как повести себя в неприятной ситуации. Можно действовать по установленному порядку: сначала проверить факты, затем определить причину и выполнить нужное действие.",
+          "lineSpacingPercent": 130000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "Мастеру необязательно каждый раз собираться с духом и придумывать, как повести себя в неприятной ситуации. Можно действовать по установленному порядку: сначала проверить факты, затем определить причину и выполнить нужное действие.",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": {
+                "type": "theme",
+                "value": "bg1",
+                "transform": {
+                  "darken": 0.5
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "Большая часть таких процедур уже разобрана в курсе: как поставить задачу, проверить её выполнение, разобрать нарушение, дать обратную связь.",
+          "lineSpacingPercent": 130000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "Большая часть таких процедур уже разобрана в курсе: как поставить задачу, проверить её выполнение, разобрать нарушение, дать обратную связь.",
+              "fontSize": 21.33,
+              "typeface": "Nunito",
+              "color": {
+                "type": "theme",
+                "value": "bg1",
+                "transform": {
+                  "darken": 0.5
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1w3i14fq",
+      "id": "19",
+      "name": "Shape 0",
+      "bbox": [
+        73.37,
+        0,
+        0.02,
+        94.67
+      ],
+      "horizontalFlip": true,
+      "geometry": "line",
+      "lineColor": "#F5340B",
+      "lineWidth": 2
+    },
+    {
+      "order": 8,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/9k7y1o3e",
+      "id": "23",
+      "name": "Рисунок 2",
+      "bbox": [
+        384.94,
+        779.77,
+        195,
+        195
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image17.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1006
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image17.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1006
+      }
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ulgfat4j",
+      "id": "24",
+      "name": "Рисунок 4",
+      "bbox": [
+        965.12,
+        877.27,
+        561.28,
+        561.28
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image18.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1261
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image18.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1261
+      }
+    },
+    {
+      "order": 10,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/vm9g3yl4",
+      "id": "25",
+      "name": "Рисунок 6",
+      "bbox": [
+        -253.14,
+        543.4,
+        188,
+        188
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image35.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 892
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image35.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 892
+      }
+    },
+    {
+      "order": 11,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/wnixc3mp",
+      "id": "26",
+      "name": "Рисунок 8",
+      "bbox": [
+        1328.43,
+        493.7,
+        132,
+        132
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image36.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 909
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image36.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 909
+      }
+    },
+    {
+      "order": 12,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/hory583a",
+      "id": "27",
+      "name": "Рисунок 10",
+      "bbox": [
+        594.06,
+        762.77,
+        212,
+        212
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image21.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image21.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      }
+    },
+    {
+      "order": 13,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/apwfy94f",
+      "id": "28",
+      "name": "Рисунок 14",
+      "bbox": [
+        56.83,
+        793.52,
+        390,
+        390
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image23.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image23.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      }
+    },
+    {
+      "order": 14,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/bq5wrul0",
+      "id": "29",
+      "name": "Рисунок 16",
+      "bbox": [
+        -277.64,
+        296.83,
+        237,
+        237
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image37.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1265
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image37.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1265
+      }
+    },
+    {
+      "order": 15,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/dgvatwru",
+      "id": "30",
+      "name": "Рисунок 18",
+      "bbox": [
+        40.15,
+        -346.75,
+        328,
+        328
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image25.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1287
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image25.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1287
+      }
+    },
+    {
+      "order": 16,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/cfm9kra9",
+      "id": "31",
+      "name": "Рисунок 20",
+      "bbox": [
+        1328.43,
+        234.36,
+        212,
+        212
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image26.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image26.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      }
+    },
+    {
+      "order": 17,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/rudsrm9o",
+      "id": "32",
+      "name": "Рисунок 22",
+      "bbox": [
+        852.07,
+        803.77,
+        130,
+        130
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image38.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 834
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image38.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 834
+      }
+    },
+    {
+      "order": 18,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/qt4ri1s3",
+      "id": "33",
+      "name": "Рисунок 24",
+      "bbox": [
+        -337.03,
+        -60.75,
+        348,
+        348
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image39.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1545
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image39.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1545
+      }
+    },
+    {
+      "order": 19,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/1kfaxgrq",
+      "id": "34",
+      "name": "Рисунок 33",
+      "bbox": [
+        384.94,
+        -227.87,
+        169,
+        169
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image40.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1124
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image40.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1124
+      }
+    },
+    {
+      "order": 20,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/0j69oba5",
+      "id": "35",
+      "name": "Рисунок 34",
+      "bbox": [
+        558.75,
+        -227.01,
+        212,
+        212
+      ],
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image41.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image41.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 962
+      }
+    },
+    {
+      "order": 21,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/zidsv69k",
+      "id": "36",
+      "name": "!!gear-07",
+      "bbox": [
+        1359.79,
+        550.11,
+        386.01,
+        386.01
+      ],
+      "rotation": 223.97,
+      "contentType": "image/svg+xml",
+      "asset": {
+        "assetId": "/ppt/media/image8.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image8.svg",
+        "contentType": "image/svg+xml",
+        "byteLength": 1448
+      }
+    },
+    {
+      "order": 22,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/eh4rm1sf",
+      "id": "37",
+      "name": "Image 7",
+      "bbox": [
+        556.61,
+        266.24,
+        123.06,
+        149.09
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image45.png",
+        "contentType": "image/png",
+        "byteLength": 8542
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image45.png",
+        "contentType": "image/png",
+        "byteLength": 8542
+      }
+    }
+  ],
+  "composeRuns": []
+}

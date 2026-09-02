@@ -1,0 +1,6 @@
+interface:
+  display_name: "Сборка презентаций по тексту курса"
+  short_description: "Собрать запрошенную часть курса по шаблону"
+  default_prompt: "Используй $course-to-slides, чтобы собрать по шаблону только указанную часть курса."
+policy:
+  allow_implicit_invocation: true

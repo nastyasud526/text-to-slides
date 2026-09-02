@@ -1,0 +1,4924 @@
+{
+  "version": 2,
+  "groups": {
+    "service": {
+      "description": "Обозначают начало курса, модуля или урока. Эти шаблоны задают уровень навигации и содержат только название и короткие служебные подписи.",
+      "templates": [
+        "course.title",
+        "module.title",
+        "lesson.title"
+      ]
+    },
+    "text": {
+      "description": "Помогают читать цельное объяснение, выделять вывод или сочетать основной текст с иллюстрацией и комментарием персонажа.",
+      "templates": [
+        "text.plain",
+        "text.key-idea",
+        "key-idea.quote",
+        "text.illustration",
+        "text.long.illustration",
+        "text.character-comment",
+        "intro.body.conclusion"
+      ]
+    },
+    "concepts": {
+      "description": "Раскрывают термин или принцип через определение, контекст, пояснение и пример. Подходят, когда части материала выполняют разные роли в объяснении нового понятия.",
+      "templates": [
+        "term.explanation",
+        "context.definition.explanation",
+        "term.context.explanation.example",
+        "thesis.example.illustration"
+      ]
+    },
+    "examples": {
+      "description": "Переводят тезис в конкретную производственную ситуацию: от короткого примера после объяснения до развёрнутой истории на весь слайд.",
+      "templates": [
+        "text.character-comment",
+        "term.context.explanation.example",
+        "thesis.example.illustration",
+        "text.example",
+        "example.full"
+      ]
+    },
+    "comparison": {
+      "description": "Показывают две сопоставимые стороны одной темы: подходы, состояния, объекты или варианты поведения. Различаются наличием вступления и объёмом текста в двух частях.",
+      "templates": [
+        "compare.poor-good",
+        "compare.two.intro.short",
+        "compare.two.intro.detailed",
+        "compare.two.no-intro"
+      ]
+    },
+    "situations": {
+      "description": "Показывают рабочую ситуацию вместе с действием, решением, изменением состояния или выводом. Связь между частями важнее простого параллельного перечисления.",
+      "templates": [
+        "situation.action.a",
+        "situation.action.b",
+        "problem.solution",
+        "intro.body.conclusion",
+        "process.situation-outcome.4"
+      ]
+    },
+    "lists": {
+      "description": "Представляют несколько самостоятельных пунктов. Внутри группы есть нумерованные перечни, карточки, варианты с вводным текстом, иллюстрацией или общей центральной мыслью. Нумерация служит визуальной организацией и сама по себе не означает последовательность.",
+      "templates": [
+        "cards.4.intro",
+        "cards.5.intro",
+        "numbered-list.3",
+        "numbered-list.4",
+        "numbered-list.5",
+        "numbered-list.6",
+        "numbered-list.4.illustration",
+        "cards.3",
+        "cards.4",
+        "cards.6",
+        "cards.6.columns",
+        "list.6.center-message"
+      ]
+    },
+    "classification": {
+      "description": "Показывают несколько категорий или частей, объединённых общим понятием. Визуальная связь с верхним блоком помогает увидеть принадлежность элементов одной системе.",
+      "templates": [
+        "list.6.center-message",
+        "classification.3",
+        "classification.4"
+      ]
+    },
+    "process": {
+      "description": "Передают порядок, переходы, стадии или развитие ситуации. Связи между этапами показаны линией, стрелками, чередованием позиций или общей траекторией.",
+      "templates": [
+        "process.situation-outcome.4",
+        "process.4.stages",
+        "process.4",
+        "process.6",
+        "process.cards.4",
+        "process.4.detailed",
+        "process.3.detailed",
+        "timeline.5"
+      ]
+    },
+    "data": {
+      "description": "Выводят несколько значений с названиями и пояснениями рядом с диаграммой. Используются для материала, где числа являются основой вывода.",
+      "templates": [
+        "statistics.3",
+        "statistics.4"
+      ]
+    },
+    "master-checklist": {
+      "description": "Специальный повторяющийся шаблон курса для итоговой самопроверки мастера в конце урока.",
+      "templates": [
+        "checklist.6"
+      ]
+    },
+    "staging": {
+      "description": "Пустые основы для диалоговой сцены и передачи интерактивного задания автору. Их назначение определяется маршрутом сборки, а не видимой композицией.",
+      "templates": [
+        "staging.blank",
+        "staging.interaction"
+      ]
+    }
+  },
+  "titleTemplate": {
+    "templateId": "lesson.title",
+    "kinds": [
+      "lesson-title"
+    ],
+    "slots": {
+      "lesson_number": "LESSON_NUMBER",
+      "title": "LESSON_TITLE",
+      "module_label": "MODULE_LABEL"
+    },
+    "groups": [
+      "service"
+    ],
+    "description": "Титульный слайд урока, разделённый вертикальной линией на номер урока и его название.",
+    "example": "Урок 1.4 «Первые решения мастера», модуль 1.",
+    "selection": {
+      "family": "service",
+      "capacity": "short",
+      "blocks": "2",
+      "visual_role": "title"
+    },
+    "thumbnail": "template-thumbnails/lesson.title.png",
+    "visual_description": "Слева крупно показан номер урока, справа — название. В верхнем левом углу находится подпись модуля. Вертикальная оранжевая линия отделяет две основные части.",
+    "content_placement": [
+      "`module_label` — номер модуля в верхней части.",
+      "`lesson_number` — крупный номер урока слева.",
+      "`title` — название урока справа от вертикальной линии."
+    ]
+  },
+  "compositions": {
+    "staging.blank": {
+      "templateId": "staging.blank",
+      "kinds": [
+        "dialogue"
+      ],
+      "stripToSlots": true,
+      "slots": {
+        "dialogue": "STAGING_BODY"
+      },
+      "groups": [
+        "staging"
+      ],
+      "description": "Пустая техническая основа для полноэкранной диалоговой сцены.",
+      "example": "Алексей задаёт вопрос о постановке задачи, Денис отвечает на производственном участке.",
+      "selection": {
+        "family": "staging",
+        "capacity": "large",
+        "blocks": "1",
+        "visual_role": "staging"
+      },
+      "thumbnail": "template-thumbnails/staging.blank.png",
+      "visual_description": "В рендере слайд выглядит почти пустым: служебное текстовое поле занимает практически весь кадр, а при сборке поверх него размещается готовое изображение диалоговой сцены.",
+      "content_placement": [
+        "`dialogue` — полный текст диалога, сохраняемый в служебном поле. Видимую композицию создаёт отдельное полноэкранное изображение."
+      ]
+    },
+    "staging.interaction": {
+      "templateId": "staging.interaction",
+      "kinds": [
+        "interactive-staging",
+        "unsupported-visual-staging"
+      ],
+      "stripToSlots": true,
+      "slots": {
+        "body": "STAGING_BODY"
+      },
+      "groups": [
+        "staging"
+      ],
+      "description": "Пустая техническая основа для передачи интерактивного задания автору.",
+      "example": "Задание на сопоставление действий мастера и возможных последствий.",
+      "selection": {
+        "family": "staging",
+        "capacity": "large",
+        "blocks": "1",
+        "visual_role": "staging"
+      },
+      "thumbnail": "template-thumbnails/staging.interaction.png",
+      "visual_description": "В рендере слайд выглядит почти пустым. Большое служебное поле занимает практически весь кадр и хранит исходный блок задания для последующей ручной разработки интерактивности.",
+      "content_placement": [
+        "`body` — весь текст задания, варианты ответа, обратная связь и служебные указания автору."
+      ]
+    },
+    "course.title": {
+      "templateId": "course.title",
+      "kinds": [
+        "course-title"
+      ],
+      "slots": {
+        "title": "COURSE_TITLE",
+        "course_subtitle": "COURSE_SUBTITLE"
+      },
+      "groups": [
+        "service"
+      ],
+      "description": "Титульный слайд всего курса с крупным названием в центре и короткой подписью под ним.",
+      "example": "Курс «Мастер производственного участка»: практические решения в течение смены.",
+      "selection": {
+        "family": "service",
+        "capacity": "short",
+        "blocks": "1",
+        "visual_role": "title"
+      },
+      "thumbnail": "template-thumbnails/course.title.png",
+      "visual_description": "Светлый фон, крупные декоративные шестерёнки по краям. Название занимает центральную верхнюю часть, под ним проходит тонкая красная линия и располагается подзаголовок.",
+      "content_placement": [
+        "`title` — название курса в крупном центральном блоке.",
+        "`course_subtitle` — короткое пояснение формата или темы курса под разделительной линией."
+      ]
+    },
+    "module.title": {
+      "templateId": "module.title",
+      "kinds": [
+        "module-title"
+      ],
+      "slots": {
+        "title": "MODULE_TITLE",
+        "module_label": "MODULE_LABEL",
+        "module_subtitle": "MODULE_SUBTITLE"
+      },
+      "groups": [
+        "service"
+      ],
+      "description": "Разделитель модуля с номером модуля, крупным названием и необязательной нижней подписью.",
+      "example": "Модуль 2. Постановка задач и контроль результата.",
+      "selection": {
+        "family": "service",
+        "capacity": "short",
+        "blocks": "2",
+        "visual_role": "title"
+      },
+      "thumbnail": "template-thumbnails/module.title.png",
+      "visual_description": "Композиция сосредоточена в правой половине: номер модуля расположен над линией, крупное название — под ней. Декоративные шестерёнки собраны преимущественно слева и по нижнему краю.",
+      "content_placement": [
+        "`module_label` — номер или обозначение модуля над линией.",
+        "`title` — крупное название модуля.",
+        "`module_subtitle` — короткая дополнительная подпись под названием."
+      ]
+    },
+    "lesson.title": {
+      "templateId": "lesson.title",
+      "kinds": [
+        "lesson-title"
+      ],
+      "slots": {
+        "lesson_number": "LESSON_NUMBER",
+        "title": "LESSON_TITLE",
+        "module_label": "MODULE_LABEL"
+      },
+      "groups": [
+        "service"
+      ],
+      "description": "Титульный слайд урока, разделённый вертикальной линией на номер урока и его название.",
+      "example": "Урок 1.4. Первые решения мастера.",
+      "selection": {
+        "family": "service",
+        "capacity": "short",
+        "blocks": "2",
+        "visual_role": "title"
+      },
+      "thumbnail": "template-thumbnails/lesson.title.png",
+      "visual_description": "Слева крупно показан номер урока, справа — название. В верхнем левом углу находится подпись модуля. Вертикальная оранжевая линия отделяет две основные части.",
+      "content_placement": [
+        "`module_label` — номер модуля в верхней части.",
+        "`lesson_number` — крупный номер урока слева.",
+        "`title` — название урока справа от вертикальной линии."
+      ]
+    },
+    "text.plain": {
+      "templateId": "text.plain",
+      "kinds": [
+        "plain-text",
+        "long-text"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "body": "BODY"
+      },
+      "groups": [
+        "text"
+      ],
+      "description": "Универсальный слайд с заголовком и одним большим полем для связного текста.",
+      "example": "Объяснение роли мастера в начале смены и влияния его решений на работу участка.",
+      "selection": {
+        "family": "text",
+        "capacity": "large",
+        "blocks": "1",
+        "visual_role": "text"
+      },
+      "thumbnail": "template-thumbnails/text.plain.png",
+      "visual_description": "Заголовок расположен сверху слева. Основной текст находится ниже в широкой белой плашке и занимает большую часть слайда; справа остаётся декоративная полоса с шестерёнками.",
+      "content_placement": [
+        "`title` — заголовок слайда.",
+        "`body` — цельное объяснение, несколько связанных абзацев или резервный вариант для материала, которому не подошла специализированная композиция."
+      ]
+    },
+    "cards.5.intro": {
+      "templateId": "cards.5.intro",
+      "kinds": [
+        "five-points",
+        "five-parallel-actions"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "intro": "INTRO",
+        "card_1_title": "CARD_1_TITLE",
+        "card_1_body": "CARD_1_BODY",
+        "card_2_title": "CARD_2_TITLE",
+        "card_2_body": "CARD_2_BODY",
+        "card_3_title": "CARD_3_TITLE",
+        "card_3_body": "CARD_3_BODY",
+        "card_4_title": "CARD_4_TITLE",
+        "card_4_body": "CARD_4_BODY",
+        "card_5_title": "CARD_5_TITLE",
+        "card_5_body": "CARD_5_BODY"
+      },
+      "groups": [
+        "lists"
+      ],
+      "description": "Вступление и пять равнозначных элементов, выстроенных в один горизонтальный ряд.",
+      "example": "Пять источников информации, которые мастер проверяет перед началом смены.",
+      "selection": {
+        "family": "lists",
+        "capacity": "medium",
+        "blocks": "4+",
+        "visual_role": "cards"
+      },
+      "thumbnail": "template-thumbnails/cards.5.intro.png",
+      "visual_description": "Под заголовком и вводной строкой находятся пять небольших шестиугольников. В каждом помещается короткое название, под каждым — отдельное пояснение; ширина блоков меньше, чем в варианте на четыре элемента.",
+      "content_placement": [
+        "`title` — тема перечня.",
+        "`intro` — одна вводная фраза.",
+        "`card_1_title`–`card_5_title` — короткие названия внутри фигур.",
+        "`card_1_body`–`card_5_body` — пояснения под соответствующими фигурами."
+      ],
+      "alternatives": [
+        {
+          "templateId": "cards.4.intro",
+          "difference": "Та же горизонтальная композиция для четырёх более широких элементов."
+        }
+      ]
+    },
+    "cards.4.intro": {
+      "templateId": "cards.4.intro",
+      "kinds": [
+        "four-points",
+        "four-parallel-actions"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "intro": "INTRO",
+        "card_1_title": "CARD_1_TITLE",
+        "card_1_body": "CARD_1_BODY",
+        "card_2_title": "CARD_2_TITLE",
+        "card_2_body": "CARD_2_BODY",
+        "card_3_title": "CARD_3_TITLE",
+        "card_3_body": "CARD_3_BODY",
+        "card_4_title": "CARD_4_TITLE",
+        "card_4_body": "CARD_4_BODY"
+      },
+      "groups": [
+        "lists"
+      ],
+      "description": "Вступление и четыре равнозначных элемента, выстроенных в один горизонтальный ряд.",
+      "example": "Четыре признака хорошо поставленной производственной задачи.",
+      "selection": {
+        "family": "lists",
+        "capacity": "medium",
+        "blocks": "4+",
+        "visual_role": "cards"
+      },
+      "thumbnail": "template-thumbnails/cards.4.intro.png",
+      "visual_description": "Под заголовком находится вводная строка. Ниже расположены четыре цветных шестиугольника с короткими названиями, а под каждым — отдельное пояснение.",
+      "content_placement": [
+        "`title` — тема перечня.",
+        "`intro` — одна вводная фраза.",
+        "`card_1_title`–`card_4_title` — короткие названия внутри фигур.",
+        "`card_1_body`–`card_4_body` — пояснения под соответствующими фигурами."
+      ],
+      "alternatives": [
+        {
+          "templateId": "cards.5.intro",
+          "difference": "Та же горизонтальная композиция для пяти более узких элементов."
+        }
+      ]
+    },
+    "text.example": {
+      "templateId": "text.example",
+      "kinds": [
+        "explanation-with-example"
+      ],
+      "slots": {
+        "title": "EXAMPLE_LABEL",
+        "body": "BODY",
+        "example_body": "EXAMPLE_BODY"
+      },
+      "groups": [
+        "examples"
+      ],
+      "description": "Основное объяснение располагается сверху, а связанный производственный пример — отдельным блоком ниже.",
+      "example": "Почему просьба отличается от задачи, затем короткий разговор мастера с рабочим.",
+      "selection": {
+        "family": "examples",
+        "capacity": "large",
+        "blocks": "2",
+        "visual_role": "text"
+      },
+      "thumbnail": "template-thumbnails/text.example.png",
+      "visual_description": "В верхней части есть заголовок и широкая белая плашка с объяснением. Ниже находится маленькая оранжевая метка примера и длинный текст примера.",
+      "content_placement": [
+        "`body` — исходный тезис или объяснение в верхней плашке.",
+        "`example_body` — конкретный пример в нижней части.",
+        "`title` по текущей карте полей связан с меткой `EXAMPLE_LABEL`, а основной объект `TITLE` не используется сборщиком."
+      ],
+      "note": "В текущем catalog.json поле `title` связано с `EXAMPLE_LABEL`, хотя на физическом слайде есть отдельный объект `TITLE`. Это техническое несоответствие нужно исправлять отдельной правкой библиотеки."
+    },
+    "term.explanation": {
+      "templateId": "term.explanation",
+      "kinds": [
+        "term-and-explanation"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "definition": "DEFINITION",
+        "explanation": "EXPLANATION"
+      },
+      "groups": [
+        "concepts"
+      ],
+      "description": "Определение или ключевой тезис слева и отдельное подробное пояснение справа.",
+      "example": "Рабочая дистанция — значение термина и пояснение поведения мастера.",
+      "selection": {
+        "family": "concepts",
+        "capacity": "large",
+        "blocks": "2",
+        "visual_role": "text"
+      },
+      "thumbnail": "template-thumbnails/term.explanation.png",
+      "visual_description": "Слева находится высокая белая плашка для определения. Справа расположен самостоятельный текстовый блок пояснения. Между ними стоит зелёная стрелка, показывающая переход от формулировки к раскрытию смысла.",
+      "content_placement": [
+        "`title` — название понятия или вопрос слайда.",
+        "`definition` — определение, принцип или ключевая формулировка в плашке.",
+        "`explanation` — подробное пояснение, следствие или практический смысл справа."
+      ]
+    },
+    "context.definition.explanation": {
+      "templateId": "context.definition.explanation",
+      "kinds": [
+        "term-with-context",
+        "principle-and-explanation"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "definition": "DEFINITION",
+        "explanation": "EXPLANATION",
+        "context": "CONTEXT"
+      },
+      "groups": [
+        "concepts"
+      ],
+      "description": "Контекст, выделенное определение и подробное пояснение размещены в трёх отдельных областях.",
+      "example": "Почему возникает отклонение, что такое обратная связь и как она влияет на повторение результата.",
+      "selection": {
+        "family": "concepts",
+        "capacity": "large",
+        "blocks": "3",
+        "visual_role": "text"
+      },
+      "thumbnail": "template-thumbnails/context.definition.explanation.png",
+      "visual_description": "Левая половина разделена на вводный контекст сверху и белую плашку с определением снизу. Справа находится высокая колонка пояснения; зелёная стрелка связывает определение с правой частью.",
+      "content_placement": [
+        "`title` — название понятия.",
+        "`context` — зачем понятие появляется в уроке или в какой ситуации оно нужно.",
+        "`definition` — краткая формулировка в левой нижней плашке.",
+        "`explanation` — развёрнутое пояснение справа."
+      ]
+    },
+    "term.context.explanation.example": {
+      "templateId": "term.context.explanation.example",
+      "kinds": [
+        "term-with-context-and-example"
+      ],
+      "slots": {
+        "title": "EXAMPLE_LABEL",
+        "definition": "DEFINITION",
+        "explanation": "EXPLANATION",
+        "context": "CONTEXT"
+      },
+      "groups": [
+        "concepts",
+        "examples"
+      ],
+      "description": "Понятие раскрывается через крупное определение, контекст и отдельное пояснение с пометкой примера.",
+      "example": "Определение контроля результата, производственный контекст и короткий пример проверки.",
+      "selection": {
+        "family": "concepts",
+        "capacity": "large",
+        "blocks": "3",
+        "visual_role": "text"
+      },
+      "thumbnail": "template-thumbnails/term.context.explanation.example.png",
+      "visual_description": "Слева сверху находится крупное определение, под ним — контекст. Справа расположена длинная колонка пояснения. В правом верхнем углу есть небольшая оранжевая метка «Пример».",
+      "content_placement": [
+        "`definition` — основная формулировка понятия слева сверху.",
+        "`context` — связанный контекст слева снизу.",
+        "`explanation` — пояснение или пример справа.",
+        "`title` по текущей карте полей связан с маленькой меткой `EXAMPLE_LABEL`, а основной объект `TITLE` не используется сборщиком."
+      ],
+      "note": "В текущем catalog.json поле `title` связано с `EXAMPLE_LABEL`, хотя на физическом слайде есть отдельный объект `TITLE`. Это техническое несоответствие нужно исправлять отдельной правкой библиотеки."
+    },
+    "compare.poor-good": {
+      "templateId": "compare.poor-good",
+      "kinds": [
+        "poor-good-contrast"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "compare_left_body": "COMPARE_LEFT_BODY",
+        "intro": "INTRO",
+        "compare_right_body": "COMPARE_RIGHT_BODY"
+      },
+      "groups": [
+        "comparison"
+      ],
+      "description": "Две контрастные стороны показаны в отдельных белых плашках с вертикальным разделителем.",
+      "example": "Неясная формулировка задачи и конкретная формулировка с результатом, сроком и проверкой.",
+      "selection": {
+        "family": "comparison",
+        "capacity": "medium",
+        "blocks": "2",
+        "visual_role": "comparison"
+      },
+      "thumbnail": "template-thumbnails/compare.poor-good.png",
+      "visual_description": "После заголовка и короткого вступления идут две крупные плашки одинакового размера. Левая и правая части разделены тонкой красной линией; цветные фрагменты текста внутри помогают отметить различие.",
+      "content_placement": [
+        "`title` — общая тема сравнения.",
+        "`intro` — короткое объяснение того, что сравнивается.",
+        "`compare_left_body` и `compare_right_body` — две стороны сравнения; отдельного поля для их названий в шаблоне нет, поэтому названия входят в текст соответствующей стороны."
+      ]
+    },
+    "situation.action.a": {
+      "templateId": "situation.action.a",
+      "kinds": [
+        "situation-action"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "solution": "SOLUTION",
+        "situation": "SITUATION"
+      },
+      "groups": [
+        "situations"
+      ],
+      "description": "Исходная рабочая ситуация слева и решение или действие справа.",
+      "example": "Рабочий сообщает о необычном следе на детали; мастер останавливается, проверяет сигнал и принимает решение.",
+      "selection": {
+        "family": "situations",
+        "capacity": "large",
+        "blocks": "2",
+        "visual_role": "comparison"
+      },
+      "thumbnail": "template-thumbnails/situation.action.a.png",
+      "visual_description": "Левая часть содержит свободный текст ситуации. Справа находится высокая белая плашка с акцентным зелёным словом; между частями стоит зелёная стрелка, направляющая чтение слева направо.",
+      "content_placement": [
+        "`title` — название ситуации или основной вопрос.",
+        "`situation` — исходные обстоятельства, проблема или контекст слева.",
+        "`solution` — действие, решение или рабочий ответ в правой плашке."
+      ]
+    },
+    "situation.action.b": {
+      "templateId": "situation.action.b",
+      "kinds": [
+        "situation-action"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "after": "AFTER",
+        "before": "BEFORE"
+      },
+      "groups": [
+        "situations"
+      ],
+      "description": "Два состояния одной ситуации показаны как переход от исходного положения к изменению.",
+      "example": "До разговора требование было необязательным; после разговора определены действие, срок и проверка.",
+      "selection": {
+        "family": "situations",
+        "capacity": "large",
+        "blocks": "2",
+        "visual_role": "comparison"
+      },
+      "thumbnail": "template-thumbnails/situation.action.b.png",
+      "visual_description": "Слева размещён приглушённый текст исходного состояния с серой меткой, справа — белая плашка с яркой зелёной меткой нового состояния. Между частями находится стрелка.",
+      "content_placement": [
+        "`title` — тема изменения.",
+        "`before` — исходное состояние, прежнее действие или положение слева.",
+        "`after` — новое состояние, результат изменения или последующее действие справа."
+      ]
+    },
+    "problem.solution": {
+      "templateId": "problem.solution",
+      "kinds": [
+        "problem-explanation-solution",
+        "research-conclusion-example"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "intro_title": "INTRO_TITLE",
+        "intro_body": "INTRO_BODY",
+        "problem_heading": "PROBLEM_HEADING",
+        "problem_body": "PROBLEM_BODY",
+        "solution_subtitle": "SOLUTION_SUBTITLE",
+        "solution_body": "SOLUTION_BODY",
+        "solution_title": "SOLUTION_TITLE"
+      },
+      "groups": [
+        "situations"
+      ],
+      "description": "Развёрнутый контекст слева и два последовательно расположенных блока проблемы и решения справа.",
+      "example": "Повторяющаяся ошибка рабочего, причина реакции мастера и способ довести требование до результата.",
+      "selection": {
+        "family": "situations",
+        "capacity": "large",
+        "blocks": "3",
+        "visual_role": "comparison"
+      },
+      "thumbnail": "template-thumbnails/problem.solution.png",
+      "visual_description": "Слайд заметно отличается от основной библиотеки тёмным диагональным фоном. Слева находится заголовок и длинное вступление. Справа два прямоугольных блока: оранжевый блок проблемы сверху и контурный блок решения снизу.",
+      "content_placement": [
+        "`title` — крупная постановка темы слева сверху.",
+        "`intro_title` и `intro_body` — название и развёрнутый контекст слева.",
+        "`problem_heading` и `problem_body` — формулировка проблемы в верхнем правом блоке.",
+        "`solution_title`, `solution_subtitle` и `solution_body` — решение и его пояснение в нижнем правом блоке."
+      ]
+    },
+    "compare.two.intro.short": {
+      "templateId": "compare.two.intro.short",
+      "kinds": [
+        "comparison",
+        "two-group-diagnostic"
+      ],
+      "slots": {
+        "intro": "INTRO",
+        "title": "TITLE",
+        "compare_bottom_body": "COMPARE_BOTTOM_BODY",
+        "compare_top_body": "COMPARE_TOP_BODY",
+        "compare_top_label": "COMPARE_TOP_LABEL",
+        "compare_bottom_label": "COMPARE_BOTTOM_LABEL"
+      },
+      "groups": [
+        "comparison"
+      ],
+      "description": "Вступление и две симметричные колонки для сравнительно короткого текста.",
+      "example": "Сравнение контроля результата и постоянного вмешательства: по одному короткому пояснению в каждом столбце.",
+      "selection": {
+        "family": "comparison",
+        "capacity": "medium",
+        "blocks": "2",
+        "visual_role": "comparison"
+      },
+      "thumbnail": "template-thumbnails/compare.two.intro.short.png",
+      "visual_description": "Заголовок расположен по центру сверху, под ним — широкое вступление. Ниже находятся две колонки с отдельными цветными названиями и текстом; между колонками стоит знак сопоставления.",
+      "content_placement": [
+        "`title` — общая тема сравнения.",
+        "`intro` — вводный контекст на всю ширину.",
+        "`compare_top_label` и `compare_bottom_label` — названия двух сторон.",
+        "`compare_top_body` и `compare_bottom_body` — пояснения средней длины в двух колонках."
+      ],
+      "alternatives": [
+        {
+          "templateId": "compare.two.intro.detailed",
+          "difference": "Та же структура с более высокими и вместительными колонками для подробного текста."
+        }
+      ]
+    },
+    "compare.two.intro.detailed": {
+      "templateId": "compare.two.intro.detailed",
+      "kinds": [
+        "comparison",
+        "two-group-diagnostic",
+        "long-comparison"
+      ],
+      "slots": {
+        "intro": "INTRO",
+        "title": "TITLE",
+        "compare_bottom_body": "COMPARE_BOTTOM_BODY",
+        "compare_top_body": "COMPARE_TOP_BODY",
+        "compare_top_label": "COMPARE_TOP_LABEL",
+        "compare_bottom_label": "COMPARE_BOTTOM_LABEL"
+      },
+      "groups": [
+        "comparison"
+      ],
+      "description": "Вступление и две симметричные вместительные колонки для подробного сравнения.",
+      "example": "Сравнение работы мастера на конвейерном и мелкосерийном производстве с несколькими предложениями на каждую сторону.",
+      "selection": {
+        "family": "comparison",
+        "capacity": "large",
+        "blocks": "2",
+        "visual_role": "comparison"
+      },
+      "thumbnail": "template-thumbnails/compare.two.intro.detailed.png",
+      "visual_description": "Заголовок и вступление занимают верхнюю треть. Нижние две трети разделены вертикальной линией на две высокие текстовые колонки с отдельными названиями.",
+      "content_placement": [
+        "`title` — общая тема сравнения.",
+        "`intro` — вводный контекст.",
+        "`compare_top_label` и `compare_bottom_label` — названия сторон.",
+        "`compare_top_body` и `compare_bottom_body` — подробные пояснения в двух колонках."
+      ],
+      "alternatives": [
+        {
+          "templateId": "compare.two.intro.short",
+          "difference": "Та же структура с менее вместительными колонками и большим количеством свободного пространства."
+        }
+      ]
+    },
+    "compare.two.no-intro": {
+      "templateId": "compare.two.no-intro",
+      "kinds": [
+        "comparison",
+        "two-group-diagnostic"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "compare_bottom_body": "COMPARE_BOTTOM_BODY",
+        "compare_top_body": "COMPARE_TOP_BODY",
+        "compare_top_label": "COMPARE_TOP_LABEL",
+        "compare_bottom_label": "COMPARE_BOTTOM_LABEL"
+      },
+      "groups": [
+        "comparison"
+      ],
+      "description": "Две стороны сравнения занимают почти весь слайд; отдельного вступительного блока нет.",
+      "example": "Опытный рабочий и новичок: различия в объёме инструктажа и точках контроля.",
+      "selection": {
+        "family": "comparison",
+        "capacity": "large",
+        "blocks": "2",
+        "visual_role": "comparison"
+      },
+      "thumbnail": "template-thumbnails/compare.two.no-intro.png",
+      "visual_description": "Под центральным заголовком сразу начинаются названия двух сторон и две высокие текстовые колонки. Между ними расположен знак сопоставления; нижний край оформлен цветными шестерёнками.",
+      "content_placement": [
+        "`title` — общая тема.",
+        "`compare_top_label` и `compare_bottom_label` — названия сторон.",
+        "`compare_top_body` и `compare_bottom_body` — основные тексты сравнения."
+      ]
+    },
+    "thesis.example.illustration": {
+      "templateId": "thesis.example.illustration",
+      "kinds": [
+        "thesis-with-example"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "definition": "DEFINITION",
+        "explanation": "EXPLANATION"
+      },
+      "groups": [
+        "concepts",
+        "examples"
+      ],
+      "description": "Короткий тезис, выделенный пример и крупная постоянная иллюстрация поддерживают одну мысль.",
+      "example": "Тезис о раннем сигнале отклонения и пример рабочего, заметившего изменение звука станка.",
+      "selection": {
+        "family": "concepts",
+        "capacity": "medium",
+        "blocks": "2",
+        "visual_role": "image-text"
+      },
+      "thumbnail": "template-thumbnails/thesis.example.illustration.png",
+      "visual_description": "Слева сверху располагается вводный тезис, ниже — белая плашка с выделенной формулировкой. Правая половина занята крупной треугольной иллюстрацией, отделённой вертикальной линией.",
+      "content_placement": [
+        "`title` — заголовок слайда.",
+        "`explanation` — вводный тезис или контекст слева сверху.",
+        "`definition` — пример, формулировка или пояснение в белой плашке."
+      ]
+    },
+    "text.character-comment": {
+      "templateId": "text.character-comment",
+      "kinds": [
+        "text-with-character-comment"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "course_text": "COURSE_TEXT",
+        "character_comment": "CHARACTER_COMMENT"
+      },
+      "groups": [
+        "text",
+        "examples"
+      ],
+      "description": "Основное объяснение дополняется репликой персонажа в отдельном облачке.",
+      "example": "Объяснение принципа и короткое замечание Дениса о похожей ситуации на участке.",
+      "selection": {
+        "family": "text",
+        "capacity": "large",
+        "blocks": "2",
+        "visual_role": "image-text"
+      },
+      "thumbnail": "template-thumbnails/text.character-comment.png",
+      "visual_description": "Основной текст занимает левую колонку. Справа расположен персонаж в полный рост, рядом с ним — речевое облачко для короткого комментария. Персонаж и фон входят в готовый шаблон.",
+      "content_placement": [
+        "`title` — заголовок слайда.",
+        "`course_text` — основное объяснение слева.",
+        "`character_comment` — более короткая реплика, наблюдение или практический комментарий в облачке."
+      ]
+    },
+    "text.illustration": {
+      "templateId": "text.illustration",
+      "kinds": [
+        "text-with-illustration"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "body": "BODY"
+      },
+      "groups": [
+        "text"
+      ],
+      "description": "Текст средней длины слева и крупная постоянная иллюстрация справа.",
+      "example": "Объяснение порядка действий мастера рядом с производственной иллюстрацией.",
+      "selection": {
+        "family": "text",
+        "capacity": "medium",
+        "blocks": "1",
+        "visual_role": "image-text"
+      },
+      "thumbnail": "template-thumbnails/text.illustration.png",
+      "visual_description": "Левая часть отведена под один текстовый блок. Справа находится крупная треугольная иллюстрация, отделённая вертикальной линией. Текстовая область занимает около двух пятых ширины.",
+      "content_placement": [
+        "`title` — заголовок слайда.",
+        "`body` — несколько коротких абзацев в левой колонке."
+      ],
+      "alternatives": [
+        {
+          "templateId": "text.long.illustration",
+          "difference": "Та же композиция с более широкой текстовой областью и уменьшенной иллюстрацией."
+        }
+      ]
+    },
+    "text.long.illustration": {
+      "templateId": "text.long.illustration",
+      "kinds": [
+        "long-text-with-illustration"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "body": "BODY"
+      },
+      "groups": [
+        "text"
+      ],
+      "description": "Вместительный текстовый блок слева и уменьшенная постоянная иллюстрация справа.",
+      "example": "Подробное объяснение последствий постоянного вмешательства в работу опытного сотрудника.",
+      "selection": {
+        "family": "text",
+        "capacity": "large",
+        "blocks": "1",
+        "visual_role": "image-text"
+      },
+      "thumbnail": "template-thumbnails/text.long.illustration.png",
+      "visual_description": "Текст занимает больше половины ширины слайда. Узкая вертикальная линия отделяет его от компактной треугольной иллюстрации справа.",
+      "content_placement": [
+        "`title` — заголовок слайда.",
+        "`body` — длинное связное объяснение или несколько абзацев."
+      ],
+      "alternatives": [
+        {
+          "templateId": "text.illustration",
+          "difference": "Та же композиция с более крупной иллюстрацией и меньшим полем для текста."
+        }
+      ]
+    },
+    "checklist.6": {
+      "templateId": "checklist.6",
+      "kinds": [
+        "checklist"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "check_1": "CHECK_1",
+        "check_2": "CHECK_2",
+        "check_3": "CHECK_3",
+        "check_4": "CHECK_4",
+        "check_5": "CHECK_5",
+        "check_6": "CHECK_6"
+      },
+      "groups": [
+        "master-checklist"
+      ],
+      "description": "Специальный слайд «Чеклист мастера» с шестью короткими пунктами самопроверки.",
+      "example": "Проверка после смены: где задача была неясной, где сигнал остался без реакции, где правило применялось непоследовательно.",
+      "selection": {
+        "family": "master-checklist",
+        "capacity": "short",
+        "blocks": "4+",
+        "visual_role": "checklist"
+      },
+      "thumbnail": "template-thumbnails/checklist.6.png",
+      "visual_description": "Заголовок находится сверху слева. Шесть пунктов расположены в две колонки по три и отмечены зелёными значками проверки. Правая часть занята постоянной декоративной иллюстрацией.",
+      "content_placement": [
+        "`title` — постоянное или уточнённое название чеклиста.",
+        "`check_1`–`check_6` — шесть коротких вопросов или проверочных формулировок для мастера."
+      ]
+    },
+    "example.full": {
+      "templateId": "example.full",
+      "kinds": [
+        "full-slide-example"
+      ],
+      "slots": {
+        "title": "EXAMPLE_LABEL",
+        "body": "BODY"
+      },
+      "groups": [
+        "examples"
+      ],
+      "description": "Один развёрнутый пример или история занимает почти всё пространство слайда.",
+      "example": "Диалог о срочном заказе и объяснение, почему рабочий воспринял задачу как необязательную просьбу.",
+      "selection": {
+        "family": "examples",
+        "capacity": "large",
+        "blocks": "1",
+        "visual_role": "text"
+      },
+      "thumbnail": "template-thumbnails/example.full.png",
+      "visual_description": "Заголовок находится сверху слева. Под ним расположен один широкий текстовый блок без карточек и внутренних делений; правый край украшен крупной группой шестерёнок.",
+      "content_placement": [
+        "`title` — название примера или ситуации.",
+        "`body` — цельная история, описание случая или разбор ситуации."
+      ]
+    },
+    "intro.body.conclusion": {
+      "templateId": "intro.body.conclusion",
+      "kinds": [
+        "introduction-body-conclusion",
+        "case-with-conclusion"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "intro": "INTRO",
+        "case_body": "CASE_BODY",
+        "conclusion": "CONCLUSION"
+      },
+      "groups": [
+        "text",
+        "situations"
+      ],
+      "description": "Вступление, основное объяснение и отдельный вывод сохраняют ход рассуждения.",
+      "example": "Общее изменение отношений после назначения, объяснение рабочей дистанции со списком и итог о сохранении авторитета.",
+      "selection": {
+        "family": "situations",
+        "capacity": "large",
+        "blocks": "3",
+        "visual_role": "text"
+      },
+      "thumbnail": "template-thumbnails/intro.body.conclusion.png",
+      "visual_description": "Под заголовком расположен короткий вводный абзац. Ниже слева находится крупная белая плашка с основным текстом, а справа — отдельный вывод с акцентной первой фразой; между частями стоит стрелка.",
+      "content_placement": [
+        "`title` — заголовок рассуждения.",
+        "`intro` — вводная мысль или контекст.",
+        "`case_body` — основное объяснение, аргументация или описание случая.",
+        "`conclusion` — вывод и значение материала для мастера."
+      ]
+    },
+    "numbered-list.3": {
+      "templateId": "numbered-list.3",
+      "kinds": [
+        "numbered-list",
+        "process"
+      ],
+      "slots": {
+        "intro": "INTRO",
+        "title": "TITLE",
+        "item_1_number": "ITEM_1_NUMBER",
+        "item_2_number": "ITEM_2_NUMBER",
+        "item_3_number": "ITEM_3_NUMBER",
+        "item_1_title": "ITEM_1_TITLE",
+        "item_1_body": "ITEM_1_BODY",
+        "item_2_title": "ITEM_2_TITLE",
+        "item_2_body": "ITEM_2_BODY",
+        "item_3_title": "ITEM_3_TITLE",
+        "item_3_body": "ITEM_3_BODY"
+      },
+      "groups": [
+        "lists"
+      ],
+      "description": "Три нумерованных пункта справа и крупный вводный или обобщающий текст слева.",
+      "example": "Три действия мастера после сигнала рабочего.",
+      "selection": {
+        "family": "lists",
+        "capacity": "large",
+        "blocks": "3",
+        "visual_role": "cards"
+      },
+      "thumbnail": "template-thumbnails/numbered-list.3.png",
+      "visual_description": "Левая половина содержит акцентную вводную мысль. Справа три пункта расположены вертикально; каждый состоит из крупного номера, короткого названия и пояснения.",
+      "content_placement": [
+        "`title` — тема перечня.",
+        "`intro` — вводная мысль, общий принцип или контекст в левой части.",
+        "`item_1_number`–`item_3_number` — визуальные номера.",
+        "`item_1_title`–`item_3_title` и соответствующие `body` — названия и пояснения пунктов."
+      ],
+      "alternatives": [
+        {
+          "templateId": "numbered-list.4",
+          "difference": "Та же композиция с четырьмя более компактными пунктами справа."
+        }
+      ]
+    },
+    "text.key-idea": {
+      "templateId": "text.key-idea",
+      "kinds": [
+        "text-with-key-idea"
+      ],
+      "slots": {
+        "intro": "INTRO",
+        "title": "TITLE",
+        "body": "BODY"
+      },
+      "groups": [
+        "text"
+      ],
+      "description": "Связное объяснение слева и отдельно выделенная ключевая мысль справа.",
+      "example": "Пояснение последствий исключений для друзей и итог о единых правилах для всей бригады.",
+      "selection": {
+        "family": "text",
+        "capacity": "large",
+        "blocks": "2",
+        "visual_role": "text"
+      },
+      "thumbnail": "template-thumbnails/text.key-idea.png",
+      "visual_description": "Основной текст занимает примерно две трети ширины слева. Справа его отделяет вертикальная оранжевая линия; за ней находится крупная акцентная формулировка, выровненная по центру.",
+      "content_placement": [
+        "`title` — заголовок слайда.",
+        "`body` — основное рассуждение или доказательство.",
+        "`intro` — короткий вывод или мысль, которую нужно визуально отделить от объяснения."
+      ]
+    },
+    "numbered-list.6": {
+      "templateId": "numbered-list.6",
+      "kinds": [
+        "numbered-list",
+        "process"
+      ],
+      "slots": {
+        "intro": "INTRO",
+        "title": "TITLE",
+        "item_1_number": "ITEM_1_NUMBER",
+        "item_2_number": "ITEM_2_NUMBER",
+        "item_3_number": "ITEM_3_NUMBER",
+        "item_1_title": "ITEM_1_TITLE",
+        "item_1_body": "ITEM_1_BODY",
+        "item_2_title": "ITEM_2_TITLE",
+        "item_2_body": "ITEM_2_BODY",
+        "item_3_title": "ITEM_3_TITLE",
+        "item_3_body": "ITEM_3_BODY",
+        "item_4_number": "ITEM_4_NUMBER",
+        "item_5_number": "ITEM_5_NUMBER",
+        "item_6_number": "ITEM_6_NUMBER",
+        "item_4_title": "ITEM_4_TITLE",
+        "item_4_body": "ITEM_4_BODY",
+        "item_5_title": "ITEM_5_TITLE",
+        "item_5_body": "ITEM_5_BODY",
+        "item_6_title": "ITEM_6_TITLE",
+        "item_6_body": "ITEM_6_BODY"
+      },
+      "groups": [
+        "lists"
+      ],
+      "description": "Шесть нумерованных пунктов в двух равных колонках с общей вводной строкой сверху.",
+      "example": "Шесть условий понятной задачи мастера.",
+      "selection": {
+        "family": "lists",
+        "capacity": "medium",
+        "blocks": "4+",
+        "visual_role": "cards"
+      },
+      "thumbnail": "template-thumbnails/numbered-list.6.png",
+      "visual_description": "После заголовка размещена зелёная вводная мысль. Ниже находятся две колонки по три пункта; каждый пункт включает номер, короткий заголовок и пояснение.",
+      "content_placement": [
+        "`title` — тема перечня.",
+        "`intro` — общая вводная или итоговая фраза.",
+        "`item_1`–`item_6` — шесть пунктов с номерами, названиями и пояснениями."
+      ],
+      "alternatives": [
+        {
+          "templateId": "numbered-list.5",
+          "difference": "Та же двухколоночная композиция для пяти пунктов с большим количеством свободного места."
+        }
+      ]
+    },
+    "numbered-list.5": {
+      "templateId": "numbered-list.5",
+      "kinds": [
+        "numbered-list",
+        "process"
+      ],
+      "slots": {
+        "intro": "INTRO",
+        "title": "TITLE",
+        "item_1_number": "ITEM_1_NUMBER",
+        "item_2_number": "ITEM_2_NUMBER",
+        "item_3_number": "ITEM_3_NUMBER",
+        "item_1_title": "ITEM_1_TITLE",
+        "item_1_body": "ITEM_1_BODY",
+        "item_2_title": "ITEM_2_TITLE",
+        "item_2_body": "ITEM_2_BODY",
+        "item_3_title": "ITEM_3_TITLE",
+        "item_3_body": "ITEM_3_BODY",
+        "item_4_number": "ITEM_4_NUMBER",
+        "item_5_number": "ITEM_5_NUMBER",
+        "item_4_title": "ITEM_4_TITLE",
+        "item_4_body": "ITEM_4_BODY",
+        "item_5_title": "ITEM_5_TITLE",
+        "item_5_body": "ITEM_5_BODY"
+      },
+      "groups": [
+        "lists"
+      ],
+      "description": "Пять нумерованных пунктов в двух колонках с общей вводной строкой сверху.",
+      "example": "Пять ошибок нового мастера в работе с опытными сотрудниками.",
+      "selection": {
+        "family": "lists",
+        "capacity": "medium",
+        "blocks": "4+",
+        "visual_role": "cards"
+      },
+      "thumbnail": "template-thumbnails/numbered-list.5.png",
+      "visual_description": "После заголовка идёт зелёная вводная мысль на всю ширину. Ниже три пункта расположены слева и два справа; каждый содержит номер, название и короткое пояснение.",
+      "content_placement": [
+        "`title` — тема перечня.",
+        "`intro` — общая вводная или итоговая фраза.",
+        "`item_1`–`item_5` — пять пунктов с номерами, названиями и пояснениями."
+      ],
+      "alternatives": [
+        {
+          "templateId": "numbered-list.6",
+          "difference": "Та же двухколоночная композиция с шестым пунктом и более плотным заполнением."
+        }
+      ]
+    },
+    "numbered-list.4": {
+      "templateId": "numbered-list.4",
+      "kinds": [
+        "numbered-list",
+        "process"
+      ],
+      "slots": {
+        "intro": "INTRO",
+        "title": "TITLE",
+        "item_1_number": "ITEM_1_NUMBER",
+        "item_2_number": "ITEM_2_NUMBER",
+        "item_3_number": "ITEM_3_NUMBER",
+        "item_1_title": "ITEM_1_TITLE",
+        "item_1_body": "ITEM_1_BODY",
+        "item_2_title": "ITEM_2_TITLE",
+        "item_2_body": "ITEM_2_BODY",
+        "item_3_title": "ITEM_3_TITLE",
+        "item_3_body": "ITEM_3_BODY",
+        "item_4_number": "ITEM_4_NUMBER",
+        "item_4_title": "ITEM_4_TITLE",
+        "item_4_body": "ITEM_4_BODY"
+      },
+      "groups": [
+        "lists"
+      ],
+      "description": "Четыре нумерованных пункта справа и крупный вводный или обобщающий текст слева.",
+      "example": "Четыре признака рабочей дистанции.",
+      "selection": {
+        "family": "lists",
+        "capacity": "large",
+        "blocks": "4+",
+        "visual_role": "cards"
+      },
+      "thumbnail": "template-thumbnails/numbered-list.4.png",
+      "visual_description": "Левая часть отведена под общий смысл перечня. Справа четыре пункта расположены вертикально и состоят из номера, короткого заголовка и пояснения.",
+      "content_placement": [
+        "`title` — тема перечня.",
+        "`intro` — вводная мысль или обобщение слева.",
+        "`item_1_number`–`item_4_number` — визуальные номера.",
+        "`item_1_title`–`item_4_title` и соответствующие `body` — названия и пояснения пунктов."
+      ],
+      "alternatives": [
+        {
+          "templateId": "numbered-list.3",
+          "difference": "Та же композиция с тремя более свободными пунктами справа."
+        }
+      ]
+    },
+    "key-idea.quote": {
+      "templateId": "key-idea.quote",
+      "kinds": [
+        "key-idea",
+        "quote"
+      ],
+      "slots": {
+        "title": "QUOTE"
+      },
+      "groups": [
+        "text"
+      ],
+      "description": "Одна короткая формулировка получает максимальный визуальный акцент.",
+      "example": "Авторитет растёт из последовательных решений, а не из названия должности.",
+      "selection": {
+        "family": "text",
+        "capacity": "short",
+        "blocks": "1",
+        "visual_role": "text"
+      },
+      "thumbnail": "template-thumbnails/key-idea.quote.png",
+      "visual_description": "На слайде нет отдельного заголовка и дополнительных блоков. Крупный оранжевый текст расположен в центре на свободном светлом фоне; по краям остаются декоративные контуры шестерёнок.",
+      "content_placement": [
+        "`title` — одна ключевая мысль, цитата или итоговая формулировка."
+      ]
+    },
+    "numbered-list.4.illustration": {
+      "templateId": "numbered-list.4.illustration",
+      "kinds": [
+        "numbered-list-with-illustration",
+        "process-with-illustration"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "item_1_number": "ITEM_1_NUMBER",
+        "item_2_number": "ITEM_2_NUMBER",
+        "item_3_number": "ITEM_3_NUMBER",
+        "item_1_title": "ITEM_1_TITLE",
+        "item_1_body": "ITEM_1_BODY",
+        "item_2_title": "ITEM_2_TITLE",
+        "item_2_body": "ITEM_2_BODY",
+        "item_3_title": "ITEM_3_TITLE",
+        "item_3_body": "ITEM_3_BODY",
+        "item_4_number": "ITEM_4_NUMBER",
+        "item_4_title": "ITEM_4_TITLE",
+        "item_4_body": "ITEM_4_BODY"
+      },
+      "groups": [
+        "lists"
+      ],
+      "description": "Крупная постоянная иллюстрация слева и четыре нумерованных пункта справа.",
+      "example": "Четыре действия мастера при обнаружении отклонения рядом с изображением участка.",
+      "selection": {
+        "family": "lists",
+        "capacity": "medium",
+        "blocks": "4+",
+        "visual_role": "image-text"
+      },
+      "thumbnail": "template-thumbnails/numbered-list.4.illustration.png",
+      "visual_description": "Левая треть занята треугольной иллюстрацией. Справа четыре пункта выстроены вертикально; каждый имеет номер, короткое название и пояснение.",
+      "content_placement": [
+        "`title` — тема перечня.",
+        "`item_1_number`–`item_4_number` — номера пунктов.",
+        "`item_1_title`–`item_4_title` и соответствующие `body` — названия и пояснения справа."
+      ]
+    },
+    "classification.3": {
+      "templateId": "classification.3",
+      "kinds": [
+        "classification"
+      ],
+      "slots": {
+        "title": "ROOT_TITLE",
+        "node_3_title": "NODE_3_TITLE",
+        "node_2_title": "NODE_2_TITLE",
+        "node_1_title": "NODE_1_TITLE",
+        "node_3_body": "NODE_3_BODY",
+        "node_2_body": "NODE_2_BODY",
+        "node_1_body": "NODE_1_BODY"
+      },
+      "groups": [
+        "classification"
+      ],
+      "description": "Общее понятие сверху связано линиями с тремя категориями в нижней части.",
+      "example": "Три типа производственных сигналов: качество, оборудование и материалы.",
+      "selection": {
+        "family": "classification",
+        "capacity": "medium",
+        "blocks": "3",
+        "visual_role": "diagram"
+      },
+      "thumbnail": "template-thumbnails/classification.3.png",
+      "visual_description": "Сверху по центру находится крупный оранжевый блок общего понятия. От него расходятся три линии к одинаковым карточкам внизу; в каждой есть название и пояснение.",
+      "content_placement": [
+        "`title` — общее понятие или основание классификации в верхнем блоке.",
+        "`node_1_title`–`node_3_title` и соответствующие `body` — три категории или части системы."
+      ],
+      "alternatives": [
+        {
+          "templateId": "classification.4",
+          "difference": "Та же схема с четырьмя нижними категориями."
+        }
+      ]
+    },
+    "classification.4": {
+      "templateId": "classification.4",
+      "kinds": [
+        "classification"
+      ],
+      "slots": {
+        "title": "ROOT_TITLE",
+        "node_1_title": "NODE_1_TITLE",
+        "node_1_body": "NODE_1_BODY",
+        "node_2_title": "NODE_2_TITLE",
+        "node_2_body": "NODE_2_BODY",
+        "node_3_title": "NODE_3_TITLE",
+        "node_3_body": "NODE_3_BODY",
+        "node_4_title": "NODE_4_TITLE",
+        "node_4_body": "NODE_4_BODY"
+      },
+      "groups": [
+        "classification"
+      ],
+      "description": "Общее понятие сверху связано линиями с четырьмя категориями в нижней части.",
+      "example": "Четыре зоны ответственности мастера на участке.",
+      "selection": {
+        "family": "classification",
+        "capacity": "medium",
+        "blocks": "4+",
+        "visual_role": "diagram"
+      },
+      "thumbnail": "template-thumbnails/classification.4.png",
+      "visual_description": "Сверху по центру находится крупный оранжевый блок общего понятия. От него расходятся четыре линии к одинаковым карточкам внизу; в каждой есть название и пояснение.",
+      "content_placement": [
+        "`title` — общее понятие или основание классификации.",
+        "`node_1_title`–`node_4_title` и соответствующие `body` — четыре категории или части системы."
+      ],
+      "alternatives": [
+        {
+          "templateId": "classification.3",
+          "difference": "Та же схема с тремя более широкими нижними категориями."
+        }
+      ]
+    },
+    "list.6.center-message": {
+      "templateId": "list.6.center-message",
+      "kinds": [
+        "six-points",
+        "classification"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "item_1_title": "ITEM_1_TITLE",
+        "item_1_body": "ITEM_1_BODY",
+        "item_2_title": "ITEM_2_TITLE",
+        "item_2_body": "ITEM_2_BODY",
+        "item_3_title": "ITEM_3_TITLE",
+        "item_3_body": "ITEM_3_BODY",
+        "item_4_title": "ITEM_4_TITLE",
+        "item_4_body": "ITEM_4_BODY",
+        "item_5_title": "ITEM_5_TITLE",
+        "item_5_body": "ITEM_5_BODY",
+        "item_6_title": "ITEM_6_TITLE",
+        "item_6_body": "ITEM_6_BODY",
+        "center_message": "CENTER_MESSAGE"
+      },
+      "groups": [
+        "lists",
+        "classification"
+      ],
+      "description": "Шесть элементов окружают общую центральную мысль.",
+      "example": "Шесть ежедневных действий мастера вокруг центральной цели — стабильного результата смены.",
+      "selection": {
+        "family": "lists",
+        "capacity": "medium",
+        "blocks": "4+",
+        "visual_role": "diagram"
+      },
+      "thumbnail": "template-thumbnails/list.6.center-message.png",
+      "visual_description": "В центре расположена крупная контурная шестерёнка с общей формулировкой. По три элемента находятся слева и справа; каждый состоит из цветного заголовка и пояснения.",
+      "content_placement": [
+        "`title` — тема слайда.",
+        "`center_message` — общий принцип, цель или объединяющая мысль.",
+        "`item_1`–`item_6` — элементы, связанные с центральной мыслью."
+      ]
+    },
+    "cards.6.columns": {
+      "templateId": "cards.6.columns",
+      "kinds": [
+        "six-cards",
+        "six-parallel-actions"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "intro": "INTRO",
+        "left_1_body": "LEFT_1_BODY",
+        "left_2_body": "LEFT_2_BODY",
+        "left_3_body": "LEFT_3_BODY",
+        "left_1_title": "LEFT_1_TITLE",
+        "left_2_title": "LEFT_2_TITLE",
+        "left_3_title": "LEFT_3_TITLE",
+        "right_1_body": "RIGHT_1_BODY",
+        "right_2_body": "RIGHT_2_BODY",
+        "right_3_body": "RIGHT_3_BODY",
+        "right_1_title": "RIGHT_1_TITLE",
+        "right_2_title": "RIGHT_2_TITLE",
+        "right_3_title": "RIGHT_3_TITLE"
+      },
+      "groups": [
+        "lists"
+      ],
+      "description": "Шесть коротких элементов расположены в двух вертикальных колонках вокруг центральной декоративной схемы.",
+      "example": "Шесть способов проверить, что задача понята одинаково.",
+      "selection": {
+        "family": "lists",
+        "capacity": "short",
+        "blocks": "4+",
+        "visual_role": "diagram"
+      },
+      "thumbnail": "template-thumbnails/cards.6.columns.png",
+      "visual_description": "В центре находится крупная многоугольная фигура с иконкой. Слева и справа от неё расположены по три небольших элемента с иконками, короткими названиями и пояснениями.",
+      "content_placement": [
+        "`title` — тема набора.",
+        "`intro` — одна общая фраза под заголовком.",
+        "`left_1`–`left_3` и `right_1`–`right_3` — шесть коротких элементов по сторонам центральной фигуры."
+      ]
+    },
+    "cards.3": {
+      "templateId": "cards.3",
+      "kinds": [
+        "three-cards",
+        "three-parallel-actions"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "intro": "INTRO",
+        "card_1_title": "CARD_1_TITLE",
+        "card_1_body": "CARD_1_BODY",
+        "card_2_title": "CARD_2_TITLE",
+        "card_2_body": "CARD_2_BODY",
+        "card_3_title": "CARD_3_TITLE",
+        "card_3_body": "CARD_3_BODY"
+      },
+      "groups": [
+        "lists"
+      ],
+      "description": "Три равнозначные карточки в один ряд с общей вводной строкой.",
+      "example": "Три уровня реакции мастера на отклонение.",
+      "selection": {
+        "family": "lists",
+        "capacity": "medium",
+        "blocks": "3",
+        "visual_role": "cards"
+      },
+      "thumbnail": "template-thumbnails/cards.3.png",
+      "visual_description": "Под заголовком и коротким вступлением расположены три широкие белые карточки одинакового размера. В каждой есть цветной заголовок и пояснение.",
+      "content_placement": [
+        "`title` — тема перечня.",
+        "`intro` — общая вводная фраза.",
+        "`card_1_title`–`card_3_title` и соответствующие `body` — три самостоятельных элемента."
+      ]
+    },
+    "cards.4": {
+      "templateId": "cards.4",
+      "kinds": [
+        "four-cards",
+        "four-parallel-actions"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "intro": "INTRO",
+        "card_1_title": "CARD_1_TITLE",
+        "card_1_body": "CARD_1_BODY",
+        "card_2_title": "CARD_2_TITLE",
+        "card_2_body": "CARD_2_BODY",
+        "card_3_title": "CARD_3_TITLE",
+        "card_3_body": "CARD_3_BODY",
+        "card_4_title": "CARD_4_TITLE",
+        "card_4_body": "CARD_4_BODY"
+      },
+      "groups": [
+        "lists"
+      ],
+      "description": "Четыре карточки справа и отдельная вводная мысль слева.",
+      "example": "Четыре вопроса перед передачей задачи рабочему.",
+      "selection": {
+        "family": "lists",
+        "capacity": "medium",
+        "blocks": "4+",
+        "visual_role": "cards"
+      },
+      "thumbnail": "template-thumbnails/cards.4.png",
+      "visual_description": "Заголовок расположен сверху. Левая четверть отведена под общий вводный текст, а справа находится сетка из четырёх белых карточек два на два.",
+      "content_placement": [
+        "`title` — тема перечня.",
+        "`intro` — общий контекст или вывод в левой колонке.",
+        "`card_1_title`–`card_4_title` и соответствующие `body` — четыре элемента в сетке."
+      ]
+    },
+    "cards.6": {
+      "templateId": "cards.6",
+      "kinds": [
+        "six-cards",
+        "six-parallel-actions"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "intro": "INTRO",
+        "card_1_title": "CARD_5_TITLE",
+        "card_1_body": "CARD_5_BODY",
+        "card_2_title": "CARD_1_TITLE",
+        "card_2_body": "CARD_1_BODY",
+        "card_3_title": "CARD_2_TITLE",
+        "card_3_body": "CARD_2_BODY",
+        "card_4_title": "CARD_6_TITLE",
+        "card_4_body": "CARD_6_BODY",
+        "card_5_title": "CARD_3_TITLE",
+        "card_5_body": "CARD_3_BODY",
+        "card_6_title": "CARD_4_TITLE",
+        "card_6_body": "CARD_4_BODY"
+      },
+      "groups": [
+        "lists"
+      ],
+      "description": "Шесть равнозначных карточек в сетке два на три.",
+      "example": "Шесть типичных сигналов о риске брака или простоя.",
+      "selection": {
+        "family": "lists",
+        "capacity": "medium",
+        "blocks": "4+",
+        "visual_role": "cards"
+      },
+      "thumbnail": "template-thumbnails/cards.6.png",
+      "visual_description": "Под заголовком находится короткая вводная строка. Основную часть занимает сетка из шести белых карточек: три сверху и три снизу.",
+      "content_placement": [
+        "`title` — тема перечня.",
+        "`intro` — короткая общая фраза.",
+        "`card_1_title`–`card_6_title` и соответствующие `body` — шесть компактных элементов."
+      ]
+    },
+    "process.situation-outcome.4": {
+      "templateId": "process.situation-outcome.4",
+      "kinds": [
+        "process",
+        "situation-development-outcome"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "intro": "INTRO",
+        "stage_1_text": "STAGE_1_TEXT",
+        "stage_2_text": "STAGE_2_TEXT",
+        "stage_3_text": "STAGE_3_TEXT",
+        "outcome_text": "OUTCOME_TEXT",
+        "stage_4_text": "STAGE_4_TEXT"
+      },
+      "groups": [
+        "process",
+        "situations"
+      ],
+      "description": "Развитие ситуации показано через четыре смысловые точки и итог на общей цепочке шестерёнок.",
+      "example": "Слабый сигнал остаётся без реакции, отклонение усиливается, возникает брак и требуется переделка.",
+      "selection": {
+        "family": "process",
+        "capacity": "short",
+        "blocks": "4+",
+        "visual_role": "diagram"
+      },
+      "thumbnail": "template-thumbnails/process.situation-outcome.4.png",
+      "visual_description": "По слайду слева направо проходит цепочка шестерёнок разного размера. К четырём позициям привязаны короткие тексты, расположенные попеременно сверху и снизу; итог выделяется крупной шестерёнкой ближе к правой части.",
+      "content_placement": [
+        "`title` — название ситуации или процесса.",
+        "`intro` — короткое пояснение исходного контекста.",
+        "`stage_1_text`–`stage_4_text` — четыре момента развития ситуации.",
+        "`outcome_text` — итоговое состояние или последствие."
+      ]
+    },
+    "process.4.stages": {
+      "templateId": "process.4.stages",
+      "kinds": [
+        "process",
+        "stages"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "step_1_title": "STEP_1_TITLE",
+        "step_1_number": "STEP_1_NUMBER",
+        "step_1_body": "STEP_1_BODY",
+        "step_2_title": "STEP_2_TITLE",
+        "step_2_number": "STEP_2_NUMBER",
+        "step_2_body": "STEP_2_BODY",
+        "step_3_title": "STEP_3_TITLE",
+        "step_3_number": "STEP_3_NUMBER",
+        "step_3_body": "STEP_3_BODY",
+        "step_4_title": "STEP_4_TITLE",
+        "step_4_number": "STEP_4_NUMBER",
+        "step_4_body": "STEP_4_BODY"
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "Четыре последовательные стадии показаны одинаковыми вертикальными блоками со стрелками между ними.",
+      "example": "Подготовить задачу, передать её, проверить понимание и согласовать контроль.",
+      "selection": {
+        "family": "process",
+        "capacity": "large",
+        "blocks": "4+",
+        "visual_role": "diagram"
+      },
+      "thumbnail": "template-thumbnails/process.4.stages.png",
+      "visual_description": "В центре слайда четыре зелёных номерных шестиугольника образуют горизонтальный ряд. Над каждым расположен короткий заголовок, под каждым — вместительное пояснение. Между стадиями стоят стрелки.",
+      "content_placement": [
+        "`title` — название процесса.",
+        "`step_1_title`–`step_4_title` — короткие названия стадий.",
+        "`step_1_number`–`step_4_number` — номера внутри фигур.",
+        "`step_1_body`–`step_4_body` — подробные пояснения под стадиями."
+      ]
+    },
+    "process.4": {
+      "templateId": "process.4",
+      "kinds": [
+        "process",
+        "stages"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "step_1_title": "STEP_1_TITLE",
+        "step_1_body": "STEP_1_BODY",
+        "step_1_number": "STEP_1_NUMBER",
+        "step_2_title": "STEP_2_TITLE",
+        "step_2_body": "STEP_2_BODY",
+        "step_2_number": "STEP_2_NUMBER",
+        "step_3_title": "STEP_3_TITLE",
+        "step_3_body": "STEP_3_BODY",
+        "step_3_number": "STEP_3_NUMBER",
+        "step_4_title": "STEP_4_TITLE",
+        "step_4_body": "STEP_4_BODY",
+        "step_4_number": "STEP_4_NUMBER"
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "Четыре этапа соединены горизонтальной линией, а пояснения чередуются сверху и снизу.",
+      "example": "Получить сигнал, проверить факт, принять решение, сообщить его рабочему.",
+      "selection": {
+        "family": "process",
+        "capacity": "medium",
+        "blocks": "4+",
+        "visual_role": "diagram"
+      },
+      "thumbnail": "template-thumbnails/process.4.png",
+      "visual_description": "В центре проходит тонкая линия с четырьмя крупными круглыми номерами. Текст первого и третьего этапов находится над линией, второго и четвёртого — под ней; заголовок слайда расположен в правом верхнем углу.",
+      "content_placement": [
+        "`title` — название процесса.",
+        "`step_1_number`–`step_4_number` — номера на линии.",
+        "`step_1_title`–`step_4_title` и соответствующие `body` — названия и пояснения четырёх этапов."
+      ]
+    },
+    "process.6": {
+      "templateId": "process.6",
+      "kinds": [
+        "process",
+        "long-process"
+      ],
+      "slots": {
+        "step_1_number": "STEP_1_NUMBER",
+        "step_2_number": "STEP_2_NUMBER",
+        "step_3_number": "STEP_3_NUMBER",
+        "step_4_number": "STEP_4_NUMBER",
+        "step_1_body": "STEP_1_BODY",
+        "step_1_title": "STEP_1_TITLE",
+        "step_2_body": "STEP_2_BODY",
+        "step_2_title": "STEP_2_TITLE",
+        "step_3_body": "STEP_3_BODY",
+        "step_3_title": "STEP_3_TITLE",
+        "step_4_body": "STEP_4_BODY",
+        "step_4_title": "STEP_4_TITLE",
+        "step_5_number": "STEP_5_NUMBER",
+        "step_5_body": "STEP_5_BODY",
+        "step_5_title": "STEP_5_TITLE",
+        "step_6_number": "STEP_6_NUMBER",
+        "step_6_body": "STEP_6_BODY",
+        "step_6_title": "STEP_6_TITLE",
+        "title": "TITLE"
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "Шесть этапов расположены в двух рядах и соединены одной ломаной траекторией.",
+      "example": "Шесть этапов постановки, выполнения и контроля производственной задачи.",
+      "selection": {
+        "family": "process",
+        "capacity": "large",
+        "blocks": "4+",
+        "visual_role": "diagram"
+      },
+      "thumbnail": "template-thumbnails/process.6.png",
+      "visual_description": "Три первых этапа идут слева направо в верхнем ряду, затем линия спускается к нижнему правому этапу и возвращается справа налево через пятый и шестой. У каждого этапа есть крупный номер, название и пояснение.",
+      "content_placement": [
+        "`title` — название процесса в верхнем левом углу.",
+        "`step_1`–`step_6` — шесть этапов с номерами, названиями и подробными пояснениями."
+      ]
+    },
+    "process.cards.4": {
+      "templateId": "process.cards.4",
+      "kinds": [
+        "process",
+        "homogeneous-concepts"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "card_1_title": "CARD_1_TITLE",
+        "card_1_body": "CARD_1_BODY",
+        "card_2_title": "CARD_2_TITLE",
+        "card_2_body": "CARD_2_BODY",
+        "card_3_title": "CARD_3_TITLE",
+        "card_3_body": "CARD_3_BODY",
+        "card_4_title": "CARD_4_TITLE",
+        "card_4_body": "CARD_4_BODY"
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "Четыре этапа оформлены как крупные шестиугольные узлы на общей волнообразной линии.",
+      "example": "Подготовка разговора, обсуждение факта, договорённость и контроль результата.",
+      "selection": {
+        "family": "process",
+        "capacity": "medium",
+        "blocks": "4+",
+        "visual_role": "diagram"
+      },
+      "thumbnail": "template-thumbnails/process.cards.4.png",
+      "visual_description": "В центре проходит декоративная линия, соединяющая четыре шестиугольника с иконками. Тексты этапов чередуются: первый и третий находятся снизу, второй и четвёртый — сверху.",
+      "content_placement": [
+        "`title` — название процесса.",
+        "`card_1_title`–`card_4_title` и соответствующие `body` — названия и пояснения четырёх этапов."
+      ]
+    },
+    "process.4.detailed": {
+      "templateId": "process.4.detailed",
+      "kinds": [
+        "process",
+        "detailed-process"
+      ],
+      "slots": {
+        "step_1_detail_title": "STEP_1_DETAIL_TITLE",
+        "step_1_body": "STEP_1_BODY",
+        "step_1_label": "STEP_1_LABEL",
+        "step_2_label": "STEP_2_LABEL",
+        "step_3_label": "STEP_3_LABEL",
+        "step_4_label": "STEP_4_LABEL",
+        "step_2_detail_title": "STEP_2_DETAIL_TITLE",
+        "step_2_body": "STEP_2_BODY",
+        "step_3_detail_title": "STEP_3_DETAIL_TITLE",
+        "step_3_body": "STEP_3_BODY",
+        "step_4_detail_title": "STEP_4_DETAIL_TITLE",
+        "step_4_body": "STEP_4_BODY",
+        "title": "TITLE"
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "Четыре крупных стрелочных блока образуют последовательность, под каждым находится подробное пояснение.",
+      "example": "Четыре этапа реакции на повторяющееся нарушение с действиями и ожидаемым результатом каждого этапа.",
+      "selection": {
+        "family": "process",
+        "capacity": "large",
+        "blocks": "4+",
+        "visual_role": "diagram"
+      },
+      "thumbnail": "template-thumbnails/process.4.detailed.png",
+      "visual_description": "В верхней половине расположены четыре широкие цветные стрелки с постоянными иконками и крупными метками этапов. Под каждой стрелкой есть дополнительный заголовок и высокий текстовый блок.",
+      "content_placement": [
+        "`title` — название процесса в правом верхнем углу.",
+        "`step_1_label`–`step_4_label` — крупные названия или номера внутри стрелок.",
+        "`step_1_detail_title`–`step_4_detail_title` — короткие подзаголовки под стрелками.",
+        "`step_1_body`–`step_4_body` — подробные пояснения."
+      ],
+      "alternatives": [
+        {
+          "templateId": "process.3.detailed",
+          "difference": "Та же композиция для трёх более широких этапов."
+        }
+      ]
+    },
+    "process.3.detailed": {
+      "templateId": "process.3.detailed",
+      "kinds": [
+        "process",
+        "detailed-process"
+      ],
+      "slots": {
+        "step_1_detail_title": "STEP_1_DETAIL_TITLE",
+        "step_1_body": "STEP_1_BODY",
+        "step_1_label": "STEP_1_LABEL",
+        "step_2_label": "STEP_2_LABEL",
+        "step_3_label": "STEP_3_LABEL",
+        "step_2_detail_title": "STEP_2_DETAIL_TITLE",
+        "step_2_body": "STEP_2_BODY",
+        "step_3_detail_title": "STEP_3_DETAIL_TITLE",
+        "step_3_body": "STEP_3_BODY",
+        "title": "TITLE"
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "Три крупных стрелочных блока образуют последовательность, под каждым находится подробное пояснение.",
+      "example": "Подготовить факты, провести разговор и проверить изменение поведения.",
+      "selection": {
+        "family": "process",
+        "capacity": "large",
+        "blocks": "3",
+        "visual_role": "diagram"
+      },
+      "thumbnail": "template-thumbnails/process.3.detailed.png",
+      "visual_description": "В верхней половине расположены три широкие цветные стрелки с постоянными иконками и крупными метками этапов. Под каждой стрелкой есть дополнительный заголовок и высокий текстовый блок.",
+      "content_placement": [
+        "`title` — название процесса.",
+        "`step_1_label`–`step_3_label` — крупные названия или номера внутри стрелок.",
+        "`step_1_detail_title`–`step_3_detail_title` — короткие подзаголовки.",
+        "`step_1_body`–`step_3_body` — подробные пояснения."
+      ],
+      "alternatives": [
+        {
+          "templateId": "process.4.detailed",
+          "difference": "Та же композиция для четырёх более узких этапов."
+        }
+      ]
+    },
+    "statistics.3": {
+      "templateId": "statistics.3",
+      "kinds": [
+        "statistics"
+      ],
+      "slots": {
+        "metric_1_title": "METRIC_1_TITLE",
+        "metric_1_body": "METRIC_1_BODY",
+        "metric_1_value": "METRIC_1_VALUE",
+        "metric_2_title": "METRIC_2_TITLE",
+        "metric_2_body": "METRIC_2_BODY",
+        "metric_2_value": "METRIC_2_VALUE",
+        "metric_3_title": "METRIC_3_TITLE",
+        "metric_3_body": "METRIC_3_BODY",
+        "metric_3_value": "METRIC_3_VALUE",
+        "title": "TITLE"
+      },
+      "groups": [
+        "data"
+      ],
+      "description": "Три числовых показателя с пояснениями расположены слева от столбчатой диаграммы.",
+      "example": "Три показателя участка: выполнение плана, доля брака и время простоя.",
+      "selection": {
+        "family": "data",
+        "capacity": "medium",
+        "blocks": "3",
+        "visual_role": "data"
+      },
+      "thumbnail": "template-thumbnails/statistics.3.png",
+      "visual_description": "Левая половина содержит три строки: крупное значение, короткое название и пояснение. Справа находится столбчатая диаграмма и заголовок слайда.",
+      "content_placement": [
+        "`title` — общий вывод или тема данных.",
+        "`metric_1_value`–`metric_3_value` — крупные значения.",
+        "`metric_1_title`–`metric_3_title` и соответствующие `body` — названия и пояснения показателей."
+      ],
+      "alternatives": [
+        {
+          "templateId": "statistics.4",
+          "difference": "Та же композиция для четырёх более компактных показателей."
+        }
+      ],
+      "note": "Диаграмма является отдельным объектом PowerPoint и сейчас не связана с полями catalog.json. Сборщик заменяет текст показателей, но не данные диаграммы."
+    },
+    "statistics.4": {
+      "templateId": "statistics.4",
+      "kinds": [
+        "statistics"
+      ],
+      "slots": {
+        "metric_1_title": "METRIC_1_TITLE",
+        "metric_1_body": "METRIC_1_BODY",
+        "metric_1_value": "METRIC_1_VALUE",
+        "metric_2_title": "METRIC_2_TITLE",
+        "metric_2_body": "METRIC_2_BODY",
+        "metric_2_value": "METRIC_2_VALUE",
+        "metric_3_title": "METRIC_3_TITLE",
+        "metric_3_body": "METRIC_3_BODY",
+        "metric_3_value": "METRIC_3_VALUE",
+        "title": "TITLE",
+        "metric_4_title": "METRIC_4_TITLE",
+        "metric_4_body": "METRIC_4_BODY",
+        "metric_4_value": "METRIC_4_VALUE"
+      },
+      "groups": [
+        "data"
+      ],
+      "description": "Четыре числовых показателя с пояснениями расположены слева от столбчатой диаграммы.",
+      "example": "Четыре результата смены: выпуск, брак, простои и переделка.",
+      "selection": {
+        "family": "data",
+        "capacity": "medium",
+        "blocks": "4+",
+        "visual_role": "data"
+      },
+      "thumbnail": "template-thumbnails/statistics.4.png",
+      "visual_description": "Левая половина содержит четыре компактные строки: значение, название и пояснение. Справа находится столбчатая диаграмма и заголовок слайда.",
+      "content_placement": [
+        "`title` — общий вывод или тема данных.",
+        "`metric_1_value`–`metric_4_value` — крупные значения.",
+        "`metric_1_title`–`metric_4_title` и соответствующие `body` — названия и пояснения показателей."
+      ],
+      "alternatives": [
+        {
+          "templateId": "statistics.3",
+          "difference": "Та же композиция для трёх более свободных показателей."
+        }
+      ],
+      "note": "Диаграмма является отдельным объектом PowerPoint и сейчас не связана с полями catalog.json. Сборщик заменяет текст показателей, но не данные диаграммы."
+    },
+    "timeline.5": {
+      "templateId": "timeline.5",
+      "kinds": [
+        "timeline",
+        "process",
+        "event-development",
+        "instruction"
+      ],
+      "slots": {
+        "title": "TITLE",
+        "event_1_title": "EVENT_1_TITLE",
+        "event_1_body": "EVENT_1_BODY",
+        "event_2_title": "EVENT_2_TITLE",
+        "event_2_body": "EVENT_2_BODY",
+        "event_3_title": "EVENT_3_TITLE",
+        "event_3_body": "EVENT_3_BODY",
+        "event_4_title": "EVENT_4_TITLE",
+        "event_4_body": "EVENT_4_BODY",
+        "event_5_title": "EVENT_5_TITLE",
+        "event_5_body": "EVENT_5_BODY"
+      },
+      "groups": [
+        "process"
+      ],
+      "description": "До пяти событий размещаются вдоль горизонтальной временной линии.",
+      "example": "Ход смены от постановки задач утром до итоговой проверки результата.",
+      "selection": {
+        "family": "process",
+        "capacity": "medium",
+        "blocks": "4+",
+        "visual_role": "diagram"
+      },
+      "thumbnail": "template-thumbnails/timeline.5.png",
+      "visual_description": "Через середину слайда проходит тонкая оранжевая линия с пятью круглыми маркерами. Описания событий чередуются сверху и снизу; заголовок расположен справа сверху.",
+      "content_placement": [
+        "`title` — название истории или периода.",
+        "`event_1_title`–`event_5_title` — названия событий.",
+        "`event_1_body`–`event_5_body` — пояснения, даты или последствия событий."
+      ]
+    }
+  },
+  "slides": [
+    {
+      "sourceSlide": 1,
+      "templateId": "staging.blank",
+      "comments": [],
+      "notes": [
+        "template_id: staging.blank\nПустая техническая основа для диалога: сборщик вставляет сцену с Алексеем и Денисом и сохраняет реплики в служебном поле.\nПример: Алексей задаёт вопрос о постановке задачи, Денис отвечает на производственном участке."
+      ],
+      "text": [
+        {
+          "objectName": "STAGING_BODY",
+          "objectId": 2,
+          "text": "Здесь текст"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "STAGING_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 2,
+      "templateId": "course.title",
+      "comments": [],
+      "notes": [
+        "template_id: course.title\nТитульный слайд всего курса с названием и кратким пояснением темы.\nПример: Курс «Мастер производственного участка»: практические решения в течение смены."
+      ],
+      "text": [
+        {
+          "objectName": "COURSE_TITLE",
+          "objectId": 1965,
+          "text": "УСПЕШНЫЙ МАСТЕР"
+        },
+        {
+          "objectName": "COURSE_SUBTITLE",
+          "objectId": 1966,
+          "text": "Обучающий курс"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "COURSE_TITLE",
+        "text_2": "COURSE_SUBTITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 3,
+      "templateId": "module.title",
+      "comments": [],
+      "notes": [
+        "template_id: module.title\nРазделитель модуля, который обозначает новый крупный этап обучения.\nПример: Модуль 2. Постановка задач и контроль результата."
+      ],
+      "text": [
+        {
+          "objectName": "MODULE_TITLE",
+          "objectId": 2140,
+          "text": "РОЛЬ МАСТЕРА"
+        },
+        {
+          "objectName": "MODULE_LABEL",
+          "objectId": 2141,
+          "text": "МОДУЛЬ 01"
+        },
+        {
+          "objectName": "MODULE_SUBTITLE",
+          "objectId": 2142,
+          "text": "You can enter a subtitle here if you need it"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "MODULE_TITLE",
+        "text_2": "MODULE_LABEL",
+        "text_3": "MODULE_SUBTITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 4,
+      "templateId": "lesson.title",
+      "comments": [],
+      "notes": [
+        "template_id: lesson.title\nТитульный слайд отдельного урока с номером, названием и обозначением модуля.\nПример: Урок 1.4. Первые решения мастера."
+      ],
+      "text": [
+        {
+          "objectName": "LESSON_NUMBER",
+          "objectId": 2100,
+          "text": "УРОК 1"
+        },
+        {
+          "objectName": "LESSON_TITLE",
+          "objectId": 2101,
+          "text": "НАЧАЛО СМЕНЫ"
+        },
+        {
+          "objectName": "MODULE_LABEL",
+          "objectId": 18,
+          "text": "МОДУЛЬ 1"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "LESSON_NUMBER",
+        "text_2": "LESSON_TITLE",
+        "text_3": "MODULE_LABEL"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 5,
+      "templateId": "text.plain",
+      "comments": [],
+      "notes": [
+        "template_id: text.plain\nОдин связный текст на плашке, когда логика последовательно раскрывается внутри нескольких абзацев и не требует отдельной схемы.\nПример: Объяснение роли мастера в начале смены и влияния его решений на работу участка."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 9,
+          "text": "РОЛЬ МАСТЕРА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "BODY",
+          "objectId": 11,
+          "text": "Мастер отвечает не только за выполнение сменного плана, но и за то, как работает бригада. Он распределяет задачи, следит за качеством сборки и первым замечает, где процесс начинает давать сбой.Сильный мастер не тушит пожары в конце смены, а выстраивает работу так, чтобы брак и простои не появлялись. Его решения в первый час смены определяют весь день участка."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 6,
+      "templateId": "cards.5.intro",
+      "comments": [],
+      "notes": [
+        "template_id: cards.5.intro\nКороткое вступление и пять самостоятельных элементов с небольшими заголовками и пояснениями.\nПример: Пять источников информации, которые мастер проверяет перед началом смены."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 9,
+          "text": "ДЛЯ РАЗНЫХ ЗАДАЧ НУЖНО РАЗНОЕ ПОВЕДЕНИЕ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 2,
+          "text": "Одного подхода на все случаи нет. Поведение мастера зависит от задачи."
+        },
+        {
+          "objectName": "CARD_1_TITLE",
+          "objectId": 39,
+          "text": "ПОСТАВИТЬ ЗАДАЧУ "
+        },
+        {
+          "objectName": "CARD_1_BODY",
+          "objectId": 3,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        },
+        {
+          "objectName": "CARD_2_TITLE",
+          "objectId": 53,
+          "text": "РАЗОБРАТЬ ОШИБКУ"
+        },
+        {
+          "objectName": "CARD_2_BODY",
+          "objectId": 57,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        },
+        {
+          "objectName": "CARD_3_TITLE",
+          "objectId": 54,
+          "text": "ОБЕСПЕЧИТЬ СТРОГОСТЬ"
+        },
+        {
+          "objectName": "CARD_3_BODY",
+          "objectId": 58,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        },
+        {
+          "objectName": "CARD_4_TITLE",
+          "objectId": 55,
+          "text": "ПОДДЕРЖАТЬ НОВИЧКА"
+        },
+        {
+          "objectName": "CARD_4_BODY",
+          "objectId": 59,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        },
+        {
+          "objectName": "CARD_5_TITLE",
+          "objectId": 56,
+          "text": "•СООБЩИТЬ О ПРОБЛЕМЕ РУКОВОДИТЕЛЮ"
+        },
+        {
+          "objectName": "CARD_5_BODY",
+          "objectId": 60,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "CARD_1_TITLE",
+        "text_4": "CARD_1_BODY",
+        "text_5": "CARD_2_TITLE",
+        "text_6": "CARD_2_BODY",
+        "text_7": "CARD_3_TITLE",
+        "text_8": "CARD_3_BODY",
+        "text_9": "CARD_4_TITLE",
+        "text_10": "CARD_4_BODY",
+        "text_11": "CARD_5_TITLE",
+        "text_12": "CARD_5_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 7,
+      "templateId": "cards.4.intro",
+      "comments": [],
+      "notes": [
+        "template_id: cards.4.intro\nКороткое вступление и четыре самостоятельных элемента, которые обучающийся должен воспринимать как равнозначный набор.\nПример: Четыре признака хорошо поставленной производственной задачи."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 9,
+          "text": "ДЛЯ РАЗНЫХ ЗАДАЧ НУЖНО РАЗНОЕ ПОВЕДЕНИЕ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 2,
+          "text": "Одного подхода на все случаи нет. Поведение мастера зависит от задачи."
+        },
+        {
+          "objectName": "CARD_1_TITLE",
+          "objectId": 39,
+          "text": "ПОСТАВИТЬ ЗАДАЧУ "
+        },
+        {
+          "objectName": "CARD_1_BODY",
+          "objectId": 3,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        },
+        {
+          "objectName": "CARD_2_TITLE",
+          "objectId": 53,
+          "text": "РАЗОБРАТЬ ОШИБКУ"
+        },
+        {
+          "objectName": "CARD_2_BODY",
+          "objectId": 57,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        },
+        {
+          "objectName": "CARD_3_TITLE",
+          "objectId": 55,
+          "text": "ПОДДЕРЖАТЬ НОВИЧКА"
+        },
+        {
+          "objectName": "CARD_3_BODY",
+          "objectId": 59,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        },
+        {
+          "objectName": "CARD_4_TITLE",
+          "objectId": 56,
+          "text": "•СООБЩИТЬ О ПРОБЛЕМЕ РУКОВОДИТЕЛЮ"
+        },
+        {
+          "objectName": "CARD_4_BODY",
+          "objectId": 60,
+          "text": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять. "
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "CARD_1_TITLE",
+        "text_4": "CARD_1_BODY",
+        "text_5": "CARD_2_TITLE",
+        "text_6": "CARD_2_BODY",
+        "text_7": "CARD_3_TITLE",
+        "text_8": "CARD_3_BODY",
+        "text_9": "CARD_4_TITLE",
+        "text_10": "CARD_4_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 8,
+      "templateId": "text.example",
+      "comments": [],
+      "notes": [
+        "template_id: text.example\nОбъяснение и отдельный пример, который показывает смысл тезиса в конкретной рабочей ситуации.\nПример: Почему просьба отличается от задачи, затем короткий разговор мастера с рабочим."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ПРОВЕРКА КОМПЛЕКТНОСТИ ДО СБОРКИ"
+        },
+        {
+          "objectName": "BODY",
+          "objectId": 8,
+          "text": "Комплектность узла проверяют до начала сборки, а не в процессе. Один недостающий крепёж останавливает работу на середине и заставляет разбирать уже собранное. Комплектность узла проверяют до начала сборки, а не в процессе. Один недостающий крепёж останавливает работу на середине и заставляет разбирать уже собранное."
+        },
+        {
+          "objectName": "EXAMPLE_LABEL",
+          "objectId": 15,
+          "text": "ПРИМЕР С УЧАСТКА"
+        },
+        {
+          "objectName": "EXAMPLE_BODY",
+          "objectId": 16,
+          "text": "На участке вентиляционных секций смена начала сборку, не пересчитав уголки. Нехватку четырёх штук заметили только на финальной затяжке — узел разобрали полностью и потеряли два часа рабочего времени. На участке вентиляционных секций смена начала сборку, не пересчитав уголки. Нехватку четырёх штук заметили только на финальной затяжке — узел разобрали."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "BODY",
+        "text_3": "EXAMPLE_LABEL",
+        "text_4": "EXAMPLE_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 9,
+      "templateId": "term.explanation",
+      "comments": [],
+      "notes": [
+        "template_id: term.explanation\nТермин или принцип и его связное пояснение, когда обучающемуся нужно сначала понять значение понятия.\nПример: Рабочая дистанция — значение термина и пояснение поведения мастера."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "DEFINITION",
+          "objectId": 8,
+          "text": "Цель мастера — чтобы участок сдавал план в срок, годным, безопасно и с разумным расходом ресурсов. Этот результат нужен каждую смену."
+        },
+        {
+          "objectName": "EXPLANATION",
+          "objectId": 16,
+          "text": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался готовый заказ. Всё, что мастер делает за день, работает на эту цель."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "DEFINITION",
+        "text_3": "EXPLANATION"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 10,
+      "templateId": "context.definition.explanation",
+      "comments": [],
+      "notes": [
+        "template_id: context.definition.explanation\nВводный контекст, определение и пояснение образуют последовательное знакомство с новым понятием.\nПример: Почему возникает отклонение, что такое обратная связь и как она влияет на повторение результата."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЧТО ТАКОЕ НОРМО-ЧАС"
+        },
+        {
+          "objectName": "DEFINITION",
+          "objectId": 8,
+          "text": "Нормо-час — это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в нормальном темпе."
+        },
+        {
+          "objectName": "EXPLANATION",
+          "objectId": 16,
+          "text": "Норматив закреплён за операцией. Если на неё установлено два нормо-часа, участок получит за выполненную операцию два нормо-часа независимо от того, кто её выполнял.Фактическое время может отличаться от норматива. Опытный рабочий выполнит операцию быстрее, новичок — медленнее. Поэтому за восьмичасовую смену рабочий может сдать больше или меньше восьми нормо-часов."
+        },
+        {
+          "objectName": "CONTEXT",
+          "objectId": 2,
+          "text": "Мастер отвечает за выполнение плана. Но разные изделия нельзя просто сложить в штуках: одно собирают за час, другое — за десять. Поэтому объём работы участка измеряют в нормо-часах."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "DEFINITION",
+        "text_3": "EXPLANATION",
+        "text_4": "CONTEXT"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 11,
+      "templateId": "term.context.explanation.example",
+      "comments": [],
+      "notes": [
+        "template_id: term.context.explanation.example\nТермин раскрывается через контекст, пояснение и конкретное применение.\nПример: Определение контроля результата, производственный контекст и короткий пример проверки."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЧТО ТАКОЕ НОРМО-ЧАС"
+        },
+        {
+          "objectName": "DEFINITION",
+          "objectId": 8,
+          "text": "Нормо-час — это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в нормальном темпе."
+        },
+        {
+          "objectName": "EXPLANATION",
+          "objectId": 16,
+          "text": "Норматив закреплён за операцией. Если на неё установлено два нормо-часа, участок получит за выполненную операцию два нормо-часа независимо от того, кто её выполнял.Фактическое время может отличаться от норматива. Опытный рабочий выполнит операцию быстрее, новичок — медленнее. Поэтому за восьмичасовую смену рабочий может сдать больше или меньше восьми нормо-часов."
+        },
+        {
+          "objectName": "CONTEXT",
+          "objectId": 2,
+          "text": "Мастер отвечает за выполнение плана. Но разные изделия нельзя просто сложить в штуках: одно собирают за час, другое — за десять. Поэтому объём работы участка измеряют в нормо-часах."
+        },
+        {
+          "objectName": "EXAMPLE_LABEL",
+          "objectId": 26,
+          "text": "ПРИМЕР"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "DEFINITION",
+        "text_3": "EXPLANATION",
+        "text_4": "CONTEXT",
+        "text_5": "EXAMPLE_LABEL"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 12,
+      "templateId": "compare.poor-good",
+      "comments": [],
+      "notes": [
+        "template_id: compare.poor-good\nЯвный контраст неудачного и удачного подхода, где две стороны показывают разные способы действовать в одной ситуации.\nПример: Неясная формулировка задачи и конкретная формулировка с результатом, сроком и проверкой."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ"
+        },
+        {
+          "objectName": "COMPARE_LEFT_BODY",
+          "objectId": 8,
+          "text": "На КОНВЕЙЕРЕ одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений."
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 16,
+          "text": "Работа мастера зависит от типа производства."
+        },
+        {
+          "objectName": "COMPARE_RIGHT_BODY",
+          "objectId": 30,
+          "text": "ВЕЗА собирает ОБОРУДОВАНИЕ ПОД ЗАКАЗ, часто поштучно под конкретную спецификацию. Почти каждый заказ отличается по составу, трудоёмкости и срокам. Сегодня нужна одна расстановка людей, завтра другая. Поэтому мастер каждую смену заново решает, кого поставить на каждую операцию и в каком порядке выполнять заказы."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "COMPARE_LEFT_BODY",
+        "text_3": "INTRO",
+        "text_4": "COMPARE_RIGHT_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 13,
+      "templateId": "situation.action.a",
+      "comments": [],
+      "notes": [
+        "template_id: situation.action.a\nРабочая ситуация и действие мастера, которое отвечает на неё.\nПример: Рабочий сообщает о необычном следе на детали; мастер останавливается, проверяет сигнал и принимает решение."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "SOLUTION",
+          "objectId": 8,
+          "text": "РЕШЕНИЕКогда один и тот же порядок действует для всех, рабочий понимает, на чём основано требование. Личной придиркой чаще выглядит другое: одному мастер разрешил, другого за то же самое наказал. "
+        },
+        {
+          "objectName": "SITUATION",
+          "objectId": 16,
+          "text": "СИТУАЦИЯМастеру необязательно каждый раз собираться с духом и придумывать, как повести себя в неприятной ситуации. Можно действовать по установленному порядку: сначала проверить факты, затем определить причину и выполнить нужное действие.Большая часть таких процедур уже разобрана в курсе: как поставить задачу, проверить её выполнение, разобрать нарушение, дать обратную связь."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "SOLUTION",
+        "text_3": "SITUATION"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 14,
+      "templateId": "situation.action.b",
+      "comments": [],
+      "notes": [
+        "template_id: situation.action.b\nДве связанные части рабочей ситуации, показывающие исходное положение и последующее действие или изменение.\nПример: До разговора требование было необязательным; после разговора определены действие, срок и проверка."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "AFTER",
+          "objectId": 8,
+          "text": "СТАЛОКогда один и тот же порядок действует для всех, рабочий понимает, на чём основано требование. Личной придиркой чаще выглядит другое: одному мастер разрешил, другого за то же самое наказал. "
+        },
+        {
+          "objectName": "BEFORE",
+          "objectId": 16,
+          "text": "БЫЛОМастеру необязательно каждый раз собираться с духом и придумывать, как повести себя в неприятной ситуации. Можно действовать по установленному порядку: сначала проверить факты, затем определить причину и выполнить нужное действие.Большая часть таких процедур уже разобрана в курсе: как поставить задачу, проверить её выполнение, разобрать нарушение, дать обратную связь."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "AFTER",
+        "text_3": "BEFORE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 15,
+      "templateId": "problem.solution",
+      "comments": [],
+      "notes": [
+        "template_id: problem.solution\nРазвёрнутая рабочая проблема, её пояснение и решение с несколькими самостоятельными смысловыми полями.\nПример: Повторяющаяся ошибка рабочего, причина реакции мастера и способ довести требование до результата."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 107,
+          "text": "THE SOLUTIONSTATEMENT"
+        },
+        {
+          "objectName": "INTRO_TITLE",
+          "objectId": 15,
+          "text": "PROBLEM WITHINFORMATION SHARING"
+        },
+        {
+          "objectName": "INTRO_BODY",
+          "objectId": 16,
+          "text": "Company values are critical, keeping in mind that it purpose organization’s functions. And like I said, having a well-lai setof company core values will keep each and everyone from top to bottom in the organization on the right. Furthermore, when associate value with a certain thing activity,  emphasizesthe importance of the same. Company values are critical, keeping in mind that it purpose organization’s functions. And like Isaid, having a well-lai setof company core values will keepeach and everyone from top to bottom."
+        },
+        {
+          "objectName": "PROBLEM_HEADING",
+          "objectId": 18,
+          "text": "PROBLEMDECENTRALIZED NETWORK"
+        },
+        {
+          "objectName": "PROBLEM_BODY",
+          "objectId": 19,
+          "text": "Look at both sides of the issue with the challenges and risks pyramid. This slide has a five-level PowerPoint pyramid to showcase the problem your team is facing and the associated risks of not acting now. Having a visualization of"
+        },
+        {
+          "objectName": "SOLUTION_SUBTITLE",
+          "objectId": 28,
+          "text": "DECENTRALIZED NETWORK"
+        },
+        {
+          "objectName": "SOLUTION_BODY",
+          "objectId": 29,
+          "text": "Look at both sides of the issue with the challenges and risks pyramid. This slide has a five-level PowerPoint pyramid to showcase the problem your team is facing and the associated risks of not acting now. Having a visualization of"
+        },
+        {
+          "objectName": "SOLUTION_TITLE",
+          "objectId": 20,
+          "text": "SOLUTION"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO_TITLE",
+        "text_3": "INTRO_BODY",
+        "text_4": "PROBLEM_HEADING",
+        "text_5": "PROBLEM_BODY",
+        "text_6": "SOLUTION_SUBTITLE",
+        "text_7": "SOLUTION_BODY",
+        "text_8": "SOLUTION_TITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 16,
+      "templateId": "compare.two.intro.short",
+      "comments": [],
+      "notes": [
+        "template_id: compare.two.intro.short\nКороткое вступление и два столбца с небольшим количеством текста для сопоставления двух объектов, подходов или состояний по одной теме.\nПример: Сравнение контроля результата и постоянного вмешательства: по одному короткому пояснению в каждом столбце."
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ"
+        },
+        {
+          "objectName": "COMPARE_BOTTOM_BODY",
+          "objectId": 52,
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. На конвейере"
+        },
+        {
+          "objectName": "COMPARE_TOP_BODY",
+          "objectId": 53,
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. На конвейере"
+        },
+        {
+          "objectName": "COMPARE_TOP_LABEL",
+          "objectId": 54,
+          "text": "КОНВЕЙЕР"
+        },
+        {
+          "objectName": "COMPARE_BOTTOM_LABEL",
+          "objectId": 55,
+          "text": "МЕЛКОСЕРИЙНОЕ ПРОИЗВОДСТВО"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "COMPARE_BOTTOM_BODY",
+        "text_4": "COMPARE_TOP_BODY",
+        "text_5": "COMPARE_TOP_LABEL",
+        "text_6": "COMPARE_BOTTOM_LABEL"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 17,
+      "templateId": "compare.two.intro.detailed",
+      "comments": [],
+      "notes": [
+        "template_id: compare.two.intro.detailed\nВступление и два вместительных столбца для подробного сопоставления двух объектов, подходов или состояний.\nПример: Сравнение работы мастера на конвейерном и мелкосерийном производстве с несколькими предложениями на каждую сторону."
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ"
+        },
+        {
+          "objectName": "COMPARE_BOTTOM_BODY",
+          "objectId": 52,
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений."
+        },
+        {
+          "objectName": "COMPARE_TOP_BODY",
+          "objectId": 53,
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений."
+        },
+        {
+          "objectName": "COMPARE_TOP_LABEL",
+          "objectId": 54,
+          "text": "КОНВЕЙЕР"
+        },
+        {
+          "objectName": "COMPARE_BOTTOM_LABEL",
+          "objectId": 55,
+          "text": "МЕЛКОСЕРИЙНОЕ ПРОИЗВОДСТВО"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "COMPARE_BOTTOM_BODY",
+        "text_4": "COMPARE_TOP_BODY",
+        "text_5": "COMPARE_TOP_LABEL",
+        "text_6": "COMPARE_BOTTOM_LABEL"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 18,
+      "templateId": "compare.two.no-intro",
+      "comments": [],
+      "notes": [
+        "template_id: compare.two.no-intro\nДва столбца без отдельного вступления для непосредственного сопоставления двух ясно названных сторон.\nПример: Опытный рабочий и новичок: различия в объёме инструктажа и точках контроля."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ"
+        },
+        {
+          "objectName": "COMPARE_BOTTOM_BODY",
+          "objectId": 52,
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. На конвейере одно и то же изделие идёт потоком"
+        },
+        {
+          "objectName": "COMPARE_TOP_BODY",
+          "objectId": 53,
+          "text": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётся меньше решений. На конвейере одно и то же изделие идёт потоком. "
+        },
+        {
+          "objectName": "COMPARE_TOP_LABEL",
+          "objectId": 54,
+          "text": "КОНВЕЙЕР"
+        },
+        {
+          "objectName": "COMPARE_BOTTOM_LABEL",
+          "objectId": 55,
+          "text": "МЕЛКОСЕРИЙНОЕ ПРОИЗВОДСТВО"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "COMPARE_BOTTOM_BODY",
+        "text_3": "COMPARE_TOP_BODY",
+        "text_4": "COMPARE_TOP_LABEL",
+        "text_5": "COMPARE_BOTTOM_LABEL"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 19,
+      "templateId": "thesis.example.illustration",
+      "comments": [],
+      "notes": [
+        "template_id: thesis.example.illustration\nТезис, поясняющий пример и сохранённая иллюстрация поддерживают одну ключевую мысль.\nПример: Тезис о раннем сигнале отклонения и пример рабочего, заметившего изменение звука станка."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "DEFINITION",
+          "objectId": 37,
+          "text": "Нормо-час — это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в нормальном темпе."
+        },
+        {
+          "objectName": "EXPLANATION",
+          "objectId": 38,
+          "text": "Мастер отвечает за выполнение плана. Но разные изделия нельзя просто сложить в штуках: одно собирают за час, другое — за десять. Поэтому объём работы участка измеряют в нормо-часах."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "DEFINITION",
+        "text_3": "EXPLANATION"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 20,
+      "templateId": "text.character-comment",
+      "comments": [],
+      "notes": [
+        "template_id: text.character-comment\nОсновной текст дополняется короткой репликой персонажа, которая помогает связать объяснение с опытом обучающегося.\nПример: Объяснение принципа и короткое замечание Дениса о похожей ситуации на участке."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "COURSE_TEXT",
+          "objectId": 37,
+          "text": "Нормо-час — это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в нормальном темпе. это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в нормальном темпе.это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в нормальном темпе."
+        },
+        {
+          "objectName": "CHARACTER_COMMENT",
+          "objectId": 38,
+          "text": "Мастер отвечает за выполнение плана. Но разные изделия нельзя просто сложить в штуках: одно собирают за час, другое — за десять. Поэтому объём работы участка измеряют в нормо-часах. Поэтому объём работы участка измеряют в нормо-часах.Поэтому объём работы Поэтому объём работы"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "COURSE_TEXT",
+        "text_3": "CHARACTER_COMMENT"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 21,
+      "templateId": "text.illustration",
+      "comments": [],
+      "notes": [
+        "template_id: text.illustration\nСвязный текст средней длины рядом с сохранённой иллюстрацией, которая поддерживает основную мысль.\nПример: Объяснение порядка действий мастера рядом с производственной иллюстрацией."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "BODY",
+          "objectId": 16,
+          "text": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался готовый заказ. Всё, что мастер делает за день, работает на эту цель."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 22,
+      "templateId": "text.long.illustration",
+      "comments": [],
+      "notes": [
+        "template_id: text.long.illustration\nБолее вместительный связный текст рядом с иллюстрацией, когда объяснение требует нескольких абзацев.\nПример: Подробное объяснение последствий постоянного вмешательства в работу опытного сотрудника."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЦЕЛЬ РОЛИ МАСТЕРА"
+        },
+        {
+          "objectName": "BODY",
+          "objectId": 16,
+          "text": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался готовый заказ. Всё, что мастер делает за день, работает на эту цель."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 23,
+      "templateId": "checklist.6",
+      "comments": [],
+      "notes": [
+        "template_id: checklist.6\nШесть коротких вопросов или проверочных пунктов, которые обучающийся применяет к собственной практике.\nПример: Проверка после смены: где задача была неясной, где сигнал остался без реакции, где правило применялось непоследовательно."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ЧЕКЛИСТ МАСТЕРА "
+        },
+        {
+          "objectName": "CHECK_1",
+          "objectId": 28,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "CHECK_2",
+          "objectId": 30,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "CHECK_3",
+          "objectId": 38,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "CHECK_4",
+          "objectId": 43,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "CHECK_5",
+          "objectId": 44,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "CHECK_6",
+          "objectId": 45,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "CHECK_1",
+        "text_3": "CHECK_2",
+        "text_4": "CHECK_3",
+        "text_5": "CHECK_4",
+        "text_6": "CHECK_5",
+        "text_7": "CHECK_6"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 24,
+      "templateId": "example.full",
+      "comments": [],
+      "notes": [
+        "template_id: example.full\nОдин развёрнутый пример или производственная история занимает основное пространство слайда.\nПример: Диалог о срочном заказе и объяснение, почему рабочий воспринял задачу как необязательную просьбу."
+      ],
+      "text": [
+        {
+          "objectName": "EXAMPLE_LABEL",
+          "objectId": 6,
+          "text": "ПРИМЕР"
+        },
+        {
+          "objectName": "BODY",
+          "objectId": 16,
+          "text": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался готовый заказ. Всё, что мастер делает за день, работает на эту цель."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "EXAMPLE_LABEL",
+        "text_2": "BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 25,
+      "templateId": "intro.body.conclusion",
+      "comments": [],
+      "notes": [
+        "template_id: intro.body.conclusion\nВступление, основное объяснение и отдельный вывод сохраняют ход рассуждения и позволяют выделить итог для обучающегося.\nПример: Общее изменение отношений после назначения, объяснение рабочей дистанции со списком и итог о сохранении авторитета."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ОТ РЕАКЦИИ МАСТЕРА ЗАВИСИТ, СООБЩАТ ЛИ ЕМУ О ПРОБЛЕМЕ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 16,
+          "text": "Состояние и поведение мастера влияют не только на настроение участка. От них зависит, решатся ли рабочие сообщать ему неприятные новости."
+        },
+        {
+          "objectName": "CASE_BODY",
+          "objectId": 30,
+          "text": "В 1999 году профессор Гарвардской школы бизнеса Эми Эдмондсон изучала медицинские команды. Она обнаружила парадокс: лучшие команды сообщали о большем количестве ошибок.Дело было не в том, что они ошибались чаще. В командах, где руководитель спокойно принимал сообщение и разбирал ошибку по существу, люди не боялись говорить о проблемах. Поэтому ошибки замечали раньше.Там, где руководитель кричал, обвинял или наказывал за сам факт плохой новости, люди старались молчать. Ошибки обнаруживали позднее, когда исправление обходилось дороже."
+        },
+        {
+          "objectName": "CONCLUSION",
+          "objectId": 4,
+          "text": "Для мастера это означает: брак и угрозу срыва невозможно обнаружить вовремя, если рабочий боится подойти и рассказать о проблеме."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "CASE_BODY",
+        "text_4": "CONCLUSION"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 26,
+      "templateId": "numbered-list.3",
+      "comments": [],
+      "notes": [
+        "template_id: numbered-list.3\nТри самостоятельных пункта с нумерацией; цифры можно добавить для удобства восприятия, даже если их не было в исходнике.\nПример: Три действия мастера после сигнала рабочего."
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "ITEM_1_NUMBER",
+          "objectId": 22,
+          "text": "01"
+        },
+        {
+          "objectName": "ITEM_2_NUMBER",
+          "objectId": 24,
+          "text": "02"
+        },
+        {
+          "objectName": "ITEM_3_NUMBER",
+          "objectId": 25,
+          "text": "03"
+        },
+        {
+          "objectName": "ITEM_1_TITLE",
+          "objectId": 29,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_1_BODY",
+          "objectId": 30,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_2_TITLE",
+          "objectId": 31,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_2_BODY",
+          "objectId": 32,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_3_TITLE",
+          "objectId": 33,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_3_BODY",
+          "objectId": 34,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "ITEM_1_NUMBER",
+        "text_4": "ITEM_2_NUMBER",
+        "text_5": "ITEM_3_NUMBER",
+        "text_6": "ITEM_1_TITLE",
+        "text_7": "ITEM_1_BODY",
+        "text_8": "ITEM_2_TITLE",
+        "text_9": "ITEM_2_BODY",
+        "text_10": "ITEM_3_TITLE",
+        "text_11": "ITEM_3_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 27,
+      "templateId": "text.key-idea",
+      "comments": [],
+      "notes": [
+        "template_id: text.key-idea\nСвязное объяснение и отдельно подчеркнутая основная мысль, которую обучающийся должен запомнить.\nПример: Пояснение последствий исключений для друзей и итог о единых правилах для всей бригады."
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "КАЧЕСТВО ДЕРЖИТСЯ НА ТРЁХ ПРИВЫЧКАХ, КОТОРЫЕ НЕ ЗАВИСЯТ ОТ СЛОЖНОСТИ ЗАКАЗА."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "BODY",
+          "objectId": 2,
+          "text": "В 1999 году профессор Гарвардской школы бизнеса Эми Эдмондсон изучала медицинские команды. Она обнаружила парадокс: лучшие команды сообщали о большем количестве ошибок.Дело было не в том, что они ошибались чаще. В командах, где руководитель спокойно принимал сообщение и разбирал ошибку по существу, люди не боялись говорить о проблемах. Поэтому ошибки замечали раньше.Там, где руководитель кричал, обвинял или наказывал за сам факт плохой новости, люди старались молчать. Ошибки обнаруживали позднее, когда исправление обходилось дороже."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 28,
+      "templateId": "numbered-list.6",
+      "comments": [],
+      "notes": [
+        "template_id: numbered-list.6\nШесть самостоятельных пунктов или шагов с нумерацией для длинного, но однородного перечня.\nПример: Шесть условий понятной задачи мастера."
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "ITEM_1_NUMBER",
+          "objectId": 22,
+          "text": "01"
+        },
+        {
+          "objectName": "ITEM_2_NUMBER",
+          "objectId": 24,
+          "text": "02"
+        },
+        {
+          "objectName": "ITEM_3_NUMBER",
+          "objectId": 25,
+          "text": "03"
+        },
+        {
+          "objectName": "ITEM_1_TITLE",
+          "objectId": 29,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_1_BODY",
+          "objectId": 30,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_2_TITLE",
+          "objectId": 31,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_2_BODY",
+          "objectId": 32,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_3_TITLE",
+          "objectId": 33,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_3_BODY",
+          "objectId": 34,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "ITEM_4_NUMBER",
+          "objectId": 50,
+          "text": "04"
+        },
+        {
+          "objectName": "ITEM_5_NUMBER",
+          "objectId": 51,
+          "text": "05"
+        },
+        {
+          "objectName": "ITEM_6_NUMBER",
+          "objectId": 52,
+          "text": "06"
+        },
+        {
+          "objectName": "ITEM_4_TITLE",
+          "objectId": 54,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_4_BODY",
+          "objectId": 55,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_5_TITLE",
+          "objectId": 56,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_5_BODY",
+          "objectId": 57,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_6_TITLE",
+          "objectId": 58,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_6_BODY",
+          "objectId": 59,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "ITEM_1_NUMBER",
+        "text_4": "ITEM_2_NUMBER",
+        "text_5": "ITEM_3_NUMBER",
+        "text_6": "ITEM_1_TITLE",
+        "text_7": "ITEM_1_BODY",
+        "text_8": "ITEM_2_TITLE",
+        "text_9": "ITEM_2_BODY",
+        "text_10": "ITEM_3_TITLE",
+        "text_11": "ITEM_3_BODY",
+        "text_12": "ITEM_4_NUMBER",
+        "text_13": "ITEM_5_NUMBER",
+        "text_14": "ITEM_6_NUMBER",
+        "text_15": "ITEM_4_TITLE",
+        "text_16": "ITEM_4_BODY",
+        "text_17": "ITEM_5_TITLE",
+        "text_18": "ITEM_5_BODY",
+        "text_19": "ITEM_6_TITLE",
+        "text_20": "ITEM_6_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 29,
+      "templateId": "numbered-list.5",
+      "comments": [],
+      "notes": [
+        "template_id: numbered-list.5\nПять самостоятельных пунктов или шагов с нумерацией, которая помогает удерживать структуру перечня.\nПример: Пять ошибок нового мастера в работе с опытными сотрудниками."
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "ITEM_1_NUMBER",
+          "objectId": 22,
+          "text": "01"
+        },
+        {
+          "objectName": "ITEM_2_NUMBER",
+          "objectId": 24,
+          "text": "02"
+        },
+        {
+          "objectName": "ITEM_3_NUMBER",
+          "objectId": 25,
+          "text": "03"
+        },
+        {
+          "objectName": "ITEM_1_TITLE",
+          "objectId": 29,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_1_BODY",
+          "objectId": 30,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_2_TITLE",
+          "objectId": 31,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_2_BODY",
+          "objectId": 32,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_3_TITLE",
+          "objectId": 33,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_3_BODY",
+          "objectId": 34,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "ITEM_4_NUMBER",
+          "objectId": 50,
+          "text": "04"
+        },
+        {
+          "objectName": "ITEM_5_NUMBER",
+          "objectId": 51,
+          "text": "05"
+        },
+        {
+          "objectName": "ITEM_4_TITLE",
+          "objectId": 54,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_4_BODY",
+          "objectId": 55,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_5_TITLE",
+          "objectId": 56,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_5_BODY",
+          "objectId": 57,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "ITEM_1_NUMBER",
+        "text_4": "ITEM_2_NUMBER",
+        "text_5": "ITEM_3_NUMBER",
+        "text_6": "ITEM_1_TITLE",
+        "text_7": "ITEM_1_BODY",
+        "text_8": "ITEM_2_TITLE",
+        "text_9": "ITEM_2_BODY",
+        "text_10": "ITEM_3_TITLE",
+        "text_11": "ITEM_3_BODY",
+        "text_12": "ITEM_4_NUMBER",
+        "text_13": "ITEM_5_NUMBER",
+        "text_14": "ITEM_4_TITLE",
+        "text_15": "ITEM_4_BODY",
+        "text_16": "ITEM_5_TITLE",
+        "text_17": "ITEM_5_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 30,
+      "templateId": "numbered-list.4",
+      "comments": [],
+      "notes": [
+        "template_id: numbered-list.4\nЧетыре самостоятельных пункта или шага с нумерацией; подходит и для обычного списка без цифр в исходнике.\nПример: Четыре признака рабочей дистанции."
+      ],
+      "text": [
+        {
+          "objectName": "INTRO",
+          "objectId": 2100,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "ITEM_1_NUMBER",
+          "objectId": 22,
+          "text": "01"
+        },
+        {
+          "objectName": "ITEM_2_NUMBER",
+          "objectId": 24,
+          "text": "02"
+        },
+        {
+          "objectName": "ITEM_3_NUMBER",
+          "objectId": 25,
+          "text": "03"
+        },
+        {
+          "objectName": "ITEM_1_TITLE",
+          "objectId": 29,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_1_BODY",
+          "objectId": 30,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_2_TITLE",
+          "objectId": 31,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_2_BODY",
+          "objectId": 32,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_3_TITLE",
+          "objectId": 33,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_3_BODY",
+          "objectId": 34,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "ITEM_4_NUMBER",
+          "objectId": 50,
+          "text": "04"
+        },
+        {
+          "objectName": "ITEM_4_TITLE",
+          "objectId": 52,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_4_BODY",
+          "objectId": 55,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "INTRO",
+        "text_2": "TITLE",
+        "text_3": "ITEM_1_NUMBER",
+        "text_4": "ITEM_2_NUMBER",
+        "text_5": "ITEM_3_NUMBER",
+        "text_6": "ITEM_1_TITLE",
+        "text_7": "ITEM_1_BODY",
+        "text_8": "ITEM_2_TITLE",
+        "text_9": "ITEM_2_BODY",
+        "text_10": "ITEM_3_TITLE",
+        "text_11": "ITEM_3_BODY",
+        "text_12": "ITEM_4_NUMBER",
+        "text_13": "ITEM_4_TITLE",
+        "text_14": "ITEM_4_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 31,
+      "templateId": "key-idea.quote",
+      "comments": [],
+      "notes": [
+        "template_id: key-idea.quote\nОдна короткая ключевая мысль или цитата получает максимальный визуальный акцент.\nПример: Авторитет растёт из последовательных решений, а не из названия должности."
+      ],
+      "text": [
+        {
+          "objectName": "QUOTE",
+          "objectId": 5,
+          "text": "SOMEONE FAMOUS This is a quote, words full of wisdom that someone important said and can make the reader get inspired"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "QUOTE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 32,
+      "templateId": "numbered-list.4.illustration",
+      "comments": [],
+      "notes": [
+        "template_id: numbered-list.4.illustration\nЧетыре нумерованных пункта рядом с сохранённой иллюстрацией, когда изображение помогает понять перечень или последовательность.\nПример: Четыре действия мастера при обнаружении отклонения рядом с изображением участка."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "ITEM_1_NUMBER",
+          "objectId": 22,
+          "text": "01"
+        },
+        {
+          "objectName": "ITEM_2_NUMBER",
+          "objectId": 24,
+          "text": "02"
+        },
+        {
+          "objectName": "ITEM_3_NUMBER",
+          "objectId": 25,
+          "text": "03"
+        },
+        {
+          "objectName": "ITEM_1_TITLE",
+          "objectId": 29,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_1_BODY",
+          "objectId": 30,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_2_TITLE",
+          "objectId": 31,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_2_BODY",
+          "objectId": 32,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_3_TITLE",
+          "objectId": 33,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_3_BODY",
+          "objectId": 34,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "ITEM_4_NUMBER",
+          "objectId": 50,
+          "text": "04"
+        },
+        {
+          "objectName": "ITEM_4_TITLE",
+          "objectId": 52,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_4_BODY",
+          "objectId": 55,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "ITEM_1_NUMBER",
+        "text_3": "ITEM_2_NUMBER",
+        "text_4": "ITEM_3_NUMBER",
+        "text_5": "ITEM_1_TITLE",
+        "text_6": "ITEM_1_BODY",
+        "text_7": "ITEM_2_TITLE",
+        "text_8": "ITEM_2_BODY",
+        "text_9": "ITEM_3_TITLE",
+        "text_10": "ITEM_3_BODY",
+        "text_11": "ITEM_4_NUMBER",
+        "text_12": "ITEM_4_TITLE",
+        "text_13": "ITEM_4_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 33,
+      "templateId": "classification.3",
+      "comments": [],
+      "notes": [
+        "template_id: classification.3\nТри категории или элемента одной системы с общим основанием классификации.\nПример: Три типа производственных сигналов: качество, оборудование и материалы."
+      ],
+      "text": [
+        {
+          "objectName": "ROOT_TITLE",
+          "objectId": 4,
+          "text": "COMPANY VALUES"
+        },
+        {
+          "objectName": "NODE_3_TITLE",
+          "objectId": 35,
+          "text": "TALENT ACQUISITION"
+        },
+        {
+          "objectName": "NODE_2_TITLE",
+          "objectId": 40,
+          "text": "EMPLOYEE RETENTION"
+        },
+        {
+          "objectName": "NODE_1_TITLE",
+          "objectId": 42,
+          "text": "EMPLOYEE ENGAGEMENT"
+        },
+        {
+          "objectName": "NODE_3_BODY",
+          "objectId": 44,
+          "text": "Every employer desires toHave performance-driven companyculture. However, cultivating thesame within organization"
+        },
+        {
+          "objectName": "NODE_2_BODY",
+          "objectId": 45,
+          "text": "Every employer desires toHave performance-driven companyculture. However, cultivating thesame within organization"
+        },
+        {
+          "objectName": "NODE_1_BODY",
+          "objectId": 46,
+          "text": "Every employer desires toHave performance-driven companyculture. However, cultivating thesame within organization"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "ROOT_TITLE",
+        "text_2": "NODE_3_TITLE",
+        "text_3": "NODE_2_TITLE",
+        "text_4": "NODE_1_TITLE",
+        "text_5": "NODE_3_BODY",
+        "text_6": "NODE_2_BODY",
+        "text_7": "NODE_1_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 34,
+      "templateId": "classification.4",
+      "comments": [],
+      "notes": [
+        "template_id: classification.4\nЧетыре категории или элемента одной системы с общим основанием классификации.\nПример: Четыре зоны ответственности мастера на участке."
+      ],
+      "text": [
+        {
+          "objectName": "ROOT_TITLE",
+          "objectId": 4,
+          "text": "COMPANY VALUES"
+        },
+        {
+          "objectName": "NODE_1_TITLE",
+          "objectId": 42,
+          "text": "EMPLOYEE ENGAGEMENT"
+        },
+        {
+          "objectName": "NODE_1_BODY",
+          "objectId": 44,
+          "text": "Every employer desires toHave performance-driven companyculture. However, cultivating thesame within organization"
+        },
+        {
+          "objectName": "NODE_2_TITLE",
+          "objectId": 40,
+          "text": "EMPLOYEE RETENTION"
+        },
+        {
+          "objectName": "NODE_2_BODY",
+          "objectId": 45,
+          "text": "Every employer desires toHave performance-driven companyculture. However, cultivating thesame within organization"
+        },
+        {
+          "objectName": "NODE_3_TITLE",
+          "objectId": 35,
+          "text": "TALENT ACQUISITION"
+        },
+        {
+          "objectName": "NODE_3_BODY",
+          "objectId": 46,
+          "text": "Every employer desires toHave performance-driven companyculture. However, cultivating thesame within organization"
+        },
+        {
+          "objectName": "NODE_4_TITLE",
+          "objectId": 77,
+          "text": "EMPLOYEE RETENTION"
+        },
+        {
+          "objectName": "NODE_4_BODY",
+          "objectId": 79,
+          "text": "Every employer desires toHave performance-driven companyculture. However, cultivating thesame within organization"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "ROOT_TITLE",
+        "text_2": "NODE_1_TITLE",
+        "text_3": "NODE_1_BODY",
+        "text_4": "NODE_2_TITLE",
+        "text_5": "NODE_2_BODY",
+        "text_6": "NODE_3_TITLE",
+        "text_7": "NODE_3_BODY",
+        "text_8": "NODE_4_TITLE",
+        "text_9": "NODE_4_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 35,
+      "templateId": "list.6.center-message",
+      "comments": [],
+      "notes": [
+        "template_id: list.6.center-message\nШесть коротких элементов окружают общую центральную мысль и показывают их связь с единым принципом.\nПример: Шесть ежедневных действий мастера вокруг центральной цели — стабильного результата смены."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 18,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "ITEM_1_TITLE",
+          "objectId": 29,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_1_BODY",
+          "objectId": 30,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_2_TITLE",
+          "objectId": 31,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_2_BODY",
+          "objectId": 32,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_3_TITLE",
+          "objectId": 33,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_3_BODY",
+          "objectId": 34,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "ITEM_4_TITLE",
+          "objectId": 52,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "ITEM_4_BODY",
+          "objectId": 53,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "ITEM_5_TITLE",
+          "objectId": 54,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_5_BODY",
+          "objectId": 55,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "ITEM_6_TITLE",
+          "objectId": 56,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "ITEM_6_BODY",
+          "objectId": 57,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "CENTER_MESSAGE",
+          "objectId": 2,
+          "text": "Поддерживать — значит замечать не только результат работы, но и состояние человека."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "ITEM_1_TITLE",
+        "text_3": "ITEM_1_BODY",
+        "text_4": "ITEM_2_TITLE",
+        "text_5": "ITEM_2_BODY",
+        "text_6": "ITEM_3_TITLE",
+        "text_7": "ITEM_3_BODY",
+        "text_8": "ITEM_4_TITLE",
+        "text_9": "ITEM_4_BODY",
+        "text_10": "ITEM_5_TITLE",
+        "text_11": "ITEM_5_BODY",
+        "text_12": "ITEM_6_TITLE",
+        "text_13": "ITEM_6_BODY",
+        "text_14": "CENTER_MESSAGE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 36,
+      "templateId": "cards.6.columns",
+      "comments": [],
+      "notes": [
+        "template_id: cards.6.columns\nШесть небольших карточек в двух колонках для параллельного набора однородных элементов.\nПример: Шесть способов проверить, что задача понята одинаково."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 3,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 4,
+          "text": "Поддерживать — значит замечать не только результат работы, но и состояние человека."
+        },
+        {
+          "objectName": "LEFT_1_BODY",
+          "objectId": 12,
+          "text": "Lorem visual form commonly use  dolor demonstrate."
+        },
+        {
+          "objectName": "LEFT_2_BODY",
+          "objectId": 14,
+          "text": "Lorem visual form commonly use  dolor demonstrate."
+        },
+        {
+          "objectName": "LEFT_3_BODY",
+          "objectId": 16,
+          "text": "Lorem visual form commonly use  dolor demonstrate."
+        },
+        {
+          "objectName": "LEFT_1_TITLE",
+          "objectId": 35,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "LEFT_2_TITLE",
+          "objectId": 37,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "LEFT_3_TITLE",
+          "objectId": 39,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "RIGHT_1_BODY",
+          "objectId": 44,
+          "text": "Lorem visual form commonly use  dolor demonstrate."
+        },
+        {
+          "objectName": "RIGHT_2_BODY",
+          "objectId": 45,
+          "text": "Lorem visual form commonly use  dolor demonstrate."
+        },
+        {
+          "objectName": "RIGHT_3_BODY",
+          "objectId": 50,
+          "text": "Lorem visual form commonly use  dolor demonstrate."
+        },
+        {
+          "objectName": "RIGHT_1_TITLE",
+          "objectId": 52,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "RIGHT_2_TITLE",
+          "objectId": 53,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "RIGHT_3_TITLE",
+          "objectId": 54,
+          "text": "ВРЕМЯ"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "LEFT_1_BODY",
+        "text_4": "LEFT_2_BODY",
+        "text_5": "LEFT_3_BODY",
+        "text_6": "LEFT_1_TITLE",
+        "text_7": "LEFT_2_TITLE",
+        "text_8": "LEFT_3_TITLE",
+        "text_9": "RIGHT_1_BODY",
+        "text_10": "RIGHT_2_BODY",
+        "text_11": "RIGHT_3_BODY",
+        "text_12": "RIGHT_1_TITLE",
+        "text_13": "RIGHT_2_TITLE",
+        "text_14": "RIGHT_3_TITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 37,
+      "templateId": "cards.3",
+      "comments": [],
+      "notes": [
+        "template_id: cards.3\nТри самостоятельные карточки для трёх равнозначных идей, действий или признаков.\nПример: Три уровня реакции мастера на отклонение."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 8,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "CARD_1_TITLE",
+          "objectId": 16,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "CARD_1_BODY",
+          "objectId": 17,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "CARD_2_TITLE",
+          "objectId": 25,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "CARD_2_BODY",
+          "objectId": 26,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "CARD_3_TITLE",
+          "objectId": 34,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "CARD_3_BODY",
+          "objectId": 35,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "CARD_1_TITLE",
+        "text_4": "CARD_1_BODY",
+        "text_5": "CARD_2_TITLE",
+        "text_6": "CARD_2_BODY",
+        "text_7": "CARD_3_TITLE",
+        "text_8": "CARD_3_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 38,
+      "templateId": "cards.4",
+      "comments": [],
+      "notes": [
+        "template_id: cards.4\nЧетыре самостоятельные карточки для коротких однородных элементов.\nПример: Четыре вопроса перед передачей задачи рабочему."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 8,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "CARD_1_TITLE",
+          "objectId": 16,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "CARD_1_BODY",
+          "objectId": 17,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "CARD_2_TITLE",
+          "objectId": 25,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "CARD_2_BODY",
+          "objectId": 26,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "CARD_3_TITLE",
+          "objectId": 34,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "CARD_3_BODY",
+          "objectId": 35,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "CARD_4_TITLE",
+          "objectId": 44,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "CARD_4_BODY",
+          "objectId": 45,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "CARD_1_TITLE",
+        "text_4": "CARD_1_BODY",
+        "text_5": "CARD_2_TITLE",
+        "text_6": "CARD_2_BODY",
+        "text_7": "CARD_3_TITLE",
+        "text_8": "CARD_3_BODY",
+        "text_9": "CARD_4_TITLE",
+        "text_10": "CARD_4_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 39,
+      "templateId": "cards.6",
+      "comments": [],
+      "notes": [
+        "template_id: cards.6\nШесть самостоятельных карточек для компактных однородных элементов, которые полезно видеть одновременно.\nПример: Шесть типичных сигналов о риске брака или простоя."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 8,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "CARD_1_TITLE",
+          "objectId": 16,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "CARD_1_BODY",
+          "objectId": 17,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "CARD_2_TITLE",
+          "objectId": 25,
+          "text": "БЕЗОПАСНОСТЬ"
+        },
+        {
+          "objectName": "CARD_2_BODY",
+          "objectId": 26,
+          "text": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+        },
+        {
+          "objectName": "CARD_3_TITLE",
+          "objectId": 34,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "CARD_3_BODY",
+          "objectId": 35,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "CARD_4_TITLE",
+          "objectId": 44,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "CARD_4_BODY",
+          "objectId": 45,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        },
+        {
+          "objectName": "CARD_5_TITLE",
+          "objectId": 48,
+          "text": "ВРЕМЯ"
+        },
+        {
+          "objectName": "CARD_5_BODY",
+          "objectId": 49,
+          "text": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+        },
+        {
+          "objectName": "CARD_6_TITLE",
+          "objectId": 51,
+          "text": "ДОСТОВЕРНОСТЬ"
+        },
+        {
+          "objectName": "CARD_6_BODY",
+          "objectId": 52,
+          "text": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "CARD_1_TITLE",
+        "text_4": "CARD_1_BODY",
+        "text_5": "CARD_2_TITLE",
+        "text_6": "CARD_2_BODY",
+        "text_7": "CARD_3_TITLE",
+        "text_8": "CARD_3_BODY",
+        "text_9": "CARD_4_TITLE",
+        "text_10": "CARD_4_BODY",
+        "text_11": "CARD_5_TITLE",
+        "text_12": "CARD_5_BODY",
+        "text_13": "CARD_6_TITLE",
+        "text_14": "CARD_6_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 40,
+      "templateId": "process.situation-outcome.4",
+      "comments": [],
+      "notes": [
+        "template_id: process.situation-outcome.4\nРазвитие ситуации через несколько стадий к итоговому состоянию, когда важна причинная связь между изменениями.\nПример: Слабый сигнал остаётся без реакции, отклонение усиливается, возникает брак и требуется переделка."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 6,
+          "text": "ПРИМЕР: ОПОЗДАНИЯ"
+        },
+        {
+          "objectName": "INTRO",
+          "objectId": 8,
+          "text": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+        },
+        {
+          "objectName": "STAGE_1_TEXT",
+          "objectId": 99,
+          "text": "Сначала один рабочий регулярно опаздывал на десять минут."
+        },
+        {
+          "objectName": "STAGE_2_TEXT",
+          "objectId": 104,
+          "text": "Мастер считал это мелочью и ничего не говорил. "
+        },
+        {
+          "objectName": "STAGE_3_TEXT",
+          "objectId": 107,
+          "text": "Через месяц опаздывали уже пятеро. "
+        },
+        {
+          "objectName": "OUTCOME_TEXT",
+          "objectId": 114,
+          "text": "Первые сорок минут смены участок работал НЕПОЛНЫМ СОСТАВОМ."
+        },
+        {
+          "objectName": "STAGE_4_TEXT",
+          "objectId": 47,
+          "text": "Через месяц опаздывали уже пятеро. "
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "INTRO",
+        "text_3": "STAGE_1_TEXT",
+        "text_4": "STAGE_2_TEXT",
+        "text_5": "STAGE_3_TEXT",
+        "text_6": "OUTCOME_TEXT",
+        "text_7": "STAGE_4_TEXT"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 41,
+      "templateId": "process.4.stages",
+      "comments": [],
+      "notes": [
+        "template_id: process.4.stages\nТри или четыре стадии процесса с названиями и пояснениями, когда обучающемуся важно видеть общий порядок.\nПример: Подготовить задачу, передать её, проверить понимание и согласовать контроль."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 8,
+          "text": "ПОРЯДОК СБОРКИ УЗЛА"
+        },
+        {
+          "objectName": "STEP_1_TITLE",
+          "objectId": 10,
+          "text": "ПОДГОТОВКА"
+        },
+        {
+          "objectName": "STEP_1_NUMBER",
+          "objectId": 12,
+          "text": "01"
+        },
+        {
+          "objectName": "STEP_1_BODY",
+          "objectId": 13,
+          "text": "Проверьте комплект и разложите крепёж по операциям. Проверьте комплект и разложите крепёж по операциям.Проверьте комплект и разложите крепёж по операциям."
+        },
+        {
+          "objectName": "STEP_2_TITLE",
+          "objectId": 15,
+          "text": "СБОРКА"
+        },
+        {
+          "objectName": "STEP_2_NUMBER",
+          "objectId": 17,
+          "text": "02"
+        },
+        {
+          "objectName": "STEP_2_BODY",
+          "objectId": 18,
+          "text": "Соберите узел по схеме, без пропуска промежуточных затяжек. Проверьте комплект и разложите крепёж по операциям.Проверьте комплект и разложите крепёж по операциям."
+        },
+        {
+          "objectName": "STEP_3_TITLE",
+          "objectId": 20,
+          "text": "КОНТРОЛЬ"
+        },
+        {
+          "objectName": "STEP_3_NUMBER",
+          "objectId": 22,
+          "text": "03"
+        },
+        {
+          "objectName": "STEP_3_BODY",
+          "objectId": 23,
+          "text": "Проверьте соединения, зазоры и размеры по чертежу. Проверьте комплект и разложите крепёж по операциям.Проверьте комплект и разложите крепёж по операциям."
+        },
+        {
+          "objectName": "STEP_4_TITLE",
+          "objectId": 25,
+          "text": "ЗАПУСК"
+        },
+        {
+          "objectName": "STEP_4_NUMBER",
+          "objectId": 27,
+          "text": "04"
+        },
+        {
+          "objectName": "STEP_4_BODY",
+          "objectId": 28,
+          "text": "Настройте параметры и запустите узел в работу. Проверьте комплект и разложите крепёж по операциям.Проверьте комплект и разложите крепёж по операциям."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "STEP_1_TITLE",
+        "text_3": "STEP_1_NUMBER",
+        "text_4": "STEP_1_BODY",
+        "text_5": "STEP_2_TITLE",
+        "text_6": "STEP_2_NUMBER",
+        "text_7": "STEP_2_BODY",
+        "text_8": "STEP_3_TITLE",
+        "text_9": "STEP_3_NUMBER",
+        "text_10": "STEP_3_BODY",
+        "text_11": "STEP_4_TITLE",
+        "text_12": "STEP_4_NUMBER",
+        "text_13": "STEP_4_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 42,
+      "templateId": "process.4",
+      "comments": [],
+      "notes": [
+        "template_id: process.4\nЧетыре последовательных шага с компактными пояснениями.\nПример: Получить сигнал, проверить факт, принять решение, сообщить его рабочему."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 5,
+          "text": "ЭТАПЫ ПРОЦЕССА"
+        },
+        {
+          "objectName": "STEP_1_TITLE",
+          "objectId": 9,
+          "text": "Шаг 1"
+        },
+        {
+          "objectName": "STEP_1_BODY",
+          "objectId": 10,
+          "text": "Подготовьте материалыи проверьте комплект Подготовьте материалыи проверьте комплект"
+        },
+        {
+          "objectName": "STEP_1_NUMBER",
+          "objectId": 11,
+          "text": "01"
+        },
+        {
+          "objectName": "STEP_2_TITLE",
+          "objectId": 14,
+          "text": "Шаг 2"
+        },
+        {
+          "objectName": "STEP_2_BODY",
+          "objectId": 15,
+          "text": "Соберите узелпо схеме Подготовьте материалыи проверьте комплект Подготовьте материалыи проверьте комплект"
+        },
+        {
+          "objectName": "STEP_2_NUMBER",
+          "objectId": 16,
+          "text": "02"
+        },
+        {
+          "objectName": "STEP_3_TITLE",
+          "objectId": 19,
+          "text": "Шаг 3"
+        },
+        {
+          "objectName": "STEP_3_BODY",
+          "objectId": 20,
+          "text": "Проверьте соединенияи размеры Подготовьте материалыи проверьте комплект"
+        },
+        {
+          "objectName": "STEP_3_NUMBER",
+          "objectId": 21,
+          "text": "03"
+        },
+        {
+          "objectName": "STEP_4_TITLE",
+          "objectId": 24,
+          "text": "Шаг 4"
+        },
+        {
+          "objectName": "STEP_4_BODY",
+          "objectId": 25,
+          "text": "Настройте параметрыи запустите работу Подготовьте материалыи проверьте комплект Подготовьте материалыи проверьте комплект"
+        },
+        {
+          "objectName": "STEP_4_NUMBER",
+          "objectId": 26,
+          "text": "04"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "STEP_1_TITLE",
+        "text_3": "STEP_1_BODY",
+        "text_4": "STEP_1_NUMBER",
+        "text_5": "STEP_2_TITLE",
+        "text_6": "STEP_2_BODY",
+        "text_7": "STEP_2_NUMBER",
+        "text_8": "STEP_3_TITLE",
+        "text_9": "STEP_3_BODY",
+        "text_10": "STEP_3_NUMBER",
+        "text_11": "STEP_4_TITLE",
+        "text_12": "STEP_4_BODY",
+        "text_13": "STEP_4_NUMBER"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 43,
+      "templateId": "process.6",
+      "comments": [],
+      "notes": [
+        "template_id: process.6\nДлинная последовательность из шести этапов, когда каждый этап требует отдельного заголовка и пояснения.\nПример: Шесть этапов постановки, выполнения и контроля производственной задачи."
+      ],
+      "text": [
+        {
+          "objectName": "STEP_1_NUMBER",
+          "objectId": 6,
+          "text": "01"
+        },
+        {
+          "objectName": "STEP_2_NUMBER",
+          "objectId": 7,
+          "text": "02"
+        },
+        {
+          "objectName": "STEP_3_NUMBER",
+          "objectId": 8,
+          "text": "03"
+        },
+        {
+          "objectName": "STEP_4_NUMBER",
+          "objectId": 9,
+          "text": "04"
+        },
+        {
+          "objectName": "STEP_1_BODY",
+          "objectId": 10,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "STEP_1_TITLE",
+          "objectId": 11,
+          "text": "ORIGINAL ARTICLES"
+        },
+        {
+          "objectName": "STEP_2_BODY",
+          "objectId": 12,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "STEP_2_TITLE",
+          "objectId": 13,
+          "text": "WORK ANALYSIS"
+        },
+        {
+          "objectName": "STEP_3_BODY",
+          "objectId": 14,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "STEP_3_TITLE",
+          "objectId": 15,
+          "text": "WORK DESIGN"
+        },
+        {
+          "objectName": "STEP_4_BODY",
+          "objectId": 16,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "STEP_4_TITLE",
+          "objectId": 17,
+          "text": "TEXT ANALYSIS"
+        },
+        {
+          "objectName": "STEP_5_NUMBER",
+          "objectId": 18,
+          "text": "05"
+        },
+        {
+          "objectName": "STEP_5_BODY",
+          "objectId": 19,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "STEP_5_TITLE",
+          "objectId": 20,
+          "text": "MARKET INSIGHTS"
+        },
+        {
+          "objectName": "STEP_6_NUMBER",
+          "objectId": 21,
+          "text": "06"
+        },
+        {
+          "objectName": "STEP_6_BODY",
+          "objectId": 22,
+          "text": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best brand ambassadors. On the other hand, neglected."
+        },
+        {
+          "objectName": "STEP_6_TITLE",
+          "objectId": 23,
+          "text": "PRODUCTION"
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 29,
+          "text": "ЭТАПЫ ПРОЦЕССА"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "STEP_1_NUMBER",
+        "text_2": "STEP_2_NUMBER",
+        "text_3": "STEP_3_NUMBER",
+        "text_4": "STEP_4_NUMBER",
+        "text_5": "STEP_1_BODY",
+        "text_6": "STEP_1_TITLE",
+        "text_7": "STEP_2_BODY",
+        "text_8": "STEP_2_TITLE",
+        "text_9": "STEP_3_BODY",
+        "text_10": "STEP_3_TITLE",
+        "text_11": "STEP_4_BODY",
+        "text_12": "STEP_4_TITLE",
+        "text_13": "STEP_5_NUMBER",
+        "text_14": "STEP_5_BODY",
+        "text_15": "STEP_5_TITLE",
+        "text_16": "STEP_6_NUMBER",
+        "text_17": "STEP_6_BODY",
+        "text_18": "STEP_6_TITLE",
+        "text_19": "TITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 44,
+      "templateId": "process.cards.4",
+      "comments": [],
+      "notes": [
+        "template_id: process.cards.4\nТри или четыре последовательных этапа, оформленных как самостоятельные карточки.\nПример: Подготовка разговора, обсуждение факта, договорённость и контроль результата."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 5,
+          "text": "ЭТАПЫ ПРОЦЕССА"
+        },
+        {
+          "objectName": "CARD_1_TITLE",
+          "objectId": 6,
+          "text": "STRATEGIC PLANS"
+        },
+        {
+          "objectName": "CARD_1_BODY",
+          "objectId": 7,
+          "text": "This is the sample Dummy Textinsert your desired text here becausethis is the dummy textThis is the sample Dummy Textinsert your desired text here becausethis is the dummy text"
+        },
+        {
+          "objectName": "CARD_2_TITLE",
+          "objectId": 8,
+          "text": "PAID SEARCH"
+        },
+        {
+          "objectName": "CARD_2_BODY",
+          "objectId": 9,
+          "text": "This is the sample Dummy Textinsert your desired text here becausethis is the dummy textThis is the sample Dummy Textinsert your desired text here becausethis is the dummy text"
+        },
+        {
+          "objectName": "CARD_3_TITLE",
+          "objectId": 10,
+          "text": "TACTICAL PLANS"
+        },
+        {
+          "objectName": "CARD_3_BODY",
+          "objectId": 11,
+          "text": "This is the sample Dummy Textinsert your desired text here becausethis is the dummy textThis is the sample Dummy Textinsert your desired text here becausethis is the dummy text"
+        },
+        {
+          "objectName": "CARD_4_TITLE",
+          "objectId": 26,
+          "text": "LAND NURTURING"
+        },
+        {
+          "objectName": "CARD_4_BODY",
+          "objectId": 27,
+          "text": "This is the sample Dummy Textinsert your desired text here becausethis is the dummy text This is the sample Dummy Textinsert your desired text here becausethis is the dummy text"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "CARD_1_TITLE",
+        "text_3": "CARD_1_BODY",
+        "text_4": "CARD_2_TITLE",
+        "text_5": "CARD_2_BODY",
+        "text_6": "CARD_3_TITLE",
+        "text_7": "CARD_3_BODY",
+        "text_8": "CARD_4_TITLE",
+        "text_9": "CARD_4_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 45,
+      "templateId": "process.4.detailed",
+      "comments": [],
+      "notes": [
+        "template_id: process.4.detailed\nПодробный процесс из четырёх этапов с дополнительными заголовками и вместительными пояснениями.\nПример: Четыре этапа реакции на повторяющееся нарушение с действиями и ожидаемым результатом каждого этапа."
+      ],
+      "text": [
+        {
+          "objectName": "STEP_1_DETAIL_TITLE",
+          "objectId": 42,
+          "text": "TITLE TEXT HERE"
+        },
+        {
+          "objectName": "STEP_1_BODY",
+          "objectId": 43,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore"
+        },
+        {
+          "objectName": "STEP_1_LABEL",
+          "objectId": 47,
+          "text": "PROCESS STEP01"
+        },
+        {
+          "objectName": "STEP_2_LABEL",
+          "objectId": 48,
+          "text": "PROCESS STEP02"
+        },
+        {
+          "objectName": "STEP_3_LABEL",
+          "objectId": 49,
+          "text": "PROCESS STEP03"
+        },
+        {
+          "objectName": "STEP_4_LABEL",
+          "objectId": 51,
+          "text": "PROCESS STEP03"
+        },
+        {
+          "objectName": "STEP_2_DETAIL_TITLE",
+          "objectId": 53,
+          "text": "TITLE TEXT HERE"
+        },
+        {
+          "objectName": "STEP_2_BODY",
+          "objectId": 54,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore"
+        },
+        {
+          "objectName": "STEP_3_DETAIL_TITLE",
+          "objectId": 56,
+          "text": "TITLE TEXT HERE"
+        },
+        {
+          "objectName": "STEP_3_BODY",
+          "objectId": 57,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore"
+        },
+        {
+          "objectName": "STEP_4_DETAIL_TITLE",
+          "objectId": 59,
+          "text": "TITLE TEXT HERE"
+        },
+        {
+          "objectName": "STEP_4_BODY",
+          "objectId": 60,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore"
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 63,
+          "text": "ЭТАПЫ ПРОЦЕССА"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "STEP_1_DETAIL_TITLE",
+        "text_2": "STEP_1_BODY",
+        "text_3": "STEP_1_LABEL",
+        "text_4": "STEP_2_LABEL",
+        "text_5": "STEP_3_LABEL",
+        "text_6": "STEP_4_LABEL",
+        "text_7": "STEP_2_DETAIL_TITLE",
+        "text_8": "STEP_2_BODY",
+        "text_9": "STEP_3_DETAIL_TITLE",
+        "text_10": "STEP_3_BODY",
+        "text_11": "STEP_4_DETAIL_TITLE",
+        "text_12": "STEP_4_BODY",
+        "text_13": "TITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 46,
+      "templateId": "process.3.detailed",
+      "comments": [],
+      "notes": [
+        "template_id: process.3.detailed\nПодробный процесс из трёх этапов с дополнительными заголовками и вместительными пояснениями.\nПример: Подготовить факты, провести разговор и проверить изменение поведения."
+      ],
+      "text": [
+        {
+          "objectName": "STEP_1_DETAIL_TITLE",
+          "objectId": 42,
+          "text": "TITLE TEXT HERE"
+        },
+        {
+          "objectName": "STEP_1_BODY",
+          "objectId": 43,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore"
+        },
+        {
+          "objectName": "STEP_1_LABEL",
+          "objectId": 47,
+          "text": "PROCESS STEP01"
+        },
+        {
+          "objectName": "STEP_2_LABEL",
+          "objectId": 48,
+          "text": "PROCESS STEP02"
+        },
+        {
+          "objectName": "STEP_3_LABEL",
+          "objectId": 51,
+          "text": "PROCESS STEP03"
+        },
+        {
+          "objectName": "STEP_2_DETAIL_TITLE",
+          "objectId": 53,
+          "text": "TITLE TEXT HERE"
+        },
+        {
+          "objectName": "STEP_2_BODY",
+          "objectId": 54,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore"
+        },
+        {
+          "objectName": "STEP_3_DETAIL_TITLE",
+          "objectId": 59,
+          "text": "TITLE TEXT HERE"
+        },
+        {
+          "objectName": "STEP_3_BODY",
+          "objectId": 60,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore"
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 63,
+          "text": "ЭТАПЫ ПРОЦЕССА"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "STEP_1_DETAIL_TITLE",
+        "text_2": "STEP_1_BODY",
+        "text_3": "STEP_1_LABEL",
+        "text_4": "STEP_2_LABEL",
+        "text_5": "STEP_3_LABEL",
+        "text_6": "STEP_2_DETAIL_TITLE",
+        "text_7": "STEP_2_BODY",
+        "text_8": "STEP_3_DETAIL_TITLE",
+        "text_9": "STEP_3_BODY",
+        "text_10": "TITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 47,
+      "templateId": "statistics.3",
+      "comments": [],
+      "notes": [
+        "template_id: statistics.3\nТри числовых показателя с короткими названиями и пояснениями.\nПример: Три показателя участка: выполнение плана, доля брака и время простоя."
+      ],
+      "text": [
+        {
+          "objectName": "METRIC_1_TITLE",
+          "objectId": 33,
+          "text": "BUDGET"
+        },
+        {
+          "objectName": "METRIC_1_BODY",
+          "objectId": 34,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the."
+        },
+        {
+          "objectName": "METRIC_1_VALUE",
+          "objectId": 36,
+          "text": "$ 4.7M"
+        },
+        {
+          "objectName": "METRIC_2_TITLE",
+          "objectId": 44,
+          "text": "SPENDING"
+        },
+        {
+          "objectName": "METRIC_2_BODY",
+          "objectId": 45,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the."
+        },
+        {
+          "objectName": "METRIC_2_VALUE",
+          "objectId": 46,
+          "text": "$ 3.5M"
+        },
+        {
+          "objectName": "METRIC_3_TITLE",
+          "objectId": 48,
+          "text": "SAVING"
+        },
+        {
+          "objectName": "METRIC_3_BODY",
+          "objectId": 49,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the."
+        },
+        {
+          "objectName": "METRIC_3_VALUE",
+          "objectId": 50,
+          "text": "$ 5M"
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 14,
+          "text": "ЦИФРЫ ИССЛЕДОВАНИЯ"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "METRIC_1_TITLE",
+        "text_2": "METRIC_1_BODY",
+        "text_3": "METRIC_1_VALUE",
+        "text_4": "METRIC_2_TITLE",
+        "text_5": "METRIC_2_BODY",
+        "text_6": "METRIC_2_VALUE",
+        "text_7": "METRIC_3_TITLE",
+        "text_8": "METRIC_3_BODY",
+        "text_9": "METRIC_3_VALUE",
+        "text_10": "TITLE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 48,
+      "templateId": "statistics.4",
+      "comments": [],
+      "notes": [
+        "template_id: statistics.4\nЧетыре числовых показателя с короткими названиями и пояснениями.\nПример: Четыре результата смены: выпуск, брак, простои и переделка."
+      ],
+      "text": [
+        {
+          "objectName": "METRIC_1_TITLE",
+          "objectId": 33,
+          "text": "BUDGET"
+        },
+        {
+          "objectName": "METRIC_1_BODY",
+          "objectId": 34,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the."
+        },
+        {
+          "objectName": "METRIC_1_VALUE",
+          "objectId": 36,
+          "text": "$ 4.7M"
+        },
+        {
+          "objectName": "METRIC_2_TITLE",
+          "objectId": 44,
+          "text": "SPENDING"
+        },
+        {
+          "objectName": "METRIC_2_BODY",
+          "objectId": 45,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the."
+        },
+        {
+          "objectName": "METRIC_2_VALUE",
+          "objectId": 46,
+          "text": "$ 3.5M"
+        },
+        {
+          "objectName": "METRIC_3_TITLE",
+          "objectId": 48,
+          "text": "SAVING"
+        },
+        {
+          "objectName": "METRIC_3_BODY",
+          "objectId": 49,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the."
+        },
+        {
+          "objectName": "METRIC_3_VALUE",
+          "objectId": 50,
+          "text": "$ 5M"
+        },
+        {
+          "objectName": "TITLE",
+          "objectId": 14,
+          "text": "ЦИФРЫ ИССЛЕДОВАНИЯ"
+        },
+        {
+          "objectName": "METRIC_4_TITLE",
+          "objectId": 15,
+          "text": "SAVING"
+        },
+        {
+          "objectName": "METRIC_4_BODY",
+          "objectId": 16,
+          "text": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here because this the."
+        },
+        {
+          "objectName": "METRIC_4_VALUE",
+          "objectId": 17,
+          "text": "$ 5M"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "METRIC_1_TITLE",
+        "text_2": "METRIC_1_BODY",
+        "text_3": "METRIC_1_VALUE",
+        "text_4": "METRIC_2_TITLE",
+        "text_5": "METRIC_2_BODY",
+        "text_6": "METRIC_2_VALUE",
+        "text_7": "METRIC_3_TITLE",
+        "text_8": "METRIC_3_BODY",
+        "text_9": "METRIC_3_VALUE",
+        "text_10": "TITLE",
+        "text_11": "METRIC_4_TITLE",
+        "text_12": "METRIC_4_BODY",
+        "text_13": "METRIC_4_VALUE"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 49,
+      "templateId": "timeline.5",
+      "comments": [],
+      "notes": [
+        "template_id: timeline.5\nДо пяти событий или этапов, связанных временем или последовательным развитием.\nПример: Ход смены от постановки задач утром до итоговой проверки результата."
+      ],
+      "text": [
+        {
+          "objectName": "TITLE",
+          "objectId": 14,
+          "text": "ТАЙМЛАЙН"
+        },
+        {
+          "objectName": "EVENT_1_TITLE",
+          "objectId": 16,
+          "text": "DESCRIPTION"
+        },
+        {
+          "objectName": "EVENT_1_BODY",
+          "objectId": 17,
+          "text": "Placeholder document design, Lorem ipsum use ipsumplaceholder text. Placeholder document design, Lorem ipsum use ipsumplaceholder text."
+        },
+        {
+          "objectName": "EVENT_2_TITLE",
+          "objectId": 18,
+          "text": "DESCRIPTION"
+        },
+        {
+          "objectName": "EVENT_2_BODY",
+          "objectId": 19,
+          "text": "Placeholder document design, Lorem ipsum use ipsumplaceholder text."
+        },
+        {
+          "objectName": "EVENT_3_TITLE",
+          "objectId": 29,
+          "text": "DESCRIPTION"
+        },
+        {
+          "objectName": "EVENT_3_BODY",
+          "objectId": 30,
+          "text": "Placeholder document design, Lorem ipsum use ipsumplaceholder text. Placeholder document design, Lorem ipsum use ipsumplaceholder text."
+        },
+        {
+          "objectName": "EVENT_4_TITLE",
+          "objectId": 31,
+          "text": "DESCRIPTION"
+        },
+        {
+          "objectName": "EVENT_4_BODY",
+          "objectId": 32,
+          "text": "Placeholder document design, Lorem ipsum use ipsumplaceholder text."
+        },
+        {
+          "objectName": "EVENT_5_TITLE",
+          "objectId": 35,
+          "text": "DESCRIPTION"
+        },
+        {
+          "objectName": "EVENT_5_BODY",
+          "objectId": 37,
+          "text": "Placeholder document design, Lorem ipsum use ipsumplaceholder text. Placeholder document design, Lorem ipsum use ipsumplaceholder text."
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "TITLE",
+        "text_2": "EVENT_1_TITLE",
+        "text_3": "EVENT_1_BODY",
+        "text_4": "EVENT_2_TITLE",
+        "text_5": "EVENT_2_BODY",
+        "text_6": "EVENT_3_TITLE",
+        "text_7": "EVENT_3_BODY",
+        "text_8": "EVENT_4_TITLE",
+        "text_9": "EVENT_4_BODY",
+        "text_10": "EVENT_5_TITLE",
+        "text_11": "EVENT_5_BODY"
+      },
+      "objectNamesAreUnique": true
+    },
+    {
+      "sourceSlide": 50,
+      "templateId": "staging.interaction",
+      "comments": [],
+      "notes": [
+        "template_id: staging.interaction\nПустая техническая основа для будущей интерактивности; полный исходный блок сохраняется для последующей авторской разработки.\nПример: Задание на сопоставление действий мастера и возможных последствий."
+      ],
+      "text": [
+        {
+          "objectName": "STAGING_BODY",
+          "objectId": 2,
+          "text": "Здесь текст"
+        }
+      ],
+      "suggestedSlots": {
+        "text_1": "STAGING_BODY"
+      },
+      "objectNamesAreUnique": true
+    }
+  ],
+  "instructions": "Add `template_id: meaningful.id` to the comment or notes of every reusable slide. Then map titleTemplate and compositions to templateId and map each semantic slot to an existing PowerPoint object name. sourceSlide is refreshed on every inspection and is never a persistent address.",
+  "groupOrder": [
+    "service",
+    "text",
+    "concepts",
+    "examples",
+    "comparison",
+    "situations",
+    "lists",
+    "classification",
+    "process",
+    "data",
+    "master-checklist",
+    "staging"
+  ],
+  "selectionGuide": "template-catalog.md",
+  "thumbnailDirectory": "template-thumbnails"
+}

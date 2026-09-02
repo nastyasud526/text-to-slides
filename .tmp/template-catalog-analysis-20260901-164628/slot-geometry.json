@@ -1,0 +1,3873 @@
+[
+  {
+    "sourceSlide": 1,
+    "templateId": "staging.blank",
+    "groups": [
+      "staging"
+    ],
+    "slots": [
+      {
+        "slot": "dialogue",
+        "object": "STAGING_BODY",
+        "x": 2.7,
+        "y": 5.6,
+        "w": 93.8,
+        "h": 90.6,
+        "sample": "Здесь текст"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 2,
+    "templateId": "course.title",
+    "groups": [
+      "service"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "COURSE_TITLE",
+        "x": 24.0,
+        "y": 11.4,
+        "w": 51.9,
+        "h": 39.9,
+        "sample": "УСПЕШНЫЙ МАСТЕР"
+      },
+      {
+        "slot": "course_subtitle",
+        "object": "COURSE_SUBTITLE",
+        "x": 32.0,
+        "y": 53.8,
+        "w": 36.0,
+        "h": 15.4,
+        "sample": "Обучающий курс"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 3,
+    "templateId": "module.title",
+    "groups": [
+      "service"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "MODULE_TITLE",
+        "x": 31.5,
+        "y": 43.8,
+        "w": 92.6,
+        "h": 25.9,
+        "sample": "РОЛЬ МАСТЕРА"
+      },
+      {
+        "slot": "module_label",
+        "object": "MODULE_LABEL",
+        "x": 31.5,
+        "y": 19.3,
+        "w": 56.5,
+        "h": 21.0,
+        "sample": "МОДУЛЬ 01"
+      },
+      {
+        "slot": "module_subtitle",
+        "object": "MODULE_SUBTITLE",
+        "x": 32.6,
+        "y": 65.5,
+        "w": 57.2,
+        "h": 11.3,
+        "sample": "You can enter a subtitle here if you need it"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 4,
+    "templateId": "lesson.title",
+    "groups": [
+      "service"
+    ],
+    "slots": [
+      {
+        "slot": "lesson_number",
+        "object": "LESSON_NUMBER",
+        "x": 9.0,
+        "y": 36.8,
+        "w": 37.3,
+        "h": 31.9,
+        "sample": "УРОК 1"
+      },
+      {
+        "slot": "title",
+        "object": "LESSON_TITLE",
+        "x": 53.7,
+        "y": 48.1,
+        "w": 38.6,
+        "h": 15.5,
+        "sample": "НАЧАЛО СМЕНЫ"
+      },
+      {
+        "slot": "module_label",
+        "object": "MODULE_LABEL",
+        "x": 1.0,
+        "y": 7.8,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "МОДУЛЬ 1"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 5,
+    "templateId": "text.plain",
+    "groups": [
+      "text"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 7.6,
+        "y": 7.2,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "РОЛЬ МАСТЕРА НА УЧАСТКЕ"
+      },
+      {
+        "slot": "body",
+        "object": "BODY",
+        "x": 8.7,
+        "y": 27.1,
+        "w": 67.5,
+        "h": 56.7,
+        "sample": "Мастер отвечает не только за выполнение сменного плана,  | но и за то, как работает бригада. Он распределяет задачи, следит за качеством ..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 6,
+    "templateId": "cards.5.intro",
+    "groups": [
+      "cards"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 3.1,
+        "y": 7.2,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ДЛЯ РАЗНЫХ ЗАДАЧ НУЖНО РАЗНОЕ ПОВЕДЕНИЕ"
+      },
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 4.3,
+        "y": 20.0,
+        "w": 87.1,
+        "h": 13.4,
+        "sample": "Одного подхода на все случаи нет. Поведение мастера зависит от задачи. |"
+      },
+      {
+        "slot": "card_1_title",
+        "object": "CARD_1_TITLE",
+        "x": 5.9,
+        "y": 42.4,
+        "w": 12.2,
+        "h": 14.7,
+        "sample": "ПОСТАВИТЬ ЗАДАЧУ"
+      },
+      {
+        "slot": "card_1_body",
+        "object": "CARD_1_BODY",
+        "x": 4.6,
+        "y": 66.1,
+        "w": 14.8,
+        "h": 23.3,
+        "sample": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять."
+      },
+      {
+        "slot": "card_2_title",
+        "object": "CARD_2_TITLE",
+        "x": 24.9,
+        "y": 42.4,
+        "w": 12.2,
+        "h": 14.7,
+        "sample": "РАЗОБРАТЬ ОШИБКУ"
+      },
+      {
+        "slot": "card_2_body",
+        "object": "CARD_2_BODY",
+        "x": 23.6,
+        "y": 66.1,
+        "w": 14.8,
+        "h": 23.3,
+        "sample": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять."
+      },
+      {
+        "slot": "card_3_title",
+        "object": "CARD_3_TITLE",
+        "x": 43.5,
+        "y": 42.4,
+        "w": 12.2,
+        "h": 14.7,
+        "sample": "ОБЕСПЕЧИТЬ СТРОГОСТЬ"
+      },
+      {
+        "slot": "card_3_body",
+        "object": "CARD_3_BODY",
+        "x": 42.6,
+        "y": 66.6,
+        "w": 14.8,
+        "h": 23.3,
+        "sample": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять."
+      },
+      {
+        "slot": "card_4_title",
+        "object": "CARD_4_TITLE",
+        "x": 63.4,
+        "y": 42.4,
+        "w": 12.2,
+        "h": 14.7,
+        "sample": "ПОДДЕРЖАТЬ НОВИЧКА"
+      },
+      {
+        "slot": "card_4_body",
+        "object": "CARD_4_BODY",
+        "x": 61.6,
+        "y": 66.1,
+        "w": 14.8,
+        "h": 23.3,
+        "sample": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять."
+      },
+      {
+        "slot": "card_5_title",
+        "object": "CARD_5_TITLE",
+        "x": 81.8,
+        "y": 42.4,
+        "w": 12.2,
+        "h": 14.7,
+        "sample": "•СООБЩИТЬ О ПРОБЛЕМЕ РУКОВОДИТЕЛЮ"
+      },
+      {
+        "slot": "card_5_body",
+        "object": "CARD_5_BODY",
+        "x": 80.6,
+        "y": 66.1,
+        "w": 14.8,
+        "h": 23.3,
+        "sample": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 7,
+    "templateId": "cards.4.intro",
+    "groups": [
+      "cards"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 3.1,
+        "y": 7.2,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ДЛЯ РАЗНЫХ ЗАДАЧ НУЖНО РАЗНОЕ ПОВЕДЕНИЕ"
+      },
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 4.3,
+        "y": 20.0,
+        "w": 87.1,
+        "h": 13.4,
+        "sample": "Одного подхода на все случаи нет. Поведение мастера зависит от задачи. |"
+      },
+      {
+        "slot": "card_1_title",
+        "object": "CARD_1_TITLE",
+        "x": 10.4,
+        "y": 42.4,
+        "w": 12.2,
+        "h": 14.7,
+        "sample": "ПОСТАВИТЬ ЗАДАЧУ"
+      },
+      {
+        "slot": "card_1_body",
+        "object": "CARD_1_BODY",
+        "x": 9.1,
+        "y": 66.1,
+        "w": 14.8,
+        "h": 23.3,
+        "sample": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять."
+      },
+      {
+        "slot": "card_2_title",
+        "object": "CARD_2_TITLE",
+        "x": 32.7,
+        "y": 42.4,
+        "w": 12.2,
+        "h": 14.7,
+        "sample": "РАЗОБРАТЬ ОШИБКУ"
+      },
+      {
+        "slot": "card_2_body",
+        "object": "CARD_2_BODY",
+        "x": 31.4,
+        "y": 66.1,
+        "w": 14.8,
+        "h": 23.3,
+        "sample": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять."
+      },
+      {
+        "slot": "card_3_title",
+        "object": "CARD_3_TITLE",
+        "x": 55.5,
+        "y": 42.4,
+        "w": 12.2,
+        "h": 14.7,
+        "sample": "ПОДДЕРЖАТЬ НОВИЧКА"
+      },
+      {
+        "slot": "card_3_body",
+        "object": "CARD_3_BODY",
+        "x": 53.8,
+        "y": 66.1,
+        "w": 14.8,
+        "h": 23.3,
+        "sample": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять."
+      },
+      {
+        "slot": "card_4_title",
+        "object": "CARD_4_TITLE",
+        "x": 77.4,
+        "y": 42.4,
+        "w": 12.2,
+        "h": 14.7,
+        "sample": "•СООБЩИТЬ О ПРОБЛЕМЕ РУКОВОДИТЕЛЮ"
+      },
+      {
+        "slot": "card_4_body",
+        "object": "CARD_4_BODY",
+        "x": 76.1,
+        "y": 66.1,
+        "w": 14.8,
+        "h": 23.3,
+        "sample": "Спокойно и ясно объяснить, что нужно сделать, к какому сроку и какой результат принять."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 8,
+    "templateId": "text.example",
+    "groups": [
+      "examples"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "EXAMPLE_LABEL",
+        "x": 26.5,
+        "y": 59.9,
+        "w": 31.2,
+        "h": 3.7,
+        "sample": "ПРИМЕР С УЧАСТКА"
+      },
+      {
+        "slot": "body",
+        "object": "BODY",
+        "x": 10.0,
+        "y": 20.1,
+        "w": 55.3,
+        "h": 29.3,
+        "sample": "Комплектность узла проверяют до начала сборки, а не в процессе. Один недостающий крепёж останавливает работу на середине и заставляет раз..."
+      },
+      {
+        "slot": "example_body",
+        "object": "EXAMPLE_BODY",
+        "x": 26.5,
+        "y": 64.5,
+        "w": 66.7,
+        "h": 23.3,
+        "sample": "На участке вентиляционных секций смена начала сборку, не пересчитав уголки. Нехватку четырёх штук заметили только на финальной затяжке — ..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 9,
+    "templateId": "term.explanation",
+    "groups": [
+      "concepts"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.6,
+        "y": 5.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ЦЕЛЬ РОЛИ МАСТЕРА"
+      },
+      {
+        "slot": "definition",
+        "object": "DEFINITION",
+        "x": 9.6,
+        "y": 19.0,
+        "w": 33.0,
+        "h": 67.9,
+        "sample": "Цель мастера — чтобы участок сдавал план в срок, годным, безопасно и с разумным расходом ресурсов.  | Этот результат нужен каждую смену."
+      },
+      {
+        "slot": "explanation",
+        "object": "EXPLANATION",
+        "x": 58.2,
+        "y": 18.6,
+        "w": 31.6,
+        "h": 62.9,
+        "sample": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался го..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 10,
+    "templateId": "context.definition.explanation",
+    "groups": [
+      "concepts"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.6,
+        "y": 5.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ЧТО ТАКОЕ НОРМО-ЧАС"
+      },
+      {
+        "slot": "definition",
+        "object": "DEFINITION",
+        "x": 10.5,
+        "y": 45.0,
+        "w": 33.0,
+        "h": 47.0,
+        "sample": "Нормо-час — это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в ..."
+      },
+      {
+        "slot": "explanation",
+        "object": "EXPLANATION",
+        "x": 58.2,
+        "y": 18.6,
+        "w": 31.6,
+        "h": 72.5,
+        "sample": "Норматив закреплён за операцией. Если на неё установлено два нормо-часа, участок получит за выполненную операцию два нормо-часа независим..."
+      },
+      {
+        "slot": "context",
+        "object": "CONTEXT",
+        "x": 6.5,
+        "y": 22.3,
+        "w": 41.5,
+        "h": 19.3,
+        "sample": "Мастер отвечает за выполнение плана. Но разные изделия нельзя просто сложить в штуках: одно собирают за час, другое — за десять. Поэтому ..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 11,
+    "templateId": "term.context.explanation.example",
+    "groups": [
+      "concepts",
+      "examples"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "EXAMPLE_LABEL",
+        "x": 82.4,
+        "y": 20.5,
+        "w": 31.2,
+        "h": 3.7,
+        "sample": "ПРИМЕР"
+      },
+      {
+        "slot": "definition",
+        "object": "DEFINITION",
+        "x": 6.6,
+        "y": 16.5,
+        "w": 42.3,
+        "h": 36.8,
+        "sample": "Нормо-час — это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в ..."
+      },
+      {
+        "slot": "explanation",
+        "object": "EXPLANATION",
+        "x": 58.2,
+        "y": 18.6,
+        "w": 31.6,
+        "h": 72.5,
+        "sample": "Норматив закреплён за операцией. Если на неё установлено два нормо-часа, участок получит за выполненную операцию два нормо-часа независим..."
+      },
+      {
+        "slot": "context",
+        "object": "CONTEXT",
+        "x": 5.7,
+        "y": 53.3,
+        "w": 41.5,
+        "h": 36.7,
+        "sample": "Мастер отвечает за выполнение плана. Но разные изделия нельзя просто сложить в штуках: одно собирают за час, другое — за десять. Поэтому ..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 12,
+    "templateId": "compare.poor-good",
+    "groups": [
+      "comparison"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.6,
+        "y": 5.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ"
+      },
+      {
+        "slot": "compare_left_body",
+        "object": "COMPARE_LEFT_BODY",
+        "x": 12.3,
+        "y": 36.6,
+        "w": 31.8,
+        "h": 50.9,
+        "sample": "На КОНВЕЙЕРЕ одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётс..."
+      },
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 7.1,
+        "y": 16.4,
+        "w": 63.1,
+        "h": 14.3,
+        "sample": "Работа мастера зависит от типа производства."
+      },
+      {
+        "slot": "compare_right_body",
+        "object": "COMPARE_RIGHT_BODY",
+        "x": 55.2,
+        "y": 35.9,
+        "w": 31.8,
+        "h": 50.9,
+        "sample": "ВЕЗА собирает ОБОРУДОВАНИЕ ПОД ЗАКАЗ, часто поштучно под конкретную спецификацию. Почти каждый заказ отличается по составу, трудоёмкости ..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 13,
+    "templateId": "situation.action.a",
+    "groups": [
+      "situations"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.6,
+        "y": 5.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ЦЕЛЬ РОЛИ МАСТЕРА"
+      },
+      {
+        "slot": "solution",
+        "object": "SOLUTION",
+        "x": 61.0,
+        "y": 21.1,
+        "w": 33.0,
+        "h": 67.9,
+        "sample": "РЕШЕНИЕ | Когда один и тот же порядок действует для всех, рабочий понимает, на чём основано требование. Личной придиркой чаще выглядит др..."
+      },
+      {
+        "slot": "situation",
+        "object": "SITUATION",
+        "x": 6.0,
+        "y": 17.6,
+        "w": 37.0,
+        "h": 71.3,
+        "sample": "СИТУАЦИЯ | Мастеру необязательно каждый раз собираться с духом и придумывать, как повести себя в неприятной ситуации. Можно действовать п..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 14,
+    "templateId": "situation.action.b",
+    "groups": [
+      "situations"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.6,
+        "y": 5.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ЦЕЛЬ РОЛИ МАСТЕРА"
+      },
+      {
+        "slot": "after",
+        "object": "AFTER",
+        "x": 61.0,
+        "y": 21.1,
+        "w": 33.0,
+        "h": 67.9,
+        "sample": "СТАЛО | Когда один и тот же порядок действует для всех, рабочий понимает, на чём основано требование. Личной придиркой чаще выглядит друг..."
+      },
+      {
+        "slot": "before",
+        "object": "BEFORE",
+        "x": 6.0,
+        "y": 17.6,
+        "w": 37.0,
+        "h": 71.3,
+        "sample": "БЫЛО | Мастеру необязательно каждый раз собираться с духом и придумывать, как повести себя в неприятной ситуации. Можно действовать по ус..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 15,
+    "templateId": "problem.solution",
+    "groups": [
+      "situations"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 8.0,
+        "y": 6.6,
+        "w": 57.0,
+        "h": 17.1,
+        "sample": "THE SOLUTION | STATEMENT"
+      },
+      {
+        "slot": "intro_title",
+        "object": "INTRO_TITLE",
+        "x": 8.0,
+        "y": 29.1,
+        "w": 13.9,
+        "h": 8.5,
+        "sample": "PROBLEM WITH | INFORMATION SHARING"
+      },
+      {
+        "slot": "intro_body",
+        "object": "INTRO_BODY",
+        "x": 8.0,
+        "y": 37.9,
+        "w": 38.5,
+        "h": 45.0,
+        "sample": "Company values are critical, keeping in mind that it purpose organization’s functions. And like I said, having a well-lai |  setof compan..."
+      },
+      {
+        "slot": "problem_heading",
+        "object": "PROBLEM_HEADING",
+        "x": 53.8,
+        "y": 18.7,
+        "w": 16.3,
+        "h": 13.0,
+        "sample": "PROBLEM | DECENTRALIZED NETWORK"
+      },
+      {
+        "slot": "problem_body",
+        "object": "PROBLEM_BODY",
+        "x": 53.8,
+        "y": 34.3,
+        "w": 33.3,
+        "h": 18.1,
+        "sample": "Look at both sides of the issue with the challenges and risks pyramid. This slide has a five-level PowerPoint pyramid to showcase the pro..."
+      },
+      {
+        "slot": "solution_subtitle",
+        "object": "SOLUTION_SUBTITLE",
+        "x": 53.8,
+        "y": 64.9,
+        "w": 16.3,
+        "h": 5.2,
+        "sample": "DECENTRALIZED NETWORK"
+      },
+      {
+        "slot": "solution_body",
+        "object": "SOLUTION_BODY",
+        "x": 53.8,
+        "y": 73.2,
+        "w": 33.3,
+        "h": 18.1,
+        "sample": "Look at both sides of the issue with the challenges and risks pyramid. This slide has a five-level PowerPoint pyramid to showcase the pro..."
+      },
+      {
+        "slot": "solution_title",
+        "object": "SOLUTION_TITLE",
+        "x": 53.8,
+        "y": 57.3,
+        "w": 12.9,
+        "h": 9.2,
+        "sample": "SOLUTION"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 16,
+    "templateId": "compare.two.intro.short",
+    "groups": [
+      "comparison"
+    ],
+    "slots": [
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 7.8,
+        "y": 14.5,
+        "w": 85.9,
+        "h": 19.6,
+        "sample": "Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Ра..."
+      },
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 11.1,
+        "y": 4.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ"
+      },
+      {
+        "slot": "compare_bottom_body",
+        "object": "COMPARE_BOTTOM_BODY",
+        "x": 59.0,
+        "y": 47.9,
+        "w": 36.4,
+        "h": 28.2,
+        "sample": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётс..."
+      },
+      {
+        "slot": "compare_top_body",
+        "object": "COMPARE_TOP_BODY",
+        "x": 7.9,
+        "y": 47.9,
+        "w": 35.5,
+        "h": 25.9,
+        "sample": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётс..."
+      },
+      {
+        "slot": "compare_top_label",
+        "object": "COMPARE_TOP_LABEL",
+        "x": 13.2,
+        "y": 38.3,
+        "w": 24.4,
+        "h": 5.4,
+        "sample": "КОНВЕЙЕР"
+      },
+      {
+        "slot": "compare_bottom_label",
+        "object": "COMPARE_BOTTOM_LABEL",
+        "x": 62.4,
+        "y": 38.6,
+        "w": 24.2,
+        "h": 5.4,
+        "sample": "МЕЛКОСЕРИЙНОЕ ПРОИЗВОДСТВО"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 17,
+    "templateId": "compare.two.intro.detailed",
+    "groups": [
+      "comparison"
+    ],
+    "slots": [
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 7.8,
+        "y": 14.5,
+        "w": 85.9,
+        "h": 16.9,
+        "sample": "Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Работа мастера зависит от типа производства. Ра..."
+      },
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 11.1,
+        "y": 4.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ"
+      },
+      {
+        "slot": "compare_bottom_body",
+        "object": "COMPARE_BOTTOM_BODY",
+        "x": 54.8,
+        "y": 47.3,
+        "w": 42.5,
+        "h": 43.1,
+        "sample": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётс..."
+      },
+      {
+        "slot": "compare_top_body",
+        "object": "COMPARE_TOP_BODY",
+        "x": 5.1,
+        "y": 47.4,
+        "w": 41.3,
+        "h": 43.0,
+        "sample": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётс..."
+      },
+      {
+        "slot": "compare_top_label",
+        "object": "COMPARE_TOP_LABEL",
+        "x": 13.2,
+        "y": 38.3,
+        "w": 24.4,
+        "h": 5.4,
+        "sample": "КОНВЕЙЕР"
+      },
+      {
+        "slot": "compare_bottom_label",
+        "object": "COMPARE_BOTTOM_LABEL",
+        "x": 62.6,
+        "y": 38.3,
+        "w": 24.2,
+        "h": 5.4,
+        "sample": "МЕЛКОСЕРИЙНОЕ ПРОИЗВОДСТВО"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 18,
+    "templateId": "compare.two.no-intro",
+    "groups": [
+      "comparison"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 11.1,
+        "y": 4.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ПОЧЕМУ НА ЗАКАЗНОМ ПРОИЗВОДСТВЕ РОЛЬ ТЯЖЕЛЕЕ"
+      },
+      {
+        "slot": "compare_bottom_body",
+        "object": "COMPARE_BOTTOM_BODY",
+        "x": 58.1,
+        "y": 28.6,
+        "w": 39.1,
+        "h": 51.1,
+        "sample": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётс..."
+      },
+      {
+        "slot": "compare_top_body",
+        "object": "COMPARE_TOP_BODY",
+        "x": 5.1,
+        "y": 28.7,
+        "w": 35.0,
+        "h": 51.0,
+        "sample": "На конвейере одно и то же изделие идёт потоком. Темп и порядок операций задаёт линия, работа у каждого расписана заранее. Мастеру остаётс..."
+      },
+      {
+        "slot": "compare_top_label",
+        "object": "COMPARE_TOP_LABEL",
+        "x": 13.2,
+        "y": 19.6,
+        "w": 24.4,
+        "h": 5.4,
+        "sample": "КОНВЕЙЕР"
+      },
+      {
+        "slot": "compare_bottom_label",
+        "object": "COMPARE_BOTTOM_LABEL",
+        "x": 62.6,
+        "y": 19.6,
+        "w": 24.2,
+        "h": 5.4,
+        "sample": "МЕЛКОСЕРИЙНОЕ ПРОИЗВОДСТВО"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 19,
+    "templateId": "thesis.example.illustration",
+    "groups": [
+      "concepts",
+      "examples"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.6,
+        "y": 5.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ЦЕЛЬ РОЛИ МАСТЕРА"
+      },
+      {
+        "slot": "definition",
+        "object": "DEFINITION",
+        "x": 10.5,
+        "y": 45.0,
+        "w": 33.0,
+        "h": 47.0,
+        "sample": "Нормо-час — это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в ..."
+      },
+      {
+        "slot": "explanation",
+        "object": "EXPLANATION",
+        "x": 6.5,
+        "y": 22.3,
+        "w": 41.5,
+        "h": 19.3,
+        "sample": "Мастер отвечает за выполнение плана. Но разные изделия нельзя просто сложить в штуках: одно собирают за час, другое — за десять. Поэтому ..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 20,
+    "templateId": "text.character-comment",
+    "groups": [
+      "text",
+      "examples"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.6,
+        "y": 5.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ЦЕЛЬ РОЛИ МАСТЕРА"
+      },
+      {
+        "slot": "course_text",
+        "object": "COURSE_TEXT",
+        "x": 6.6,
+        "y": 20.5,
+        "w": 36.9,
+        "h": 71.4,
+        "sample": "Нормо-час — это мера объёма работы. Он показывает, сколько времени по нормативу должен потратить квалифицированный рабочий на операцию в ..."
+      },
+      {
+        "slot": "character_comment",
+        "object": "CHARACTER_COMMENT",
+        "x": 53.8,
+        "y": 9.3,
+        "w": 21.1,
+        "h": 48.5,
+        "sample": "Мастер отвечает за выполнение плана. Но разные изделия нельзя просто сложить в штуках: одно собирают за час, другое — за десять. Поэтому ..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 21,
+    "templateId": "text.illustration",
+    "groups": [
+      "text"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.6,
+        "y": 5.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ЦЕЛЬ РОЛИ МАСТЕРА"
+      },
+      {
+        "slot": "body",
+        "object": "BODY",
+        "x": 6.0,
+        "y": 14.9,
+        "w": 38.4,
+        "h": 72.0,
+        "sample": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался го..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 22,
+    "templateId": "text.long.illustration",
+    "groups": [
+      "text"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.6,
+        "y": 5.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ЦЕЛЬ РОЛИ МАСТЕРА"
+      },
+      {
+        "slot": "body",
+        "object": "BODY",
+        "x": 6.0,
+        "y": 14.9,
+        "w": 57.6,
+        "h": 72.0,
+        "sample": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался го..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 23,
+    "templateId": "checklist.6",
+    "groups": [
+      "lists"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.6,
+        "y": 5.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ЧЕКЛИСТ МАСТЕРА"
+      },
+      {
+        "slot": "check_1",
+        "object": "CHECK_1",
+        "x": 12.0,
+        "y": 24.7,
+        "w": 25.2,
+        "h": 14.2,
+        "sample": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+      },
+      {
+        "slot": "check_2",
+        "object": "CHECK_2",
+        "x": 12.0,
+        "y": 47.8,
+        "w": 25.2,
+        "h": 14.2,
+        "sample": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+      },
+      {
+        "slot": "check_3",
+        "object": "CHECK_3",
+        "x": 12.0,
+        "y": 73.6,
+        "w": 25.2,
+        "h": 14.2,
+        "sample": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+      },
+      {
+        "slot": "check_4",
+        "object": "CHECK_4",
+        "x": 45.9,
+        "y": 24.7,
+        "w": 25.2,
+        "h": 14.2,
+        "sample": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+      },
+      {
+        "slot": "check_5",
+        "object": "CHECK_5",
+        "x": 45.9,
+        "y": 47.8,
+        "w": 25.2,
+        "h": 14.2,
+        "sample": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+      },
+      {
+        "slot": "check_6",
+        "object": "CHECK_6",
+        "x": 45.9,
+        "y": 73.6,
+        "w": 25.2,
+        "h": 14.2,
+        "sample": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 24,
+    "templateId": "example.full",
+    "groups": [
+      "examples"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "EXAMPLE_LABEL",
+        "x": 6.6,
+        "y": 5.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ПРИМЕР"
+      },
+      {
+        "slot": "body",
+        "object": "BODY",
+        "x": 6.0,
+        "y": 14.9,
+        "w": 62.3,
+        "h": 75.4,
+        "sample": "Участок — это люди, оборудование и материалы. Сами по себе они изделие не выпустят. Мастер соединяет их так, чтобы на выходе получался го..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 25,
+    "templateId": "intro.body.conclusion",
+    "groups": [
+      "text",
+      "situations"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.6,
+        "y": 5.1,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ОТ РЕАКЦИИ МАСТЕРА ЗАВИСИТ, СООБЩАТ ЛИ ЕМУ О ПРОБЛЕМЕ"
+      },
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 6.6,
+        "y": 12.5,
+        "w": 72.0,
+        "h": 18.5,
+        "sample": "Состояние и поведение мастера влияют не только на настроение участка. От них зависит, решатся ли рабочие сообщать ему неприятные новости."
+      },
+      {
+        "slot": "case_body",
+        "object": "CASE_BODY",
+        "x": 10.2,
+        "y": 35.2,
+        "w": 43.8,
+        "h": 52.5,
+        "sample": "В 1999 году профессор Гарвардской школы бизнеса Эми Эдмондсон изучала медицинские команды. Она обнаружила парадокс: лучшие команды сообща..."
+      },
+      {
+        "slot": "conclusion",
+        "object": "CONCLUSION",
+        "x": 71.6,
+        "y": 30.0,
+        "w": 26.4,
+        "h": 63.1,
+        "sample": "Для мастера это означает: брак и угрозу срыва невозможно обнаружить вовремя, если рабочий боится подойти и рассказать о проблеме. |"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 26,
+    "templateId": "numbered-list.3",
+    "groups": [
+      "lists",
+      "process"
+    ],
+    "slots": [
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 3.0,
+        "y": 22.5,
+        "w": 37.4,
+        "h": 46.2,
+        "sample": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+      },
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 0.8,
+        "y": 2.8,
+        "w": 84.2,
+        "h": 8.1,
+        "sample": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+      },
+      {
+        "slot": "item_1_number",
+        "object": "ITEM_1_NUMBER",
+        "x": 45.0,
+        "y": 22.5,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "01"
+      },
+      {
+        "slot": "item_2_number",
+        "object": "ITEM_2_NUMBER",
+        "x": 45.3,
+        "y": 47.5,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "02"
+      },
+      {
+        "slot": "item_3_number",
+        "object": "ITEM_3_NUMBER",
+        "x": 45.2,
+        "y": 72.4,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "03"
+      },
+      {
+        "slot": "item_1_title",
+        "object": "ITEM_1_TITLE",
+        "x": 55.7,
+        "y": 18.8,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "item_1_body",
+        "object": "ITEM_1_BODY",
+        "x": 55.7,
+        "y": 24.3,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+      },
+      {
+        "slot": "item_2_title",
+        "object": "ITEM_2_TITLE",
+        "x": 55.3,
+        "y": 43.8,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "БЕЗОПАСНОСТЬ"
+      },
+      {
+        "slot": "item_2_body",
+        "object": "ITEM_2_BODY",
+        "x": 55.3,
+        "y": 49.4,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+      },
+      {
+        "slot": "item_3_title",
+        "object": "ITEM_3_TITLE",
+        "x": 55.7,
+        "y": 70.2,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "item_3_body",
+        "object": "ITEM_3_BODY",
+        "x": 55.7,
+        "y": 75.7,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 27,
+    "templateId": "text.key-idea",
+    "groups": [
+      "text"
+    ],
+    "slots": [
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 66.9,
+        "y": 22.1,
+        "w": 30.5,
+        "h": 71.2,
+        "sample": "КАЧЕСТВО ДЕРЖИТСЯ НА ТРЁХ ПРИВЫЧКАХ, КОТОРЫЕ НЕ ЗАВИСЯТ ОТ СЛОЖНОСТИ ЗАКАЗА."
+      },
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 0.8,
+        "y": 6.0,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+      },
+      {
+        "slot": "body",
+        "object": "BODY",
+        "x": 3.1,
+        "y": 17.4,
+        "w": 57.1,
+        "h": 72.2,
+        "sample": "В 1999 году профессор Гарвардской школы бизнеса Эми Эдмондсон изучала медицинские команды. Она обнаружила парадокс: лучшие команды сообща..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 28,
+    "templateId": "numbered-list.6",
+    "groups": [
+      "lists",
+      "process"
+    ],
+    "slots": [
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 19.9,
+        "y": 13.0,
+        "w": 77.4,
+        "h": 16.6,
+        "sample": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+      },
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 0.8,
+        "y": 2.8,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+      },
+      {
+        "slot": "item_1_number",
+        "object": "ITEM_1_NUMBER",
+        "x": 8.9,
+        "y": 36.9,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "01"
+      },
+      {
+        "slot": "item_2_number",
+        "object": "ITEM_2_NUMBER",
+        "x": 9.2,
+        "y": 55.8,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "02"
+      },
+      {
+        "slot": "item_3_number",
+        "object": "ITEM_3_NUMBER",
+        "x": 9.2,
+        "y": 73.9,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "03"
+      },
+      {
+        "slot": "item_1_title",
+        "object": "ITEM_1_TITLE",
+        "x": 19.2,
+        "y": 33.2,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "item_1_body",
+        "object": "ITEM_1_BODY",
+        "x": 19.2,
+        "y": 38.7,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+      },
+      {
+        "slot": "item_2_title",
+        "object": "ITEM_2_TITLE",
+        "x": 19.2,
+        "y": 52.7,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "БЕЗОПАСНОСТЬ"
+      },
+      {
+        "slot": "item_2_body",
+        "object": "ITEM_2_BODY",
+        "x": 19.2,
+        "y": 58.2,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+      },
+      {
+        "slot": "item_3_title",
+        "object": "ITEM_3_TITLE",
+        "x": 19.2,
+        "y": 72.3,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "item_3_body",
+        "object": "ITEM_3_BODY",
+        "x": 19.2,
+        "y": 76.8,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      },
+      {
+        "slot": "item_4_number",
+        "object": "ITEM_4_NUMBER",
+        "x": 54.0,
+        "y": 37.9,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "04"
+      },
+      {
+        "slot": "item_5_number",
+        "object": "ITEM_5_NUMBER",
+        "x": 54.4,
+        "y": 55.9,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "05"
+      },
+      {
+        "slot": "item_6_number",
+        "object": "ITEM_6_NUMBER",
+        "x": 54.3,
+        "y": 74.0,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "06"
+      },
+      {
+        "slot": "item_4_title",
+        "object": "ITEM_4_TITLE",
+        "x": 64.3,
+        "y": 33.6,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "item_4_body",
+        "object": "ITEM_4_BODY",
+        "x": 64.3,
+        "y": 38.8,
+        "w": 34.9,
+        "h": 14.2,
+        "sample": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+      },
+      {
+        "slot": "item_5_title",
+        "object": "ITEM_5_TITLE",
+        "x": 64.3,
+        "y": 53.6,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "БЕЗОПАСНОСТЬ"
+      },
+      {
+        "slot": "item_5_body",
+        "object": "ITEM_5_BODY",
+        "x": 64.3,
+        "y": 58.3,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+      },
+      {
+        "slot": "item_6_title",
+        "object": "ITEM_6_TITLE",
+        "x": 64.7,
+        "y": 72.4,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "item_6_body",
+        "object": "ITEM_6_BODY",
+        "x": 64.3,
+        "y": 76.9,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 29,
+    "templateId": "numbered-list.5",
+    "groups": [
+      "lists",
+      "process"
+    ],
+    "slots": [
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 19.9,
+        "y": 13.0,
+        "w": 77.4,
+        "h": 16.6,
+        "sample": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+      },
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 0.8,
+        "y": 2.8,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+      },
+      {
+        "slot": "item_1_number",
+        "object": "ITEM_1_NUMBER",
+        "x": 8.9,
+        "y": 36.9,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "01"
+      },
+      {
+        "slot": "item_2_number",
+        "object": "ITEM_2_NUMBER",
+        "x": 9.2,
+        "y": 55.8,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "02"
+      },
+      {
+        "slot": "item_3_number",
+        "object": "ITEM_3_NUMBER",
+        "x": 9.2,
+        "y": 73.9,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "03"
+      },
+      {
+        "slot": "item_1_title",
+        "object": "ITEM_1_TITLE",
+        "x": 19.2,
+        "y": 33.2,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "item_1_body",
+        "object": "ITEM_1_BODY",
+        "x": 19.2,
+        "y": 38.7,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+      },
+      {
+        "slot": "item_2_title",
+        "object": "ITEM_2_TITLE",
+        "x": 19.2,
+        "y": 52.7,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "БЕЗОПАСНОСТЬ"
+      },
+      {
+        "slot": "item_2_body",
+        "object": "ITEM_2_BODY",
+        "x": 19.2,
+        "y": 58.2,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+      },
+      {
+        "slot": "item_3_title",
+        "object": "ITEM_3_TITLE",
+        "x": 19.2,
+        "y": 72.3,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "item_3_body",
+        "object": "ITEM_3_BODY",
+        "x": 19.2,
+        "y": 76.8,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      },
+      {
+        "slot": "item_4_number",
+        "object": "ITEM_4_NUMBER",
+        "x": 53.6,
+        "y": 44.2,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "04"
+      },
+      {
+        "slot": "item_5_number",
+        "object": "ITEM_5_NUMBER",
+        "x": 53.9,
+        "y": 62.3,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "05"
+      },
+      {
+        "slot": "item_4_title",
+        "object": "ITEM_4_TITLE",
+        "x": 63.9,
+        "y": 40.0,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "item_4_body",
+        "object": "ITEM_4_BODY",
+        "x": 63.9,
+        "y": 45.2,
+        "w": 34.9,
+        "h": 14.2,
+        "sample": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+      },
+      {
+        "slot": "item_5_title",
+        "object": "ITEM_5_TITLE",
+        "x": 63.9,
+        "y": 59.9,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "БЕЗОПАСНОСТЬ"
+      },
+      {
+        "slot": "item_5_body",
+        "object": "ITEM_5_BODY",
+        "x": 63.9,
+        "y": 64.7,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 30,
+    "templateId": "numbered-list.4",
+    "groups": [
+      "lists",
+      "process"
+    ],
+    "slots": [
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 3.0,
+        "y": 22.5,
+        "w": 37.4,
+        "h": 46.2,
+        "sample": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+      },
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 0.8,
+        "y": 2.8,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+      },
+      {
+        "slot": "item_1_number",
+        "object": "ITEM_1_NUMBER",
+        "x": 45.0,
+        "y": 13.9,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "01"
+      },
+      {
+        "slot": "item_2_number",
+        "object": "ITEM_2_NUMBER",
+        "x": 45.3,
+        "y": 34.8,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "02"
+      },
+      {
+        "slot": "item_3_number",
+        "object": "ITEM_3_NUMBER",
+        "x": 45.2,
+        "y": 55.6,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "03"
+      },
+      {
+        "slot": "item_1_title",
+        "object": "ITEM_1_TITLE",
+        "x": 55.3,
+        "y": 10.2,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "item_1_body",
+        "object": "ITEM_1_BODY",
+        "x": 55.3,
+        "y": 15.7,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+      },
+      {
+        "slot": "item_2_title",
+        "object": "ITEM_2_TITLE",
+        "x": 55.3,
+        "y": 31.5,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "БЕЗОПАСНОСТЬ"
+      },
+      {
+        "slot": "item_2_body",
+        "object": "ITEM_2_BODY",
+        "x": 55.3,
+        "y": 37.0,
+        "w": 34.9,
+        "h": 16.2,
+        "sample": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+      },
+      {
+        "slot": "item_3_title",
+        "object": "ITEM_3_TITLE",
+        "x": 55.3,
+        "y": 51.7,
+        "w": 34.9,
+        "h": 6.0,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "item_3_body",
+        "object": "ITEM_3_BODY",
+        "x": 55.3,
+        "y": 80.3,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      },
+      {
+        "slot": "item_4_number",
+        "object": "ITEM_4_NUMBER",
+        "x": 45.8,
+        "y": 76.5,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "04"
+      },
+      {
+        "slot": "item_4_title",
+        "object": "ITEM_4_TITLE",
+        "x": 55.3,
+        "y": 74.2,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "item_4_body",
+        "object": "ITEM_4_BODY",
+        "x": 55.3,
+        "y": 59.0,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 31,
+    "templateId": "key-idea.quote",
+    "groups": [
+      "text"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "QUOTE",
+        "x": 18.2,
+        "y": 40.7,
+        "w": 63.0,
+        "h": 36.0,
+        "sample": "SOMEONE FAMOUS This is a quote, words full of wisdom that someone important said and can make the reader get inspired"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 32,
+    "templateId": "numbered-list.4.illustration",
+    "groups": [
+      "lists",
+      "process"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 0.8,
+        "y": 2.8,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+      },
+      {
+        "slot": "item_1_number",
+        "object": "ITEM_1_NUMBER",
+        "x": 45.0,
+        "y": 13.9,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "01"
+      },
+      {
+        "slot": "item_2_number",
+        "object": "ITEM_2_NUMBER",
+        "x": 45.3,
+        "y": 34.8,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "02"
+      },
+      {
+        "slot": "item_3_number",
+        "object": "ITEM_3_NUMBER",
+        "x": 45.2,
+        "y": 55.6,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "03"
+      },
+      {
+        "slot": "item_1_title",
+        "object": "ITEM_1_TITLE",
+        "x": 55.3,
+        "y": 10.2,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "item_1_body",
+        "object": "ITEM_1_BODY",
+        "x": 55.3,
+        "y": 15.7,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+      },
+      {
+        "slot": "item_2_title",
+        "object": "ITEM_2_TITLE",
+        "x": 55.3,
+        "y": 31.5,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "БЕЗОПАСНОСТЬ"
+      },
+      {
+        "slot": "item_2_body",
+        "object": "ITEM_2_BODY",
+        "x": 55.3,
+        "y": 37.0,
+        "w": 34.9,
+        "h": 16.2,
+        "sample": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+      },
+      {
+        "slot": "item_3_title",
+        "object": "ITEM_3_TITLE",
+        "x": 55.3,
+        "y": 51.7,
+        "w": 34.9,
+        "h": 6.0,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "item_3_body",
+        "object": "ITEM_3_BODY",
+        "x": 55.3,
+        "y": 80.3,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      },
+      {
+        "slot": "item_4_number",
+        "object": "ITEM_4_NUMBER",
+        "x": 45.8,
+        "y": 76.5,
+        "w": 9.5,
+        "h": 13.7,
+        "sample": "04"
+      },
+      {
+        "slot": "item_4_title",
+        "object": "ITEM_4_TITLE",
+        "x": 55.3,
+        "y": 74.2,
+        "w": 34.9,
+        "h": 4.6,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "item_4_body",
+        "object": "ITEM_4_BODY",
+        "x": 55.3,
+        "y": 59.0,
+        "w": 34.9,
+        "h": 18.5,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 33,
+    "templateId": "classification.3",
+    "groups": [
+      "classification"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "ROOT_TITLE",
+        "x": 38.6,
+        "y": 19.1,
+        "w": 22.6,
+        "h": 9.2,
+        "sample": "COMPANY VALUES"
+      },
+      {
+        "slot": "node_3_title",
+        "object": "NODE_3_TITLE",
+        "x": 69.4,
+        "y": 56.4,
+        "w": 10.4,
+        "h": 4.3,
+        "sample": "TALENT ACQUISITION"
+      },
+      {
+        "slot": "node_2_title",
+        "object": "NODE_2_TITLE",
+        "x": 44.4,
+        "y": 56.4,
+        "w": 11.0,
+        "h": 4.3,
+        "sample": "EMPLOYEE RETENTION"
+      },
+      {
+        "slot": "node_1_title",
+        "object": "NODE_1_TITLE",
+        "x": 19.1,
+        "y": 56.4,
+        "w": 12.1,
+        "h": 4.3,
+        "sample": "EMPLOYEE ENGAGEMENT"
+      },
+      {
+        "slot": "node_3_body",
+        "object": "NODE_3_BODY",
+        "x": 15.3,
+        "y": 66.6,
+        "w": 19.7,
+        "h": 13.0,
+        "sample": "Every employer desires to | Have performance-driven company | culture. However, cultivating the | same within organization"
+      },
+      {
+        "slot": "node_2_body",
+        "object": "NODE_2_BODY",
+        "x": 40.0,
+        "y": 66.6,
+        "w": 19.7,
+        "h": 13.0,
+        "sample": "Every employer desires to | Have performance-driven company | culture. However, cultivating the | same within organization"
+      },
+      {
+        "slot": "node_1_body",
+        "object": "NODE_1_BODY",
+        "x": 64.7,
+        "y": 66.6,
+        "w": 19.7,
+        "h": 13.0,
+        "sample": "Every employer desires to | Have performance-driven company | culture. However, cultivating the | same within organization"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 34,
+    "templateId": "classification.4",
+    "groups": [
+      "classification"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "ROOT_TITLE",
+        "x": 38.6,
+        "y": 19.1,
+        "w": 22.6,
+        "h": 9.2,
+        "sample": "COMPANY VALUES"
+      },
+      {
+        "slot": "node_1_title",
+        "object": "NODE_1_TITLE",
+        "x": 8.2,
+        "y": 56.4,
+        "w": 12.1,
+        "h": 4.3,
+        "sample": "EMPLOYEE ENGAGEMENT"
+      },
+      {
+        "slot": "node_1_body",
+        "object": "NODE_1_BODY",
+        "x": 4.3,
+        "y": 66.6,
+        "w": 19.7,
+        "h": 13.0,
+        "sample": "Every employer desires to | Have performance-driven company | culture. However, cultivating the | same within organization"
+      },
+      {
+        "slot": "node_2_title",
+        "object": "NODE_2_TITLE",
+        "x": 32.7,
+        "y": 56.4,
+        "w": 11.0,
+        "h": 4.3,
+        "sample": "EMPLOYEE RETENTION"
+      },
+      {
+        "slot": "node_2_body",
+        "object": "NODE_2_BODY",
+        "x": 28.3,
+        "y": 66.6,
+        "w": 19.7,
+        "h": 13.0,
+        "sample": "Every employer desires to | Have performance-driven company | culture. However, cultivating the | same within organization"
+      },
+      {
+        "slot": "node_3_title",
+        "object": "NODE_3_TITLE",
+        "x": 80.0,
+        "y": 56.4,
+        "w": 10.4,
+        "h": 4.3,
+        "sample": "TALENT ACQUISITION"
+      },
+      {
+        "slot": "node_3_body",
+        "object": "NODE_3_BODY",
+        "x": 75.4,
+        "y": 66.6,
+        "w": 19.7,
+        "h": 13.0,
+        "sample": "Every employer desires to | Have performance-driven company | culture. However, cultivating the | same within organization"
+      },
+      {
+        "slot": "node_4_title",
+        "object": "NODE_4_TITLE",
+        "x": 55.9,
+        "y": 56.4,
+        "w": 11.0,
+        "h": 4.3,
+        "sample": "EMPLOYEE RETENTION"
+      },
+      {
+        "slot": "node_4_body",
+        "object": "NODE_4_BODY",
+        "x": 51.5,
+        "y": 66.6,
+        "w": 19.7,
+        "h": 13.0,
+        "sample": "Every employer desires to | Have performance-driven company | culture. However, cultivating the | same within organization"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 35,
+    "templateId": "list.6.center-message",
+    "groups": [
+      "lists",
+      "classification"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 0.8,
+        "y": 2.8,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+      },
+      {
+        "slot": "item_1_title",
+        "object": "ITEM_1_TITLE",
+        "x": 71.0,
+        "y": 18.8,
+        "w": 24.8,
+        "h": 4.6,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "item_1_body",
+        "object": "ITEM_1_BODY",
+        "x": 71.0,
+        "y": 24.3,
+        "w": 24.8,
+        "h": 18.5,
+        "sample": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+      },
+      {
+        "slot": "item_2_title",
+        "object": "ITEM_2_TITLE",
+        "x": 71.0,
+        "y": 43.8,
+        "w": 24.8,
+        "h": 4.6,
+        "sample": "БЕЗОПАСНОСТЬ"
+      },
+      {
+        "slot": "item_2_body",
+        "object": "ITEM_2_BODY",
+        "x": 71.0,
+        "y": 49.4,
+        "w": 24.8,
+        "h": 18.5,
+        "sample": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+      },
+      {
+        "slot": "item_3_title",
+        "object": "ITEM_3_TITLE",
+        "x": 71.0,
+        "y": 70.2,
+        "w": 24.8,
+        "h": 4.6,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "item_3_body",
+        "object": "ITEM_3_BODY",
+        "x": 71.0,
+        "y": 75.7,
+        "w": 24.8,
+        "h": 18.5,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      },
+      {
+        "slot": "item_4_title",
+        "object": "ITEM_4_TITLE",
+        "x": 3.8,
+        "y": 17.7,
+        "w": 25.1,
+        "h": 4.6,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "item_4_body",
+        "object": "ITEM_4_BODY",
+        "x": 3.8,
+        "y": 23.3,
+        "w": 25.1,
+        "h": 18.5,
+        "sample": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+      },
+      {
+        "slot": "item_5_title",
+        "object": "ITEM_5_TITLE",
+        "x": 3.8,
+        "y": 42.8,
+        "w": 25.1,
+        "h": 4.6,
+        "sample": "БЕЗОПАСНОСТЬ"
+      },
+      {
+        "slot": "item_5_body",
+        "object": "ITEM_5_BODY",
+        "x": 3.8,
+        "y": 48.3,
+        "w": 25.1,
+        "h": 18.5,
+        "sample": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+      },
+      {
+        "slot": "item_6_title",
+        "object": "ITEM_6_TITLE",
+        "x": 3.8,
+        "y": 69.1,
+        "w": 25.1,
+        "h": 4.6,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "item_6_body",
+        "object": "ITEM_6_BODY",
+        "x": 3.8,
+        "y": 74.7,
+        "w": 25.1,
+        "h": 18.5,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      },
+      {
+        "slot": "center_message",
+        "object": "CENTER_MESSAGE",
+        "x": 38.0,
+        "y": 30.5,
+        "w": 23.5,
+        "h": 33.9,
+        "sample": "Поддерживать — значит замечать не только результат работы, но и состояние человека."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 36,
+    "templateId": "cards.6.columns",
+    "groups": [
+      "cards"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 28.4,
+        "y": 5.6,
+        "w": 43.1,
+        "h": 9.2,
+        "sample": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+      },
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 18.6,
+        "y": 14.5,
+        "w": 62.8,
+        "h": 8.8,
+        "sample": "Поддерживать — значит замечать не только результат работы, но и состояние человека."
+      },
+      {
+        "slot": "left_1_body",
+        "object": "LEFT_1_BODY",
+        "x": 8.2,
+        "y": 34.9,
+        "w": 18.1,
+        "h": 13.2,
+        "sample": "Lorem visual form commonly use  dolor demonstrate."
+      },
+      {
+        "slot": "left_2_body",
+        "object": "LEFT_2_BODY",
+        "x": 8.2,
+        "y": 56.0,
+        "w": 18.1,
+        "h": 13.2,
+        "sample": "Lorem visual form commonly use  dolor demonstrate."
+      },
+      {
+        "slot": "left_3_body",
+        "object": "LEFT_3_BODY",
+        "x": 8.2,
+        "y": 77.7,
+        "w": 18.1,
+        "h": 13.2,
+        "sample": "Lorem visual form commonly use  dolor demonstrate."
+      },
+      {
+        "slot": "left_1_title",
+        "object": "LEFT_1_TITLE",
+        "x": 16.8,
+        "y": 30.9,
+        "w": 9.3,
+        "h": 5.4,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "left_2_title",
+        "object": "LEFT_2_TITLE",
+        "x": 16.9,
+        "y": 73.2,
+        "w": 9.3,
+        "h": 5.4,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "left_3_title",
+        "object": "LEFT_3_TITLE",
+        "x": 16.9,
+        "y": 51.1,
+        "w": 9.3,
+        "h": 5.4,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "right_1_body",
+        "object": "RIGHT_1_BODY",
+        "x": 73.6,
+        "y": 34.9,
+        "w": 18.1,
+        "h": 15.0,
+        "sample": "Lorem visual form commonly use  dolor demonstrate."
+      },
+      {
+        "slot": "right_2_body",
+        "object": "RIGHT_2_BODY",
+        "x": 73.5,
+        "y": 56.0,
+        "w": 18.1,
+        "h": 15.0,
+        "sample": "Lorem visual form commonly use  dolor demonstrate."
+      },
+      {
+        "slot": "right_3_body",
+        "object": "RIGHT_3_BODY",
+        "x": 73.8,
+        "y": 77.3,
+        "w": 18.1,
+        "h": 15.0,
+        "sample": "Lorem visual form commonly use  dolor demonstrate."
+      },
+      {
+        "slot": "right_1_title",
+        "object": "RIGHT_1_TITLE",
+        "x": 73.5,
+        "y": 30.9,
+        "w": 16.8,
+        "h": 5.4,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "right_2_title",
+        "object": "RIGHT_2_TITLE",
+        "x": 73.8,
+        "y": 73.4,
+        "w": 16.0,
+        "h": 5.4,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "right_3_title",
+        "object": "RIGHT_3_TITLE",
+        "x": 73.7,
+        "y": 51.5,
+        "w": 16.1,
+        "h": 5.4,
+        "sample": "ВРЕМЯ"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 37,
+    "templateId": "cards.3",
+    "groups": [
+      "cards"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.8,
+        "y": 12.4,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+      },
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 7.1,
+        "y": 26.1,
+        "w": 72.9,
+        "h": 7.4,
+        "sample": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+      },
+      {
+        "slot": "card_1_title",
+        "object": "CARD_1_TITLE",
+        "x": 9.1,
+        "y": 42.9,
+        "w": 22.4,
+        "h": 4.6,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "card_1_body",
+        "object": "CARD_1_BODY",
+        "x": 9.1,
+        "y": 48.4,
+        "w": 22.4,
+        "h": 18.5,
+        "sample": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+      },
+      {
+        "slot": "card_2_title",
+        "object": "CARD_2_TITLE",
+        "x": 39.2,
+        "y": 42.9,
+        "w": 22.4,
+        "h": 4.6,
+        "sample": "БЕЗОПАСНОСТЬ"
+      },
+      {
+        "slot": "card_2_body",
+        "object": "CARD_2_BODY",
+        "x": 39.2,
+        "y": 48.4,
+        "w": 22.4,
+        "h": 18.5,
+        "sample": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+      },
+      {
+        "slot": "card_3_title",
+        "object": "CARD_3_TITLE",
+        "x": 69.7,
+        "y": 42.9,
+        "w": 22.4,
+        "h": 4.6,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "card_3_body",
+        "object": "CARD_3_BODY",
+        "x": 69.7,
+        "y": 48.4,
+        "w": 24.2,
+        "h": 18.5,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 38,
+    "templateId": "cards.4",
+    "groups": [
+      "cards"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.8,
+        "y": 4.8,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+      },
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 6.8,
+        "y": 24.4,
+        "w": 19.8,
+        "h": 60.2,
+        "sample": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+      },
+      {
+        "slot": "card_1_title",
+        "object": "CARD_1_TITLE",
+        "x": 36.3,
+        "y": 28.3,
+        "w": 22.4,
+        "h": 4.6,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "card_1_body",
+        "object": "CARD_1_BODY",
+        "x": 36.3,
+        "y": 33.9,
+        "w": 26.0,
+        "h": 16.1,
+        "sample": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+      },
+      {
+        "slot": "card_2_title",
+        "object": "CARD_2_TITLE",
+        "x": 68.0,
+        "y": 28.3,
+        "w": 26.0,
+        "h": 4.6,
+        "sample": "БЕЗОПАСНОСТЬ"
+      },
+      {
+        "slot": "card_2_body",
+        "object": "CARD_2_BODY",
+        "x": 68.0,
+        "y": 33.9,
+        "w": 26.0,
+        "h": 16.1,
+        "sample": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+      },
+      {
+        "slot": "card_3_title",
+        "object": "CARD_3_TITLE",
+        "x": 36.7,
+        "y": 59.3,
+        "w": 22.4,
+        "h": 4.6,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "card_3_body",
+        "object": "CARD_3_BODY",
+        "x": 36.7,
+        "y": 64.8,
+        "w": 26.2,
+        "h": 17.3,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      },
+      {
+        "slot": "card_4_title",
+        "object": "CARD_4_TITLE",
+        "x": 67.8,
+        "y": 59.3,
+        "w": 22.4,
+        "h": 4.6,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "card_4_body",
+        "object": "CARD_4_BODY",
+        "x": 68.0,
+        "y": 64.8,
+        "w": 26.0,
+        "h": 17.3,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 39,
+    "templateId": "cards.6",
+    "groups": [
+      "cards"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.8,
+        "y": 4.8,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ТРИ ОПОРЫ КАЧЕСТВА НА УЧАСТКЕ"
+      },
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 6.8,
+        "y": 12.3,
+        "w": 51.8,
+        "h": 10.6,
+        "sample": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+      },
+      {
+        "slot": "card_1_title",
+        "object": "CARD_5_TITLE",
+        "x": 5.5,
+        "y": 28.6,
+        "w": 22.4,
+        "h": 4.6,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "card_1_body",
+        "object": "CARD_5_BODY",
+        "x": 5.5,
+        "y": 34.2,
+        "w": 26.0,
+        "h": 16.1,
+        "sample": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+      },
+      {
+        "slot": "card_2_title",
+        "object": "CARD_1_TITLE",
+        "x": 36.3,
+        "y": 28.3,
+        "w": 22.4,
+        "h": 4.6,
+        "sample": "ВРЕМЯ"
+      },
+      {
+        "slot": "card_2_body",
+        "object": "CARD_1_BODY",
+        "x": 36.3,
+        "y": 33.9,
+        "w": 26.0,
+        "h": 16.1,
+        "sample": "Проверки и затяжка идут по регламенту, а не «когда дойдут руки»."
+      },
+      {
+        "slot": "card_3_title",
+        "object": "CARD_2_TITLE",
+        "x": 68.0,
+        "y": 28.3,
+        "w": 26.0,
+        "h": 4.6,
+        "sample": "БЕЗОПАСНОСТЬ"
+      },
+      {
+        "slot": "card_3_body",
+        "object": "CARD_2_BODY",
+        "x": 68.0,
+        "y": 33.9,
+        "w": 26.0,
+        "h": 16.1,
+        "sample": "СИЗ надеты, зона свободна, инструмент исправен — до начала операции, не после."
+      },
+      {
+        "slot": "card_4_title",
+        "object": "CARD_6_TITLE",
+        "x": 5.8,
+        "y": 59.5,
+        "w": 22.4,
+        "h": 4.6,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "card_4_body",
+        "object": "CARD_6_BODY",
+        "x": 5.8,
+        "y": 65.1,
+        "w": 26.2,
+        "h": 17.3,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      },
+      {
+        "slot": "card_5_title",
+        "object": "CARD_3_TITLE",
+        "x": 36.7,
+        "y": 59.3,
+        "w": 22.4,
+        "h": 4.6,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "card_5_body",
+        "object": "CARD_3_BODY",
+        "x": 36.7,
+        "y": 64.8,
+        "w": 26.2,
+        "h": 17.3,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      },
+      {
+        "slot": "card_6_title",
+        "object": "CARD_4_TITLE",
+        "x": 67.8,
+        "y": 59.3,
+        "w": 22.4,
+        "h": 4.6,
+        "sample": "ДОСТОВЕРНОСТЬ"
+      },
+      {
+        "slot": "card_6_body",
+        "object": "CARD_4_BODY",
+        "x": 68.0,
+        "y": 64.8,
+        "w": 26.0,
+        "h": 17.3,
+        "sample": "В журнал вносят то, что реально сделано, без округлений и «потом допишу»."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 40,
+    "templateId": "process.situation-outcome.4",
+    "groups": [
+      "process"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 6.8,
+        "y": 4.8,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ПРИМЕР: ОПОЗДАНИЯ"
+      },
+      {
+        "slot": "intro",
+        "object": "INTRO",
+        "x": 6.8,
+        "y": 12.3,
+        "w": 51.8,
+        "h": 10.6,
+        "sample": "Качество держится на трёх привычках, которые не зависят от сложности заказа."
+      },
+      {
+        "slot": "stage_1_text",
+        "object": "STAGE_1_TEXT",
+        "x": 3.1,
+        "y": 75.9,
+        "w": 24.2,
+        "h": 22.8,
+        "sample": "Сначала один рабочий регулярно опаздывал на десять минут."
+      },
+      {
+        "slot": "stage_2_text",
+        "object": "STAGE_2_TEXT",
+        "x": 29.4,
+        "y": 79.3,
+        "w": 24.2,
+        "h": 18.2,
+        "sample": "Мастер считал это мелочью и ничего не говорил."
+      },
+      {
+        "slot": "stage_3_text",
+        "object": "STAGE_3_TEXT",
+        "x": 37.8,
+        "y": 20.2,
+        "w": 21.0,
+        "h": 22.8,
+        "sample": "Через месяц опаздывали уже пятеро."
+      },
+      {
+        "slot": "outcome_text",
+        "object": "OUTCOME_TEXT",
+        "x": 61.7,
+        "y": 77.1,
+        "w": 32.3,
+        "h": 20.6,
+        "sample": "Первые сорок минут смены участок работал НЕПОЛНЫМ СОСТАВОМ."
+      },
+      {
+        "slot": "stage_4_text",
+        "object": "STAGE_4_TEXT",
+        "x": 69.6,
+        "y": 6.0,
+        "w": 24.4,
+        "h": 27.7,
+        "sample": "Через месяц опаздывали уже пятеро."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 41,
+    "templateId": "process.4.stages",
+    "groups": [
+      "process"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 7.7,
+        "y": 22.0,
+        "w": 78.1,
+        "h": 8.1,
+        "sample": "ПОРЯДОК СБОРКИ УЗЛА"
+      },
+      {
+        "slot": "step_1_title",
+        "object": "STEP_1_TITLE",
+        "x": 7.1,
+        "y": 37.0,
+        "w": 15.6,
+        "h": 4.6,
+        "sample": "ПОДГОТОВКА"
+      },
+      {
+        "slot": "step_1_number",
+        "object": "STEP_1_NUMBER",
+        "x": 11.5,
+        "y": 43.0,
+        "w": 6.8,
+        "h": 12.0,
+        "sample": "01"
+      },
+      {
+        "slot": "step_1_body",
+        "object": "STEP_1_BODY",
+        "x": 6.6,
+        "y": 57.4,
+        "w": 17.5,
+        "h": 37.6,
+        "sample": "Проверьте комплект и разложите крепёж по операциям. Проверьте комплект и разложите крепёж по операциям. | Проверьте комплект и разложите ..."
+      },
+      {
+        "slot": "step_2_title",
+        "object": "STEP_2_TITLE",
+        "x": 30.5,
+        "y": 37.0,
+        "w": 15.6,
+        "h": 4.6,
+        "sample": "СБОРКА"
+      },
+      {
+        "slot": "step_2_number",
+        "object": "STEP_2_NUMBER",
+        "x": 34.9,
+        "y": 43.0,
+        "w": 6.8,
+        "h": 12.0,
+        "sample": "02"
+      },
+      {
+        "slot": "step_2_body",
+        "object": "STEP_2_BODY",
+        "x": 30.0,
+        "y": 57.4,
+        "w": 17.5,
+        "h": 37.6,
+        "sample": "Соберите узел по схеме, без пропуска промежуточных затяжек. Проверьте комплект и разложите крепёж по операциям. | Проверьте комплект и ра..."
+      },
+      {
+        "slot": "step_3_title",
+        "object": "STEP_3_TITLE",
+        "x": 53.9,
+        "y": 37.0,
+        "w": 15.6,
+        "h": 4.6,
+        "sample": "КОНТРОЛЬ"
+      },
+      {
+        "slot": "step_3_number",
+        "object": "STEP_3_NUMBER",
+        "x": 58.3,
+        "y": 43.0,
+        "w": 6.8,
+        "h": 12.0,
+        "sample": "03"
+      },
+      {
+        "slot": "step_3_body",
+        "object": "STEP_3_BODY",
+        "x": 53.3,
+        "y": 57.4,
+        "w": 17.5,
+        "h": 37.6,
+        "sample": "Проверьте соединения, зазоры и размеры по чертежу. Проверьте комплект и разложите крепёж по операциям. | Проверьте комплект и разложите к..."
+      },
+      {
+        "slot": "step_4_title",
+        "object": "STEP_4_TITLE",
+        "x": 77.2,
+        "y": 37.0,
+        "w": 15.6,
+        "h": 4.6,
+        "sample": "ЗАПУСК"
+      },
+      {
+        "slot": "step_4_number",
+        "object": "STEP_4_NUMBER",
+        "x": 81.7,
+        "y": 43.0,
+        "w": 6.8,
+        "h": 12.0,
+        "sample": "04"
+      },
+      {
+        "slot": "step_4_body",
+        "object": "STEP_4_BODY",
+        "x": 76.7,
+        "y": 57.4,
+        "w": 17.5,
+        "h": 37.6,
+        "sample": "Настройте параметры и запустите узел в работу. Проверьте комплект и разложите крепёж по операциям. | Проверьте комплект и разложите крепё..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 42,
+    "templateId": "process.4",
+    "groups": [
+      "process"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 69.4,
+        "y": 6.4,
+        "w": 23.6,
+        "h": 6.4,
+        "sample": "ЭТАПЫ ПРОЦЕССА"
+      },
+      {
+        "slot": "step_1_title",
+        "object": "STEP_1_TITLE",
+        "x": 11.3,
+        "y": 10.7,
+        "w": 19.1,
+        "h": 4.4,
+        "sample": "Шаг 1"
+      },
+      {
+        "slot": "step_1_body",
+        "object": "STEP_1_BODY",
+        "x": 7.6,
+        "y": 15.7,
+        "w": 25.6,
+        "h": 16.8,
+        "sample": "Подготовьте материалы | и проверьте комплект Подготовьте материалы | и проверьте комплект |"
+      },
+      {
+        "slot": "step_1_number",
+        "object": "STEP_1_NUMBER",
+        "x": 16.3,
+        "y": 41.9,
+        "w": 9.2,
+        "h": 16.3,
+        "sample": "01"
+      },
+      {
+        "slot": "step_2_title",
+        "object": "STEP_2_TITLE",
+        "x": 30.7,
+        "y": 67.5,
+        "w": 19.1,
+        "h": 4.4,
+        "sample": "Шаг 2"
+      },
+      {
+        "slot": "step_2_body",
+        "object": "STEP_2_BODY",
+        "x": 26.9,
+        "y": 75.8,
+        "w": 30.0,
+        "h": 21.5,
+        "sample": "Соберите узел | по схеме Подготовьте материалы | и проверьте комплект Подготовьте материалы | и проверьте комплект |  |"
+      },
+      {
+        "slot": "step_2_number",
+        "object": "STEP_2_NUMBER",
+        "x": 35.7,
+        "y": 41.5,
+        "w": 9.2,
+        "h": 16.3,
+        "sample": "02"
+      },
+      {
+        "slot": "step_3_title",
+        "object": "STEP_3_TITLE",
+        "x": 50.1,
+        "y": 10.7,
+        "w": 19.1,
+        "h": 4.4,
+        "sample": "Шаг 3"
+      },
+      {
+        "slot": "step_3_body",
+        "object": "STEP_3_BODY",
+        "x": 46.4,
+        "y": 15.7,
+        "w": 25.6,
+        "h": 16.8,
+        "sample": "Проверьте соединения | и размеры Подготовьте материалы | и проверьте комплект |"
+      },
+      {
+        "slot": "step_3_number",
+        "object": "STEP_3_NUMBER",
+        "x": 55.1,
+        "y": 41.5,
+        "w": 9.2,
+        "h": 16.3,
+        "sample": "03"
+      },
+      {
+        "slot": "step_4_title",
+        "object": "STEP_4_TITLE",
+        "x": 69.6,
+        "y": 67.5,
+        "w": 19.1,
+        "h": 4.4,
+        "sample": "Шаг 4"
+      },
+      {
+        "slot": "step_4_body",
+        "object": "STEP_4_BODY",
+        "x": 63.0,
+        "y": 75.8,
+        "w": 30.0,
+        "h": 19.6,
+        "sample": "Настройте параметры | и запустите работу Подготовьте материалы | и проверьте комплект Подготовьте материалы | и проверьте комплект |  |"
+      },
+      {
+        "slot": "step_4_number",
+        "object": "STEP_4_NUMBER",
+        "x": 74.6,
+        "y": 41.5,
+        "w": 9.2,
+        "h": 16.3,
+        "sample": "04"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 43,
+    "templateId": "process.6",
+    "groups": [
+      "process"
+    ],
+    "slots": [
+      {
+        "slot": "step_1_number",
+        "object": "STEP_1_NUMBER",
+        "x": 10.4,
+        "y": 17.8,
+        "w": 5.4,
+        "h": 13.5,
+        "sample": "01"
+      },
+      {
+        "slot": "step_2_number",
+        "object": "STEP_2_NUMBER",
+        "x": 38.6,
+        "y": 17.8,
+        "w": 6.1,
+        "h": 13.5,
+        "sample": "02"
+      },
+      {
+        "slot": "step_3_number",
+        "object": "STEP_3_NUMBER",
+        "x": 66.7,
+        "y": 17.8,
+        "w": 6.1,
+        "h": 13.5,
+        "sample": "03"
+      },
+      {
+        "slot": "step_4_number",
+        "object": "STEP_4_NUMBER",
+        "x": 66.7,
+        "y": 55.2,
+        "w": 6.3,
+        "h": 13.5,
+        "sample": "04"
+      },
+      {
+        "slot": "step_1_body",
+        "object": "STEP_1_BODY",
+        "x": 10.4,
+        "y": 35.2,
+        "w": 26.3,
+        "h": 21.7,
+        "sample": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best bra..."
+      },
+      {
+        "slot": "step_1_title",
+        "object": "STEP_1_TITLE",
+        "x": 10.4,
+        "y": 30.3,
+        "w": 13.3,
+        "h": 5.4,
+        "sample": "ORIGINAL ARTICLES"
+      },
+      {
+        "slot": "step_2_body",
+        "object": "STEP_2_BODY",
+        "x": 38.6,
+        "y": 35.2,
+        "w": 26.3,
+        "h": 21.7,
+        "sample": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best bra..."
+      },
+      {
+        "slot": "step_2_title",
+        "object": "STEP_2_TITLE",
+        "x": 38.6,
+        "y": 30.3,
+        "w": 11.3,
+        "h": 5.4,
+        "sample": "WORK ANALYSIS"
+      },
+      {
+        "slot": "step_3_body",
+        "object": "STEP_3_BODY",
+        "x": 66.7,
+        "y": 35.2,
+        "w": 26.3,
+        "h": 21.7,
+        "sample": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best bra..."
+      },
+      {
+        "slot": "step_3_title",
+        "object": "STEP_3_TITLE",
+        "x": 66.7,
+        "y": 30.3,
+        "w": 9.9,
+        "h": 5.4,
+        "sample": "WORK DESIGN"
+      },
+      {
+        "slot": "step_4_body",
+        "object": "STEP_4_BODY",
+        "x": 66.7,
+        "y": 73.5,
+        "w": 26.3,
+        "h": 21.7,
+        "sample": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best bra..."
+      },
+      {
+        "slot": "step_4_title",
+        "object": "STEP_4_TITLE",
+        "x": 66.7,
+        "y": 68.1,
+        "w": 10.5,
+        "h": 5.4,
+        "sample": "TEXT ANALYSIS"
+      },
+      {
+        "slot": "step_5_number",
+        "object": "STEP_5_NUMBER",
+        "x": 38.6,
+        "y": 55.2,
+        "w": 6.2,
+        "h": 13.5,
+        "sample": "05"
+      },
+      {
+        "slot": "step_5_body",
+        "object": "STEP_5_BODY",
+        "x": 38.6,
+        "y": 73.5,
+        "w": 26.3,
+        "h": 21.7,
+        "sample": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best bra..."
+      },
+      {
+        "slot": "step_5_title",
+        "object": "STEP_5_TITLE",
+        "x": 38.6,
+        "y": 68.1,
+        "w": 12.3,
+        "h": 5.4,
+        "sample": "MARKET INSIGHTS"
+      },
+      {
+        "slot": "step_6_number",
+        "object": "STEP_6_NUMBER",
+        "x": 10.4,
+        "y": 55.2,
+        "w": 6.1,
+        "h": 13.5,
+        "sample": "06"
+      },
+      {
+        "slot": "step_6_body",
+        "object": "STEP_6_BODY",
+        "x": 10.4,
+        "y": 73.5,
+        "w": 26.3,
+        "h": 21.7,
+        "sample": "Satisfied and well-taken-care-of customers can be the best brand ambassadors. On the other hand, neglected. customers can be the best bra..."
+      },
+      {
+        "slot": "step_6_title",
+        "object": "STEP_6_TITLE",
+        "x": 10.4,
+        "y": 68.1,
+        "w": 9.1,
+        "h": 5.4,
+        "sample": "PRODUCTION"
+      },
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": -0.8,
+        "y": 3.5,
+        "w": 23.6,
+        "h": 6.4,
+        "sample": "ЭТАПЫ ПРОЦЕССА"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 44,
+    "templateId": "process.cards.4",
+    "groups": [
+      "process"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": -2.3,
+        "y": 5.1,
+        "w": 23.6,
+        "h": 6.4,
+        "sample": "ЭТАПЫ ПРОЦЕССА"
+      },
+      {
+        "slot": "card_1_title",
+        "object": "CARD_1_TITLE",
+        "x": 18.0,
+        "y": 71.5,
+        "w": 12.4,
+        "h": 5.4,
+        "sample": "STRATEGIC PLANS"
+      },
+      {
+        "slot": "card_1_body",
+        "object": "CARD_1_BODY",
+        "x": 11.7,
+        "y": 76.3,
+        "w": 25.8,
+        "h": 21.5,
+        "sample": "This is the sample Dummy Text | insert your desired text here because | this is the dummy textThis is the sample Dummy Text | insert your..."
+      },
+      {
+        "slot": "card_2_title",
+        "object": "CARD_2_TITLE",
+        "x": 38.3,
+        "y": 7.2,
+        "w": 9.5,
+        "h": 5.4,
+        "sample": "PAID SEARCH"
+      },
+      {
+        "slot": "card_2_body",
+        "object": "CARD_2_BODY",
+        "x": 30.2,
+        "y": 12.6,
+        "w": 25.8,
+        "h": 25.1,
+        "sample": "This is the sample Dummy Text | insert your desired text here because | this is the dummy textThis is the sample Dummy Text | insert your..."
+      },
+      {
+        "slot": "card_3_title",
+        "object": "CARD_3_TITLE",
+        "x": 55.6,
+        "y": 71.5,
+        "w": 11.5,
+        "h": 5.4,
+        "sample": "TACTICAL PLANS"
+      },
+      {
+        "slot": "card_3_body",
+        "object": "CARD_3_BODY",
+        "x": 48.7,
+        "y": 76.3,
+        "w": 25.8,
+        "h": 21.5,
+        "sample": "This is the sample Dummy Text | insert your desired text here because | this is the dummy textThis is the sample Dummy Text | insert your..."
+      },
+      {
+        "slot": "card_4_title",
+        "object": "CARD_4_TITLE",
+        "x": 74.2,
+        "y": 7.2,
+        "w": 11.9,
+        "h": 5.4,
+        "sample": "LAND NURTURING"
+      },
+      {
+        "slot": "card_4_body",
+        "object": "CARD_4_BODY",
+        "x": 67.3,
+        "y": 12.6,
+        "w": 25.8,
+        "h": 25.1,
+        "sample": "This is the sample Dummy Text | insert your desired text here because | this is the dummy text This is the sample Dummy Text | insert you..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 45,
+    "templateId": "process.4.detailed",
+    "groups": [
+      "process"
+    ],
+    "slots": [
+      {
+        "slot": "step_1_detail_title",
+        "object": "STEP_1_DETAIL_TITLE",
+        "x": 10.2,
+        "y": 61.3,
+        "w": 14.9,
+        "h": 4.7,
+        "sample": "TITLE TEXT HERE"
+      },
+      {
+        "slot": "step_1_body",
+        "object": "STEP_1_BODY",
+        "x": 7.4,
+        "y": 65.6,
+        "w": 19.7,
+        "h": 31.7,
+        "sample": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit am..."
+      },
+      {
+        "slot": "step_1_label",
+        "object": "STEP_1_LABEL",
+        "x": 12.4,
+        "y": 40.6,
+        "w": 10.6,
+        "h": 9.4,
+        "sample": "PROCESS STEP | 01"
+      },
+      {
+        "slot": "step_2_label",
+        "object": "STEP_2_LABEL",
+        "x": 33.0,
+        "y": 40.6,
+        "w": 10.6,
+        "h": 9.4,
+        "sample": "PROCESS STEP | 02"
+      },
+      {
+        "slot": "step_3_label",
+        "object": "STEP_3_LABEL",
+        "x": 53.4,
+        "y": 40.6,
+        "w": 10.6,
+        "h": 9.4,
+        "sample": "PROCESS STEP | 03"
+      },
+      {
+        "slot": "step_4_label",
+        "object": "STEP_4_LABEL",
+        "x": 73.6,
+        "y": 40.6,
+        "w": 10.6,
+        "h": 9.4,
+        "sample": "PROCESS STEP | 03"
+      },
+      {
+        "slot": "step_2_detail_title",
+        "object": "STEP_2_DETAIL_TITLE",
+        "x": 30.9,
+        "y": 61.3,
+        "w": 14.9,
+        "h": 4.7,
+        "sample": "TITLE TEXT HERE"
+      },
+      {
+        "slot": "step_2_body",
+        "object": "STEP_2_BODY",
+        "x": 28.0,
+        "y": 65.6,
+        "w": 19.7,
+        "h": 31.7,
+        "sample": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit am..."
+      },
+      {
+        "slot": "step_3_detail_title",
+        "object": "STEP_3_DETAIL_TITLE",
+        "x": 51.2,
+        "y": 61.3,
+        "w": 14.9,
+        "h": 4.7,
+        "sample": "TITLE TEXT HERE"
+      },
+      {
+        "slot": "step_3_body",
+        "object": "STEP_3_BODY",
+        "x": 48.4,
+        "y": 65.6,
+        "w": 19.7,
+        "h": 31.7,
+        "sample": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit am..."
+      },
+      {
+        "slot": "step_4_detail_title",
+        "object": "STEP_4_DETAIL_TITLE",
+        "x": 71.4,
+        "y": 61.3,
+        "w": 14.9,
+        "h": 4.7,
+        "sample": "TITLE TEXT HERE"
+      },
+      {
+        "slot": "step_4_body",
+        "object": "STEP_4_BODY",
+        "x": 68.6,
+        "y": 65.6,
+        "w": 19.7,
+        "h": 31.7,
+        "sample": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit am..."
+      },
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 69.4,
+        "y": 6.4,
+        "w": 23.6,
+        "h": 6.4,
+        "sample": "ЭТАПЫ ПРОЦЕССА"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 46,
+    "templateId": "process.3.detailed",
+    "groups": [
+      "process"
+    ],
+    "slots": [
+      {
+        "slot": "step_1_detail_title",
+        "object": "STEP_1_DETAIL_TITLE",
+        "x": 11.6,
+        "y": 61.3,
+        "w": 14.9,
+        "h": 4.7,
+        "sample": "TITLE TEXT HERE"
+      },
+      {
+        "slot": "step_1_body",
+        "object": "STEP_1_BODY",
+        "x": 7.9,
+        "y": 65.6,
+        "w": 23.6,
+        "h": 31.7,
+        "sample": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit am..."
+      },
+      {
+        "slot": "step_1_label",
+        "object": "STEP_1_LABEL",
+        "x": 13.8,
+        "y": 40.6,
+        "w": 10.6,
+        "h": 9.4,
+        "sample": "PROCESS STEP | 01"
+      },
+      {
+        "slot": "step_2_label",
+        "object": "STEP_2_LABEL",
+        "x": 44.5,
+        "y": 40.6,
+        "w": 10.6,
+        "h": 9.4,
+        "sample": "PROCESS STEP | 02"
+      },
+      {
+        "slot": "step_3_label",
+        "object": "STEP_3_LABEL",
+        "x": 74.9,
+        "y": 40.6,
+        "w": 10.6,
+        "h": 9.4,
+        "sample": "PROCESS STEP | 03"
+      },
+      {
+        "slot": "step_2_detail_title",
+        "object": "STEP_2_DETAIL_TITLE",
+        "x": 42.3,
+        "y": 61.3,
+        "w": 14.9,
+        "h": 4.7,
+        "sample": "TITLE TEXT HERE"
+      },
+      {
+        "slot": "step_2_body",
+        "object": "STEP_2_BODY",
+        "x": 38.6,
+        "y": 65.6,
+        "w": 23.6,
+        "h": 31.7,
+        "sample": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit am..."
+      },
+      {
+        "slot": "step_3_detail_title",
+        "object": "STEP_3_DETAIL_TITLE",
+        "x": 72.8,
+        "y": 61.3,
+        "w": 14.9,
+        "h": 4.7,
+        "sample": "TITLE TEXT HERE"
+      },
+      {
+        "slot": "step_3_body",
+        "object": "STEP_3_BODY",
+        "x": 69.1,
+        "y": 65.6,
+        "w": 23.6,
+        "h": 31.7,
+        "sample": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor is incididunt ut labore et dolore Lorem ipsum dolor sit am..."
+      },
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 69.4,
+        "y": 6.4,
+        "w": 23.6,
+        "h": 6.4,
+        "sample": "ЭТАПЫ ПРОЦЕССА"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 47,
+    "templateId": "statistics.3",
+    "groups": [
+      "data"
+    ],
+    "slots": [
+      {
+        "slot": "metric_1_title",
+        "object": "METRIC_1_TITLE",
+        "x": 20.4,
+        "y": 17.8,
+        "w": 5.3,
+        "h": 4.7,
+        "sample": "BUDGET"
+      },
+      {
+        "slot": "metric_1_body",
+        "object": "METRIC_1_BODY",
+        "x": 20.4,
+        "y": 22.6,
+        "w": 28.0,
+        "h": 19.4,
+        "sample": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here..."
+      },
+      {
+        "slot": "metric_1_value",
+        "object": "METRIC_1_VALUE",
+        "x": 11.1,
+        "y": 17.0,
+        "w": 6.5,
+        "h": 6.3,
+        "sample": "$ 4.7M"
+      },
+      {
+        "slot": "metric_2_title",
+        "object": "METRIC_2_TITLE",
+        "x": 20.4,
+        "y": 41.3,
+        "w": 6.6,
+        "h": 4.7,
+        "sample": "SPENDING"
+      },
+      {
+        "slot": "metric_2_body",
+        "object": "METRIC_2_BODY",
+        "x": 20.4,
+        "y": 46.2,
+        "w": 28.0,
+        "h": 19.4,
+        "sample": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here..."
+      },
+      {
+        "slot": "metric_2_value",
+        "object": "METRIC_2_VALUE",
+        "x": 11.1,
+        "y": 40.5,
+        "w": 6.5,
+        "h": 6.3,
+        "sample": "$ 3.5M"
+      },
+      {
+        "slot": "metric_3_title",
+        "object": "METRIC_3_TITLE",
+        "x": 20.4,
+        "y": 64.8,
+        "w": 5.2,
+        "h": 4.7,
+        "sample": "SAVING"
+      },
+      {
+        "slot": "metric_3_body",
+        "object": "METRIC_3_BODY",
+        "x": 20.4,
+        "y": 69.7,
+        "w": 28.0,
+        "h": 19.4,
+        "sample": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here..."
+      },
+      {
+        "slot": "metric_3_value",
+        "object": "METRIC_3_VALUE",
+        "x": 12.4,
+        "y": 64.1,
+        "w": 5.2,
+        "h": 6.3,
+        "sample": "$ 5M"
+      },
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 61.7,
+        "y": 6.4,
+        "w": 31.3,
+        "h": 6.4,
+        "sample": "ЦИФРЫ ИССЛЕДОВАНИЯ"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 48,
+    "templateId": "statistics.4",
+    "groups": [
+      "data"
+    ],
+    "slots": [
+      {
+        "slot": "metric_1_title",
+        "object": "METRIC_1_TITLE",
+        "x": 17.6,
+        "y": 7.2,
+        "w": 5.3,
+        "h": 4.7,
+        "sample": "BUDGET"
+      },
+      {
+        "slot": "metric_1_body",
+        "object": "METRIC_1_BODY",
+        "x": 17.6,
+        "y": 12.0,
+        "w": 34.2,
+        "h": 16.5,
+        "sample": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here..."
+      },
+      {
+        "slot": "metric_1_value",
+        "object": "METRIC_1_VALUE",
+        "x": 8.2,
+        "y": 6.4,
+        "w": 6.5,
+        "h": 6.3,
+        "sample": "$ 4.7M"
+      },
+      {
+        "slot": "metric_2_title",
+        "object": "METRIC_2_TITLE",
+        "x": 17.6,
+        "y": 30.7,
+        "w": 6.6,
+        "h": 4.7,
+        "sample": "SPENDING"
+      },
+      {
+        "slot": "metric_2_body",
+        "object": "METRIC_2_BODY",
+        "x": 17.6,
+        "y": 35.6,
+        "w": 34.2,
+        "h": 16.5,
+        "sample": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here..."
+      },
+      {
+        "slot": "metric_2_value",
+        "object": "METRIC_2_VALUE",
+        "x": 8.2,
+        "y": 29.9,
+        "w": 6.5,
+        "h": 6.3,
+        "sample": "$ 3.5M"
+      },
+      {
+        "slot": "metric_3_title",
+        "object": "METRIC_3_TITLE",
+        "x": 17.6,
+        "y": 54.2,
+        "w": 5.2,
+        "h": 4.7,
+        "sample": "SAVING"
+      },
+      {
+        "slot": "metric_3_body",
+        "object": "METRIC_3_BODY",
+        "x": 17.6,
+        "y": 59.1,
+        "w": 34.2,
+        "h": 16.5,
+        "sample": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here..."
+      },
+      {
+        "slot": "metric_3_value",
+        "object": "METRIC_3_VALUE",
+        "x": 9.5,
+        "y": 53.5,
+        "w": 5.2,
+        "h": 6.3,
+        "sample": "$ 5M"
+      },
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 61.7,
+        "y": 6.4,
+        "w": 31.3,
+        "h": 6.4,
+        "sample": "ЦИФРЫ ИССЛЕДОВАНИЯ"
+      },
+      {
+        "slot": "metric_4_title",
+        "object": "METRIC_4_TITLE",
+        "x": 17.6,
+        "y": 76.3,
+        "w": 5.2,
+        "h": 4.7,
+        "sample": "SAVING"
+      },
+      {
+        "slot": "metric_4_body",
+        "object": "METRIC_4_BODY",
+        "x": 17.6,
+        "y": 81.2,
+        "w": 34.2,
+        "h": 16.5,
+        "sample": "This is the sample Dummy Text insert your desired text here because this the. This is the sample Dummy Text insert your desired text here..."
+      },
+      {
+        "slot": "metric_4_value",
+        "object": "METRIC_4_VALUE",
+        "x": 9.5,
+        "y": 75.5,
+        "w": 5.2,
+        "h": 6.3,
+        "sample": "$ 5M"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 49,
+    "templateId": "timeline.5",
+    "groups": [
+      "process"
+    ],
+    "slots": [
+      {
+        "slot": "title",
+        "object": "TITLE",
+        "x": 61.7,
+        "y": 6.4,
+        "w": 31.3,
+        "h": 6.4,
+        "sample": "ТАЙМЛАЙН"
+      },
+      {
+        "slot": "event_1_title",
+        "object": "EVENT_1_TITLE",
+        "x": 15.8,
+        "y": 66.9,
+        "w": 8.5,
+        "h": 4.9,
+        "sample": "DESCRIPTION"
+      },
+      {
+        "slot": "event_1_body",
+        "object": "EVENT_1_BODY",
+        "x": 11.5,
+        "y": 71.9,
+        "w": 17.3,
+        "h": 25.3,
+        "sample": "Placeholder document  | design, Lorem ipsum use ipsum | placeholder text. Placeholder document  | design, Lorem ipsum use ipsum | placeho..."
+      },
+      {
+        "slot": "event_2_title",
+        "object": "EVENT_2_TITLE",
+        "x": 30.4,
+        "y": 5.8,
+        "w": 8.5,
+        "h": 4.9,
+        "sample": "DESCRIPTION"
+      },
+      {
+        "slot": "event_2_body",
+        "object": "EVENT_2_BODY",
+        "x": 26.4,
+        "y": 10.7,
+        "w": 17.3,
+        "h": 27.3,
+        "sample": "Placeholder document  | design, Lorem ipsum use ipsum | placeholder text."
+      },
+      {
+        "slot": "event_3_title",
+        "object": "EVENT_3_TITLE",
+        "x": 45.7,
+        "y": 66.9,
+        "w": 8.5,
+        "h": 4.9,
+        "sample": "DESCRIPTION"
+      },
+      {
+        "slot": "event_3_body",
+        "object": "EVENT_3_BODY",
+        "x": 41.4,
+        "y": 71.9,
+        "w": 17.3,
+        "h": 25.3,
+        "sample": "Placeholder document  | design, Lorem ipsum use ipsum | placeholder text. Placeholder document  | design, Lorem ipsum use ipsum | placeho..."
+      },
+      {
+        "slot": "event_4_title",
+        "object": "EVENT_4_TITLE",
+        "x": 60.9,
+        "y": 5.8,
+        "w": 8.5,
+        "h": 4.9,
+        "sample": "DESCRIPTION"
+      },
+      {
+        "slot": "event_4_body",
+        "object": "EVENT_4_BODY",
+        "x": 56.3,
+        "y": 11.3,
+        "w": 17.3,
+        "h": 26.7,
+        "sample": "Placeholder document  | design, Lorem ipsum use ipsum | placeholder text."
+      },
+      {
+        "slot": "event_5_title",
+        "object": "EVENT_5_TITLE",
+        "x": 75.6,
+        "y": 66.9,
+        "w": 8.5,
+        "h": 4.9,
+        "sample": "DESCRIPTION"
+      },
+      {
+        "slot": "event_5_body",
+        "object": "EVENT_5_BODY",
+        "x": 72.1,
+        "y": 71.9,
+        "w": 17.3,
+        "h": 25.3,
+        "sample": "Placeholder document  | design, Lorem ipsum use ipsum | placeholder text. Placeholder document  | design, Lorem ipsum use ipsum | placeho..."
+      }
+    ]
+  },
+  {
+    "sourceSlide": 50,
+    "templateId": "staging.interaction",
+    "groups": [
+      "staging"
+    ],
+    "slots": [
+      {
+        "slot": "body",
+        "object": "STAGING_BODY",
+        "x": 2.7,
+        "y": 5.6,
+        "w": 93.8,
+        "h": 90.6,
+        "sample": "Здесь текст"
+      }
+    ]
+  }
+]

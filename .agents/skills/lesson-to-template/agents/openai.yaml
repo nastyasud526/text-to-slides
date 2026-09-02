@@ -1,0 +1,6 @@
+interface:
+  display_name: "Исполнитель презентации урока"
+  short_description: "Спланировать или собрать переданный фрагмент"
+  default_prompt: "Используй $lesson-to-template для переданной оркестратором операции plan или build."
+policy:
+  allow_implicit_invocation: false
