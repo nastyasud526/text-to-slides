@@ -345,7 +345,7 @@ function speakerNotesWithAppendedText(notesXml, text) {
   const txBodyStart = body.xml.indexOf("<p:txBody");
   if (txBodyStart < 0) throw new Error("Notes body has no text frame.");
   const txBodyEnd = findMatchingElement(body.xml, txBodyStart, "p:txBody");
-  const paragraphs = normalize(text).split("\n").map((line) => `<a:p><a:r><a:rPr lang="ru-RU"/><a:t>${escapeXml(line)}</a:t></a:r><a:endParaRPr lang="ru-RU"/></a:p>`).join("");
+  const paragraphs = normalize(text).split("\n").map((line) => `<a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:r><a:rPr lang="ru-RU"/><a:t>${escapeXml(line)}</a:t></a:r><a:endParaRPr lang="ru-RU"/></a:p>`).join("");
   const updatedBody = `${body.xml.slice(0, txBodyEnd - "</p:txBody>".length)}${paragraphs}</p:txBody>${body.xml.slice(txBodyEnd)}`;
   return `${notesXml.slice(0, body.start)}${updatedBody}${notesXml.slice(body.end)}`;
 }

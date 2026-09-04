@@ -95,11 +95,103 @@ function capacity(value, label) {
   }
 }
 
-function semanticSelection(value, label, requiresFallback) {
+function sourceReading(value, label) {
   object(value, label);
-  nonEmptyString(value.learningGoal, `${label}.learningGoal`);
-  nonEmptyString(value.structure, `${label}.structure`);
+  nonEmptyString(value.function, `${label}.function`);
+  if (!Array.isArray(value.units) || !value.units.length) throw new Error(`${label}.units must be a non-empty array`);
+  value.units.forEach((unit, index) => nonEmptyString(unit, `${label}.units[${index}]`));
+  nonEmptyString(value.relationships, `${label}.relationships`);
+  if (value.excludedNotes !== undefined) {
+    if (!Array.isArray(value.excludedNotes)) throw new Error(`${label}.excludedNotes must be an array when present`);
+    value.excludedNotes.forEach((note, index) => nonEmptyString(note, `${label}.excludedNotes[${index}]`));
+  }
+}
+
+
+const PRIMARY_RELATION_TYPES = new Set([
+  "comparison",
+  "cause-effect",
+  "sequence",
+  "complementary",
+  "composition",
+  "classification",
+  "rule-example",
+  "situation-solution",
+  "none",
+  "uncertain"
+]);
+
+function ledgerRelation(value, label, primary) {
+  object(value, label);
+  nonEmptyString(value.type, `${label}.type`);
+  if (primary && !PRIMARY_RELATION_TYPES.has(value.type)) {
+    throw new Error(`${label}.type must be one of: ${[...PRIMARY_RELATION_TYPES].join(", ")}`);
+  }
+  if (!Array.isArray(value.evidence) || !value.evidence.length) throw new Error(`${label}.evidence must be a non-empty array`);
+  value.evidence.forEach((fragment, index) => nonEmptyString(fragment, `${label}.evidence[${index}]`));
+  nonEmptyString(primary ? value.whyPrimary : value.whyPresent, `${label}.${primary ? "whyPrimary" : "whyPresent"}`);
+}
+
+export function validateReadingLedger(ledger) {
+  object(ledger, "readingLedger");
+  if (ledger.version !== 1) throw new Error("readingLedger.version must equal 1");
+  nonEmptyString(ledger.lessonTitle, "readingLedger.lessonTitle");
+  if (!Array.isArray(ledger.slides) || !ledger.slides.length) throw new Error("readingLedger.slides must be a non-empty array");
+  const sourceSlides = new Set();
+  ledger.slides.forEach((entry, index) => {
+    object(entry, `readingLedger.slides[${index}]`);
+    integer(entry.sourceSlide, `readingLedger.slides[${index}].sourceSlide`, 1);
+    if (sourceSlides.has(entry.sourceSlide)) throw new Error(`readingLedger contains duplicate sourceSlide ${entry.sourceSlide}`);
+    sourceSlides.add(entry.sourceSlide);
+    nonEmptyString(entry.sourceText, `readingLedger.slides[${index}].sourceText`);
+    const reading = entry.reading;
+    object(reading, `readingLedger.slides[${index}].reading`);
+    nonEmptyString(reading.function, `readingLedger.slides[${index}].reading.function`);
+    nonEmptyString(reading.keyMessage, `readingLedger.slides[${index}].reading.keyMessage`);
+    if (!Array.isArray(reading.units) || !reading.units.length) throw new Error(`readingLedger.slides[${index}].reading.units must be a non-empty array`);
+    reading.units.forEach((unit, unitIndex) => {
+      object(unit, `readingLedger.slides[${index}].reading.units[${unitIndex}]`);
+      nonEmptyString(unit.text, `readingLedger.slides[${index}].reading.units[${unitIndex}].text`);
+      nonEmptyString(unit.role, `readingLedger.slides[${index}].reading.units[${unitIndex}].role`);
+      nonEmptyString(unit.level, `readingLedger.slides[${index}].reading.units[${unitIndex}].level`);
+    });
+    object(reading.framing, `readingLedger.slides[${index}].reading.framing`);
+    for (const field of ["intro", "conclusion"]) {
+      if (!Array.isArray(reading.framing[field])) throw new Error(`readingLedger.slides[${index}].reading.framing.${field} must be an array`);
+      reading.framing[field].forEach((fragment, fragmentIndex) => nonEmptyString(fragment, `readingLedger.slides[${index}].reading.framing.${field}[${fragmentIndex}]`));
+    }
+    object(reading.relationships, `readingLedger.slides[${index}].reading.relationships`);
+    ledgerRelation(reading.relationships.primary, `readingLedger.slides[${index}].reading.relationships.primary`, true);
+    if (!Array.isArray(reading.relationships.secondary)) throw new Error(`readingLedger.slides[${index}].reading.relationships.secondary must be an array`);
+    reading.relationships.secondary.forEach((relation, relationIndex) => ledgerRelation(relation, `readingLedger.slides[${index}].reading.relationships.secondary[${relationIndex}]`, false));
+    if (reading.excludedNotes !== undefined) {
+      if (!Array.isArray(reading.excludedNotes)) throw new Error(`readingLedger.slides[${index}].reading.excludedNotes must be an array`);
+      reading.excludedNotes.forEach((note, noteIndex) => nonEmptyString(note, `readingLedger.slides[${index}].reading.excludedNotes[${noteIndex}]`));
+    }
+  });
+  return ledger;
+}
+
+export function planReadingFromLedger(entry) {
+  const primary = entry.reading.relationships.primary;
+  const secondary = entry.reading.relationships.secondary.map((relation) => `Вторичная связь: ${relation.type}. ${relation.whyPresent}`);
+  return {
+    function: entry.reading.function,
+    units: entry.reading.units.map((unit) => unit.text),
+    relationships: [`Главная связь: ${primary.type}. ${primary.whyPrimary}`, ...secondary].join(" "),
+    excludedNotes: entry.reading.excludedNotes ?? []
+  };
+}
+
+function semanticSelection(value, label, requiresFallback, requiresCardsReason, requiresInteractionReason) {
+  object(value, label);
   nonEmptyString(value.rationale, `${label}.rationale`);
+  if (requiresCardsReason) {
+    object(value.cardsReason, `${label}.cardsReason`);
+    nonEmptyString(value.cardsReason.independence, `${label}.cardsReason.independence`);
+    nonEmptyString(value.cardsReason.commonLevel, `${label}.cardsReason.commonLevel`);
+  }
+  if (requiresInteractionReason) nonEmptyString(value.learnerAction, `${label}.learnerAction`);
   if (!requiresFallback) return;
   object(value.fallback, `${label}.fallback`);
   nonEmptyString(value.fallback.neededStructure, `${label}.fallback.neededStructure`);
@@ -197,7 +289,14 @@ export function validatePlan(plan, catalog) {
     if (item.kind === "content") {
       integer(item.sourceSlide, `plan.slides[${index}].sourceSlide`, 1);
       nonEmptyString(item.sourceText, `plan.slides[${index}].sourceText`);
-      semanticSelection(item.selection, `plan.slides[${index}].selection`, spec.templateId === "text.plain");
+      sourceReading(item.reading, `plan.slides[${index}].reading`);
+      semanticSelection(
+        item.selection,
+        `plan.slides[${index}].selection`,
+        spec.templateId === "text.plain",
+        spec.templateId.startsWith("cards."),
+        isInteractionStaging
+      );
       if (item.interactive === true && !isInteractionStaging) throw new Error(`plan.slides[${index}] interactive content must use an interactive-staging composition`);
       if (isInteractionStaging && item.interactive !== true) throw new Error(`plan.slides[${index}] interactive-staging composition requires interactive: true`);
       if (isInteractionStaging && spec.templateId === "staging.blank") throw new Error(`plan.slides[${index}] interaction must not use dialogue-only staging.blank`);
