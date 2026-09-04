@@ -3,4 +3,4 @@ interface:
   short_description: "Создать сцену разговора по конфигурации курса"
   default_prompt: "Используй $dialogue-scenes, чтобы создать диалоговую сцену по данным course.yaml и сохранить её по указанному пути текущего запуска."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

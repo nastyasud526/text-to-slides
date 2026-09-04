@@ -5,8 +5,11 @@ import { resolveTemplate, validateCatalog, validatePlan } from "./validate.mjs";
 import { patchPptxTextRuns } from "./patch_text_runs.mjs";
 import { preflightLibrary } from "./preflight_library.mjs";
 
-const [source, catalogPath, planPath, out] = process.argv.slice(2);
-if (!source || !catalogPath || !planPath || !out) usage("build_presentation.mjs", "<template.pptx> <catalog.json> <lesson-plan.json> <output.pptx>");
+const argv = process.argv.slice(2);
+const requireScenes = argv.includes("--require-scenes");
+const [source, catalogPath, planPath, out] = argv.filter((a) => a !== "--require-scenes");
+if (!source || !catalogPath || !planPath || !out) usage("build_presentation.mjs", "<template.pptx> <catalog.json> <lesson-plan.json> <output.pptx> [--require-scenes]");
+const missingScenes = [];
 const catalog = validateCatalog(JSON.parse(await fs.readFile(catalogPath, "utf8")));
 const plan = validatePlan(JSON.parse(await fs.readFile(planPath, "utf8")), catalog);
 await preflightLibrary(source, catalog);
@@ -30,11 +33,19 @@ const uppercaseSlotValue = (value) => typeof value === "string"
   if (sourceTemplate.sourceSlide > originals.length) throw new Error(`plan.slides[${planIndex}] points to missing source slide ${sourceTemplate.sourceSlide}`);
   const clone = originals[sourceTemplate.sourceSlide - 1].duplicate();
   if (item.kind === "dialogue") {
-    dialogueOperations.push({
-      slideIndex: planIndex + 1,
-      objectName: "DIALOGUE_SCENE",
-      imagePath: path.resolve(path.dirname(planPath), item.scenePath)
-    });
+    const imagePath = path.resolve(path.dirname(planPath), item.scenePath);
+    const exists = await fs.access(imagePath).then(() => true, () => false);
+    if (exists) {
+      dialogueOperations.push({ slideIndex: planIndex + 1, objectName: "DIALOGUE_SCENE", imagePath });
+    } else if (requireScenes) {
+      throw new Error(`plan.slides[${planIndex}]: dialogue scene ${item.scenePath} is missing`);
+    } else {
+      // Build without the picture: the slide keeps the dialogue text in its service field and a note
+      // tells the author which scene is still to be generated. Re-running the build after the
+      // scenes step embeds the pictures without changing anything else.
+      missingScenes.push({ slide: planIndex + 1, scenePath: item.scenePath });
+      speakerNoteOperations.push({ slideIndex: planIndex + 1, text: `СЦЕНА НЕ СГЕНЕРИРОВАНА\n${item.scenePath}` });
+    }
   }
   for (const [slot, value] of Object.entries(item.slots)) {
     const finalValue = isHeadingSlot(slot) ? uppercaseSlotValue(value) : value;
@@ -63,4 +74,8 @@ for (let index = originals.length - 1; index >= 0; index -= 1) originals[index].
 for (const [index, slide] of outputSlides.entries()) slide.moveTo(index);
 await (await PresentationFile.exportPptx(deck)).save(out);
   await patchPptxTextRuns(out, textPatches, stripOperations, imagePatches, dialogueOperations, speakerNoteOperations);
-console.log(`Created ${outputSlides.length} slides from selected templates only, including ${dialogueOperations.length} dialogue slide(s) assembled from the dialogue template.`);
+console.log(`Created ${outputSlides.length} slides from selected templates only, including ${dialogueOperations.length} dialogue slide(s) with scenes and ${missingScenes.length} dialogue slide(s) awaiting a scene.`);
+if (missingScenes.length) {
+  await fs.writeFile(`${out}.missing-scenes.json`, `${JSON.stringify(missingScenes, null, 2)}\n`, "utf8");
+  for (const m of missingScenes) console.log(`  slide ${m.slide}: scene pending ${m.scenePath}`);
+}

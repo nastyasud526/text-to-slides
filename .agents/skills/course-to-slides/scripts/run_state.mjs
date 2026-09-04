@@ -7,9 +7,9 @@ const STAGES = [
   "initialized",
   "source_ready",
   "plan_ready",
-  "assets_ready",
   "presentation_built",
-  "verified"
+  "verified",
+  "assets_ready"
 ];
 
 const STAGE_STATUSES = new Set(["pending", "in_progress", "complete", "waiting_for_input", "failed"]);

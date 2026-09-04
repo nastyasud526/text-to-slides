@@ -1,3 +1,4 @@
+import { PRIMARY_TYPES, primaryFromAnswers } from "./bridge.mjs";
 function object(value, label) {
   if (!value || Array.isArray(value) || typeof value !== "object") throw new Error(`${label} must be an object`);
 }
@@ -132,17 +133,75 @@ function ledgerRelation(value, label, primary) {
   nonEmptyString(primary ? value.whyPrimary : value.whyPresent, `${label}.${primary ? "whyPrimary" : "whyPresent"}`);
 }
 
-export function validateReadingLedger(ledger) {
-  object(ledger, "readingLedger");
-  if (ledger.version !== 1) throw new Error("readingLedger.version must equal 1");
-  nonEmptyString(ledger.lessonTitle, "readingLedger.lessonTitle");
-  if (!Array.isArray(ledger.slides) || !ledger.slides.length) throw new Error("readingLedger.slides must be a non-empty array");
+const ANSWER_KEYS = ["chain", "sides", "research", "list", "definition", "example", "conclusion"];
+
+function stringArray(value, label, required = false) {
+  if (value === undefined) {
+    if (required) throw new Error(`${label} is required`);
+    return;
+  }
+  if (!Array.isArray(value)) throw new Error(`${label} must be an array`);
+  value.forEach((item, index) => nonEmptyString(item, `${label}[${index}]`));
+}
+
+function validateAnswers(answers, label) {
+  object(answers, label);
+  for (const key of ANSWER_KEYS) {
+    const a = answers[key];
+    object(a, `${label}.${key}`);
+    if (typeof a.answer !== "boolean") throw new Error(`${label}.${key}.answer must be true or false`);
+    if (!a.answer) continue;
+    switch (key) {
+      case "chain":
+        stringArray(a.links, `${label}.chain.links`, true);
+        if (a.links.length < 2) throw new Error(`${label}.chain.links needs at least two links`);
+        if (a.outcome !== undefined) nonEmptyString(a.outcome, `${label}.chain.outcome`);
+        break;
+      case "sides":
+        if (a.kind !== "poor-good" && a.kind !== "two-sides") throw new Error(`${label}.sides.kind must be poor-good or two-sides`);
+        stringArray(a.left, `${label}.sides.left`, true);
+        stringArray(a.right, `${label}.sides.right`, true);
+        break;
+      case "list":
+        integer(a.count, `${label}.list.count`, 2);
+        if (typeof a.ordered !== "boolean") throw new Error(`${label}.list.ordered must be true or false`);
+        stringArray(a.items, `${label}.list.items`, true);
+        if (a.items.length !== a.count) throw new Error(`${label}.list.items must contain exactly count=${a.count} fragments`);
+        break;
+      default:
+        stringArray(a.evidence, `${label}.${key}.evidence`, true);
+    }
+  }
+}
+
+function validateLedgerV2(ledger) {
+  ledger.slides.forEach((entry, index) => {
+    const label = `readingLedger.slides[${index}]`;
+    object(entry, label);
+    integer(entry.sourceSlide, `${label}.sourceSlide`, 1);
+    nonEmptyString(entry.sourceText, `${label}.sourceText`);
+    if (entry.authorType !== undefined && entry.authorType !== null) nonEmptyString(entry.authorType, `${label}.authorType`);
+    const r = entry.reading;
+    object(r, `${label}.reading`);
+    nonEmptyString(r.function, `${label}.reading.function`);
+    nonEmptyString(r.keyMessage, `${label}.reading.keyMessage`);
+    validateAnswers(r.answers, `${label}.reading.answers`);
+    stringArray(r.intro, `${label}.reading.intro`);
+    nonEmptyString(r.primary, `${label}.reading.primary`);
+    if (!PRIMARY_TYPES.includes(r.primary)) throw new Error(`${label}.reading.primary must be one of: ${PRIMARY_TYPES.join(", ")}`);
+    const derived = primaryFromAnswers(r.answers);
+    if (!["checklist", "statistics"].includes(r.primary) && derived !== r.primary) {
+      throw new Error(`${label}.reading.primary is ${r.primary} but the answers imply ${derived}; fix the answers or the primary`);
+    }
+    nonEmptyString(r.whyPrimary, `${label}.reading.whyPrimary`);
+  });
+}
+
+function validateLedgerV1(ledger) {
   const sourceSlides = new Set();
   ledger.slides.forEach((entry, index) => {
     object(entry, `readingLedger.slides[${index}]`);
     integer(entry.sourceSlide, `readingLedger.slides[${index}].sourceSlide`, 1);
-    if (sourceSlides.has(entry.sourceSlide)) throw new Error(`readingLedger contains duplicate sourceSlide ${entry.sourceSlide}`);
-    sourceSlides.add(entry.sourceSlide);
     nonEmptyString(entry.sourceText, `readingLedger.slides[${index}].sourceText`);
     const reading = entry.reading;
     object(reading, `readingLedger.slides[${index}].reading`);
@@ -169,10 +228,42 @@ export function validateReadingLedger(ledger) {
       reading.excludedNotes.forEach((note, noteIndex) => nonEmptyString(note, `readingLedger.slides[${index}].reading.excludedNotes[${noteIndex}]`));
     }
   });
+}
+
+export function validateReadingLedger(ledger) {
+  object(ledger, "readingLedger");
+  if (ledger.version !== 1 && ledger.version !== 2) throw new Error("readingLedger.version must equal 1 or 2");
+  nonEmptyString(ledger.lessonTitle, "readingLedger.lessonTitle");
+  if (!Array.isArray(ledger.slides) || !ledger.slides.length) throw new Error("readingLedger.slides must be a non-empty array");
+  const sourceSlides = new Set();
+  for (const entry of ledger.slides) {
+    if (sourceSlides.has(entry?.sourceSlide)) throw new Error(`readingLedger contains duplicate sourceSlide ${entry.sourceSlide}`);
+    sourceSlides.add(entry?.sourceSlide);
+  }
+  if (ledger.version === 2) validateLedgerV2(ledger); else validateLedgerV1(ledger);
   return ledger;
 }
 
+export function ledgerUnits(entry) {
+  const a = entry.reading.answers;
+  const out = [];
+  if (a.chain?.answer) { out.push(...a.chain.links); if (a.chain.outcome) out.push(a.chain.outcome); }
+  if (a.sides?.answer) out.push(...a.sides.left, ...a.sides.right);
+  if (a.research?.answer) { out.push(...a.research.evidence); if (a.research.conclusion) out.push(a.research.conclusion); }
+  if (a.list?.answer) out.push(...a.list.items);
+  for (const k of ["definition", "example", "conclusion"]) if (a[k]?.answer) out.push(...a[k].evidence);
+  return out;
+}
+
 export function planReadingFromLedger(entry) {
+  if (entry.reading.answers) {
+    return {
+      function: entry.reading.function,
+      units: ledgerUnits(entry),
+      relationships: `Главная связь: ${entry.reading.primary}. ${entry.reading.whyPrimary}`,
+      excludedNotes: []
+    };
+  }
   const primary = entry.reading.relationships.primary;
   const secondary = entry.reading.relationships.secondary.map((relation) => `Вторичная связь: ${relation.type}. ${relation.whyPresent}`);
   return {
@@ -192,14 +283,20 @@ function semanticSelection(value, label, requiresFallback, requiresCardsReason, 
     nonEmptyString(value.cardsReason.commonLevel, `${label}.cardsReason.commonLevel`);
   }
   if (requiresInteractionReason) nonEmptyString(value.learnerAction, `${label}.learnerAction`);
+  if (value.competitor !== undefined) {
+    object(value.competitor, `${label}.competitor`);
+    nonEmptyString(value.competitor.templateId, `${label}.competitor.templateId`);
+    nonEmptyString(value.competitor.whyNot, `${label}.competitor.whyNot`);
+  }
   if (!requiresFallback) return;
   object(value.fallback, `${label}.fallback`);
   nonEmptyString(value.fallback.neededStructure, `${label}.fallback.neededStructure`);
   nonEmptyString(value.fallback.reason, `${label}.fallback.reason`);
-  if (!Array.isArray(value.fallback.considered) || !value.fallback.considered.length) {
-    throw new Error(`${label}.fallback.considered must contain the considered compositions`);
+  if (value.fallback.considered !== undefined) {
+    if (!Array.isArray(value.fallback.considered)) throw new Error(`${label}.fallback.considered must be an array when present`);
+    value.fallback.considered.forEach((item, index) => nonEmptyString(item, `${label}.fallback.considered[${index}]`));
   }
-  value.fallback.considered.forEach((item, index) => nonEmptyString(item, `${label}.fallback.considered[${index}]`));
+
 }
 
 function catalogSlides(value) {

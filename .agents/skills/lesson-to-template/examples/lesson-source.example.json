@@ -1,0 +1,439 @@
+{
+  "source": "Курс_мастеров.docx",
+  "version": 2,
+  "slides": [
+    {
+      "module": "Модуль 1. Кто такой мастер",
+      "lesson": "Урок 1.3. Как ведёт себя мастер",
+      "sourceSlide": 9,
+      "title": "Слайд 9. Строгость не означает давление",
+      "authorType": null,
+      "interactive": false,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "body_index": 265,
+          "text": "Другая ошибка — добиваться результата криком и угрозами.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 266,
+          "text": "Мастер кричал на весь цех и резко реагировал на вопросы. Рабочие боялись к нему подходить, поэтому не уточняли задания и скрывали возникающие проблемы. Работа останавливалась, ошибки накапливались, сильные рабочие начинали увольняться.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 267,
+          "text": "Строгость удерживает понятное требование. Давление заставляет человека защищаться, молчать или выполнять указание, не разобравшись в задаче.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "item",
+          "title": "Строгость удерживает понятное требование",
+          "body": "Давление заставляет человека защищаться, молчать или выполнять указание, не разобравшись в задаче."
+        }
+      ],
+      "summary": {
+        "paragraphs": 3,
+        "chars": 431,
+        "subheads": 0,
+        "items": 1,
+        "speech_lines": 0,
+        "labelled": 0,
+        "connectors": 0,
+        "quotes": 0,
+        "tables": 0,
+        "has_arrow": false,
+        "has_poor_good": false,
+        "has_example": false,
+        "has_definition": false,
+        "has_sequence_words": false,
+        "questions": 0
+      }
+    },
+    {
+      "module": "Модуль 1. Кто такой мастер",
+      "lesson": "Урок 1.4. Авторитет мастера",
+      "sourceSlide": 15,
+      "title": "Слайд 15. Просьба и задача",
+      "authorType": null,
+      "interactive": false,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "body_index": 431,
+          "text": "Просьба коллеги",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "subhead"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 432,
+          "text": "«Сделаешь, когда сможешь».",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "quote"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 433,
+          "text": "Человек сам определит, насколько просьба срочная и когда её выполнить.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 434,
+          "text": "Задача мастера",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "subhead"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 435,
+          "text": "«Сделай заказ до 12:00. Сейчас он первый по приоритету. Если не хватает деталей, сообщи сразу. В 10:30 я проверю, как идёт работа».",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "quote"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 436,
+          "text": "В задаче обозначены:",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 437,
+          "text": "приоритет;",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": true,
+          "list_level": 0,
+          "flags": [],
+          "role": "item"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 438,
+          "text": "срок;",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": true,
+          "list_level": 0,
+          "flags": [],
+          "role": "item"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 439,
+          "text": "действие при сбое;",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": true,
+          "list_level": 0,
+          "flags": [],
+          "role": "item"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 440,
+          "text": "контроль.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": true,
+          "list_level": 0,
+          "flags": [],
+          "role": "item"
+        }
+      ],
+      "summary": {
+        "paragraphs": 11,
+        "chars": 359,
+        "subheads": 2,
+        "items": 4,
+        "speech_lines": 0,
+        "labelled": 0,
+        "connectors": 0,
+        "quotes": 2,
+        "tables": 0,
+        "has_arrow": false,
+        "has_poor_good": false,
+        "has_example": false,
+        "has_definition": false,
+        "has_sequence_words": false,
+        "questions": 0
+      }
+    },
+    {
+      "module": "Модуль 1. Кто такой мастер",
+      "lesson": "Урок 1.4. Авторитет мастера",
+      "sourceSlide": 12,
+      "title": "Слайд 12. Что показало исследование Google",
+      "authorType": null,
+      "interactive": false,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "body_index": 412,
+          "text": "В 2008 году Google начал изучать работу своих руководителей. Исследователи сравнили команды с разными результатами и выяснили, какие действия руководителей помогали людям работать лучше.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 413,
+          "text": "Для темы самостоятельности важны два вывода из исследования:",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 414,
+          "text": "успешные руководители ясно объясняли, какой результат нужен;",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": true,
+          "list_level": 0,
+          "flags": [],
+          "role": "item"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 415,
+          "text": "давали сотрудникам самостоятельно выбирать способ работы.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": true,
+          "list_level": 0,
+          "flags": [],
+          "role": "item"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 416,
+          "text": "Для мастера вывод такой: объясните, что нужно получить, обозначьте срок и точки контроля. Опытному рабочему оставьте самостоятельность в пределах чертежа, технологии и стандарта.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "labelled",
+          "title": "Для мастера вывод такой",
+          "body": "объясните, что нужно получить, обозначьте срок и точки контроля. Опытному рабочему оставьте самостоятельность в пределах чертежа, технологии и стандарта."
+        }
+      ],
+      "summary": {
+        "paragraphs": 6,
+        "chars": 611,
+        "subheads": 0,
+        "items": 2,
+        "speech_lines": 0,
+        "labelled": 1,
+        "connectors": 0,
+        "quotes": 0,
+        "tables": 0,
+        "has_arrow": false,
+        "has_poor_good": false,
+        "has_example": false,
+        "has_definition": false,
+        "has_sequence_words": false,
+        "questions": 0
+      }
+    },
+    {
+      "module": "Модуль 2. Развитие и оценка сотрудников",
+      "lesson": "Урок 2.3. Оценка сотрудника: не тянет, справляется, растёт",
+      "sourceSlide": 5,
+      "title": "Слайд 5. Как оценить сотрудника",
+      "authorType": null,
+      "interactive": false,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "body_index": 927,
+          "text": "Чтобы ничего не упустить, удобно использовать список критериев.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 928,
+          "text": "Результат — выполняет ли рабочий сменное или суточное задание в срок и в нужном объёме.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 929,
+          "text": "Качество — сдаёт ли детали без брака и переделок стабильно, а не время от времени.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 930,
+          "text": "Безопасность и дисциплина — соблюдает ли требования по СИЗ и порядку, даже когда мастер не смотрит; приходит ли вовремя.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 931,
+          "text": "Самостоятельность — берёт задание и выполняет его без пошагового контроля или постоянных подсказок.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 932,
+          "text": "Обучаемость — быстро осваивает новую операцию и не повторяет одну и ту же ошибку после показа.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 933,
+          "text": "Ответственность — сам сообщает о проблеме или ошибке, не дожидаясь, пока её обнаружат.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 934,
+          "text": "Вовлечённость — предупреждает о риске, помогает довести заказ до результата, а не только делает свою деталь.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 935,
+          "text": "Инициативность — предлагает изменить хранение, подачу деталей или порядок проверки, если видит, что так будет удобнее.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 936,
+          "text": "Работа с людьми — помогает новичкам и соседям по участку или срывается на них.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        },
+        {
+          "kind": "paragraph",
+          "body_index": 937,
+          "text": "Широта взгляда — понимает, как его операция скажется на следующем участке, а не видит только свою деталь.",
+          "style": "Normal (Web)",
+          "bold": false,
+          "numbered": false,
+          "list_level": null,
+          "flags": [],
+          "role": "text"
+        }
+      ],
+      "summary": {
+        "paragraphs": 11,
+        "chars": 1040,
+        "subheads": 0,
+        "items": 0,
+        "speech_lines": 0,
+        "labelled": 0,
+        "connectors": 0,
+        "quotes": 0,
+        "tables": 0,
+        "has_arrow": false,
+        "has_poor_good": false,
+        "has_example": false,
+        "has_definition": false,
+        "has_sequence_words": false,
+        "questions": 0
+      }
+    }
+  ],
+  "body": [],
+  "headers_footers": {}
+}
