@@ -107,7 +107,7 @@ function slideRelationshipsFileName(slideFileName) {
 }
 
 function relationshipTarget(xml, relationshipId) {
-  for (const match of xml.matchAll(/<Relationship\b[^>]*\/?>(?:<\/Relationship>)?/g)) {
+  for (const match of xml.matchAll(/<(?:\w+:)?Relationship\b[^>]*\/?>(?:<\/(?:\w+:)?Relationship>)?/g)) {
     if (attribute(match[0], "Id") === relationshipId) return attribute(match[0], "Target");
   }
   return null;
@@ -115,7 +115,7 @@ function relationshipTarget(xml, relationshipId) {
 
 function replaceRelationshipTarget(xml, relationshipId, target) {
   let replaced = false;
-  const result = xml.replace(/<Relationship\b[^>]*\/?>(?:<\/Relationship>)?/g, (entry) => {
+  const result = xml.replace(/<(?:\w+:)?Relationship\b[^>]*\/?>(?:<\/(?:\w+:)?Relationship>)?/g, (entry) => {
     if (attribute(entry, "Id") !== relationshipId) return entry;
     replaced = true;
     if (!/\bTarget="[^"]*"/.test(entry)) throw new Error(`Relationship ${JSON.stringify(relationshipId)} has no Target attribute.`);
@@ -141,7 +141,7 @@ export async function orderedSlideFileNames(zip) {
   const relationships = await zip.file("ppt/_rels/presentation.xml.rels")?.async("string");
   if (!presentation || !relationships) throw new Error("PPTX is missing presentation slide-order metadata.");
   const targets = new Map();
-  for (const match of relationships.matchAll(/<Relationship\b[^>]*\/?>(?:<\/Relationship>)?/g)) {
+  for (const match of relationships.matchAll(/<(?:\w+:)?Relationship\b[^>]*\/?>(?:<\/(?:\w+:)?Relationship>)?/g)) {
     const id = attribute(match[0], "Id");
     const target = attribute(match[0], "Target");
     if (id && target) targets.set(id, target);
@@ -289,9 +289,14 @@ function insertDialogueScene(xml, operation, relationshipId) {
 
 function appendRelationship(xml, relationshipId, target) {
   if (relationshipTarget(xml, relationshipId)) throw new Error(`Relationship ${JSON.stringify(relationshipId)} already exists.`);
-  const closing = xml.lastIndexOf("</Relationships>");
-  if (closing < 0) throw new Error("Slide relationships XML has no closing Relationships element.");
-  const entry = `<Relationship Id="${escapeXml(relationshipId)}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="${escapeXml(target)}"/>`;
+  // Tools that round-trip the package through a namespace-aware XML writer emit prefixed
+  // elements such as <ns0:Relationships>. An unprefixed child would land outside the
+  // relationships namespace, so follow whatever convention the document already uses.
+  const closingTag = /<\/(\w+:)?Relationships>/.exec(xml);
+  if (!closingTag) throw new Error("Slide relationships XML has no closing Relationships element.");
+  const prefix = closingTag[1] ?? "";
+  const closing = xml.lastIndexOf(closingTag[0]);
+  const entry = `<${prefix}Relationship Id="${escapeXml(relationshipId)}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="${escapeXml(target)}"/>`;
   return `${xml.slice(0, closing)}${entry}${xml.slice(closing)}`;
 }
 
@@ -378,7 +383,7 @@ function speakerNotesWithRemovedText(notesXml, text) {
 async function notesFileName(zip, slideFileName) {
   const rels = await zip.file(slideRelationshipsFileName(slideFileName))?.async("string");
   if (!rels) throw new Error(`Slide ${slideFileName}: missing relationship data for speaker notes.`);
-  for (const match of rels.matchAll(/<Relationship\b[^>]*\/?>(?:<\/Relationship>)?/g)) {
+  for (const match of rels.matchAll(/<(?:\w+:)?Relationship\b[^>]*\/?>(?:<\/(?:\w+:)?Relationship>)?/g)) {
     if (attribute(match[0], "Type")?.endsWith("/notesSlide")) {
       const target = attribute(match[0], "Target");
       if (target) return resolveRelationshipTarget(slideFileName, target);

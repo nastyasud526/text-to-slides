@@ -15,7 +15,7 @@ function attribute(xml, name) {
 }
 
 function relationshipEntries(xml) {
-  return [...xml.matchAll(/<Relationship\b[^>]*\/?>(?:<\/Relationship>)?/g)].map((match) => ({
+  return [...xml.matchAll(/<(?:\w+:)?Relationship\b[^>]*\/?>(?:<\/(?:\w+:)?Relationship>)?/g)].map((match) => ({
     id: attribute(match[0], "Id"),
     type: attribute(match[0], "Type"),
     target: attribute(match[0], "Target")

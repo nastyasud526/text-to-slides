@@ -44,6 +44,10 @@ async function markedFamilies() {
   const families = new Set();
   for (const slide of source.slides ?? []) {
     if (slide.interactive === true) continue;
+    // Service marks (dialogue and interaction staging) name no semantic family and are kept
+    // unconditionally, so they neither add a family nor disable the filter.
+    const spec = slide.authorType ? catalog.compositions?.[slide.authorType] : null;
+    if (spec && stagingSpec(spec)) continue;
     const family = familyOfMark(slide.authorType);
     // One unmarked or unrecognised ordinary slide is enough to need the whole library.
     if (!family) return null;

@@ -34,7 +34,7 @@ for (const slideNumber of dialogueSlides) {
   const relsName = path.posix.join(parsed.dir, "_rels", `${parsed.base}.rels`);
   const rels = await approved.file(relsName)?.async("string");
   if (!rels) throw new Error(`Approved PPTX is missing ${relsName}.`);
-  const relationship = [...rels.matchAll(/<Relationship\b[^>]*>/g)]
+  const relationship = [...rels.matchAll(/<(?:\w+:)?Relationship\b[^>]*>/g)]
     .map((match) => match[0])
     .find((entry) => /Type="[^"]*\/notesSlide"/.test(entry));
   const target = relationship && /Target="([^"]+)"/.exec(relationship)?.[1];

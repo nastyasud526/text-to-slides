@@ -20,7 +20,9 @@ if (!Array.isArray(plan.slides)) throw new Error("plan.slides must be an array")
 
 const sourceBySlide = new Map();
 for (const slide of source.slides ?? []) {
-  const paragraphs = (slide.blocks ?? []).filter((block) => block.kind === "paragraph");
+  // Author annotations (template marks) are instructions to the pipeline, not lesson text:
+  // they must not end up in sourceText and must not be required on the built slide.
+  const paragraphs = (slide.blocks ?? []).filter((block) => block.kind === "paragraph" && block.role !== "instruction");
   sourceBySlide.set(slide.sourceSlide, {
     paragraphs: paragraphs.map((block) => block.text),
     hasTable: (slide.blocks ?? []).some((block) => block.kind !== "paragraph")
@@ -74,8 +76,20 @@ for (const [index, item] of plan.slides.entries()) {
 
   if (item.reading === undefined) {
     const entry = ledgerBySlide.get(item.sourceSlide);
-    if (!entry) throw new Error(`${label}: reading-ledger.json has no entry for slide ${item.sourceSlide}`);
-    item.reading = planReadingFromLedger(entry);
+    if (entry) {
+      item.reading = planReadingFromLedger(entry);
+    } else if (item.interactive === true) {
+      // An interaction staging slide is placed by the author's mark, not by reading the text,
+      // so the ledger holds no entry for it and the record is built from the slide itself.
+      item.reading = {
+        function: "Служебный слайд интерактивности, размещён по авторской метке.",
+        units: [item.sourceText],
+        relationships: "Главная связь: не определяется чтением; слайд выбран авторской разметкой.",
+        excludedNotes: []
+      };
+    } else {
+      throw new Error(`${label}: reading-ledger.json has no entry for slide ${item.sourceSlide}`);
+    }
     filled.reading += 1;
   }
 }

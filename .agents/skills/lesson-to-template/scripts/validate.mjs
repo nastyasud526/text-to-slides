@@ -1,4 +1,4 @@
-import { PRIMARY_TYPES, primaryFromAnswers } from "./bridge.mjs";
+import { PRIMARY_TYPES, familyOf, primaryFromAnswers } from "./bridge.mjs";
 function object(value, label) {
   if (!value || Array.isArray(value) || typeof value !== "object") throw new Error(`${label} must be an object`);
 }
@@ -193,7 +193,10 @@ function validateLedgerV2(ledger) {
       // The slide already carries an accepted author template mark (markup-decision.mode "use").
       // Skip the seven-question questionnaire and its consistency check: the author's mark is the reading.
       if (entry.authorType === undefined || entry.authorType === null) throw new Error(`${label}.authorType is required when reading.fromAuthorTag is true`);
-      if (r.primary !== entry.authorType) throw new Error(`${label}.reading.primary must equal authorType ${JSON.stringify(entry.authorType)} when reading.fromAuthorTag is true`);
+      // The author may name either a family ("[тип: items]") or a concrete template
+      // ("Шаблон: text.illustration"); both must agree with the recorded primary relation.
+      const markFamily = PRIMARY_TYPES.includes(entry.authorType) ? entry.authorType : familyOf(entry.authorType);
+      if (r.primary !== markFamily) throw new Error(`${label}.reading.primary is ${r.primary} but authorType ${JSON.stringify(entry.authorType)} belongs to ${JSON.stringify(markFamily)}`);
       if (r.answers !== undefined) throw new Error(`${label}.reading.answers must be absent when reading.fromAuthorTag is true`);
       return;
     }
