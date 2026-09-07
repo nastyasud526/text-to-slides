@@ -45,7 +45,7 @@ description: "Создаёт презентации по подготовлен�
 ### 2. Смысловая разметка
 
 5. Запусти Sol medium по операции `lesson-to-template plan`. Он получает `source.json`, контекст урока и `markup-decision.json`; во второй фазе также получает `planner-catalog.json`. Sol создаёт `reading-ledger.json`, `lesson-plan.json`, `decision-log.json`, `semantic-review.json`, `interactionSpec` и `visual-requests.json`. Для слайдов с принятой авторской меткой (`markup-decision.mode: use`, `status: accepted`) семь вопросов анкеты не задаются: Sol сразу пишет компактную запись реестра `reading.fromAuthorTag: true` и не создаёт для них запись в `decision-log.json` — подробности в `../lesson-to-template/references/reading-ledger-schema.md`. Анкету полностью проходят только слайды без принятой метки.
-6. Выполни `hydrate_plan.mjs`: он подставляет в план `sourceText` и `reading` из `source.json` и реестра и сверяет текст плана с выгрузкой извлекателя. Затем выполни `review_plan.mjs`; при проблемах верни план тому же смысловому исполнителю. После чистого обзора выполни `diversify_plan.mjs` и зафиксируй `plan_ready`. При запросе «только разметить» на этом заверши работу и верни пользователю план и обзор.
+6. Выполни `fill_plan.mjs`: он заполняет в плане `sourceText` и `reading` из `source.json` и реестра и сверяет текст плана с выгрузкой извлекателя. Затем выполни `review_plan.mjs`; при проблемах верни план тому же смысловому исполнителю. После чистого обзора выполни `diversify_plan.mjs` и зафиксируй `plan_ready`. При запросе «только разметить» на этом заверши работу и верни пользователю план и обзор.
 
 ### 3. Презентация на утверждение
 

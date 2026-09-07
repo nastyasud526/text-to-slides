@@ -1,14 +1,14 @@
-// Join the compact model output with the extractor result: fill plan.slides[].sourceText from
+// Fill the compact model output with the extractor result: fill plan.slides[].sourceText from
 // source.json, fill plan.slides[].reading from reading-ledger.json, and verify that the plan did
 // not alter the approved course text. Runs before review_plan.mjs. Usage:
-//   hydrate_plan.mjs <source.json> <reading-ledger.json> <lesson-plan.json> [<out-plan.json>]
+//   fill_plan.mjs <source.json> <reading-ledger.json> <lesson-plan.json> [<out-plan.json>]
 import fs from "node:fs/promises";
 import { usage } from "./runtime.mjs";
 import { planReadingFromLedger, validateCatalog, validatePlan, validateReadingLedger } from "./validate.mjs";
 
 const [sourcePath, ledgerPath, planPath, outPath, catalogPath] = process.argv.slice(2);
 if (!sourcePath || !ledgerPath || !planPath) {
-  usage("hydrate_plan.mjs", "<source.json> <reading-ledger.json> <lesson-plan.json> [<out-plan.json>] [<catalog.json>]");
+  usage("fill_plan.mjs", "<source.json> <reading-ledger.json> <lesson-plan.json> [<out-plan.json>] [<catalog.json>]");
 }
 
 const normalize = (value) => value.replace(/\s+/g, " ").trim();
@@ -90,4 +90,4 @@ if (problems.length) {
 if (catalogPath) validatePlan(plan, validateCatalog(JSON.parse(await fs.readFile(catalogPath, "utf8"))));
 await fs.writeFile(ledgerPath, `${JSON.stringify(ledger, null, 2)}\n`, "utf8");
 await fs.writeFile(outPath ?? planPath, `${JSON.stringify(plan, null, 2)}\n`, "utf8");
-console.log(`Hydrated plan: filled sourceText on ${filled.sourceText} slide(s), reading on ${filled.reading} slide(s), ledger sourceText on ${filled.ledgerSourceText} entry(ies); course text verified against ${sourcePath}.`);
+console.log(`Filled plan: sourceText on ${filled.sourceText} slide(s), reading on ${filled.reading} slide(s), ledger sourceText on ${filled.ledgerSourceText} entry(ies); course text verified against ${sourcePath}.`);
