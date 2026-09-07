@@ -135,8 +135,9 @@ description: "Внутренний исполнитель course-to-slides: ос
 Получи от оркестратора библиотеку PowerPoint, каталог, сохранённый `lesson-plan.json` и пути результатов. Эта операция создаёт презентацию на утверждение и намеренно не встраивает изображения, даже если рядом остались файлы прошлого запуска. Используй Node и пакеты, возвращённые `load_workspace_dependencies`, затем выполни:
 
 1. `scripts/build_presentation.mjs <template.pptx> <catalog.json> <lesson-plan.json> <working-output.pptx>`;
-2. `scripts/report_overflow.mjs <catalog.json> <lesson-plan.json> <overflow-report.json>`;
-3. `scripts/verify_output.mjs <working-output.pptx> <catalog.json> <lesson-plan.json> <verification-directory> --allow-pending-scenes`.
+2. `scripts/verify_output.mjs <working-output.pptx> <catalog.json> <lesson-plan.json> <verification-directory> --allow-pending-scenes`.
+
+Переполнение полей не проверяется: сборщик не меняет размер шрифта, макет и число слайдов, поэтому отчёт о переполнении не ведёт ни к какому решению. Текст, который не помещается в поля композиции, попадает в `manualLayout` и в заметки слайда под заголовком `ДОВЕРСТАТЬ ВРУЧНУЮ`.
 
 После успешной проверки верни оркестратору PPTX на утверждение и отчёты. Сохранённый план остаётся основанием единственной сборки слайдов; после утверждения эту команду повторять нельзя.
 
