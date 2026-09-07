@@ -50,6 +50,27 @@
 
 `authorType` переносится из тега `[тип: …]` в исходнике. Если он задан, `primary` обязан ему соответствовать.
 
+## Компактная запись для принятой авторской метки
+
+Если `markup-decision.mode: use` и метка слайда принята без конфликтов (`markup-normalization.json` содержит `status: accepted` с известным `templateId`), семь вопросов анкеты не задаются. Вместо `answers` и `intro` запиши:
+
+```json
+{
+  "sourceSlide": 4,
+  "sourceText": "Дословный видимый текст слайда",
+  "authorType": "text",
+  "reading": {
+    "function": "Учебная функция слайда одной фразой.",
+    "keyMessage": "Мысль, которую должен понять обучающийся.",
+    "primary": "text",
+    "whyPrimary": "Автор указал шаблон text.illustration; композиция подобрана в семействе по мосту.",
+    "fromAuthorTag": true
+  }
+}
+```
+
+`primary` обязан совпадать с `authorType`. Поле `fromAuthorTag: true` отключает проверку соответствия анкеты и `primary`: анкету по этому слайду не проходят. Слайды без принятой метки или при `markup-decision.mode: ignore` всегда проходят полную анкету из семи вопросов.
+
 ## Перенос в lesson-plan.json
 
 `reading` в плане строится детерминированно:

@@ -185,15 +185,23 @@ function validateLedgerV2(ledger) {
     object(r, `${label}.reading`);
     nonEmptyString(r.function, `${label}.reading.function`);
     nonEmptyString(r.keyMessage, `${label}.reading.keyMessage`);
-    validateAnswers(r.answers, `${label}.reading.answers`);
-    stringArray(r.intro, `${label}.reading.intro`);
     nonEmptyString(r.primary, `${label}.reading.primary`);
     if (!PRIMARY_TYPES.includes(r.primary)) throw new Error(`${label}.reading.primary must be one of: ${PRIMARY_TYPES.join(", ")}`);
+    nonEmptyString(r.whyPrimary, `${label}.reading.whyPrimary`);
+    if (r.fromAuthorTag) {
+      // The slide already carries an accepted author template mark (markup-decision.mode "use").
+      // Skip the seven-question questionnaire and its consistency check: the author's mark is the reading.
+      if (entry.authorType === undefined || entry.authorType === null) throw new Error(`${label}.authorType is required when reading.fromAuthorTag is true`);
+      if (r.primary !== entry.authorType) throw new Error(`${label}.reading.primary must equal authorType ${JSON.stringify(entry.authorType)} when reading.fromAuthorTag is true`);
+      if (r.answers !== undefined) throw new Error(`${label}.reading.answers must be absent when reading.fromAuthorTag is true`);
+      return;
+    }
+    validateAnswers(r.answers, `${label}.reading.answers`);
+    stringArray(r.intro, `${label}.reading.intro`);
     const derived = primaryFromAnswers(r.answers);
     if (!["checklist", "statistics"].includes(r.primary) && derived !== r.primary) {
       throw new Error(`${label}.reading.primary is ${r.primary} but the answers imply ${derived}; fix the answers or the primary`);
     }
-    nonEmptyString(r.whyPrimary, `${label}.reading.whyPrimary`);
   });
 }
 
@@ -256,6 +264,14 @@ export function ledgerUnits(entry) {
 }
 
 export function planReadingFromLedger(entry) {
+  if (entry.reading.fromAuthorTag) {
+    return {
+      function: entry.reading.function,
+      units: [entry.sourceText],
+      relationships: `Главная связь: ${entry.reading.primary}. ${entry.reading.whyPrimary}`,
+      excludedNotes: []
+    };
+  }
   if (entry.reading.answers) {
     return {
       function: entry.reading.function,
