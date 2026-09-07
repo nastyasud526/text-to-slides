@@ -179,7 +179,8 @@ function validateLedgerV2(ledger) {
     const label = `readingLedger.slides[${index}]`;
     object(entry, label);
     integer(entry.sourceSlide, `${label}.sourceSlide`, 1);
-    nonEmptyString(entry.sourceText, `${label}.sourceText`);
+    // Optional: hydrate_plan.mjs joins it from source.json so the ledger need not copy the lesson text.
+    if (entry.sourceText !== undefined) nonEmptyString(entry.sourceText, `${label}.sourceText`);
     if (entry.authorType !== undefined && entry.authorType !== null) nonEmptyString(entry.authorType, `${label}.authorType`);
     const r = entry.reading;
     object(r, `${label}.reading`);
@@ -206,7 +207,6 @@ function validateLedgerV2(ledger) {
 }
 
 function validateLedgerV1(ledger) {
-  const sourceSlides = new Set();
   ledger.slides.forEach((entry, index) => {
     object(entry, `readingLedger.slides[${index}]`);
     integer(entry.sourceSlide, `readingLedger.slides[${index}].sourceSlide`, 1);
@@ -265,6 +265,7 @@ export function ledgerUnits(entry) {
 
 export function planReadingFromLedger(entry) {
   if (entry.reading.fromAuthorTag) {
+    if (entry.sourceText === undefined) throw new Error(`readingLedger slide ${entry.sourceSlide}: sourceText is required to build the plan reading; run hydrate_plan.mjs first`);
     return {
       function: entry.reading.function,
       units: [entry.sourceText],

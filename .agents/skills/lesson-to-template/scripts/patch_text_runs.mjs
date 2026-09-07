@@ -3,6 +3,31 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import { createRequire } from "node:module";
 
+let jszipModule = null;
+
+function loadJszip() {
+  if (jszipModule) return jszipModule;
+  const modules = process.env.RUNTIME_NODE_MODULES;
+  if (!modules) throw new Error("RUNTIME_NODE_MODULES is not set.");
+  jszipModule = createRequire(path.join(modules, "lesson-to-template-runtime.cjs"))("jszip");
+  return jszipModule;
+}
+
+// verify_output.mjs asks the same PPTX for its slide count, named text, image hashes and speaker
+// notes in a row. Each of those used to re-read and re-inflate the whole archive, including the
+// full-screen scene images. The key covers mtime and size, so a rebuilt file is never served stale.
+let readCache = null;
+
+async function openPptxForReading(pptxPath) {
+  const resolved = path.resolve(pptxPath);
+  const stat = await fs.stat(resolved);
+  const key = `${resolved}:${stat.mtimeMs}:${stat.size}`;
+  if (readCache?.key === key) return readCache.zip;
+  const zip = await loadJszip().loadAsync(await fs.readFile(resolved));
+  readCache = { key, zip };
+  return zip;
+}
+
 function normalize(value) {
   return value.replace(/\r\n?/g, "\n");
 }
@@ -278,11 +303,7 @@ function ensurePngContentType(xml) {
 }
 
 export async function getPptxNamedShapeTexts(pptxPath) {
-  const modules = process.env.RUNTIME_NODE_MODULES;
-  if (!modules) throw new Error("RUNTIME_NODE_MODULES is not set.");
-  const require = createRequire(path.join(modules, "lesson-to-template-runtime.cjs"));
-  const JSZip = require("jszip");
-  const zip = await JSZip.loadAsync(await fs.readFile(pptxPath));
+  const zip = await openPptxForReading(pptxPath);
   const result = new Map();
   const slideFiles = await orderedSlideFileNames(zip);
   for (const [index, name] of slideFiles.entries()) {
@@ -301,11 +322,7 @@ export async function getPptxNamedShapeTexts(pptxPath) {
 }
 
 export async function getPptxNamedImageHashes(pptxPath) {
-  const modules = process.env.RUNTIME_NODE_MODULES;
-  if (!modules) throw new Error("RUNTIME_NODE_MODULES is not set.");
-  const require = createRequire(path.join(modules, "lesson-to-template-runtime.cjs"));
-  const JSZip = require("jszip");
-  const zip = await JSZip.loadAsync(await fs.readFile(pptxPath));
+  const zip = await openPptxForReading(pptxPath);
   const result = new Map();
   const slideFiles = await orderedSlideFileNames(zip);
   for (const [index, slideFileName] of slideFiles.entries()) {
@@ -331,12 +348,7 @@ export async function getPptxNamedImageHashes(pptxPath) {
 }
 
 export async function getPptxSlideCount(pptxPath) {
-  const modules = process.env.RUNTIME_NODE_MODULES;
-  if (!modules) throw new Error("RUNTIME_NODE_MODULES is not set.");
-  const require = createRequire(path.join(modules, "lesson-to-template-runtime.cjs"));
-  const JSZip = require("jszip");
-  const zip = await JSZip.loadAsync(await fs.readFile(pptxPath));
-  return (await orderedSlideFileNames(zip)).length;
+  return (await orderedSlideFileNames(await openPptxForReading(pptxPath))).length;
 }
 
 function speakerNotesWithAppendedText(notesXml, text) {
@@ -376,11 +388,7 @@ async function notesFileName(zip, slideFileName) {
 }
 
 export async function getPptxSpeakerNotes(pptxPath) {
-  const modules = process.env.RUNTIME_NODE_MODULES;
-  if (!modules) throw new Error("RUNTIME_NODE_MODULES is not set.");
-  const require = createRequire(path.join(modules, "lesson-to-template-runtime.cjs"));
-  const JSZip = require("jszip");
-  const zip = await JSZip.loadAsync(await fs.readFile(pptxPath));
+  const zip = await openPptxForReading(pptxPath);
   const result = new Map();
   for (const [index, slideFile] of (await orderedSlideFileNames(zip)).entries()) {
     const notesFile = await notesFileName(zip, slideFile);
@@ -392,11 +400,9 @@ export async function getPptxSpeakerNotes(pptxPath) {
 }
 
 export async function patchPptxTextRuns(pptxPath, patches, stripOperations = [], imagePatches = [], dialogueOperations = [], speakerNoteOperations = []) {
-  const modules = process.env.RUNTIME_NODE_MODULES;
-  if (!modules) throw new Error("RUNTIME_NODE_MODULES is not set.");
-  const require = createRequire(path.join(modules, "lesson-to-template-runtime.cjs"));
-  const JSZip = require("jszip");
-  const zip = await JSZip.loadAsync(await fs.readFile(pptxPath));
+  // Loads its own archive: this one is mutated and written back, so it must never be the shared
+  // read-only instance.
+  const zip = await loadJszip().loadAsync(await fs.readFile(pptxPath));
   const slideFiles = await orderedSlideFileNames(zip);
   for (const operation of speakerNoteOperations) {
     const slideFileName = slideFiles[operation.slideIndex - 1];
@@ -476,4 +482,5 @@ export async function patchPptxTextRuns(pptxPath, patches, stripOperations = [],
     zip.file(relationshipsFileName, replaceRelationshipTarget(relationshipsXml, relationshipId, `../media/${path.posix.basename(mediaFileName)}`));
   }
   await fs.writeFile(pptxPath, await zip.generateAsync({ type: "nodebuffer", compression: "DEFLATE" }));
+  readCache = null;
 }

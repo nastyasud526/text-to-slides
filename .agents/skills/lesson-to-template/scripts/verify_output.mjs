@@ -47,8 +47,9 @@ for (const [slideIndex, item] of plan.slides.entries()) {
     }
     if (!sceneExists) {
       if (actualHash) throw new Error(`Slide ${slideIndex + 1}, dialogue scene: image embedded but ${JSON.stringify(item.scenePath)} does not exist.`);
-      pendingScenes.push(slideIndex + 1);
-      continue;
+      // Without --allow-pending-scenes this is the final verification, where every dialogue slide
+      // must carry its image; a missing scene is a failure, not a pending item.
+      throw new Error(`Slide ${slideIndex + 1}, dialogue scene: neither an embedded image nor ${JSON.stringify(item.scenePath)} exists.`);
     }
     if (!actualHash) throw new Error(`Slide ${slideIndex + 1}, dialogue scene: no image named "DIALOGUE_SCENE".`);
     const expectedHash = createHash("sha256").update(await fs.readFile(path.resolve(path.dirname(planPath), item.scenePath))).digest("hex");
@@ -63,7 +64,7 @@ for (const [slideIndex, item] of plan.slides.entries()) {
 await fs.writeFile(path.join(verificationDir, "technical-verification.json"), JSON.stringify({
   slideCount,
   exactNamedText: true,
-  dialogueSceneAssets: true,
+  dialogueSceneAssets: pendingScenes.length === 0,
   manualLayoutNotes: true,
   pendingScenes
 }, null, 2), "utf8");

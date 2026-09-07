@@ -5,7 +5,7 @@
 //   diversify_plan.mjs <catalog.json> <lesson-plan.json> <out-plan.json>
 import fs from "node:fs/promises";
 import { usage } from "./runtime.mjs";
-import { validateCatalog, validatePlan } from "./validate.mjs";
+import { slotText, validateCatalog, validatePlan } from "./validate.mjs";
 import { EQUIVALENT } from "./bridge.mjs";
 
 const [catalogPath, planPath, outPath] = process.argv.slice(2);
@@ -46,8 +46,10 @@ function remapSlots(item, from, to) {
   for (const [slot, value] of Object.entries(item.slots)) {
     const name = map(slot);
     if (target[name] !== undefined && slots[name] === undefined) slots[name] = value;
-    else if (target[name] !== undefined) slots[name] = `${slots[name]}\n${value}`;
-    else if (value && !/_number$/.test(slot)) leftovers.push(typeof value === "string" ? value : JSON.stringify(value));
+    // Merging two source slots into one target slot drops per-segment styles, so flatten both
+    // sides to plain text; interpolating a structured value would write "[object Object]".
+    else if (target[name] !== undefined) slots[name] = `${slotText(slots[name])}\n${slotText(value)}`;
+    else if (value && !/_number$/.test(slot)) leftovers.push(slotText(value));
   }
   for (const name of Object.keys(target)) if (slots[name] === undefined) slots[name] = "";
   if (leftovers.length) item.manualLayout = [item.manualLayout, ...leftovers].filter(Boolean).join("\n");

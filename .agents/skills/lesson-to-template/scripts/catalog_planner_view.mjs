@@ -16,6 +16,9 @@ for (const [id, spec] of Object.entries(catalog.compositions)) {
     description: spec.description,
     example: spec.example,
     capacity: spec.selection?.capacity,
+    // Numeric per-slot limits the planner must respect; report_overflow.mjs checks the same field
+    // after the build, so withholding it here only turns overflow into rework.
+    capacityLimits: spec.capacity,
     repeatedSlots: slotCount(spec),
     slots: Object.keys(spec.slots),
     content_placement: spec.content_placement ?? [],
