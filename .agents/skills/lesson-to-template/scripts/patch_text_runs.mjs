@@ -111,7 +111,7 @@ function attribute(xml, name) {
   return match ? decodeXml(match[1]) : null;
 }
 
-async function orderedSlideFileNames(zip) {
+export async function orderedSlideFileNames(zip) {
   const presentation = await zip.file("ppt/presentation.xml")?.async("string");
   const relationships = await zip.file("ppt/_rels/presentation.xml.rels")?.async("string");
   if (!presentation || !relationships) throw new Error("PPTX is missing presentation slide-order metadata.");
@@ -350,6 +350,19 @@ function speakerNotesWithAppendedText(notesXml, text) {
   return `${notesXml.slice(0, body.start)}${updatedBody}${notesXml.slice(body.end)}`;
 }
 
+function speakerNotesWithRemovedText(notesXml, text) {
+  const body = findShapeRanges(notesXml).find((shape) => /<p:ph\b[^>]*\btype="body"/.test(shape.xml));
+  if (!body) throw new Error("Notes slide has no body placeholder.");
+  const lines = new Set(normalize(text).split("\n"));
+  const updatedBody = body.xml.replace(/<a:p(?:\s[^>]*)?>[\s\S]*?<\/a:p>/g, (paragraph) => {
+    const value = [...paragraph.matchAll(/<a:t(?:\s[^>]*)?>([\s\S]*?)<\/a:t>/g)]
+      .map((match) => decodeXml(match[1]))
+      .join("");
+    return lines.has(value) ? "" : paragraph;
+  });
+  return `${notesXml.slice(0, body.start)}${updatedBody}${notesXml.slice(body.end)}`;
+}
+
 async function notesFileName(zip, slideFileName) {
   const rels = await zip.file(slideRelationshipsFileName(slideFileName))?.async("string");
   if (!rels) throw new Error(`Slide ${slideFileName}: missing relationship data for speaker notes.`);
@@ -391,7 +404,13 @@ export async function patchPptxTextRuns(pptxPath, patches, stripOperations = [],
     const notesPath = await notesFileName(zip, slideFileName);
     const notesFile = zip.file(notesPath);
     if (!notesFile) throw new Error(`Slide ${operation.slideIndex}: missing ${notesPath}.`);
-    zip.file(notesPath, speakerNotesWithAppendedText(await notesFile.async("string"), operation.text));
+    const notesXml = await notesFile.async("string");
+    zip.file(
+      notesPath,
+      operation.mode === "remove"
+        ? speakerNotesWithRemovedText(notesXml, operation.text)
+        : speakerNotesWithAppendedText(notesXml, operation.text)
+    );
   }
   for (const operation of dialogueOperations) {
     const fileName = slideFiles[operation.slideIndex - 1];

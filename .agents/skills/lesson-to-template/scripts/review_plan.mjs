@@ -25,6 +25,7 @@ const plainFallbacks = [];
 const readings = [];
 const problems = [];
 const matchedLedgerSlides = new Set();
+const useAuthorTemplateMarks = plan.sourceMarkup?.mode !== "ignore";
 
 function problem(item, index, text) {
   problems.push({ sourceSlide: item.sourceSlide, outputSlide: index + 1, problem: text });
@@ -75,7 +76,7 @@ for (const [index, item] of plan.slides.entries()) {
         problem(item, index, `text.plain выбран, хотя анкета дала положительные ответы; нужен шаблон семейства ${r.primary}`);
       }
     }
-    if (entry.authorType && !allowed.includes(spec.templateId) && r.primary !== entry.authorType) {
+    if (useAuthorTemplateMarks && entry.authorType && !allowed.includes(spec.templateId) && r.primary !== entry.authorType) {
       problem(item, index, `автор указал тип ${entry.authorType}, выбран ${spec.templateId}`);
     }
     const comp = item.selection?.competitor;
@@ -118,6 +119,7 @@ if (ledger) {
 const report = {
   contentSlides: plan.slides.filter((item) => item.kind === "content").length,
   readingLedgerMatched: ledger ? true : null,
+  sourceMarkupMode: plan.sourceMarkup?.mode ?? "legacy-use",
   compositionDistribution: distribution,
   slideReadings: readings,
   textPlainFallbacks: plainFallbacks,

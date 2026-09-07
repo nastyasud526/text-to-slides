@@ -5,9 +5,11 @@ import { usage } from "./runtime.mjs";
 import { slotText, validateCatalog, validatePlan } from "./validate.mjs";
 import { getPptxNamedImageHashes, getPptxNamedShapeTexts, getPptxSlideCount, getPptxSpeakerNotes } from "./patch_text_runs.mjs";
 
-const [pptx, catalogPath, planPath, verificationDir] = process.argv.slice(2);
+const argv = process.argv.slice(2);
+const allowPendingScenes = argv.includes("--allow-pending-scenes");
+const [pptx, catalogPath, planPath, verificationDir] = argv.filter((value) => value !== "--allow-pending-scenes");
 const pendingScenes = [];
-if (!pptx || !catalogPath || !planPath || !verificationDir) usage("verify_output.mjs", "<output.pptx> <catalog.json> <lesson-plan.json> <verification-directory>");
+if (!pptx || !catalogPath || !planPath || !verificationDir) usage("verify_output.mjs", "<output.pptx> <catalog.json> <lesson-plan.json> <verification-directory> [--allow-pending-scenes]");
 const catalog = validateCatalog(JSON.parse(await fs.readFile(catalogPath, "utf8")));
 const plan = validatePlan(JSON.parse(await fs.readFile(planPath, "utf8")), catalog);
 const isHeadingSlot = (slot) => slot === "title" || slot === "subtitle" || /_(?:title|label)$/.test(slot);
@@ -39,6 +41,10 @@ for (const [slideIndex, item] of plan.slides.entries()) {
     const actualHash = namedImageHashes.get(slideIndex + 1)?.get("DIALOGUE_SCENE");
     const scenePath = path.resolve(path.dirname(planPath), item.scenePath);
     const sceneExists = await fs.access(scenePath).then(() => true, () => false);
+    if (allowPendingScenes && !actualHash) {
+      pendingScenes.push(slideIndex + 1);
+      continue;
+    }
     if (!sceneExists) {
       if (actualHash) throw new Error(`Slide ${slideIndex + 1}, dialogue scene: image embedded but ${JSON.stringify(item.scenePath)} does not exist.`);
       pendingScenes.push(slideIndex + 1);
@@ -58,6 +64,7 @@ await fs.writeFile(path.join(verificationDir, "technical-verification.json"), JS
   slideCount,
   exactNamedText: true,
   dialogueSceneAssets: true,
-  manualLayoutNotes: true
+  manualLayoutNotes: true,
+  pendingScenes
 }, null, 2), "utf8");
 console.log(`Structurally verified ${slideCount} slides, exact mapped text, dialogue scene assets, and heading casing in ${verificationDir}.${pendingScenes.length ? ` Scenes pending on slides ${pendingScenes.join(", ")}.` : ""}`);

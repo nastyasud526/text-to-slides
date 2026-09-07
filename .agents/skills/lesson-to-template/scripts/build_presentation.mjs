@@ -35,14 +35,13 @@ const uppercaseSlotValue = (value) => typeof value === "string"
   if (item.kind === "dialogue") {
     const imagePath = path.resolve(path.dirname(planPath), item.scenePath);
     const exists = await fs.access(imagePath).then(() => true, () => false);
-    if (exists) {
+    if (requireScenes && exists) {
       dialogueOperations.push({ slideIndex: planIndex + 1, objectName: "DIALOGUE_SCENE", imagePath });
     } else if (requireScenes) {
       throw new Error(`plan.slides[${planIndex}]: dialogue scene ${item.scenePath} is missing`);
     } else {
-      // Build without the picture: the slide keeps the dialogue text in its service field and a note
-      // tells the author which scene is still to be generated. Re-running the build after the
-      // scenes step embeds the pictures without changing anything else.
+      // The approval build never embeds scenes, even if a stale asset exists. Images are added
+      // later to a copy of the approved PPTX so slide content and iSpring bindings stay intact.
       missingScenes.push({ slide: planIndex + 1, scenePath: item.scenePath });
       speakerNoteOperations.push({ slideIndex: planIndex + 1, text: `СЦЕНА НЕ СГЕНЕРИРОВАНА\n${item.scenePath}` });
     }

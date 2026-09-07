@@ -25,6 +25,7 @@ Only the standard library is used.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import zipfile
@@ -48,6 +49,7 @@ TYPE_TAG = re.compile(r"^\[\s*тип\s*:\s*([^\]]+)\]\s*$", re.I)
 INTERACTIVE = re.compile(r"интерактив", re.I)
 SLIDE_HEAD = re.compile(r"^Слайд\s+(\d+)\s*[\.:]", re.I)
 LESSON_HEAD = re.compile(r"^Урок\s+\d+(\.\d+)?", re.I)
+LESSON_ID = re.compile(r"^Урок\s+(\d+[\.,]\d+)", re.I)
 MODULE_HEAD = re.compile(r"^Модуль\s+\d+", re.I)
 SPEAKER = re.compile(r"^([А-ЯЁ][а-яё]+(?:\s[А-ЯЁ][а-яё]+)?)\s*:\s*\S")
 LABEL = re.compile(r"^([А-ЯЁ][^:\.\!\?]{1,45}):\s+\S")
@@ -240,10 +242,15 @@ def assign_roles(blocks: list[dict], speakers: set[str]) -> None:
         b["role"] = ROLE_TEXT
 
 
-def group_slides(blocks: list[dict]) -> list[dict]:
+def group_slides(blocks: list[dict], markup_map: dict | None = None) -> list[dict]:
     slides: list[dict] = []
     module = lesson = None
     current = None
+    normalized_entries = {
+        entry["bodyIndex"]: entry
+        for entry in (markup_map or {}).get("entries", [])
+        if entry.get("status") == "accepted"
+    }
     for b in blocks:
         h = is_heading(b)
         if h == "module":
@@ -253,6 +260,23 @@ def group_slides(blocks: list[dict]) -> list[dict]:
         if h == "lesson":
             lesson = b["text"]
             b["role"] = ROLE_HEADING
+            current = None
+            continue
+        normalized = normalized_entries.get(b.get("body_index"))
+        if normalized and normalized.get("kind") == "interaction_start":
+            b["role"] = ROLE_INSTRUCTION
+            current = {
+                "module": module,
+                "lesson": lesson,
+                "sourceSlide": normalized.get("sourceSlide"),
+                "title": normalized.get("title") or b["text"],
+                "authorType": "staging.interaction",
+                "interactive": True,
+                "interactionType": normalized.get("interactionType"),
+                "synthetic": True,
+                "blocks": [],
+            }
+            slides.append(current)
             continue
         if h == "slide":
             b["role"] = ROLE_HEADING
@@ -271,6 +295,9 @@ def group_slides(blocks: list[dict]) -> list[dict]:
         if current is None:
             continue
         current["blocks"].append(b)
+        if normalized and normalized.get("kind") == "template":
+            b["role"] = ROLE_INSTRUCTION
+            current["authorType"] = normalized.get("templateId")
     speakers = set(DEFAULT_SPEAKERS)
     for b in blocks:
         if b["kind"] == "paragraph" and b["style"].lower() == "dialogue":
@@ -283,12 +310,30 @@ def group_slides(blocks: list[dict]) -> list[dict]:
             if b["kind"] != "paragraph":
                 continue
             m = TYPE_TAG.match(b["text"])
-            if m:
+            if m and not s.get("authorType"):
                 s["authorType"] = m.group(1).strip().lower()
             if "interactive" in b["flags"] and len(b["text"]) < 160:
                 s["interactive"] = True
         s["summary"] = summarize(s)
     return slides
+
+
+def requested_lesson(text: str | None, lesson_id: str) -> bool:
+    if not text:
+        return False
+    match = LESSON_ID.match(text)
+    return bool(match and match.group(1).replace(",", ".") == lesson_id.replace(",", "."))
+
+
+def lesson_body(blocks: list[dict], lesson_id: str) -> list[dict]:
+    selected = []
+    active = False
+    for block in blocks:
+        if block["kind"] == "paragraph" and is_heading(block) == "lesson":
+            active = requested_lesson(block["text"], lesson_id)
+        if active:
+            selected.append(block)
+    return selected
 
 
 def summarize(slide: dict) -> dict:
@@ -319,6 +364,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input_docx", type=Path)
     parser.add_argument("output_json", type=Path)
+    parser.add_argument("--markup-map", type=Path)
+    parser.add_argument("--lesson")
     args = parser.parse_args()
 
     header_footer_re = re.compile(r"word/(?:header|footer)\d+\.xml$")
@@ -330,11 +377,57 @@ def main() -> None:
             if header_footer_re.match(name):
                 extras[name] = parse_body(ET.fromstring(archive.read(name)), styles)
 
-    slides = group_slides(document)
+    markup_map = None
+    if args.markup_map:
+        markup_map = json.loads(args.markup_map.read_text(encoding="utf-8"))
+        expected_hash = markup_map.get("sourceSha256")
+        actual_hash = hashlib.sha256(args.input_docx.read_bytes()).hexdigest()
+        if expected_hash != actual_hash:
+            raise SystemExit(f"Карта разметки относится к другой версии DOCX: ожидался {expected_hash}, получен {actual_hash}.")
+    slides = group_slides(document, markup_map)
+    output_body = document
+    if args.lesson:
+        slides = [slide for slide in slides if requested_lesson(slide.get("lesson"), args.lesson)]
+        output_body = lesson_body(document, args.lesson)
+    def slide_location(slide: dict, document_index: int) -> dict:
+        return {
+            "documentSlideIndex": document_index,
+            "module": slide.get("module"),
+            "lesson": slide.get("lesson"),
+            "sourceSlide": slide.get("sourceSlide"),
+            "title": slide.get("title"),
+        }
+
+    template_marked = [
+        {**slide_location(slide, index), "authorType": slide.get("authorType")}
+        for index, slide in enumerate(slides, start=1)
+        if slide.get("authorType")
+    ]
+    interaction_marked = [
+        slide_location(slide, index)
+        for index, slide in enumerate(slides, start=1)
+        if slide.get("interactive")
+    ]
+    if not template_marked:
+        template_coverage = "none"
+    elif len(template_marked) == len(slides):
+        template_coverage = "full"
+    else:
+        template_coverage = "partial"
     result = {
         "source": str(args.input_docx),
         "version": 2,
-        "body": document,
+        "markupMap": str(args.markup_map.resolve()) if args.markup_map else None,
+        "markupSummary": {
+            "totalSlides": len(slides),
+            "templateCoverage": template_coverage,
+            "templateMarkedCount": len(template_marked),
+            "templateMarkedSlides": template_marked,
+            "interactionMarkedCount": len(interaction_marked),
+            "interactionMarkedSlides": interaction_marked,
+            "authorTypes": sorted({slide["authorType"] for slide in slides if slide.get("authorType")}),
+        },
+        "body": output_body,
         "slides": slides,
         "headers_footers": extras,
     }

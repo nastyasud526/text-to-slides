@@ -9,13 +9,18 @@
 Для каждого запрошенного элемента фиксируются следующие результаты:
 
 1. `initialized` — создана рабочая папка элемента;
-2. `source_ready` — сохранены `source.json` (структурированный исходник), `planner-catalog.json` и контекст урока;
-3. `plan_ready` — для всех запрошенных слайдов записаны решения, создан `lesson-plan.json`, обзор чистый и чередование выполнено;
-4. `presentation_built` — создан рабочий PPTX (сцены могут отсутствовать; их список лежит в `*.missing-scenes.json`);
-5. `verified` — структурная проверка завершена;
-6. `assets_ready` — созданы сцены, перечисленные в плане, выполнена повторная сборка и проверка, слайдов, ожидающих сцену, не осталось.
+2. `markup_scanned` — быстрый сканер сохранил `source-scan.json` с возможными авторскими метками;
+3. `markup_ready` — оркестратор создал `markup-audit.json`, получил решение пользователя и сохранил `markup-decision.json` и `markup-normalization.json`;
+4. `source_ready` — извлекатель применил нормализованную карту и сохранил `source.json`, `planner-catalog.json` и контекст урока;
+5. `plan_ready` — создан и проверен `lesson-plan.json`, включая `interactionSpec` и запросы изображений;
+6. `presentation_built` — один раз создан PPTX и добавлены iSpring-интерактивности;
+7. `verified` — презентация на утверждение прошла структурную и iSpring-проверку;
+8. `presentation_approved` — пользователь утвердил конкретный PPTX, его путь и SHA-256 зафиксированы;
+9. `assets_ready` — созданы и проверены изображения из утверждённого плана;
+10. `images_inserted` — изображения добавлены в новую копию утверждённого PPTX;
+11. `final_verified` — финальная презентация проверена, а iSpring-части сохранились неизменными.
 
-Порядок этапов фиксированный: сцены идут после сборки, а не перед ней. Полный запуск завершается на `assets_ready`; на `verified` он останавливается только если пользователь просил «без сцен».
+Порядок этапов фиксированный. На `markup_ready` и `presentation_approved` допустим статус `waiting_for_input`. Полный запуск завершается на `final_verified`; отдельная операция разметки имеет цель `plan_ready`, а сборка без изображений — `verified`.
 
 Этап готов, когда существует его ожидаемый результат и состояние зарегистрировано через `scripts/run_state.mjs`. Состояние описывает фактически готовые артефакты и не заменяет их проверку.
 
@@ -31,9 +36,9 @@
 
 После прерывания прочитай состояние выбранного запуска и результаты текущего этапа. Готовые результаты используются дальше, а работа продолжается с первого незавершённого результата.
 
-`source.json` (результат `extract_docx_blocks.py`) и `planner-catalog.json` (результат `catalog_planner_view.mjs`) создаются на этапе `source_ready` и переиспользуются при продолжении. `reading-ledger.json` (версия 2) является первым сохранённым результатом планирования. Сначала заверши анкету для всего запрошенного объёма без каталога. При продолжении этой фазы сохрани готовые записи реестра и начни с первого содержательного слайда, для которого анкета ещё не заполнена. После завершения реестра используй его для выбора композиций. Частично заполненный `decision-log.json` сохраняет прогресс второй фазы: каждая запись фиксируется сразу после выбора композиции. `plan_ready` устанавливается после того, как готовый реестр покрывает все содержательные слайды, создан `lesson-plan.json`, `review_plan.mjs` завершился без `problems` и выполнен `diversify_plan.mjs`.
+`source-scan.json` создаётся до извлечения. Если найдены метки, дождись решения пользователя, сохрани аудит, решение и нормализованную карту, а затем создай `source.json` и `planner-catalog.json`. `reading-ledger.json` является первым результатом планирования. Частично заполненный `decision-log.json` сохраняет прогресс второй фазы. `plan_ready` устанавливается после полного реестра, чистого `review_plan.mjs` и `diversify_plan.mjs`.
 
-Если после `verified` часть сцен отсутствует, создай недостающие по сохранённому плану и повтори сборку; уже созданные сцены не пересоздавай. Если сборка или структурная проверка завершилась ошибкой, повтори соответствующую команду с сохранённым планом и готовыми ассетами. Если отсутствует необходимый вход, сохрани состояние `waiting_for_input` с точным путём и причиной; после появления входа продолжи тот же этап.
+После `verified` передай PPTX пользователю и остановись на `presentation_approved: waiting_for_input`. При утверждении сохрани SHA-256 файла. После этого текст, порядок слайдов, шаблоны и iSpring менять нельзя. Если часть изображений отсутствует, создавай только недостающие. Если вставка или финальная проверка завершилась ошибкой, удали только неудачный финальный файл, создай новую копию утверждённого PPTX и повтори точечную вставку. Сборку текста и iSpring не повторяй.
 
 ## Команды состояния
 
@@ -41,10 +46,11 @@
 
 ```text
 <node> <skill-dir>/scripts/run_state.mjs find --results <results> --course_id <course-id> --scope_key <scope-key>
-<node> <skill-dir>/scripts/run_state.mjs start --results <results> --course_id <course-id> --course_root <course-root> --scope_key <scope-key> --scope_label <label> --items <item-ids> --source <source> --template <template> --catalog <catalog>
+<node> <skill-dir>/scripts/run_state.mjs start --results <results> --course_id <course-id> --course_root <course-root> --scope_key <scope-key> --scope_label <label> --items <item-ids> --source <source> --template <template> --catalog <catalog> --target_stage <plan_ready|verified|final_verified>
 <node> <skill-dir>/scripts/run_state.mjs start ... --fresh
 <node> <skill-dir>/scripts/run_state.mjs set-stage --run <run> --item <item-id> --stage <stage> --status <status> --outputs <paths>
-<node> <skill-dir>/scripts/run_state.mjs finish --run <run>
+<node> <skill-dir>/scripts/run_state.mjs set-stage --run <run> --item <item-id> --stage presentation_approved --status complete --approved_presentation <approved.pptx> --approved_sha256 <sha256>
+<node> <skill-dir>/scripts/run_state.mjs finish --run <run> [--target_stage <stage>]
 ```
 
 В `--items` передаются идентификаторы согласованного объёма, а в `--outputs` — созданные на соответствующем этапе файлы. Оркестратор обновляет состояние после получения результата от исполнителя и сообщает пользователю о `waiting_for_input` или `failed` с точным этапом, путём и причиной.

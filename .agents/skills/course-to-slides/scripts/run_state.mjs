@@ -5,11 +5,16 @@ import { parseArgs } from "node:util";
 
 const STAGES = [
   "initialized",
+  "markup_scanned",
+  "markup_ready",
   "source_ready",
   "plan_ready",
   "presentation_built",
   "verified",
-  "assets_ready"
+  "presentation_approved",
+  "assets_ready",
+  "images_inserted",
+  "final_verified"
 ];
 
 const STAGE_STATUSES = new Set(["pending", "in_progress", "complete", "waiting_for_input", "failed"]);
@@ -134,6 +139,7 @@ async function findRuns(resultsPath, courseId, scopeKey) {
       createdAt: manifest.created_at ?? entry.name,
       status: manifest.status ?? "unknown",
       currentStage: manifest.current_stage ?? null,
+      targetStage: manifest.target_stage ?? "verified",
       scopeLabel: manifest.scope?.label ?? manifest.requested ?? scopeKey,
       fingerprints: manifest.fingerprints ?? null
     });
@@ -149,6 +155,8 @@ async function start(values) {
   const scopeLabel = required(values, "scope_label");
   const itemIds = required(values, "items").split(",").map((item) => safeItemId(item.trim())).filter(Boolean);
   if (!itemIds.length) fail("--items must contain at least one item id");
+  const targetStage = values.target_stage?.trim() || "final_verified";
+  if (!STAGES.includes(targetStage)) fail(`Unknown target stage ${JSON.stringify(targetStage)}`);
 
   const previous = await findRuns(results, courseId, scopeKey);
   if (previous.length && !values.fresh) {
@@ -170,8 +178,9 @@ async function start(values) {
     await fs.mkdir(path.join(itemRoot, "generated-assets"), { recursive: true });
     await fs.mkdir(path.join(itemRoot, "verification"), { recursive: true });
     await atomicWriteJson(path.join(itemRoot, "state.yaml"), {
-      version: 1,
+      version: 2,
       item_id: itemId,
+      target_stage: targetStage,
       status: "active",
       current_stage: "initialized",
       stages: Object.fromEntries(STAGES.map((stage) => [stage, {
@@ -183,10 +192,11 @@ async function start(values) {
   }
 
   const manifest = {
-    version: 1,
+    version: 2,
     run_id: runId,
     course: { id: courseId, root: courseRoot },
     scope: { key: scopeKey, label: scopeLabel, items: itemIds },
+    target_stage: targetStage,
     status: "active",
     current_stage: "initialized",
     fingerprints: await fingerprints(values),
@@ -209,7 +219,7 @@ async function setStage(values) {
   if (!(await exists(statePath))) fail(`Item state does not exist: ${statePath}`);
   const state = await readManifest(statePath);
   const index = STAGES.indexOf(stage);
-  if (status === "in_progress" && index > 0 && state.stages?.[STAGES[index - 1]]?.status !== "complete") {
+  if (["in_progress", "complete", "waiting_for_input"].includes(status) && index > 0 && state.stages?.[STAGES[index - 1]]?.status !== "complete") {
     fail(`Cannot start ${stage}; previous stage ${STAGES[index - 1]} is not complete`);
   }
 
@@ -222,9 +232,24 @@ async function setStage(values) {
   };
   if (values.message) state.stages[stage].message = values.message;
   if (values.outputs) state.stages[stage].outputs = values.outputs.split(",").map((item) => path.resolve(item.trim()));
+  if (values.approved_presentation || values.approved_sha256) {
+    if (stage !== "presentation_approved" || status !== "complete") {
+      fail("Approval metadata can only be recorded when presentation_approved is complete");
+    }
+    const approvedPresentation = path.resolve(required(values, "approved_presentation"));
+    const approvedSha256 = required(values, "approved_sha256").toLowerCase();
+    if (!/^[a-f0-9]{64}$/.test(approvedSha256)) fail("--approved-sha256 must be a 64-character hexadecimal SHA-256 value");
+    state.stages[stage].approved_presentation = approvedPresentation;
+    state.stages[stage].approved_sha256 = approvedSha256;
+  }
   state.current_stage = stage;
-  state.status = status === "waiting_for_input" || status === "failed" ? status : "active";
-  if (stage === "verified" && status === "complete") state.status = "complete";
+  const targetStage = state.target_stage ?? "verified";
+  const targetComplete = state.stages?.[targetStage]?.status === "complete";
+  state.status = status === "waiting_for_input" || status === "failed"
+    ? status
+    : targetComplete
+      ? "complete"
+      : "active";
   state.updated_at = updatedAt;
   await atomicWriteJson(statePath, state);
 
@@ -241,9 +266,12 @@ async function finish(values) {
   const runRoot = path.resolve(required(values, "run"));
   const manifestPath = path.join(runRoot, "_work", "run.yaml");
   const manifest = await readManifest(manifestPath);
+  const targetStage = values.target_stage?.trim() || manifest.target_stage || "verified";
+  if (!STAGES.includes(targetStage)) fail(`Unknown target stage ${JSON.stringify(targetStage)}`);
   for (const itemId of manifest.scope?.items ?? []) {
     const state = await readManifest(path.join(runRoot, "_work", "items", itemId, "state.yaml"));
-    if (state.stages?.verified?.status !== "complete") fail(`Cannot finish run; item ${itemId} is not verified`);
+    const itemTarget = state.target_stage ?? targetStage;
+    if (state.stages?.[itemTarget]?.status !== "complete") fail(`Cannot finish run; item ${itemId} has not completed target stage ${itemTarget}`);
   }
   manifest.status = "complete";
   manifest.current_stage = "complete";
@@ -268,11 +296,14 @@ const { values } = parseArgs({
     fresh: { type: "boolean", default: false },
     timestamp: { type: "string" },
     run: { type: "string" },
+    target_stage: { type: "string" },
     item: { type: "string" },
     stage: { type: "string" },
     status: { type: "string" },
     message: { type: "string" },
-    outputs: { type: "string" }
+    outputs: { type: "string" },
+    approved_presentation: { type: "string" },
+    approved_sha256: { type: "string" }
   },
   allowPositionals: false
 });

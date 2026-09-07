@@ -361,6 +361,17 @@ export function validatePlan(plan, catalog) {
   object(plan, "plan");
   if (plan.version !== 2) throw new Error("plan.version must equal 2");
   if (typeof plan.lessonTitle !== "string" || !plan.lessonTitle.trim()) throw new Error("plan.lessonTitle must be a non-empty string");
+  if (plan.sourceMarkup !== undefined) {
+    object(plan.sourceMarkup, "plan.sourceMarkup");
+    if (!['use', 'ignore'].includes(plan.sourceMarkup.mode)) throw new Error("plan.sourceMarkup.mode must be use or ignore");
+    if (plan.sourceMarkup.templateCoverage !== undefined && !['none', 'partial', 'full'].includes(plan.sourceMarkup.templateCoverage)) {
+      throw new Error("plan.sourceMarkup.templateCoverage must be none, partial, or full");
+    }
+    if (plan.sourceMarkup.templateMarkedSlides !== undefined) {
+      if (!Array.isArray(plan.sourceMarkup.templateMarkedSlides)) throw new Error("plan.sourceMarkup.templateMarkedSlides must be an array");
+      plan.sourceMarkup.templateMarkedSlides.forEach((value, index) => integer(value, `plan.sourceMarkup.templateMarkedSlides[${index}]`, 1));
+    }
+  }
   if (!Array.isArray(plan.slides) || !plan.slides.length) throw new Error("plan.slides must be a non-empty array");
   if (plan.slides[0].kind !== "title") throw new Error("plan.slides[0] must be the title slide");
   plan.slides.forEach((item, index) => {
