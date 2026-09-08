@@ -32,11 +32,13 @@ const uppercaseSlotValue = (value) => typeof value === "string"
   const sourceTemplate = resolveTemplate(catalog, spec, `plan.slides[${planIndex}]`);
   if (sourceTemplate.sourceSlide > originals.length) throw new Error(`plan.slides[${planIndex}] points to missing source slide ${sourceTemplate.sourceSlide}`);
   const clone = originals[sourceTemplate.sourceSlide - 1].duplicate();
+  let sceneEmbedded = false;
   if (item.kind === "dialogue") {
     const imagePath = path.resolve(path.dirname(planPath), item.scenePath);
     const exists = await fs.access(imagePath).then(() => true, () => false);
     if (requireScenes && exists) {
       dialogueOperations.push({ slideIndex: planIndex + 1, objectName: "DIALOGUE_SCENE", imagePath });
+      sceneEmbedded = true;
     } else if (requireScenes) {
       throw new Error(`plan.slides[${planIndex}]: dialogue scene ${item.scenePath} is missing`);
     } else {
@@ -59,7 +61,7 @@ const uppercaseSlotValue = (value) => typeof value === "string"
     if (spec.stripToSlots) {
     stripOperations.push({
       slideIndex: planIndex + 1,
-      keepObjectNames: [...new Set([...Object.values(spec.slots), ...(item.kind === "dialogue" ? ["DIALOGUE_SCENE"] : [])])]
+      keepObjectNames: [...new Set([...Object.values(spec.slots), ...(sceneEmbedded ? ["DIALOGUE_SCENE"] : [])])]
     });
     }
     if (item.manualLayout) {

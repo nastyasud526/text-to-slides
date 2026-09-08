@@ -7,7 +7,7 @@
 | Быстрое сканирование | детерминированный скрипт | DOCX и каталог | `source-scan.json` с кандидатами |
 | Аудит и нормализация меток | `gpt-5.6-terra`, `medium` | `source-scan.json`, решение пользователя и каталог | `markup-audit.json`, `markup-decision.json`, `markup-normalization.json` |
 | Preflight | `gpt-5.6-luna`, `low` | `course.yaml`, нормализованный `source.json`, пути каталога и библиотеки | отчёт preflight |
-| Смысловая разметка | `gpt-5.6-sol`, `medium` | `source.json`, контекст урока, `markup-decision.json`, затем `planner-catalog.json` | `reading-ledger.json`, `lesson-plan.json` с `interactionSpec`, `decision-log.json`, `semantic-review.json` |
+| Смысловая разметка | `gpt-5.6-sol`, `medium` | `planner-source.json`, контекст урока, `markup-decision.json`, затем `planner-catalog.json` | `reading-ledger.json`, `lesson-plan.json` с `interactionSpec`, `decision-log.json`, `semantic-review.json`. Для слайдов с принятой авторской меткой анкету не проходит и запись в `decision-log.json` не создаёт. |
 | Сборка и iSpring | `gpt-5.6-luna`, `medium` | проверенный план, каталог, PowerPoint- и iSpring-шаблоны | PPTX на утверждение, ресурсы и технические отчёты |
 | Визуальное решение | `gpt-5.6-terra`, `medium` | `visual-requests.json`, визуальная конфигурация курса и референсы | PNG и `asset-report.json` |
 | Вставка PNG | `gpt-5.6-luna`, `medium` | утверждённый PPTX, его SHA-256, план и готовые PNG | финальный PPTX |

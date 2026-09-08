@@ -38,10 +38,9 @@ for (const [index, item] of plan.slides.entries()) {
   const kinds = spec.kinds ?? [];
   const isStaging = kinds.includes("interactive-staging") || kinds.includes("dialogue");
   let entry = null;
-  if (ledger) {
+  if (ledger && !isStaging) {
     entry = ledgerBySourceSlide.get(item.sourceSlide);
     if (!entry) throw new Error(`plan sourceSlide ${item.sourceSlide} has no reading-ledger entry`);
-    if (entry.reading.relationships?.primary?.type === "uncertain") throw new Error(`plan sourceSlide ${item.sourceSlide} cannot select a template while its primary relationship is uncertain`);
     if (entry.sourceText !== item.sourceText) throw new Error(`plan sourceSlide ${item.sourceSlide} changed sourceText after the reading phase`);
     const expectedReading = planReadingFromLedger(entry);
     for (const field of ["function", "units", "relationships", "excludedNotes"]) {

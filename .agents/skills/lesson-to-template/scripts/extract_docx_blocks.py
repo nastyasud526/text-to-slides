@@ -306,6 +306,13 @@ def group_slides(blocks: list[dict], markup_map: dict | None = None) -> list[dic
                 speakers.add(m.group(1))
     for s in slides:
         assign_roles(s["blocks"], speakers)
+        # assign_roles classifies every paragraph by its shape, which would turn an author's
+        # template mark back into ordinary content. The mark is an instruction to the pipeline,
+        # not lesson text, so restore its role after the general pass.
+        for b in s["blocks"]:
+            entry = normalized_entries.get(b.get("body_index"))
+            if entry and entry.get("kind") == "template":
+                b["role"] = ROLE_INSTRUCTION
         for b in s["blocks"]:
             if b["kind"] != "paragraph":
                 continue

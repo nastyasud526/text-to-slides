@@ -1,4 +1,4 @@
-import { PRIMARY_TYPES, primaryFromAnswers } from "./bridge.mjs";
+import { PRIMARY_TYPES, familyOf, primaryFromAnswers } from "./bridge.mjs";
 function object(value, label) {
   if (!value || Array.isArray(value) || typeof value !== "object") throw new Error(`${label} must be an object`);
 }
@@ -179,26 +179,37 @@ function validateLedgerV2(ledger) {
     const label = `readingLedger.slides[${index}]`;
     object(entry, label);
     integer(entry.sourceSlide, `${label}.sourceSlide`, 1);
-    nonEmptyString(entry.sourceText, `${label}.sourceText`);
+    // Optional: fill_plan.mjs joins it from source.json so the ledger need not copy the lesson text.
+    if (entry.sourceText !== undefined) nonEmptyString(entry.sourceText, `${label}.sourceText`);
     if (entry.authorType !== undefined && entry.authorType !== null) nonEmptyString(entry.authorType, `${label}.authorType`);
     const r = entry.reading;
     object(r, `${label}.reading`);
     nonEmptyString(r.function, `${label}.reading.function`);
     nonEmptyString(r.keyMessage, `${label}.reading.keyMessage`);
-    validateAnswers(r.answers, `${label}.reading.answers`);
-    stringArray(r.intro, `${label}.reading.intro`);
     nonEmptyString(r.primary, `${label}.reading.primary`);
     if (!PRIMARY_TYPES.includes(r.primary)) throw new Error(`${label}.reading.primary must be one of: ${PRIMARY_TYPES.join(", ")}`);
+    nonEmptyString(r.whyPrimary, `${label}.reading.whyPrimary`);
+    if (r.fromAuthorTag) {
+      // The slide already carries an accepted author template mark (markup-decision.mode "use").
+      // Skip the seven-question questionnaire and its consistency check: the author's mark is the reading.
+      if (entry.authorType === undefined || entry.authorType === null) throw new Error(`${label}.authorType is required when reading.fromAuthorTag is true`);
+      // The author may name either a family ("[тип: items]") or a concrete template
+      // ("Шаблон: text.illustration"); both must agree with the recorded primary relation.
+      const markFamily = PRIMARY_TYPES.includes(entry.authorType) ? entry.authorType : familyOf(entry.authorType);
+      if (r.primary !== markFamily) throw new Error(`${label}.reading.primary is ${r.primary} but authorType ${JSON.stringify(entry.authorType)} belongs to ${JSON.stringify(markFamily)}`);
+      if (r.answers !== undefined) throw new Error(`${label}.reading.answers must be absent when reading.fromAuthorTag is true`);
+      return;
+    }
+    validateAnswers(r.answers, `${label}.reading.answers`);
+    stringArray(r.intro, `${label}.reading.intro`);
     const derived = primaryFromAnswers(r.answers);
     if (!["checklist", "statistics"].includes(r.primary) && derived !== r.primary) {
       throw new Error(`${label}.reading.primary is ${r.primary} but the answers imply ${derived}; fix the answers or the primary`);
     }
-    nonEmptyString(r.whyPrimary, `${label}.reading.whyPrimary`);
   });
 }
 
 function validateLedgerV1(ledger) {
-  const sourceSlides = new Set();
   ledger.slides.forEach((entry, index) => {
     object(entry, `readingLedger.slides[${index}]`);
     integer(entry.sourceSlide, `readingLedger.slides[${index}].sourceSlide`, 1);
@@ -256,6 +267,15 @@ export function ledgerUnits(entry) {
 }
 
 export function planReadingFromLedger(entry) {
+  if (entry.reading.fromAuthorTag) {
+    if (entry.sourceText === undefined) throw new Error(`readingLedger slide ${entry.sourceSlide}: sourceText is required to build the plan reading; run fill_plan.mjs first`);
+    return {
+      function: entry.reading.function,
+      units: [entry.sourceText],
+      relationships: `Главная связь: ${entry.reading.primary}. ${entry.reading.whyPrimary}`,
+      excludedNotes: []
+    };
+  }
   if (entry.reading.answers) {
     return {
       function: entry.reading.function,
